@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1" />
+
+		
+		<link href="src/main/resources/static/cdn/css/custom.css"/>
+		
+		<script th:src="@{webjars/jquery/2.2.1/jquery.min.js}"></script>
+		<script src="resoources/../jquery.js"></script>
+		<script src="resoources/../bootstrap.js"></script>
+		<script src="resoources/../principal.js"></script>
+		<script src="resoources/../principal.js"></script>
+	</head>
+	
+	<body>
+		<div th:replace="layouts/principal/header :: MiHeader"></div>
+		<div layout:fragment="content">Bla bla bla...</div>
+		<div th:replace="layouts/principal/footer :: miFooter"></div>
+	</body>
+</html>
