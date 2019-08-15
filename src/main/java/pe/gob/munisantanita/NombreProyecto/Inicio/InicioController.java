@@ -16,6 +16,4 @@ public class InicioController {
 		model.addAttribute("data", data );
 		return "pages/index";
 	}
-	
-	
 }
