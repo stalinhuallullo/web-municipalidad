@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/bar-menu-category"></div>
+		
+         <div class="main-content p30-20">
+            <!--Events Start-->
+            <div class="news-wrapper news-grid deprt-txt">
+               <div class="container">
+                  <div class="row">
+
+	                  <div class="col-md-12">
+		                  <div class="row">
+		                  
+		                  	<div class="col-md-12 mb-40" th:if="${ !listCategory1.isEmpty() }">
+								<div class="cityscapes wf100">
+								    <div class="row">
+								        <!--Item Start-->
+								        <th:block th:each=" item, i : ${listCategory1}">
+									        <div th:classappend=" ${ (i.index == 0 ? 'col-md-7 col-sm-6 col-xs-12 p5' : '') + ((i.index == 1 || i.index == 2) ? 'col-md-5 col-sm-6 col-xs-12 p5' : '') + ((i.index > 2) ? 'col-md-4 col-sm-4 col-xs-12 p5' : '') } ">
+									            <div th:classappend=" ${ (i.index == 0 ? 'ch-box ch ch-primary' : 'ch-box ch ch-secondary') } ">
+									                <div class="ch-thumb">
+									                	<img th:if="${ item.imagen != null }" th:src=" ${ @helper.getServerApiImgNoticias(item.imagen) } " alt=""> 
+									                	<img th:unless="${ item.imagen != null }" th:src="${ @helper.assetsImgDefault() }" alt="">
+									                </div>
+									                <p th:text="  ${item} "></p>
+									                <p th:text="  ${i.index} "></p>
+									                <div class="ch-txt">
+									                    <h5><a th:href="${@helper.getURL('noticias/' + item.slug)}" th:text="${item.titulo}"></a></h5>
+									                    <ul>
+									                        <li><a th:href="${@helper.getURL('noticias/' + item.slug)}" th:text=" ${ @helper.convertirFecha(item.fecha) } "></a></li>
+									                    </ul>
+									                    <p class="ellipsis-height ellipsis text-justify" th:text="${item.resumen}"></p>
+									                </div>
+									            </div>
+									        </div>
+								        </th:block>
+								    </div>
+								</div>
+							</div>
+							
+							
+							<th:block  th:if="${ !listCategory2.isEmpty() }">
+								<div class="col-sm-12 mt-15">
+	    							<div class="header-category">
+										<h3 class="name">Educación</h3>
+										<div class="control">
+											<a th:href="${@helper.getURL('noticias/categoria/educacion')}" class="c2">Ver más</a>
+										</div>    							
+	    							</div>
+								</div>
+								
+								<div class="col-md-3 col-sm-6" th:each="i : ${listCategory2}">
+									<div class="news-box">
+										<div class="new-thumb card">
+											<img th:if="${ i.imagen != null }" th:src=" ${ @helper.getServerApiImgNoticias(i.imagen) } " alt=""> 
+								            <img th:unless="${ i.imagen != null }" th:src="${ @helper.assetsImgDefault() }" alt=""> 
+										</div>
+										<div class="new-txt">
+											<ul class="news-meta">
+												<li th:text=" ${ @helper.convertirFecha(i.fecha) } "></li>
+											</ul>
+											<h6><a th:href="${@helper.getURL('noticias/' + i.slug)}" th:id="${i.id}"  th:text="${i.titulo}"></a></h6>
+											<p class="ellipsis-height ellipsis text-justify" th:text="${i.resumen}"></p>
+										</div>
+									</div>
+								</div>
+							</th:block>
+							
+							<th:block  th:if="${ !listCategory3.isEmpty() }">
+								<div class="col-sm-12 mt-15">
+	    							<div class="header-category">
+										<h3 class="name">Salud</h3>
+										<div class="control">
+											<a th:href="${@helper.getURL('noticias/categoria/salud')}" class="c3">Ver más</a>
+										</div>    							
+	    							</div>
+								</div>
+								<div class="col-md-3 col-sm-6" th:each="i : ${listCategory3}">
+									<div class="news-box">
+										<div class="new-thumb card">
+											<img th:if="${ i.imagen != null }" th:src=" ${ @helper.getServerApiImgNoticias(i.imagen) } " alt=""> 
+								            <img th:unless="${ i.imagen != null }" th:src="${ @helper.assetsImgDefault() }" alt="">
+										</div>
+										<div class="new-txt">
+											<ul class="news-meta">
+												<li th:text=" ${ @helper.convertirFecha(i.fecha) } "></li>
+											</ul>
+											<h6><a th:href="${@helper.getURL('noticias/' + i.slug)}"  th:text="${i.titulo}"></a></h6>
+											<p class="ellipsis-height ellipsis text-justify" th:text="${i.resumen}"></p>
+										</div>
+									</div>
+								</div>
+							</th:block>
+							
+							<th:block  th:if="${ !listCategory4.isEmpty() }">
+								<div class="col-sm-12 mt-15">
+	    							<div class="header-category">
+										<h3 class="name">Cultural</h3>
+										<div class="control">
+											<a th:href="${@helper.getURL('noticias/categoria/cultural')}" class="c4">Ver más</a>
+										</div>    							
+	    							</div>
+								</div>
+								<div class="col-md-3 col-sm-6" th:each="i : ${listCategory4}">
+									<div class="news-box">
+										<div class="new-thumb card">
+											<img th:if="${ i.imagen != null }" th:src=" ${ @helper.getServerApiImgNoticias(i.imagen) } " alt=""> 
+								            <img th:unless="${ i.imagen != null }" th:src="${ @helper.assetsImgDefault() }" alt="">
+										</div>
+										<div class="new-txt">
+											<ul class="news-meta">
+												<li th:text=" ${ @helper.convertirFecha(i.fecha) } "></li>
+											</ul>
+											<h6><a th:href="${@helper.getURL('noticias/' + i.slug)}"  th:text="${i.titulo}"></a></h6>
+											<p class="ellipsis-height ellipsis text-justify" th:text="${i.resumen}"></p>
+										</div>
+									</div>
+	                            </div>
+                            </th:block>
+                            
+                            
+	                     </div>
+                     </div>
+                     
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+	</body>
+</html>

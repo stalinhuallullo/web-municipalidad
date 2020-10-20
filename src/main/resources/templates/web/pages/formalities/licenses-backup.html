@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                           	<h3 class="stitle text-center">Licencias de funcionamiento</h3>
+	                           	<style>
+	                           	
+									.cmsmasters_table {
+									    width: 100%;
+									    border-collapse: unset;
+									}
+									.cmsmasters_table{
+									    border-collapse: collapse;
+									    border-spacing: 0;
+									    vertical-align: middle;
+									}
+									.cmsmasters_table thead .cmsmasters_table_row_header th:first-child {
+									    -webkit-border-radius: 3px 0 0 0;
+									    border-radius: 3px 0 0 0;
+									}
+									.cmsmasters_table tr td.cmsmasters_table_cell_alignleft, .cmsmasters_table tr th.cmsmasters_table_cell_alignleft {
+									    text-align: left;
+									}
+									.cmsmasters_table tr td:first-child, .cmsmasters_table tr th:first-child {
+									    border-left-width: 1px;
+									    border-left-style: solid;
+									}
+									.cmsmasters_table thead .cmsmasters_table_row_header th {
+									    padding: 15px 25px;
+									}
+									.cmsmasters_table .cmsmasters_table_row_header th {
+									    border-color: #00AD46;
+										background-color: #00AD46;
+										color: #fafafa;
+									}
+									
+									.cmsmasters_table tbody tr td {
+									    padding: 13px 25px;
+									}
+									.cmsmasters_table .cmsmasters_table_row_header th{
+										text-align: left;
+									}
+									.cmsmasters_table tbody tr td, 
+									.cmsmasters_table tfoot tr td {
+									    border-bottom-width: 1px;
+									    border-bottom-style: solid;
+									}
+									.cmsmasters_table tr td:last-child, 
+									.cmsmasters_table tr th:last-child {
+									    border-right-width: 1px;
+									    border-right-style: solid;
+									}
+									.cmsmasters_table tr td{
+										border-color: #dedede;
+									}
+                                </style> 
+                                   
+                                <table class="cmsmasters_table">
+                                    <caption><h6 class="title-info">Subgerencia de comercialización y licencias</h6></caption>
+                                    <thead>
+                                        <tr class="cmsmasters_table_row_header">
+                                            <th class="cmsmasters_table_cell_alignleft">Descripción</th>
+                                            <th class="cmsmasters_table_cell_aligncenter" width="50px">Enlace</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="cmsmasters_table_cell_alignleft">Visor de zonificación</td>
+                                            <td class="cmsmasters_table_cell_aligncenter">
+                                                <a href="https://www.google.com/maps/place/Municipalidad+de+Santa+Anita/@-12.0434904,-76.9788103,15z/data=!4m5!3m4!1s0x9105c6795eb9ac21:0x8b78741b0aafece8!8m2!3d-12.0434547!4d-76.9713736" target="_blank" rel="noopener noreferrer"><i class="ico zonificacion"></i></a>
+                                            </td>
+                                        </tr>
+                                        <!--<tr>
+                                            <td class="cmsmasters_table_cell_alignleft">Estado de trámite de licencia de funcionamiento</td>
+                                            <td class="cmsmasters_table_cell_aligncenter">
+                                                <a href="https://www.munisantanita.gob.pe/Modulo_consulta/licencias.php" target="_blank" rel="noopener noreferrer"><i class="ico foldertramites"></i></a>
+                                            </td>
+                                        </tr>-->
+                                    </tbody>
+                                </table>
+
+
+
+	                           	<table class="cmsmasters_table">
+                                    <caption><h6 class="title-info">Meta 24</h6></caption>
+                                    <thead>
+                                        <tr class="cmsmasters_table_row_header">
+                                            <th class="cmsmasters_table_cell_alignleft">Descripción</th>
+                                            <th class="cmsmasters_table_cell_aligncenter" width="50px">Enlace</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- <tr>
+                                            <td colspan="3">
+                                                <div>
+                                                    <h6 class="title-info">Meta 24</h6>
+                                                </div>
+                                            </td>
+                                        </tr> -->
+                                        <tr>
+                                            <td class="cmsmasters_table_cell_alignleft"><strong>Marco legal</strong></td>
+                                            <td class="cmsmasters_table_cell_aligncenter">
+                                                <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/marco_legal_meta_24.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cmsmasters_table_cell_alignleft"><strong>Estado de solicitudes de licencia de funcionamiento</strong></td>
+                                            <td class="cmsmasters_table_cell_aligncenter">
+                                                <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/META 24 AL 16 12 2016  MDSA CUADRO 02 .xlsx')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cmsmasters_table_cell_alignleft"><strong>Requisitos licencia de funcionamiento</strong></td>
+                                            <td class="cmsmasters_table_cell_aligncenter">
+                                                <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/req  licencia de funcionamiento.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="cmsmasters_table">
+                                        <caption><h6 class="title-info">Formularios</h6></caption>
+                                        <thead>
+                                            <tr class="cmsmasters_table_row_header">
+                                                <th class="cmsmasters_table_cell_alignleft">Descripción</th>
+                                                <th class="cmsmasters_table_cell_aligncenter" width="50px">Enlace</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Solicitud para la obtención de Licencia de Funcionamiento</strong></td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/Solicitud para la obtención de Licencia de Funcionamiento 2019.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Declaración Jurada de Condiciones Básicas de Seguridad</strong></td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/Declaracion Jurada de Cumplimiento de las Condiciones de Seguridad en la Edificacion.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>licencia de funcionamiento municipal para una bodega que ocupa un área de 35 m2 y se encuentra ubicado en Jr. Los Libertadores N° 874 Urb. Universal</strong></td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/Llenado de Formulario ejemplo 1.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Inversiones Inteligentes SAC desea tramitar una licencia de funcionamiento municipal por un año para una oficina administrativa que ocupa un área de 25 m2 y se encuentra ubicado en la Av. Francisco Bolognesi N° 1278 Urb. Los Ficus</strong></td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/Llenado de Formulario ejemplo 2.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Maria Palacios Figueroa desea dar de baja a la Licencia de funcionamiento municipal N° 002356-2002 emitida con resolución N° 00362 y expedida el 25/08/2002</strong></td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/Llenado de Formulario ejemplo 3.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <!-- <table class="cmsmasters_table">
+                                        <caption><h6 class="title-info">Proceso de tramite de licencia de funcionamiento</h6></caption>
+                                        <thead>
+                                            <tr class="cmsmasters_table_row_header">
+                                                <th class="cmsmasters_table_cell_alignleft">Descripción</th>
+                                                <th class="cmsmasters_table_cell_aligncenter" width="50px">Enlace</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Proceso de Tramite de una licencia de Funcionamiento (TRIPTICO)</strong></td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/triptico actual.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>-->
+
+                                    <table class="cmsmasters_table">
+                                        <caption><h6 class="title-info">Legislación</h6></caption>
+                                        <thead>
+                                            <tr class="cmsmasters_table_row_header">
+                                                <th class="cmsmasters_table_cell_alignleft">Descripción</th>
+                                                <th class="cmsmasters_table_cell_aligncenter" width="50px">Enlace</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ley orgánica de municipalidades, ley N° 27972</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/LEY ORGÁNICA DE MUNICIPALIDADES LEY Nº 27972.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft">Ley N° 28976, ley marco de licencia de funcionamiento</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ley_nro_28976.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>DECRETO SUPREMO N° 006-2013-PCM -</strong> Aprueba la relación de autorizaciones sectoriales de las Entidades del Poder Ejecutivo, que deben ser exigidas como requisito previo para el otorgamiento de la licencia de funcionamiento, de acuerdo a la Ley N° 28976, Ley Marco de Licencia de Funcionamiento</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/DS-006-2013-PCM.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>DECRETO SUPREMO N° 058-2014-PCM -</strong> Decreto Supremo que aprueba el Reglamento de Inspecciones Técnicas de Seguridad en Edificaciones</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/DS-058-2014-PCM.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>LEY N° 30230 -</strong> Ley que establece medidas tributarias, simplificación de procedimientos y permisos para la promoción y dinamización de la inversión en el País</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/Ley30230.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Decreto Legislativo Nº 1200</strong>, Decreto Legislativo que modifica los artículos 2, 3, 6, 7, 8, 9, 11, 13 y 15 de la Ley N° 28976, Ley Marco de Licencias de Funcionamiento y los artículos 12 y 14 de la Ley N° 29664, Ley que crea el Sistema Nacional de Gestión del Riesgo de Desastres</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/DECRETO LEGISLATIVO N 1200.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft">Decreto supremo N° 004-2011-vivienda</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/DS 004_2011_VIVIENDA.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza Nro. 1025 - MML</strong> Aprueban reajuste integral de zonificación de ajuste de suelos en los distritos de El Agustino, y de Santa Anita que forman parte del área de tratamiento normativo I de Lima Metropolitana</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ORD-1025.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza Nro. 1015 - MML</strong> - Normas de zonificación</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ORD-1015.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza Nro. 933 - MML</strong> - indice de usos para la Ubicación de Actividades Urbanas</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ORD_933_MML.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza N° 00099 /MDSA-2012</strong> Aprueba la modificación de los artículos 13°, 40° y 42° de la Ordenanza N° 00096/MDSA que regula el otorgamiento de licencia y/o autorización municipal de funcionamiento en el distrito de Santa Anita</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ordenanza0099_mdsa.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza N° 00173/MDSA</strong> Modifican el Reglamento para el otorgamiento de licencia y/o autorización municipal de funcionamiento en el distrito de Santa Anita(modifica la Ordenanza N° 00096/MDSA-2012</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ORD  173 - DEROGAR HORARIO.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza N° 0043/MDSA-2009</strong> Ordenanza que aprueba el texto único de Procedimientos Administrativos de la Municipalidad Distrital de Santa Anita</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ordenanza0043_mdsa.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza N° 0211/MDSA-2016</strong> Ordenanza que aprueba el T.U.P.A. de la Municipalidad</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ORD_211.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza N° 00104 /MDSA-2012</strong> Declarar zona rigidas, no accesibles para el comercio ambulatorio las siguientes vias</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ordenanza0104_mdsa.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza N° 00131 /MDSA-2013</strong> Regula el otorgamiento de licencias de funcionamiento, anuncios publicitarios y toldos en forma conjunta para establecimientos comerciales en la jurisdicción del distrito de Santa Anita</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ordenanza131-2013.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Decreto de Alcaldía Nº 00012-2015/MDSA</strong>, Modifican el texto único de Procedimientos Administrativos de la Municipalidad Distrital de Santa Anita</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/D A  N 12-15-MDSA (TUPA).pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Decreto de Alcaldía Nº 00011-2016/MDSA</strong>, Modifican el texto único de Procedimientos Administrativos de la Municipalidad Distrital de Santa Anita</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/dec_11_2016.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft">Preguntas frecuentes</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/PREGUNTAS FRECUENTES  SOBRE LICENCIAS DE FUNCIONAMIENTO.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft">Plano de Zonificación</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/zonifica.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft">Indice de Uso de Suelos</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/indice_uso.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    
+                            
+
+
+
+                                
+                                
+	                           	
+	                           	
+	                           	
+
+								
+								
+								
+								<h6 class="title-info">Procedimiento</h6>
+								<div class="row">
+                                    <div class="col-md-12">
+                                       	<ul class="checklist table-info">
+                                       		<li>
+												<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+												<span class="table-item-text">Procedimiento para obtener la Licencia de Funcionamiento</span>
+												<p><span class="mr-10"><u><strong>1er Tipo</strong></u></span> Establecimientos con área ocupada hasta 100 m2 y capacidad de almacenamiento no mayor de 30 % del área total del local. Están excluidos los establecimientos que incluyan los giros : Púb., licorería, discoteca, bar, casinos, juego de azar, maquinas tragamonedas, ferreterías o giros afines a los mismos. Así como solicitudes que incluyan giros cuyo desarrollo implique el almacenamiento, uso o comercialización de productos tóxicos o altamente inflamables</p>
+												<ul class="checklist table-info">
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 1:</strong></u></span> El administrado se dirige a la Municipalidad - a la ventanilla unica a solicitar orientación y recabar la solicitud formato con carácter de declaración jurada</li>
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 2:</strong></u></span> Paga en ventanilla unica el derecho correspondiente al procedimiento administrativo de solicitud de licencia de funcionamiento establecido en el TUPA</li>
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 3:</strong></u></span> Presenta en la ventanilla unica la solicitud formato debidamente llenado con carácter de declaración jurada adjuntando los requisitos establecidos en el TUPA según corresponda</li>
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 4:</strong></u></span> Se verifica que cumple los requisitos establecidos en el TUPA y se advierte al administrado la zonificación y compatibilidad de uso. De ser procedente se emite la Licencia de Funcionamiento Municipal notificando al administrado en el acto (determinados giros - automáticos)</li>
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 5:</strong></u></span> Aquellos giros que se encuentran en excluidos, sera derivado a la Subgerencia de Comercialización y Licencias a efectos de su evaluación correspondiente</li>
+												</ul>
+												<br>
+												
+												<p><span class="mr-10"><u><strong>2do Tipo</strong></u></span> Establecimientos con área ocupada hasta 100 m2 no considerados en la categoría anterior y establecimientos de diversos giros con área ocupada mayor a 100 m2 hasta 500 m2</p>
+												<ul class="checklist">
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 1:</strong></u></span> El administrado se dirige a la Municipalidad - ventanilla unica a efectos de solicitar orientación y recabar la solicitud formato con carácter de declaración jurada</li>
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 2:</strong></u></span> Paga en la ventanilla unica el derecho correspondiente al procedimiento administrativo de solicitud de licencia de funcionamiento establecido en el TUPA</li>
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 3:</strong></u></span> Presenta la documentacion en la ventanilla unica que asigna un numero de expediente, la solicitud formato debidamente llenado con carácter de declaración jurada adjuntando los requisitos establecidos en el TUPA según corresponda</li>
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 4:</strong></u></span> El expediente es derivado a la Subgerencia de Comercializacion y Licencias a efectos de su evaluación correspondiente</li>
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 5:</strong></u></span> Se realiza al establecimiento, Inspección Técnica de Seguridad en Edificaciones - Ex Ante, en merito al cual se emite el Informe Técnico correspondiente</li>
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 6:</strong></u></span> Según sea los resultados de ITSE, PROCEDENTE se procederá a emitir la Licencia de Funcionamiento Municipal; IMPROCEDENTE se le emitirá la Resolución indicándole el motivo del pronunciamiento al administrado</li>
+												</ul>
+												<br>
+												
+												<p><span class="mr-10"><u><strong>3er Tipo</strong></u></span> Establecimientos con área ocupada mayor a 500 m2</p>
+												<ul class="checklist">
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 1:</strong></u></span> El administrado se dirige a la Municipalidad - ventanilla unica a efectos de solicitar orientación y recabar la solicitud formato con carácter de declaración jurada</li>
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 2:</strong></u></span> Paga en la ventanilla unica el derecho correspondiente al procedimiento administrativo de solicitud de licencia de funcionamiento establecido en el TUPA</li>
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 3:</strong></u></span> Presenta a través de la ventanilla unica que asigna un numero de expediente, la solicitud formato debidamente llenado con carácter de declaración jurada adjuntando los requisitos establecidos en el TUPA según corresponda</li>
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 4:</strong></u></span> El expediente es derivado a la Subgerencia de Comercialización y Licencias a efectos de su evaluación correspondiente</li>
+													<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>PASO 5:</strong></u></span> Según sea los resultados de ITSE, PROCEDENTE se procederá a emitir la Licencia de Funcionamiento Municipal; IMPROCEDENTE se le emitirá la Resolución indicándole el motivo del pronunciamiento al administrado</li>
+												</ul>
+												
+											</li>
+											<li>
+												<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+												<span class="table-item-text">Requisitos para obtener la Licencia de Funcionamiento</span>
+												<p>De conformidad con el Texto Único de Procedimientos Administrativos – TUPA vigente a la fecha los requisitos son como sigue:</p>
+												<p>Licencia de funcionamiento: establecimientos con un área de hasta 100 m2 y con itse basica ex post (la capacidad del almacenamiento no debe ser mayor del 30% del área total del establecimiento)</p>
+												
+												<span><strong>Requisitos Generales:</strong></span>
+												<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Formato de Solicitud de Licencia de Funcionamiento (de distribución gratuita) o de libre reproducción con carácter de declaración jurada que incluye: -Numero de RUC y DNI o Carne de Extranjería del solicitante, tratándose de personas jurídicas o naturales, según corresponda. -Numero de DNI o Carne de Extranjería del representante legal, en caso de personas jurídicas u otros entes colectivos, o tratándose de personas naturales que actúen mediante representación</li>
+		                                       		<li><i class="fas fa-check"></i> Copia de vigencia de poder de representante legal, en caso de personas jurídicas u otros entes colectivos. Tratándose de representación de personas naturales, se requerirá carta poder con firma legalizada</li>
+		                                       		<li><i class="fas fa-check"></i> Indicación del numero de comprobante de pago por derecho de tramite (S/. 36.30)</li>
+		                                       		<li><i class="fas fa-check"></i> Declaración Jurada de observancia de condiciones de seguridad</li>
+		                                       	</ul>
+		                                       	<br>
+		                                       	
+		                                       	<span><strong>Giros no aplicables:</strong></span>
+												<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Edificaciones, recintos o instalaciones hasta 100 m2 señalados en el literal precedente, en caso superen el 30% del área total para fines de almacenamiento</li>
+		                                       		<li><i class="fas fa-check"></i> Solicitudes que incluyan giros de pub, licorería, discoteca, bar, casino, juegos de azar, maquina tragamonedas, ferreterías y giros afines</li>
+		                                       		<li><i class="fas fa-check"></i> Giros cuyo desarrollo implique el almacenamiento uso o comercialización de productos inflamables</li>
+		                                       		<li><i class="fas fa-check"></i> Giros que requieran de una ITSE Ex Ante; de Detalle o Multidisciplinaria</li>
+		                                       	</ul>
+		                                       	<br>
+		                                       	
+		                                       	<span><strong>Requisitos específicos:</strong></span>
+												<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Copia simple del título profesional en el caso de servicios relacionados con la salud</li>
+		                                       		<li><i class="fas fa-check"></i> Informar sobre el numero de estacionamientos de acuerdo a la normativa vigente, en la Declaración Jurada</li>
+		                                       		<li><i class="fas fa-check"></i> Copia simple de la autorización sectorial contenida en el Decreto Supremo N° 006-2013-PCM o norma que la sustituya o reemplace</li>
+		                                       		<li><i class="fas fa-check"></i> Copia simple de la autorización expedida por el Ministerio de Cultura, conforme a la Ley N° 28296, Ley General del Patrimonio Cultural de la Nación. Excepto en los casos en que el Ministerio de Cultura haya participado en las etapas de remodelación y monitoreo de ejecución de obras previas inmediatas a la solicitud de la licencia del local por el cual se solicita la licencia</li>
+		                                       	</ul>
+		                                       	<br>
+		                                       	
+		                                       	<p>Licencia de funcionamiento: establecimientos con un área mas de 100 m2 hasta 500 m2 con ex ante</p>
+		                                       	
+		                                       	<span><strong>Requisitos Generales:</strong></span>
+												<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Formato de Solicitud de Licencia de Funcionamiento (de distribución gratuita) o de libre reproducción con carácter de declaración jurada que incluye: -Numero de RUC y DNI o Carne de Extranjería del solicitante, tratándose de personas jurídicas o naturales, según corresponda. -Numero de DNI o Carne de Extranjería del representante legal, en caso de personas jurídicas u otros entes colectivos, o tratándose de personas naturales que actúen mediante representación</li>
+		                                       		<li><i class="fas fa-check"></i> Copia de vigencia de poder de representante legal, en caso de personas jurídicas u otros entes colectivos. Tratándose de representación de personas naturales, se requerirá carta poder con firma legalizada</li>
+		                                       		<li><i class="fas fa-check"></i> Indicación del numero de comprobante de pago por derecho de tramite (S/. 279.00)</li>
+		                                       	</ul>
+		                                       	<br>
+		                                       	
+		                                       	<span><strong>Requisitos específicos:</strong></span>
+		                                       	<p>De ser el caso, serán exigibles los siguientes requisitos:</p>
+												<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Copia simple del título profesional en el caso de servicios relacionados con la salud</li>
+		                                       		<li><i class="fas fa-check"></i> Informar sobre el numero de estacionamientos de acuerdo a la normativa vigente, en la Declaración Jurada</li>
+		                                       		<li><i class="fas fa-check"></i> Copia simple de la autorización sectorial contenida en el Decreto Supremo N° 006-2013-PCM o norma que la sustituya o reemplace</li>
+		                                       		<li><i class="fas fa-check"></i> Copia simple de la autorización expedida por el Ministerio de Cultura, conforme a la Ley N° 28296, Ley General del Patrimonio Cultural de la Nación. Excepto en los casos en que el Ministerio de Cultura haya participado en las etapas de remodelación y monitoreo de ejecución de obras previas inmediatas a la solicitud de la licencia del local por el cual se solicita la licencia</li>
+		                                       	</ul>
+		                                       	<br>
+		                                       	
+		                                       	<p>Licencia de funcionamiento: establecimientos que requieren de un itse de detalle o multidisciplinaria (más de 500 m2)</p>
+		                                       	
+		                                       	<span><strong>Requisitos Generales:</strong></span>
+		                                       	<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Formato de Solicitud de Licencia de Funcionamiento (de distribución gratuita) o de libre reproducción con carácter de declaración jurada que incluye: -Numero de RUC y DNI o Carne de Extranjería del solicitante, tratándose de personas jurídicas o naturales, según corresponda. -Numero de DNI o Carne de Extranjería del representante legal, en caso de personas jurídicas u otros entes colectivos, o tratándose de personas naturales que actúen mediante representación</li>
+		                                       		<li><i class="fas fa-check"></i> Copia de vigencia de poder de representante legal, en caso de personas jurídicas u otros entes colectivos. Tratándose de representación de personas naturales, se requerirá carta poder con firma legalizada</li>
+		                                       		<li><i class="fas fa-check"></i> Indicar el número de Certificado de ITSE de Detalle o copia del Certificado de ITSE Multidisciplinaria</li>
+		                                       		<li><i class="fas fa-check"></i> Indicación del numero de comprobante de pago por derecho de tramite (S/. 36.30)</li>
+		                                       	</ul>
+		                                       	<br>
+		                                       	
+		                                       	<span><strong>Requisitos específicos:</strong></span>
+		                                       	<p>De ser el caso, serán exigibles los siguientes requisitos:</p>
+		                                       	<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Copia simple del título profesional en el caso de servicios relacionados con la salud</li>
+		                                       		<li><i class="fas fa-check"></i> Informar sobre el numero de estacionamientos de acuerdo a la normativa vigente, en la Declaración Jurada</li>
+		                                       		<li><i class="fas fa-check"></i> Copia simple de la autorización sectorial contenida en el Decreto Supremo N° 006-2013-PCM o norma que la sustituya o reemplace</li>
+		                                       		<li><i class="fas fa-check"></i> Copia simple de la autorización expedida por el Ministerio de Cultura, conforme a la Ley N° 28296, Ley General del Patrimonio Cultural de la Nación. Excepto en los casos en que el Ministerio de Cultura haya participado en las etapas de remodelación y monitoreo de ejecución de obras previas inmediatas a la solicitud de la licencia del local por el cual se solicita la licencia</li>
+		                                       	</ul>
+		                                       	<br>
+		                                       	<table border="1" align="center" cellpadding="0" cellspacing="0">
+	                                                <tbody>
+		                                                <tr>
+		                                                    <td width="248" rowspan="2" bgcolor="#CCCCCC" class="Texto"><p align="center"><strong>PAGO POR DERECHO <br>DE TRÁMITE</strong></p></td>
+		                                                    <td colspan="2" bgcolor="#CCCCCC" class="Texto"><p align="center"><strong>COSTO</strong></p></td>
+		                                                    <td width="107" rowspan="2" bgcolor="#CCCCCC" class="Texto"><p align="center"><strong>PLAZO</strong><span class="celeste">(**)</span></p></td>
+		                                                </tr>
+		                                                <tr>
+		                                                    <td width="61" bgcolor="#CCCCCC" class="Texto"><p align="center"><strong>% UIT</strong></p></td>
+		                                                    <td width="51" bgcolor="#CCCCCC" class="Texto"><p align="center"><strong>S/<span class="celeste"> (*)</span></strong></p></td>
+		                                                </tr>
+		                                                <tr>
+		                                                    <td width="248" bgcolor="#F4F4F4" class="Texto"><p>Para áreas hasta 100 m<sup>2</sup> ( incluye inspección de Defensa Civil) </p></td>
+		                                                    <td width="61" bgcolor="#F4F4F4" class="Texto"><p align="center">0.92 %</p></td>
+		                                                    <td width="51" bgcolor="#F4F4F4" class="Texto"><p align="center">36.30</p></td>
+		                                                    <td width="107" bgcolor="#F4F4F4" class="Texto"><p align="center">15 días</p></td>
+		                                                </tr>
+		                                                <tr>
+		                                                    <td width="248" bgcolor="#F4F4F4" class="Texto"><p>Para áreas ente los 101 m<sup>2</sup> a 500 m<sup>2</sup>  (incluye inspección de Defensa Civil)  </p></td>
+		                                                    <td width="61" bgcolor="#F4F4F4" class="Texto"><p align="center">7.06 %</p></td>
+		                                                    <td width="51" bgcolor="#F4F4F4" class="Texto"><p align="center">279.00</p></td>
+		                                                    <td width="107" bgcolor="#F4F4F4" class="Texto"><p align="center">15 días</p></td>
+		                                                </tr>
+		                                                <tr>
+		                                                    <td width="248" bgcolor="#F4F4F4" class="Texto"><p>Para áreas mayores a 501 m<sup>2</sup>  (No incluye inspección de Defensa Civil)  </p></td>
+		                                                    <td width="61" bgcolor="#F4F4F4" class="Texto"><p align="center">0.92 %</p></td>
+		                                                    <td width="51" bgcolor="#F4F4F4" class="Texto"><p align="center">36.30</p></td>
+		                                                    <td width="107" bgcolor="#F4F4F4" class="Texto"><p align="center">15 días</p></td>
+		                                                </tr>
+		                                            </tbody>
+                                                </table>
+		                                       	<br>
+		                                       	
+		                                       	<p>Licencia de funcionamiento: mercados de abastos, galerías comerciales y centros comerciales (licencia corporativa)</p>
+		                                       	
+		                                       	<span><strong>Requisitos Generales:</strong></span>
+		                                       	<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Formato de Solicitud de Licencia de Funcionamiento (de distribución gratuita) o de libre reproducción con carácter de declaración jurada que incluye: -Numero de RUC y DNI o Carne de Extranjería del solicitante, tratándose de personas jurídicas o naturales, según corresponda. -Numero de DNI o Carne de Extranjería del representante legal, en caso de personas jurídicas u otros entes colectivos, o tratándose de personas naturales que actúen mediante representación</li>
+		                                       		<li><i class="fas fa-check"></i> Copia de vigencia de poder de representante legal, en caso de personas jurídicas u otros entes colectivos. Tratándose de representación de personas naturales, se requerirá carta poder con firma legalizada</li>
+		                                       		<li><i class="fas fa-check"></i> Indicar el número de Certificado de ITSE de Detalle o copia del Certificado de ITSE Multidisciplinaria</li>
+		                                       		<li><i class="fas fa-check"></i> Indicación del numero de comprobante de pago por derecho de tramite (S/. 36.30)</li>
+		                                       	</ul>
+		                                       	<br>
+		                                       	
+		                                       	<span><strong>Requisitos específicos:</strong></span>
+		                                       	<p>De ser el caso, serán exigibles los siguientes requisitos:</p>
+		                                       	<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Copia simple del título profesional en el caso de servicios relacionados con la salud</li>
+		                                       		<li><i class="fas fa-check"></i> Informar sobre el numero de estacionamientos de acuerdo a la normativa vigente, en la Declaración Jurada</li>
+		                                       		<li><i class="fas fa-check"></i> Copia simple de la autorización expedida por el Ministerio de Cultura, conforme a la Ley N° 28296, Ley General del Patrimonio Cultural de la Nación. Excepto en los casos en que el Ministerio de Cultura haya participado en las etapas de remodelación y monitoreo de ejecución de obras previas inmediatas a la solicitud de la licencia del local por el cual se solicita la licencia</li>
+		                                       	</ul>
+		                                       	<br>
+		                                       	
+		                                       	<table border="1" align="center" cellpadding="0" cellspacing="0">
+                                                    <tbody>
+	                                                    <tr>
+	                                                        <td width="248" rowspan="2" bgcolor="#CCCCCC" class="Texto"><p align="center"><strong>PAGO POR DERECHO AL TRAMITE</strong></p></td>
+	                                                        <td colspan="2" bgcolor="#CCCCCC" class="Texto"><p align="center"><strong>COSTO</strong></p></td>
+	                                                        <td width="107" rowspan="2" bgcolor="#CCCCCC" class="Texto"><p align="center"><strong>PLAZO</strong><span class="celeste">(**)</span></p></td>
+	                                                    </tr>
+	                                                    <tr>
+	                                                        <td width="61" bgcolor="#CCCCCC" class="Texto"><p align="center"><strong>% UIT</strong></p></td>
+	                                                        <td width="51" bgcolor="#CCCCCC" class="Texto"><p align="center"><strong>S/<span class="celeste"> (*)</span></strong></p></td>
+	                                                    </tr>
+	                                                    <tr>
+	                                                        <td width="248" bgcolor="#F4F4F4" class="Texto"><p>Para área mayor a 100 m2 ( incluye inspección de Defensa Civil)</p></td>
+	                                                        <td width="61" bgcolor="#F4F4F4" class="Texto"><p align="center">0.92 %</p></td>
+	                                                        <td width="51" bgcolor="#F4F4F4" class="Texto"><p align="center">36.30</p></td>
+	                                                        <td width="107" bgcolor="#F4F4F4" class="Texto"><p align="center">15 días</p></td>
+	                                                    </tr>
+	                                                </tbody>
+                                                </table>
+                                                <br>
+                                                
+                                                <p>LICENCIA DE FUNCIONAMIENTO – CESIONARIOS CON UN ÁREA DE HASTA 100 M2 CON ITSE BASICA EX POST</p>
+                                                
+                                                <span><strong>Requisitos Generales:</strong></span>
+		                                       	<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Formato de Solicitud de Licencia de Funcionamiento (de distribución gratuita) o de libre reproducción con carácter de declaración jurada que incluye: -Numero de RUC y DNI o Carne de Extranjería del solicitante, tratándose de personas jurídicas o naturales, según corresponda. -Numero de DNI o Carne de Extranjería del representante legal, en caso de personas jurídicas u otros entes colectivos, o tratándose de personas naturales que actúen mediante representación</li>
+		                                       		<li><i class="fas fa-check"></i> Copia de vigencia de poder de representante legal, en caso de personas jurídicas u otros entes colectivos. Tratándose de representación de personas naturales, se requerirá carta poder con firma legalizada</li>
+		                                       		<li><i class="fas fa-check"></i> Indicación del numero de comprobante de pago por derecho de tramite (S/. 36.30)</li>
+		                                       		<li><i class="fas fa-check"></i> Declaración Jurada de observancia de condiciones de seguridad</li>
+		                                       	</ul>
+		                                       	<br>
+		                                       	
+		                                       	<span><strong>Requisitos específicos:</strong></span>
+		                                       	<p>De ser el caso, serán exigibles los siguientes requisitos:</p>
+		                                       	<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Copia simple del titulo profesional en el caso de servicios relacionados con la salud</li>
+		                                       		<li><i class="fas fa-check"></i> Copia simple de la autorización sectorial contenida en el Decreto Supremo N° 006-2013-PCM o norma que la sustituya o reemplace</li>
+		                                       	</ul>
+		                                       	<br>
+		                                       	
+		                                       	<p>LICENCIA DE FUNCIONAMIENTO – CESIONARIOS CON UN AREA MAS DE 100 M2 HASTA 500 M2 CON ITSE BASICA EX ANTE</p>
+		                                       	
+		                                       	<span><strong>Requisitos Generales:</strong></span>
+		                                       	<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Formato de Solicitud de Licencia de Funcionamiento (de distribución gratuita) o de libre reproducción con carácter de declaración jurada que incluye: -Numero de RUC y DNI o Carne de Extranjería del solicitante, tratándose de personas jurídicas o naturales, según corresponda. -Numero de DNI o Carne de Extranjería del representante legal, en caso de personas jurídicas u otros entes colectivos, o tratándose de personas naturales que actúen mediante representación</li>
+		                                       		<li><i class="fas fa-check"></i> Copia de vigencia de poder de representante legal, en caso de personas jurídicas u otros entes colectivos. Tratándose de representación de personas naturales, se requerirá carta poder con firma legalizada</li>
+		                                       		<li><i class="fas fa-check"></i> Indicación del numero de comprobante de pago por derecho de tramite (S/. 189.50)</li>
+		                                       	</ul>
+		                                       	<br>
+		                                       	
+		                                       	<span><strong>Requisitos específicos:</strong></span>
+		                                       	<p>De ser el caso, serán exigibles los siguientes requisitos:</p>
+		                                       	<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Copia simple del título profesional en el caso de servicios relacionados con la salud</li>
+		                                       		<li><i class="fas fa-check"></i> Copia simple de la autorización sectorial contenida en el Decreto Supremo N° 006-2013-PCM o norma que la sustituya o reemplace</li>
+		                                       	</ul>
+		                                       	<br>
+		                                       	
+		                                       	<p>LICENCIA DE FUNCIONAMIENTO – CESIONARIO CON UN AREA DE MÁS DE 500 M2</p>
+		                                       	
+		                                       	<span><strong>Requisitos Generales:</strong></span>
+		                                       	<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Formato de Solicitud de Licencia de Funcionamiento (de distribución gratuita) o de libre reproducción con carácter de declaración jurada que incluye: -Numero de RUC y DNI o Carne de Extranjería del solicitante, tratándose de personas jurídicas o naturales, según corresponda. -Numero de DNI o Carne de Extranjería del representante legal, en caso de personas jurídicas u otros entes colectivos, o tratándose de personas naturales que actúen mediante representación</li>
+		                                       		<li><i class="fas fa-check"></i> Copia de vigencia de poder de representante legal, en caso de personas jurídicas u otros entes colectivos. Tratándose de representación de personas naturales, se requerirá carta poder con firma legalizada</li>
+		                                       		<li><i class="fas fa-check"></i> Indicar el número de Certificado de ITSE de Detalle</li>
+		                                       		<li><i class="fas fa-check"></i> Indicación del número de comprobante de pago por derecho de tramite (S/. 36.30)</li>
+		                                       	</ul>
+		                                       	<br>
+		                                       	
+		                                       	<span><strong>Requisitos específicos:</strong></span>
+		                                       	<p>De ser el caso, serán exigibles los siguientes requisitos:</p>
+		                                       	<ul class="checklist">
+		                                       		<li><i class="fas fa-check"></i> Copia simple del título profesional en el caso de servicios relacionados con la salud</li>
+		                                       		<li><i class="fas fa-check"></i> Copia simple de la autorización sectorial contenida en el Decreto Supremo N° 006-2013-PCM o norma que la sustituya o reemplace</li>
+		                                       	</ul>
+		                                       	<br>
+                                                
+											</li>
+											<li>
+												<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+												<span class="table-item-text">Estructura de costos del derecho de Licencia de Funcionamiento</span>
+												<ul class="table-info checklist">
+													<li><a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/Licencia 1.1  - Establecimientos con un area de hasta 100 M2 con Itse  Basica Ex Post.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Licencia de funcionamiento: establecimientos con un área de hasta 100 m2 con itse básica ex post (la capacidad no mayor de almacenamiento no debe ser de 30% del área total del establecimiento)</span></a></li>
+													<li><a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/Licencia 1.2  - Establecimientos con un area de Hasta 100 M2 con Itse  Basica Ex Post.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Licencia de funcionamiento: establecimientos con un área de hasta 100 m2 con itse básica ex post en forma conjunta con la autorización de anuncio publicitario simple (adosado a fachada) y/o toldo</span></a></li>
+													<li><a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/Licencia 1.3  - Establecimientos con un area de Hasta 100 M2 con Itse  Basica Ex Post.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Licencia de funcionamiento: establecimientos con un área de hasta 100 m2 con itse básica ex post en forma conjunta con la autorización de anuncio (luminoso o iluminado) y/o toldo </span></a></li>
+													<li><a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/Licencia 2.1  - Establecimientos con un area más de 100 M2 hasta 500 M2 Ex Ante.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Licencia de funcionamiento: establecimientos con un área más de 100 m2 hasta 500 m2 con ex ante</span></a></li>
+												</ul>
+											</li>
+											<li>
+												<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+												<span class="table-item-text">Tipos de inspección de seguridad y criterios de evaluación en cada uno de ellos</span>
+												<ul class="table-info checklist">
+													<li>
+														<a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/DS-058-2014-PCM.pdf')} ">
+															<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+															<span class="table-item-text">De acuerdo de Decreto Supremo  N°058-2014-PCM, Decreto Supremo que aprueba en Nuevo Reglamento de Inspecciones Técnicas de Seguridad en Edificaciones se establece los siguientes tipos de inspección de seguridad en edificaciones:</span>
+														</a>
+															
+														<ul class="checklist">
+															<li>
+				                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+				                                       			<span class="table-item-text">Inspección Técnica de Seguridad en Edificaciones Básica Ex Pos</span>
+				                                       		</li>
+				                                       		<li>
+				                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+				                                       			<span class="table-item-text">Inspección Técnica de Seguridad en Edificaciones Básica Ex Ante</span>
+				                                       		</li>
+				                                       		<li>
+				                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+				                                       			<span class="table-item-text">Inspección Técnica de Seguridad en Edificaciones de Detalle - ITSE de detalle</span>
+				                                       		</li>
+				                                       		<li>
+				                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+				                                       			<span class="table-item-text">Inspección Técnica de Seguridad en Edificaciones Multidiciplinaria - ITSE Multidiciplinaria</span>
+				                                       		</li>
+														</ul>
+														
+													</li>
+												</ul>
+											</li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/TUPA LICENCIA 2016.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Sección del TUPA referida a Licencia de Funcionamiento</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+								<h6 class="title-info">Flujograma de licencia de funcionamiento</h6>
+								<div class="row">
+                                    <div class="col-md-12">
+	                                    <ul class="checklist table-info">
+											<li>												
+												<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+												<span class="table-item-text">Establecimientos con área ocupada hasta 100 m2 y capacidad de almacenamiento no mayor de 30 % del área total del local. Están excluidos los establecimientos que incluyan los giros : Púb., licorería, discoteca, bar, casinos, juego de azar, maquinas tragamonedas, ferreterías o giros afines a los mismos. Así como solicitudes que incluyan giros cuyo desarrollo implique el almacenamiento, uso o comercialización de productos tóxicos o altamente inflamables</span>
+												   		
+												<br>
+												<div class="new-thumb new-thumb-post">
+													<img th:src="${@helper.assetsImg('licencias/flujograma-de-licencia-de-funcionamiento-1.png')}" alt="">
+												</div>
+												<br>
+												<p><strong>NOTA.-</strong> Previo al inicio del proceso de revocación de licencia de funcionamiento se notifica al administrado de conformidad con el Art. 203º Ley del Procedimiento Administrativo General – Ley Nº 27444</p>
+											</li>
+											<li>
+												<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+												<span class="table-item-text">Establecimientos con área ocupada hasta 100 m2 y giros no comprendidos en la categoría anterior, y establecimientos con área ocupada mayor a 100 m2 hasta 500 m2</span>
+												  
+												<br>
+												<div class="new-thumb new-thumb-post">
+													<img th:src="${@helper.assetsImg('licencias/flujograma-de-licencia-de-funcionamiento-2.png')}" alt="">
+												</div>
+												<br>
+												<p><strong>NOTA.-</strong> Previo al inicio del proceso de revocación de licencia de funcionamiento se notifica al administrado de conformidad con el Art. 203º Ley del Procedimiento Administrativo General – Ley Nº 27444</p>
+											</li>
+											<li>
+												<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+												<span class="table-item-text">Establecimientos con área ocupada mayor a 500 m2</span>
+												  
+												<br>
+												<div class="new-thumb new-thumb-post">
+													<img th:src="${@helper.assetsImg('licencias/flujograma-de-licencia-de-funcionamiento-3.png')}" alt="">
+												</div>
+												<br>
+												<p><strong>NOTA.-</strong> Previo al inicio del proceso de revocación de licencia de funcionamiento se notifica al administrado de conformidad con el Art. 203º Ley del Procedimiento Administrativo General – Ley Nº 27444</p>
+											</li>
+										</ul>
+                                    
+                                    <h6 class="title-info">Autorización para la ubicación de anuncios, avisos o elementos publicitarios</h6>
+                                    <div class="row">
+	                                    <div class="col-md-12">
+	                                    	<ul class="table-info checklist">
+												<li><a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/formato_anuncio.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Solicitud - Declaración Jurada para la obtención de la autorización de anuncio</span></a></li>
+											</ul>
+	                                    </div>
+                                    </div>
+                                    
+                                    <h6 class="title-info">Requisitos autorización para la ubicación de anuncios, avisos o elementos publicitarios</h6>
+                                    <div class="row">
+	                                    <div class="col-md-12">
+	                                    	<ul class="checklist table-info">
+												<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Formato gratuito de solicitud - Declaración Jurada, debidamente llenada</span>
+	                                       		</li>
+												<li>
+													<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Presentar las siguientes vistas:</span>
+													<ul class="checklist">
+														<li>
+			                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+			                                       			<span class="table-item-text">Arte o diseño del anuncio o aviso publicitario con sus dimensiones</span>
+			                                       		</li>
+			                                       		<li>
+			                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+			                                       			<span class="table-item-text">Fotografía en el cual se debe apreciar el entorno urbano y el bien o edificación donde se ubicará el anuncio o aviso publicitario</span>
+			                                       		</li>
+			                                       		<li>
+			                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+			                                       			<span class="table-item-text">Fotomontaje del anuncio o aviso publicitario para el que solicita Autorización, en el cual se debe apreciar el entorno urbano y el bien o edificación donde se ubicara</span>
+			                                       		</li>
+													</ul>
+												</li>
+												<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Copia de la autorización Municipal de funcionamiento, si se ubica en un establecimiento que opera fuera de la jurisdicción del municipio donde se tramita la solicitud</span>
+	                                       		</li>
+	                                       		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Copia simple del documento de identidad del solicitante o representante legal</span>
+	                                       		</li>
+											</ul>
+	                                    </div>
+                                    </div>
+                                    
+                                    <h6 class="title-info">Adicionalmente</h6>
+                                    
+                                    <h6 class="title-info">En Bienes de Dominio Privado:</h6>
+                                    <div class="row">
+	                                    <div class="col-md-12">
+	                                    	<p>Copia del acta de la Junta o Asamblea de propietarios de los bienes de dominio privado sujetos al régimen de propiedad exclusiva y común, en la que la mitad más uno de los propietarios autorizan la ubicación del anuncio o aviso publicitario</p>
+	                                    </div>
+                                    </div>
+                                    
+                                    <h6 class="title-info">Requisitos autorización para la ubicación de anuncios, avisos o elementos publicitarios</h6>
+                                    <div class="row">
+	                                    <div class="col-md-12">
+	                                    	<ul class="checklist table-info">
+	                                    		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Plano de Ubicación con coordenadas UTM, a escala 1/500 ó 1/250, y esquema de localización a escala 1/5000. Se indicaran las distancias de la arista mas saliente del panel hasta el eje de la base al borde exterior de la pista. Debe adjuntar el archivo digital del plano</span>
+	                                       		</li>
+	                                       		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">En caso de anuncios o avisos publicitarios luminosos, iluminados o especiales deberán presentar la copia de la carta de factibilidad de conexión eléctrica por la empresa prestadora de servicios correspondiente</span>
+	                                       		</li>
+											</ul>
+	                                    </div>
+                                    </div>
+                                    
+                                    <h6 class="title-info">En Paneles Monumentales:</h6>
+                                    <div class="row">
+	                                    <div class="col-md-12">
+	                                    	<ul class="checklist table-info">
+	                                    		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Plano de Ubicación con coordenadas UTM, a escala 1/500 ó 1/250, y esquema de localización a escala 1/5000. Se indicarán las distancias de la arista mas saliente del panel hasta el eje de la base al borde exterior de la pista. Debe adjuntar el archivo digital del plano</span>
+	                                       		</li>
+	                                       		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Especificaciones técnicas y plano de estructuras a escala conveniente, refrendados por un ingeniero civil</span>
+	                                       		</li>
+											</ul>
+	                                    </div>
+                                    </div>
+                                    
+                                    <h6 class="title-info">En Anuncios o Avisos Publicitarios Luminosos, Iluminados o Especiales:</h6>
+                                    <p>Con áreas de exhibición mayores a 12.00 M2:</p>
+                                    <div class="row">
+	                                    <div class="col-md-12">
+	                                    	<ul class="checklist table-info">
+	                                    		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Memoria Descriptiva y Especificaciones Técnicas, refrendado por un Ing. Electricista</span>
+	                                       		</li>
+	                                       		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Plano de Instalaciones eléctricas, a escala conveniente, refrendado por un Ingeniero Electricista</span>
+	                                       		</li>
+											</ul>
+											<p><strong>Nota:</strong> Cuando la Ubicación del anuncio o aviso publicitario, involucra la instalación de una red de energía eléctrica, se deberá solicitar la autorización correspondiente a la Subgerencia de Obras Privadas y Control Urbano</p>
+	                                    </div>
+                                    </div>
+                                    
+                                    <h6 class="title-info">Para Banderolas de Campañas y Eventos:</h6>
+                                    <p>En el Formato - Solicitud debe consignar el tiempo de exhibición de los afiches o banderolas. Derecho de Pago:</p>
+                                    <div class="row">
+	                                    <div class="col-md-12">
+	                                    	<ul class="checklist table-info">
+	                                    		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Anuncios y avisos publicitarios que identifican templos religiosos, así como de los centros educativos estatales: sólo con respecto al nombre y en una sola ubicación. La información temporal de actividades religiosas, culturales, recreativas, deportivas, cívicas y benéficas; no lucrativos y la información de entidades públicas. GRATUITO</span>
+	                                       		</li>
+	                                       		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Ubicación de Panel Simple, Paleta, Escaparate, Marquesina, Globo Aerostatico, Cartelera, Valla, Banderola, Aviso Volumétrico y Aviso Ecológico...... S/ 120.00</span>
+	                                       		</li>
+	                                       		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Ubicación de Paneles Monumentales, Unipolares, Tótem y Publicidad en Mobiliario Urbano........... S/ 150.00</span>
+	                                       		</li>
+											</ul>
+											<p><strong>Nota:</strong> Cuando la Ubicación del anuncio o aviso publicitario, involucra la instalación de una red de energía eléctrica, se deberá solicitar la autorización correspondiente a la Subgerencia de Obras Privadas y Control Urbano</p>
+	                                    </div>
+                                    </div>
+                                    
+                                    <h6 class="title-info">Procedimiento</h6>
+									<div class="row">
+		                                <div class="col-md-12">
+		                                	<ul class="checklist table-info">
+		                                		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Solicitud - Formato con carácter de declaración Jurada</span>
+	                                       		</li>
+	                                       		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Nombre del titular de la Licencia de Funcionamiento o Autorización. Conjunta</span>
+	                                       		</li>
+	                                       		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Numero de DNI o Carne de Extranjería del representante legal, en caso de Persona Jurídica u otros entes colectivos; o tratándose de personas naturales que actúen mediante representación</span>
+	                                       		</li>
+	                                       		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Numero de licencia de funcionamiento</span>
+	                                       		</li>
+	                                       		
+	                                       		
+	                                       		<li>
+	                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+	                                       			<span class="table-item-text">Fecha de cese de actividades</span>
+	                                       		</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								
+	                        </div>
+	                        
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

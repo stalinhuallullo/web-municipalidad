@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt gallery">
+	                        	<h3 class="stitle text-center">Mejoras Implementadas</h3>
+	                        	
+	                        	<div th:replace="web/fragments/mini-banner"></div>
+								
+								<br/>
+								<br/>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+                                       	
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/informe0085.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Informe N°058 - Area de deportes</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/memorandum 609.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memorandum N° 687 - Gerencia Seguridad Ciudadana</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/memorandum 616.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memorandum N° 616 - Gerencia Seguridad Ciudadana</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/memorandum 660.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memorándum N° 660 - Gerencia Seguridad Ciudadana</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/memorandum 662A.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memorándum N° 662A - Gerencia Seguridad Ciudadana</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/memorandum 793.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memorándum N° 793 - Gerencia Seguridad Ciudadana</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/memorandum 819.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memorándum N° 819 - Gerencia Seguridad Ciudadana</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/sociales/memorandum_1296.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memorándum N° 1296 - Gerencia De Servicios Públicos</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/sociales/memorandum_1297.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memorándum N° 1297 - Gerencia De Servicios Públicos</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

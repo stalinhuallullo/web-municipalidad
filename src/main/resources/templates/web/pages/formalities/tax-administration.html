@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                           	<h3 class="stitle text-center">Sub gerencia de administración tributaria</h3>
+
+								<div th:replace="web/fragments/mini-banner"></div>
+								
+								<h6  class="title-info">Pagos en linea para descargar</h6>
+								<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info">
+											<li><a href="https://pagosenlinea.munisantanita.gob.pe/pagosenlinea/login.xhtml" target="_blank"><span class="table-item-ico left"><i class="ico visa"></i></span><span class="table-item-text">Pagos en linea con visa</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+								<h6  class="title-info">I. Administración de tributos</h6>
+								<div class="row">
+                                    <div class="col-md-12">
+		                               <span><strong>Estimado contribuyente consulte vía on line :</strong></span>
+                                       <ul class="table-info checklist">
+											<li><a href="https://pagosenlinea.munisantanita.gob.pe/consultas/estado_cuenta.xhtml" target="_blank"><span class="table-item-ico left"><i class="ico foldertramites"></i></span><span class="table-item-text">Estado de cuenta corriente del impuesto predial</span></a></li>
+											<li><a href="https://www.munisantanita.gob.pe/Modulo_consulta/inicio_HR.php" target="_blank"><span class="table-item-ico left"><i class="ico hojatramite"></i></span><span class="table-item-text">Liquidación del impuesto predial (hoja de resumen - hr) - 2018</span></a></li>
+											<li><a href="https://www.munisantanita.gob.pe/Modulo_consulta/inicio_LAM.php" target="_blank"><span class="table-item-ico left"><i class="ico hojatramite2"></i></span><span class="table-item-text">Liquidación de arbitrios municipales (lam) - 2018</span></a></li>
+										</ul>
+										<p>Pagos en plataforma de atención al contribuyente con tarjetas de crédito y/o débito afiliadas a visa ó mastercard</p>
+                                    </div>
+								</div>
+								
+								<h6 class="title-info">II. Pago de tributos en entidades financieras</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<span>También podrá efectuar el pago del Impuesto Predial y Arbitrios Municipales del presente año en las Agencias Bancarias del Scotiabank e Interbank ó realizarlo vía virtual ingresando a las paginas Web respectivas; para ello deberá ingresar su Código de Contribuyente.</span>
+										<ul class="table-info">
+											<li><a href="http://www.scotiabank.com.pe/" target="_blank"><span class="table-item-ico left"><i class="ico scotiabank"></i></span><span class="table-item-text">Scotiabank</span></a></li>
+											<li><a href="http://www.interbank.com.pe/" target="_blank"><span class="table-item-ico left"><i class="ico interbank"></i></span><span class="table-item-text">Interbank</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">III. Formularios para presentar en la administración tributaria</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<span><strong>a) Formularios para la Declaración Jurada del Impuesto Predial y de actualización de domicilio fiscal para ser descargados e impresos</strong></span>
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/hr.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario Hoja de Resumen - HR</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/pu.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario Predio Urbano - PU</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Decreto de Alcaldia N 016-2012-MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Decreto de Alcaldía N° 016-2012-MDSA – Procedimiento Simplificado para la presentación de Declaraciones Juradas</span></a></li>
+										</ul>
+										
+										<span><strong>b) Indicaciones para el llenado de los Formularios incluyendo ejemplos prácticos</strong></span>
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/indicacion_llenado_hr_pu.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Llenado de formularios Predio Urbano(PU) y Hoja de Resumen(HR)</span></a></li>
+										</ul>
+										
+										<span><strong>c) Presentación de la Declaración Jurada de Autoavaluo</strong></span>
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Requisitos Inscripcion.xls')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Requisito para la Declaración Jurada de Inscripción</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Requisitos Rectificacion.xls')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Requisitos para la Declaración Jurada Rectificatoria</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Plazos de presentacion DDJJ.doc')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plazos para la presentación de la Declaración Jurada del Impuesto Predia</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">IV. Legislación normativa</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<span><strong>a) Marco Legal</strong></span>
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/ley_27972.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley Orgánica de Municipalidades - LEY N° 27972</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/ley_274444.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley del Procedimiento Administrativo General LEY N° 27444</span></a></li>
+										</ul>
+										
+										<span><strong>b) Marco Tributario</strong></span>
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/D.S. N 133-2013-EF.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">T.U.O. del Código Tributario – D.S. N° 133-2013-EF</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/tou_ley_tributacion_municipal.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">T.U.O. de la Ley de Tributación Municipal – D.S. N° 156-2004-EF</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">V. Arbitrios municipales</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<span><strong>a) Ordenanzas que aprueban Régimen Tributario de Arbitrios Municipales</strong></span>
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/arbitrio2008_ordenaza034.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza N° 0034-2007/MDSA - Arbitrios Municipales 2008</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Arbitrio2009_ordenanza018.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza N° 0018-2008/MDSA - Arbitrios Municipales 2009</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Arbitrio2010_ordenanza044.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza N° 0044/MDSA - Arbitrios Municipales 2010</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Ordenanza_00059_00060.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza N° 0059/MDSA y Ordenanza N° 0060/MDSA - Arbitrios Municipales 2011</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Ordenanza080-MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza N° 0080/MDSA - Arbitrios Municipales 2012</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Arbitrios 2013 - MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza N° 101 - Arbitrios Municipales 2013</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Arbitrios 2014 - MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza N° 0125/MDSA y Ordenanza Nº 0126/MDSA - Arbitrios Municipales 2014. Fe de Erratas</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/ordenanza153-2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza N° 0153/MDSA - Arbitrios Municipales 2015</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Arbitrios 2016 - MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza N° 0187/MDSA -  Ordenanza Nº 0179/MDSA; Arbitrios Municipales 2016</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Arbitrios 2017 - MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza N° 0212/MDSA -  Arbitrios Municipales 2017</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Arbitrios 2018 - MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza N° 0228/MDSA -  Arbitrios Municipales 2018</span></a></li>
+										</ul>
+										
+										<span><strong>b) Acuerdos de Concejo de la Municipalidad Metropolitana de Lima que ratifican las Ordenanzas que aprueban Régimen Tributario de Arbitrios Municipales.</strong></span>
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/arbitrio2008_acuerdo500.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo Nº 500-MML Ratificar la Ordenanza Nº 0034-2007/MDSA - Arbitrios Municipales 2008</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Arbitrio2009_acuerdo575.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo Nº 575-MML – Ratificar la Ordenanza Nº 0018-2008/MDSA - Arbitrios Municipales 2009</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Arbitrio2010_acuerdo472.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo Nº 472-MML – Ratificar la Ordenanza Nº 0044/MDSA - Arbitrios Municipales 2010</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Ordenanza_00059_00060.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo Nº 490-MML – Ratificar la Ordenanza Nº 0059/MDSA y Ordenanza Nº 0060/MDSA - Arbitrios Municipales 2011</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Ordenanza080-MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo Nº 1565-MML – Ratificar la Ordenanza Nº 0080/MDSA - Arbitrios Municipales 2012</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Acuerdo2218.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo Nº 2218-MML – Ratificar la Ordenanza Nº 0101/MDSA - Arbitrios Municipales 2013</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Arbitrios 2014 - MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo Nº 2632-MML – Ratificar la Ordenanza Nº 0125/MDSA y Ordenanza Nº 0126/MDSA - Arbitrios Municipales 2014</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/A.C. Arb2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo Nº 2423-MML – Ratificar la Ordenanza Nº 0153/MDSA ;Arbitrios Municipales 2015</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Arbitrios 2016 - MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo Nº 442-MML – Ratificar la Ordenanza Nº 0179/MDSA, Ordenanza Nº 0187/MDSA ;Arbitrios Municipales 2016</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Arbitrios 2017 - MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo Nº 429-MML – Ordenanza Nº 0212/MDSA ;Arbitrios Municipales 2017</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Arbitrios 2018 - MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo Nº 400-MML – Ordenanza Nº 0228/MDSA ;Arbitrios Municipales 2018</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">VI. Impuesto predial</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<span><strong>a) Cuadro de Valores Unitarios Oficiales de Edificación aprobados por el Ministerio de Vivienda, Construcción y Saneamiento</strong></span>
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/ordenanza_05_mdsa2008.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Valores Unitarios Oficial de Edificación – Año 2008</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/ordenanza_33_2009.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Valores Unitarios Oficial de Edificación – Año 2009</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/valores_unitarios.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Valores Unitarios Oficial de Edificación – Año 2010</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Tabla_valores_unitarios2011.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Valores Unitarios Oficial de Edificación – Año 2011</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/CUADRO-UNITARIO-VALORES-2012.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Valores Unitarios Oficial de Edificación – Año 2012</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Cuadro_2013.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Valores Unitarios Oficial de Edificación – Año 2013</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Cuadro Unitario de Valores 2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Valores Unitarios Oficial de Edificación – Año 2014</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Valores_Unitarios_2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Valores Unitarios Oficial de Edificación – Año 2015</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Cuadro Unitario de Valores 2016.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Valores Unitarios Oficial de Edificación – Año 2016</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Cuadro Unitario de Valores 2017.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Valores Unitarios Oficial de Edificación – Año 2017</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Cuadro Unitario de Valores 2018.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Valores Unitarios Oficial de Edificación – Año 2018</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+	                           
+								
+								<div class="row">
+									<div class="col-md-12">
+										<span><strong>b) Tablas de Depreciación por antigüedad y estados de conservación según el material estructural predominante (aplicable al último ejercicio)</strong></span>
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/arbitrio2008_acuerdo500.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Tablas de Depreciación por antigüedad y estados de conservación según el material estructural predominante (aplicable al último ejercicio)</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+								
+								<div class="row">
+									<div class="col-md-12">
+										<span><strong>c) Plano de Valores Arancelarios</strong></span>
+										<ul class="table-info checklist">
+											<li><a href="https://www.munisantanita.gob.pe/arancelario/nivel01.php" target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plano de Valores Arancelarios– Año 2010</span></a></li>
+											<li><a href="https://www.munisantanita.gob.pe/arancelario/nivel05.php" target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plano de Valores Arancelarios– Año 2011</span></a></li>
+											<li><a href="https://www.munisantanita.gob.pe/arancelario/nivel07.php" target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plano de Valores Arancelarios– Año 2012</span></a></li>
+											<li><a href="https://www.munisantanita.gob.pe/arancelario/nivel13.php?id=Ordenanza080-MDSA.pdf" target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plano de Valores Arancelarios– Año 2013</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Plano Arancelario 2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plano de Valores Arancelarios– Año 2014</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Plano Arancelario 2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plano de Valores Arancelarios– Año 2015</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Planos_2016.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plano de Valores Arancelarios– Año 2016</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Plano 2017.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plano de Valores Arancelarios– Año 2017</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Plano 2018.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plano de Valores Arancelarios– Año 2018</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+								
+								<div class="row">
+									<div class="col-md-12">
+										<span><strong>d) Cuadro de Valores Unitarios a costo directo de algunas obras complementarias e instalaciones fijas y permanentes (aplicable al último ejercicio)</strong></span>
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Obras Complementarias.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Cuadro de Valores Unitarios a costo directo de algunas obras complementarias e instalaciones fijas y permanentes (aplicable al último ejercicio)</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+								
+								<div class="row">
+									<div class="col-md-12">
+										<span><strong>e) Ordenanzas que aprueban la Estructura de Costos, Estimación de Ingresos del Servicio de Emisión Mecanizada del Impuesto Predial y Arbitrios Municipales</strong></span>
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Derecho de emision Predial 2013.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanzas que aprueban la Estructura de Costos, Estimación de Ingresos del Servicio de Emisión Mecanizada del Impuesto Predial y Arbitrios Municipales</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/ordenanza_05_mdsa2008.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0005/MDSA – Emisión Mecanizada 2008</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/ordenanza_33_2009.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0005/MDSA – Emisión Mecanizada 2009</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/emision_mecanizada_2010.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0005/MDSA – Emisión Mecanizada 2010</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Ordenanza00061.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0005/MDSA – Emisión Mecanizada 2011</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/ordenanza085-2012.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0005/MDSA – Emisión Mecanizada 2012</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Ordenanza_105.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0005/MDSA – Emisión Mecanizada 2013</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/ordenanza128-2013.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0005/MDSA – Emisión Mecanizada 2014</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/ordenanza158-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0005/MDSA – Emisión Mecanizada 2015</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Emision Mecanizada 2016 - MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0005/MDSA – Emisión Mecanizada 2016</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Emision Mecanizada 2017 - MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0005/MDSA – Emisión Mecanizada 2017</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Emision Mecanizada 2018 - MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0005/MDSA – Emisión Mecanizada 2018</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+								
+								<div class="row">
+									<div class="col-md-12">
+										<span><strong>f) Acuerdos de Concejo de la Municipalidad Metropolitana de Lima que ratifican las Ordenanzas del Servicio de Emisión Mecanizada del Impuesto Predial y Arbitrios Municipales</strong></span>
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/emision_mecanizada_2008.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo Nro. 194/MML-2008 – Ratificar la Ordenanza N° 0005-2008/MDSA de Emisión Mecanizada 2008</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/emision_mecanizada_2009.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo N° 179-MML – Ratificar la Ordenanza N° 0033-2009/MDSA de Emisión Mecanizada 2009</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/acuerdo377-2012.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo Nro. 377/MML-2012 – Ratificar la Ordenanza N° 0085/MDSA de Emisión Mecanizada 2012</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Emision Mecanizada 2016 - MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acuerdo de Concejo Nro. 367/MML-2015 – Ratificar la Ordenanza N° 0177/MDSA de Emisión Mecanizada 2016</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">VII. Fraccionamiento tributario</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<span><strong>a) Cuadro de Valores Unitarios Oficiales de Edificación aprobados por el Ministerio de Vivienda, Construcción y Saneamiento</strong></span>
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Ord. 012-MDSA Reglamento de fracc.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 012/MDSA-2008 – Aprueba Reglamento de Fraccionamiento de Deudas Tributarias y No Tributarias</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Ord. 048-MDSA Modifica Reglamento.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 048/MDSA-2009 – Modifica Ordenanza N° 012-2008/MDSA que aprobó el Reglamento de Fraccionamiento de Deudas Tributarias y No Tributarias</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">VIII. Calendario de pagos de tributos municipales</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<span><strong>a) Cuadro de Valores Unitarios Oficiales de Edificación aprobados por el Ministerio de Vivienda, Construcción y Saneamiento</strong></span>
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Ord. 083-MDSA Vencimiento 2012.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 083/MDSA – Fechas de vencimiento de pago del Impuesto Predial y Arbitrios Municipales 2012</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Ord. 107-MDSA Vencimiento 2013.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0107/MDSA – Fechas de vencimiento de pago del Impuesto Predial y Arbitrios Municipales 2013</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Ord. 129-MDSA Vencimiento 2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0129/MDSA – Fechas de vencimiento de pago del Impuesto Predial y Arbitrios Municipales 2014</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/ordenanza157-2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0157/MDSA – Fechas de vencimiento de pago del Impuesto Predial y Arbitrios Municipales 2015</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Vencimiento Pred_Arb 2016 - Ord. 182-MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0182/MDSA – Fechas de vencimiento de pago del Impuesto Predial y Arbitrios Municipales 2016</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Vencimiento Pred_Arb 2017 - Ord. 215-MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0215/MDSA – Fechas de vencimiento de pago del Impuesto Predial y Arbitrios Municipales 2017</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Admtributaria/Vencimiento Pred_Arb 2018 - Ord. 232-MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ORDENANZA N° 0232/MDSA – Fechas de vencimiento de pago del Impuesto Predial y Arbitrios Municipales 2018</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+								
+								<p class="text-center"><strong>Calendario de pagos de tributos municipales 2019</strong></p>
+								
+	                        </div>
+	                        
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

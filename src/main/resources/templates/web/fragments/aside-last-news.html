@@ -1,0 +1,15 @@
+<div class="widget" th:fragment="mifragmento">
+	<div class="recent-posts inner">
+        <ul>
+            <li  th:each="i, index : ${listRelatedNews}">
+                <a th:href="${@helper.getURL('noticias/' + i.slug)}">
+                    <img th:if="${ i.imagen != null }" th:src=" ${ @helper.getServerApiImgNoticias(i.imagen) } " alt="">
+                    <img th:unless="${ i.imagen != null }" th:src="${ @helper.assetsImgDefault() }" alt="">
+                </a>
+                    
+                <strong class="text-uppercase" th:text=" ${ @helper.convertirFecha(i.fecha) } "></strong>
+                <h6 class="ellipsis"><a th:href="${@helper.getURL('noticias/' + i.slug)}"  th:text="${i.titulo}"></a></h6>
+            </li>
+        </ul>
+	</div>
+</div>

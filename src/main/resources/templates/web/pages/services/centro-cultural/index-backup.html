@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+    <head>
+    </head>
+    <body layout:fragment="content" class="haeder-fixed-scroll">
+        
+        <div th:replace="web/fragments/banner"></div>
+        
+        <div class="main-content p130-50">
+            <section class="department-details">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="deprt-txt">
+                                <h3>CENTRO CULTURAL DE LA MUNICIPALIDAD DE SANTA ANITA</h3>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>Inauguración de los talleres culturales, educativos y juveniles: Verano 2020. Dando el inicio, el regidor: profesor Miguel Huaranga en representación de Jose Luis Nole, alcalde de Santa Anita y el subgerente de Cultura; Lic. Felipe  Enríquez Ponce.</p>
+                                    </div>
+                                </div>
+
+
+                                
+                                <div class="col-md-12 row department-links">
+                                    <h5>Categorias de talleres</h5>
+                                    <ul>
+                                        <li><a class="c1" th:href="${@helper.getPageInfo('centro-cultural/baile')}">Baile</a></li>
+                                        <li><a class="c2" th:href="${@helper.getPageInfo('centro-cultural/musica')}">Música</a></li>
+                                        <li><a class="c3" th:href="${@helper.getPageInfo('centro-cultural/educativo')}">Educativo</a></li>
+                
+                                        <li><a class="c4" th:href="${@helper.getPageInfo('centro-cultural/artistico')}">Artístico</a></li>
+                                        <li><a class="c5" th:href="${@helper.getPageInfo('centro-cultural/tecnologia')}">Tecnología</a></li>
+                                        <li><a class="c6" th:href="${@helper.getPageInfo('centro-cultural/deportes')}">Deportes (por sedes)</a></li>
+
+                                        <li><a class="c7" th:href="${@helper.getPageInfo('centro-cultural/preparacion')}">Preparación</a></li>
+
+                                    </ul>
+                                </div>
+                                <div class="row" th:switch="${ subPage }">
+                                    <div class="col-md-12" th:switch="${ subPage }">
+                                        <th:block th:case="'baile'">
+                                            <th:block th:replace="${@helper.vistaWeb('services/centro-cultural/fragment/baile')}"></th:block>
+                                        </th:block>
+                                        <th:block th:case="'musica'">
+                                            <th:block th:replace="${@helper.vistaWeb('services/centro-cultural/fragment/musica')}"></th:block>
+                                        </th:block>
+                                        <th:block th:case="'educativo'">
+                                            <th:block th:replace="${@helper.vistaWeb('services/centro-cultural/fragment/educativo')}"></th:block>
+                                        </th:block>
+                                        <th:block th:case="'artistico'">
+                                            <th:block th:replace="${@helper.vistaWeb('services/centro-cultural/fragment/artistico')}"></th:block>
+                                        </th:block>
+
+                                        <th:block th:case="'tecnologia'">
+                                            <th:block th:replace="${@helper.vistaWeb('services/centro-cultural/fragment/tecnologia')}"></th:block>
+                                        </th:block>
+                                        <th:block th:case="'deportes'">
+                                            <th:block th:replace="${@helper.vistaWeb('services/centro-cultural/fragment/deportes')}"></th:block>
+                                        </th:block>
+                                        <th:block th:case="'preparacion'">
+                                            <th:block th:replace="${@helper.vistaWeb('services/centro-cultural/fragment/preparacion')}"></th:block>
+                                        </th:block>
+                                    </div>
+                                </div>
+                                <style type="text/css">
+                                    td {
+                                        color: #5C3F4B;
+                                        padding: 10px 0px;
+                                        border-bottom: 1px solid #CDC1C6;
+                                        line-height: 20px;
+                                    }
+                                    .table-style-horario{
+                                        margin: 0;
+                                    }
+                                    .table-titulo td {
+                                        font-family: 'oswaldregular';
+                                        font-size: 16px;
+                                        color: #CA0058;
+                                        padding: 3px;
+                                        background: #fff;
+                                        border-bottom: 3px solid #333;
+                                    }
+                                    .table-horario-pe {
+                                        padding-left: 15px !important;
+                                    }
+                                    .table-titulo .t-1 {
+                                    }
+                                    .table-titulo .t-2,
+                                    .table-horario{
+                                        width: 400px;
+                                    }
+                                    .table-titulo .t-3,
+                                    .table-fecha {
+                                        width: 180px;
+                                    }
+                                    .table-titulo .t-4,
+                                    .table-inscripcion {
+                                        width: 300px;
+                                    }
+                                    .table-curso, tr.odd .table-curso {
+                                        background: #E5DFE1;
+                                        padding: 10px;
+                                        color: #5C3F4B;
+                                        font-weight: bold;
+                                        line-height: 1.3em;
+                                    }
+                                    .table-curso-pe {
+                                        vertical-align: top !important;
+                                    }
+                                    .table-horario {
+                                        padding-left: 15px !important;
+                                        padding-right: 15px;
+                                    }
+                                    .table-horario ul{
+                                        margin: 0;
+                                        padding: 0;
+                                        list-style: none;
+                                    }
+                                    .table-horario ul li{
+
+                                    }
+                                    .table-fecha{
+                                        padding-right: 15px;
+                                    }
+                                    .table-inscripcion {
+                                        width: 90px;
+                                        padding-right: 15px;
+                                        text-align: center;
+                                    }
+                                    .table-inversion {
+                                        width: 105px !important;
+                                        padding-left: 10px !important;
+                                        vertical-align: top !important;
+                                    }
+                                </style>
+                                
+                                
+                                <br/>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    <div class="rel-box">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6 informatin-card">
+                                                    <h6>Horario de atención:</h6>
+                                                    <div>Lunes a Viernes de 8:00 a 17:00 horas</div>
+                                                    <div>Sábados de 8:00 a 13:00 horas</div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 informatin-card">
+                                                    <h6>Dirección:</h6>
+                                                    <div><strong>DIRECCIÓN: </strong> Jr. Santiago de Chuco S/N</div>
+                                                    <div><strong>REFERENCIA: </strong> Teatro Municipal Santa Anita</div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section> 
+        </div>
+    </body>
+</html>

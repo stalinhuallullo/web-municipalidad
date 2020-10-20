@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                        	<h3 class="stitle text-center">Proceso de elecciones</h3>
+	                        	
+	                        	<div class="row">
+									<div class="col-md-12">
+										<p>Proceso de elecciones para elegir a los representantes titulares y suplentes de los trabajadores ante el <strong style="color: black;font-size: 2rem; ">Comité de Seguridad y Salud en el trabajo</strong> de la “Municipalidad Distrital de Santa Anita” periodo 2020-2022</p>
+										<div class="" style="margin-top: 25px; margin-bottom: 25px;">
+					                		<a th:href=" ${@helper.getServerApiDataWeb('recursos/proceso-de-elecciones/Lista de Candidatos-2.jpg')} " target="_blank">
+									        	<img src="https://www.munisantanita.gob.pe/data/web/recursos/voto-5.jpeg" style="width: 100%;">
+									        </a>
+									    </div>
+										
+						        	</div>
+								</div>
+								
+								<div class="row">
+									<div class="col-md-12">
+										<br/>
+										<p><a th:href=" ${@helper.getServerApiDataWeb('recursos/proceso-de-elecciones/Lista de Candidatos-2.jpg')} "><b>Lista de Candidatos</b></a></p>
+						        	</div>
+								</div>
+								<!-- <iframe th:src=" ${@helper.getServerApiDataWeb('recursos/proceso-de-elecciones/Lista de Candidatos-2.jpg')} " style="width: 100%; height: 600px;"></iframe> -->
+								<div style="height: 600px; overflow-y: scroll;">
+									<img th:src=" ${@helper.getServerApiDataWeb('recursos/proceso-de-elecciones/Lista de Candidatos-2.jpg')} " style="width: 100%;" />
+								</div>
+								
+								<div class="row">
+									<div class="col-md-12">
+										<br/>
+										<p><a href="https://www.munisantanita.gob.pe/data/web/recursos/proceso-de-elecciones/Reglamento de Elecciones de los trabajadores ante el   comite de seguridadf y salud en el trabajo-1.pdf"><b>Leer Proceso de Elecciones 2020-2022</b></a></p>
+						        	</div>
+								</div>
+	                        	<iframe th:src=" ${@helper.getServerApiDataWeb('recursos/proceso-de-elecciones/Reglamento de Elecciones de los trabajadores ante el   comite de seguridadf y salud en el trabajo-2.pdf')} " style="width: 100%; height: 600px;"></iframe>
+	                        	
+	                        	
+	                        	
+	                        	<div class="row">
+									<div class="col-md-12">
+										<br/>
+										<p>Reglamento de elecciones para elegir a los representantes de los trabajadores ante el comite de seguridad y salud en el trabajo de la Municipalidad de Santa Anita Periodo 2020-2022</p>
+										<p><a href="https://www.munisantanita.gob.pe/data/web/recursos/proceso-de-elecciones/Reglamento de Elecciones de los trabajadores ante el   comite de seguridadf y salud en el trabajo-3.pdf"><b>Leer Reglamento de Elecciones 2020-2022</b></a></p>
+						        	</div>
+								</div>
+								<iframe th:src=" ${@helper.getServerApiDataWeb('recursos/proceso-de-elecciones/Reglamento de Elecciones de los trabajadores ante el   comite de seguridadf y salud en el trabajo-3.pdf')} " style="width: 100%; height: 600px;" class="mb-15"></iframe>
+								
+								<iframe th:src=" ${@helper.getServerApiDataWeb('recursos/proceso-de-elecciones/LEY  DE SEG. SALUD EN EL TRABAJO.pdf')} " style="width: 100%; height: 600px;" class="mb-15"></iframe>
+								<iframe th:src=" ${@helper.getServerApiDataWeb('recursos/proceso-de-elecciones/ley 30222.pdf')} " style="width: 100%; height: 600px;" class="mb-15"></iframe>
+								<iframe th:src=" ${@helper.getServerApiDataWeb('recursos/proceso-de-elecciones/REGLAMENTO DE SEG. SALUD EN EL TRABAJO.pdf')} " style="width: 100%; height: 600px;" class="mb-15"></iframe>
+	                       
+	                        	
+								
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

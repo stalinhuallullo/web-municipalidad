@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                           	<h3 class="stitle text-center">Servicio de recolección de residuos sólidos</h3>
+	                           	
+	                           	<div class="row">
+                                    <div class="col-md-12">
+                                       <p>Si los vecinos colaboran y sacan la “basurita” a la hora del paso del camión recolector, Santa Anita se convertiria en una ciudad ejemplar.</p>
+                                    </div>
+								</div>
+								
+								<div th:replace="web/fragments/mini-banner"></div>
+	                           	
+	                           	
+	                           	
+	                           	<h6 class="title-info">Beneficios:</h6>
+								<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info table-info-border-none checklist">
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Una ciudad limpia.</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">No se apreciará en el distrito focos con malos olores producto de la descomposición de los residuos sólidos.</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Mantendremos alejadas las plagas de moscas, mosquitos y larvas.</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Lograremos una ciudad sin contaminación.</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Lograremos una ciudad sin contaminación.</span>
+                                       		</li>
+                                       		
+                                       		
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Tendremos familias saludables.</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Contribuiremos con el cuidado del planeta.</span>
+                                       		</li>
+                                       </ul>
+                                    </div>
+								</div>
+	                           	
+	                           	<div class="row">
+									<div class="img-gallery style-2 gallery">
+							            <div class="portfolio classic-gallery">
+										    <div class="isotope items">
+										       <div class="item width2">
+										          <div class="gallery-thumb"> 
+										          	<a th:href="${@helper.assetsImg('recoleccion-de-residuos-solidos/horario_2019.jpg')}" data-rel="prettyPhoto[gallery]">
+										          		<i class="fas fa-search"></i>
+										          	</a> 
+										          	<img th:src="${@helper.assetsImg('recoleccion-de-residuos-solidos/horario_2019.jpg')}"  alt=""> 
+										          </div>
+										       </div>
+										       <div class="item width2">
+										          <div class="gallery-thumb"> 
+										          	<a th:href="${@helper.assetsImg('recoleccion-de-residuos-solidos/camion1.jpg')}" data-rel="prettyPhoto[gallery]">
+										          		<i class="fas fa-search"></i>
+										          	</a> 
+										          	<img th:src="${@helper.assetsImg('recoleccion-de-residuos-solidos/camion1.jpg')}"  alt=""> 
+										          </div>
+										       </div>
+										       <div class="item width2">
+										          <div class="gallery-thumb"> 
+										          	<a th:href="${@helper.assetsImg('recoleccion-de-residuos-solidos/camion2.jpg')}" data-rel="prettyPhoto[gallery]">
+										          		<i class="fas fa-search"></i>
+										          	</a> 
+										          	<img th:src="${@helper.assetsImg('recoleccion-de-residuos-solidos/camion2.jpg')}"  alt=""> 
+										          </div>
+										       </div>
+										  </div>
+										</div>
+						            </div>
+								</div>
+								
+	                           	<h6 class="title-info">Documentos para descargar</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<ul class="table-info">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/Recojo.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plan de ruta de recojo de residuos solidos</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+	                           	
+	                           	
+								
+	                           	<br/>
+	                           	<br/>
+								
+								<div class="row">
+                                    <div class="col-md-12">
+                                       <div class="rel-box">
+                                          	<div class="row">
+                                          		<div class="col-md-6 col-sm-6 informatin-card">
+                                          			<h6>Direcci&oacute;n:</h6>
+                                          			<div>Parque Lampa de Oro, Cooperativa Chancas de Andahuaylas (Casa del Adulto Mayor).</div>
+                                          		</div>
+                                          		<div class="col-md-6 col-sm-6 informatin-card">
+                                          			<h6>Horario de atenci&oacute;n:</h6>
+                                          			<div>Lunes a Viernes de 8:00 a 01:00 PM y de 2:00 a 4:00 PM</div>
+                                          			<div>Tel&eacute;fono: (01) 362-8080</div>
+                                          		</div>
+                                          	</div>
+                                       </div>
+                                    </div>
+								</div>
+								
+	                           
+	                        </div>
+	                        
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

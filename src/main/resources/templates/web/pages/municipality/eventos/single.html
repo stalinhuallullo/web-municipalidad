@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+		<style>
+         	.title{
+         		font-size: 41px;
+			    letter-spacing: -0.1rem;
+			    line-height: 1;
+			    text-rendering: optimizeSpeed;
+			    font-weight: 600;
+         	}
+         	.sub-title{
+				font-size: 20px;
+				line-height: 1.4;
+	    		font-weight: 100;
+				letter-spacing: inherit;
+         	}
+         	.main-content{
+         		float: none;
+         	}
+         	.category{
+				color: #F00;
+			    display: block;
+			    margin-bottom: 1rem;
+			    font-size: 17.5px;
+			    font-weight: 600;
+			    line-height: 1;
+			    text-transform: uppercase;
+         	}
+         </style>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/bar-menu-category"></div>	
+		
+         <div class="main-content p30">
+         	<section class="news-details">
+         		<div class="container">
+         			<div class="row">
+         				
+         				<div class="col-md-9">
+         					<div class="event-details">
+         					
+         					<a th:href=" ${ @helper.getURL('eventos/categoria/')  + evento.categoria_slug } " class="category" th:text=" ${ evento.categoria } "></a>
+         					
+         					<h1 class="mb-15 title" th:text=" ${ evento.titulo } "></h1>
+         					
+							<div class="event-thumb"> 
+								<img th:src=" ${ @helper.getServerApiImgEventos(evento.archivo) } " alt="">
+							</div>
+                           		<br/>
+         						<div class="event-content p0">
+         							<div class="etext">
+	         							<ul class="emeta">
+		                                    <li><strong>Inicio:</strong> <span th:text=" ${ @helper.convertirFecha(evento.fecha_inicio) } + ' '+  ${ @helper.convertirHora(evento.fecha_inicio) } "></span></li>
+		                                    <li><strong>Finalización:</strong> <span th:text=" ${ @helper.convertirFecha(evento.fecha_final) } + ' '+ ${ @helper.convertirHora(evento.fecha_final) } "></span></li>
+		                                    <li><strong>Ubicación:</strong> <span th:text=" ${ evento.direccion } "></span></li>
+		                                 </ul>
+		                                 
+		                                 <th:block th:utext="${ evento.descripcion }"></th:block>	
+         							</div>
+         						</div>
+         					</div>
+         					
+	                     </div>
+	                     <div class="col-md-3">
+	                        <div class="sidebar">
+	                        	<div th:replace="web/fragments/aside-eventos"></div>
+	                        </div>
+	                     </div> 
+	                     
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+         
+	</body>
+</html>

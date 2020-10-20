@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                           	<h3 class="stitle text-center">Proceso del presupuesto participativo basado en resultados para el año fiscal 2020 de la municipalidad distrital de santa anita</h3>
+
+								<div th:replace="web/fragments/mini-banner"></div>
+								
+								<h6  class="title-info">Participa y contribuye al desarrollo de nuestro distrito</h6>
+								
+								<div class="row">
+                                    <div class="col-md-12">
+										<ul class="checklist table-info">
+											<li><a th:href=" ${@helper.getServerApiRecursos('presupuesto-participativo/Ordenanza 265-2019 aprueba Reglamento del PP 2020.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Reglamento del Presupuesto Participativo 2020</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('presupuesto-participativo/Resolucion de Alcaldia 151-2019 aprueba Equipo Tecnico PP 2020.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Conformación del Equipo Técnico Municipal del Presupuesto Participativo 2020</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('presupuesto-participativo/decreto0010.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Cronograma de Actividades del Presupuesto Participativo 2020</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('presupuesto-participativo/Formato de Registro de Agentes Participantes PP 2020.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formato de Registro de Agentes Participantes para el Presupuesto Participativo 2020</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('presupuesto-participativo/RELACION PRESUPUESTO PARTICIPATIVO.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Relación de Agentes Participantes del Presupuesto Participativo 2020</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('presupuesto-participativo/PRIMERA PRESENTACIÓN PP 2020 SANTA ANITA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Capacitación sobre la normativa del Presupuesto Participativo del Ministerio de Economia MEF y el Reglamento del Proceso del Presupuesto Participativo Basado en Resultado 2020, Aprobado mediante Ordenanza N° 000265/MDSA</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('presupuesto-participativo/INVER 2020.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Capacitación sobre Proyectos de Inversión Pública en el marco del Sistema Nacional de Programación Multianual y Gestión de Inversiones (Invierte.pe)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('presupuesto-participativo/SEGUNDA PRESENTACION PP 2020 PDLC VISION Y OBJETIVOS.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Capacitación sobre el PDLC 2017-2021: Visión, Objetivos, Acciones y Ruta Estratégica</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('presupuesto-participativo/FICHA PROPUESTA DE PIP PP 2020.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ficha de Propuesta de Proyecto de Inversión Publica (Idea de Proyecto)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('presupuesto-participativo/IDEAS DE PROYECTOS PRESENTADOS PARA EL PRESUPUESTO PARTICIPATIVO 2020 MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Propuestas de Ideas de Proyectos Presentados Por Los Agentes Participantes Para El Presupuesto Participativo 2020 de La Municipalidad Distrital de Santa Anita</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('presupuesto-participativo/FICHA DE VOTACIÓN PP 2020.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ficha de Votación de Las Propuestas de Ideas de Proyectos Presentados</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('presupuesto-participativo/RESULTADOS DE LAS IDEAS DE PROYECTOS PRIORIZADOS EN EL PROCESO DEL PRESUPUESTO PARTICIPATIVO 2020.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Resultados de las Ideas de Proyectos Priorizados en el Proceso del Presupuesto Participativo 2020</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+	                           
+	                        </div>
+	                        
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

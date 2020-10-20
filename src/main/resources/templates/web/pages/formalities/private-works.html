@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                           	<h3 class="stitle text-center">Subgerencia de Obras Privadas, Control Urbano y Catastro</h3>
+
+								<div th:replace="web/fragments/mini-banner"></div>
+								
+								<h6  class="title-info">Reglamento de Licencias de Habilitación Urbana y Licencias de Edificación</h6>
+								<h6  class="title-info">Formularios para descargar</h6>
+								<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info">
+											<li><a href="http://www3.vivienda.gob.pe/dgprvu/direcviviendaley29090_form03.html" target="_blank"><span class="table-item-ico left"><i class="ico view"></i></span><span class="table-item-text">Descargar Formularios del Ministerio de Vivienda</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/solicitud_declaracion_jurada.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Solicitud de Declaración Jurada</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/formato_ejemplo.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Modelo de llenado para formuarios ejemplos</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+								<h6 class="title-info">Legislación para descargar</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<ul class="table-info">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/LEY29090.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text"><strong>LEY 29090 :</strong> Ley de Regulación de habitaciones urbanas y de Edificaciones</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/LEY29476.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text"><strong>LEY 29476 :</strong> Ley que modifica y complementa la ley 29090</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/LEY_30494.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text"><strong>LEY 30494 :</strong> Ley que modifica la ley 29090, Ley de Regulación de habitaciones urbanas y de Edificaciones</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/REGLAMENTODELALEYDS024_2008_VIVIENDA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text"><strong>D.S. N° 024-2008-VIVIENDA (Derogada)</strong></span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/ds-003-2010-viv.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text"><strong>D.S. N° 003-2010-VIVIENDA (Derogada)</strong></span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/ds-008-2013-viv.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text"><strong>D.S. N° 008-2013-VIVIENDA (Vigente)</strong></span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/D.S. N014-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text"><strong>D.S. N° 014-2015-VIVIENDA (modificación)</strong></span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/D.S. N009-2016.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text"><strong>D.S. N° 009-2016-VIVIENDA (modificación)</strong></span></a></li>
+										</ul>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">Procedimiento</h6>
+								<div class="row">
+                                    <div class="col-md-12">
+                                    	<span><strong>Procedimiento para obtener las licencias de edificación :</strong></span>
+										<ul class="checklist table-info">
+											<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Solicitar la Modalidad de la Licencias (A, B, C o D)</span>
+                                       		</li>
+											<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Plataforma de Atención al Contribuyente</span>
+                                       		</li>
+											<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Evaluación en la Subgerencia de Obras Privadas</span>
+                                       		</li>
+											<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Entrega de la licencia de obra</span>
+                                       		</li>
+
+
+											<li>
+												<a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/REQUISITOS DE PROCEDIMIENTOS.pdf')} ">
+													<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+													<span class="table-item-text">Requisitos para Obtener la Licencia de Edificación, conexiones domiciliarias y conformidades de obras</span>
+												</a>
+											</li>
+											<li>
+												<a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/COSTOS Y PLAZOS.pdf')} ">
+													<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+													<span class="table-item-text">Costos y plazos para Obtener la Licencias de Edificación</span>
+												</a>
+											</li>
+										</ul>
+
+										<span><strong>Tipos de Inspección y criterios de evaluación de cada uno de ellos</strong></span>
+										<ul class="checklist table-info">
+											
+											<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Inspección Técnica para todas las modalidades (A, B, C y D)</span>
+                                       		</li>
+											
+											<li>
+												<i class="fas fa-check"></i> Criterios de Evaluación
+												<ul class="checklist">
+													<li>
+		                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+		                                       			<span class="table-item-text">La Modalidad A (Automatica)</span>
+		                                       		</li>
+													<li>
+		                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+		                                       			<span class="table-item-text">La Modalidad B (Evaluación Previa administrativa - 15 días)</span>
+		                                       		</li>
+													<li>
+		                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+		                                       			<span class="table-item-text">La Modalidad C y D (Evaluación Comisión Técnica - 25 días)</span>
+		                                       		</li>
+												</ul>
+											</li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/zonificacion2016.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plano de Zonificación</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/ordenaza1025_mml.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza N° 1025-MML-Zonificación</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/indice_usos.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza N° 933-MML-Indice de Usos</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/ordenanza1015_mml.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenaza N° 1015-MML-Anexo 2, Anexo 10</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Obras_Privadas/flujograma de edificacion.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Flujograma del Proceso de Licencia de Edificación</span></a></li>
+										</ul>
+										
+                                    </div>
+								</div>
+								
+	                           
+	                        </div>
+	                        
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

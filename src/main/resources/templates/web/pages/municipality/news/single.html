@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+		<style>
+         	.title{
+         		font-size: 41px;
+			    letter-spacing: -0.1rem;
+			    line-height: 1;
+			    text-rendering: optimizeSpeed;
+			    font-weight: 600;
+         	}
+         	.sub-title{
+				font-size: 20px;
+				line-height: 1.4;
+	    		font-weight: 100;
+				letter-spacing: inherit;
+         	}
+         	.main-content{
+         		float: none;
+         	}
+         	.category{
+				color: #F00;
+			    display: block;
+			    margin-bottom: 1rem;
+			    font-size: 17.5px;
+			    font-weight: 600;
+			    line-height: 1;
+			    text-transform: uppercase;
+         	}
+         </style>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/bar-menu-category"></div>	
+		
+         <div class="main-content p30">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-9">
+         					<a th:href="${@helper.getURL('noticias/categoria/' + news.categoria_slug)}" class="category" th:text=" ${ news.categoria } "></a>
+         					<h1 class="mb-15 title" th:text="${ news.titulo }"></h1>
+         					<h2 class="mb-15 sub-title" th:text="${ news.resumen }"></h2>
+         					
+	                        	
+	                           	<div class="event-thumb"> 
+	                           		<th:block th:if="${ !news.imagenes.isEmpty() && news.fotos_portada_id != null }">
+	                           			<th:block th:each=" i : ${ news.imagenes } ">
+	                           				<img th:if="${ i.id == news.fotos_portada_id }" th:src=" ${ @helper.getServerApiImgNoticias(i.archivo_url) } " alt=""> 
+	                           			</th:block>
+								    </th:block>
+								    <img th:unless="${ !news.imagenes.isEmpty() && news.fotos_portada_id != null }" th:src="${ @helper.assetsImgDefault() }" alt="">
+								    <!-- <img th:src="${ @helper.assetsImgDefault() }" alt=""> -->
+	                           	</div>
+
+	                           <div class="new-txt row">
+	                              <ul class="news-meta">
+	                                 <li th:text=" ${ @helper.convertirFecha(news.fecha) } "></li>
+	                              </ul>
+	                              <p><strong th:utext="${ news.subtitulo }"></strong></p>
+	                              	<p th:utext="${ news.contenido }"></p>
+									<br>
+	                              
+	                              
+	                              <th:block th:if="${ !news.imagenes.isEmpty() }">
+									<ul class="gallery-3-col">
+										<li th:each=" i : ${ news.imagenes } ">
+											<a rel='prettyPhoto' th:href=" ${ @helper.getServerApiImgNoticias(i.archivo_url) } ">
+												<img  th:src=" ${ @helper.getServerApiImgNoticias(i.archivo_url) } " alt=""> 
+											</a>
+										</li>
+									</ul>
+	                              </th:block>
+	                              
+	                              <th:block th:if="${ news.url_youtube != null && news.url_youtube != '' }">
+	                              	<iframe class="mt-15 mb-15" width="100%" height="350" th:src="${ news.url_youtube }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	                              </th:block>
+	                              
+	                              
+	                           </div>
+	                     </div>
+	                     <div class="col-md-3">
+	                        <div class="sidebar">
+	                        	<div th:replace="web/fragments/aside-last-news"></div>
+	                        </div>
+	                     </div>
+	                     
+	                     <div class="col-md-12">
+					        <div class="title-style-3">
+					            <h3>Noticias relacionadas</h3>
+					        </div>
+					        <div id="news-slider" class="owl-carousel owl-theme carrousel-slider"> 
+					            <div class="item-new" th:each="i : ${listRelatedNews}">
+					                <div class="news-box">
+                                        <a th:href=" ${@helper.getURL('noticias/' + i.slug)} ">
+                                            <div class="new-thumb card">
+                                                <img th:if="${ i.imagen != null }" th:src=" ${ @helper.getServerApiImgNoticias(i.imagen) } " alt=""> 
+                                                <img th:unless="${ i.imagen != null }" th:src="${ @helper.assetsImgDefault() }" alt="">
+                                            </div>
+                                        </a>
+										<div class="new-txt">
+											<ul class="news-meta">
+												<li th:text=" ${ @helper.convertirFecha(i.fecha) } "></li>
+											</ul>
+											<h6><a th:href=" ${@helper.getURL('noticias/' + i.slug)} "  th:text="${i.titulo}"></a></h6>
+											<p class="ellipsis-height ellipsis text-justify" th:text="${i.resumen}"></p>
+										</div>
+									</div>
+					            </div>
+					        </div>
+	                     </div>
+	                     
+	                     <div class="col-md-12">
+	                     	<div class="fb-comments" th:data-href=" ${ @helper.getURL('noticias/' + slug) } " data-width="100%" data-numposts="5"></div>
+	                     	<div style="clear: both;"></div>
+	                     </div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+         
+	</body>
+</html>

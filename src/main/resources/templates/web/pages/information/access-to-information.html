@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                        	<h3 class="stitle text-center">Acceso a la Información</h3>
+	                        	
+	                        	<div th:replace="web/fragments/mini-banner"></div>
+								
+								<br/>
+								<br/>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/acceso_inf/Formato_Acceso.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acceso a la información</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

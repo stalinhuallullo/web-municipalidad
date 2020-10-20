@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				
+         				<div class="col-md-12" th:switch="${ subPage }">
+							<th:block th:case="''">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/inicio')}"></th:block>
+							</th:block>
+							<th:block th:case="'proceso-cambio-2012-3'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/proceso-cambio-2012-3')}"></th:block>
+							</th:block>
+							<th:block th:case="'proceso-cambio-2012-2'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/proceso-cambio-2012-2')}"></th:block>
+							</th:block>
+							<th:block th:case="'proceso-cambio-2012-1'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/proceso-cambio-2012-1')}"></th:block>
+							</th:block>
+							
+							<th:block th:case="'proceso-cambio-2011-4'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/proceso-cambio-2011-4')}"></th:block>
+							</th:block>
+							<th:block th:case="'proceso-cambio-2011-3'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/proceso-cambio-2011-3')}"></th:block>
+							</th:block>
+							<th:block th:case="'proceso-cambio-2011-2'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/proceso-cambio-2011-2')}"></th:block>
+							</th:block>
+							<th:block th:case="'proceso-cambio-2011-1'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/proceso-cambio-2011-1')}"></th:block>
+							</th:block>
+							
+							<th:block th:case="'proceso-cambio-2010-4'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/2010/proceso-cambio-4')}"></th:block>
+							</th:block>
+							<th:block th:case="'proceso-cambio-2010-3'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/2010/proceso-cambio-3')}"></th:block>
+							</th:block>
+							<th:block th:case="'proceso-cambio-2010-2'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/2010/proceso-cambio-2')}"></th:block>
+							</th:block>
+							<th:block th:case="'proceso-cambio-2010-1'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/2010/proceso-cambio-1')}"></th:block>
+							</th:block>
+							
+							<th:block th:case="'proceso-cambio-2009-3'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/2009/proceso-cambio-3')}"></th:block>
+							</th:block>
+							<th:block th:case="'proceso-cambio-2009-2'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/2009/proceso-cambio-2')}"></th:block>
+							</th:block>
+							<th:block th:case="'proceso-cambio-2009-1'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/2009/proceso-cambio-1')}"></th:block>
+							</th:block>
+							
+							<th:block th:case="'proceso-cambio-2008-1'">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/2008/proceso-cambio-1')}"></th:block>
+							</th:block>
+						</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

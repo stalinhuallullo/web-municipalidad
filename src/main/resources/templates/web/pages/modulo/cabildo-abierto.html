@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                        	<h3 class="stitle text-center">Cabildo abierto</h3>
+	                        	
+								<h6 class="title-info">Suscripción</h6>
+								<div class="row">
+                                    <div class="col-md-12">
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/cabildo-abierto/cabildo.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza de cabildo abierto</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>	

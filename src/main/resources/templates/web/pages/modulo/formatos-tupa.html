@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                        	<h3 class="stitle text-center">Formatos tupa</h3>
+	                        	
+								<h6 class="title-info">Licencia de edificación y habilitaciones urbanas</h6>
+								<div class="row">
+                                    <div class="col-md-12">
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/edificaciones_afines.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario de Licencia para Edificaciones y Afines</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/ANEXO I.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario único de Habilitación Urbana - FUHU</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo II.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario único de Edificación - FUE</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo III.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario único de Habilitación Urbana - FUHU : Recepción de Obras</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo IV.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario único de Edificación - FUE : Conformidad de Obras y Declaratoria de Edificación</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo V.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario - Anexo A - Datos de Condominios : Personas Naturales</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo VI.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario - Anexo B - Datos de Condominios : Personas Naturales</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo VII.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario - Anexo C - Predeclaratoria de Edificación</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo VIII.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario - Anexo E - Independización de Terreno Rústico / Habilitación Urbana</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo IX.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario - Anexo F - Subdivisión de Lote Urbano</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo X.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario - Anexo G : Regularización de Habilitación Urbana Ejecutada</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo XI.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario - Anexo H : Inicio de Obra</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo XII.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario - Acta de Verificación y Dictamen : Habilitación Urbana</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo XIII.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario - Acta de Verificación y Dictamen : Edificación</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo XIV.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formato - Plano de Ubicación : Esquema de Localización</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo XV.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formato - Carta de Seguridad de Obra</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo XVI.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formato - Informe de Verificación Administrativa : Habilitación Urbana</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo XVII.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formato - Informe de Verificación Administrativa : Edificación</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo XVIII.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formato - Informe de Verificación Administrativa : Recepción de Obras - Habilitación Urbana</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/Anexo XIX.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formato - Informe de Verificación Administrativa : Conformidad de Obra - Edificación</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+								
+								<h6 class="title-info">Licencia de funcionamiento y anuncios</h6>
+								<div class="row">
+                                    <div class="col-md-12">
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/publicitarios.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Solicitud: Para Tramite de Autorización de Anuncios Publicitarios</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/DS_0058.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Declaración Jurada de Observancia de Condiciones de Seguridad</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/funcionamiento_establecimiento.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formulario : Para Tramite Vinculados al Funcionamiento de Establecimientos</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+								<!-- <h6 class="title-info">Catastro y habilitaciones urbanas</h6>
+								<div class="row">
+                                    <div class="col-md-12">
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/formatos-tupa/catastro.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Solicitud : Varios Catastro</span></a></li>
+										</ul>
+                                    </div>
+								</div> -->
+								
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>	

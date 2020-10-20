@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                        	<h3 class="stitle text-center">Informacion Adicional</h3>
+	                        	
+	                        	<div th:replace="web/fragments/mini-banner"></div>
+								
+								<br/>
+								<br/>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/informe tecnico.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Bienes muebles calificados como RAEE 2014</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/INFORME RAEE II.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Bienes muebles calificados como RAEE 2015</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/INFORME RAEE2017.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Bienes muebles calificados como RAEE 2017</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/eje_presup_2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva de Ejecución Presupuestaria para el Año Fiscal 2014</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/des_laboral.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva de Evaluación de Desempeño Laboral</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/principios_etica.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva Principios y Valores Que Rigen La Conducta Ética Laboral</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/ESTADOS_PRESUPUESTALES.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Estado Presupuestal, del tercer trimestre 2015</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/EvaluacionanualPOI2013.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Evaluación Anual 2013</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/Eval Isemestre2013.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Evaluación I Semestre 2013</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/Eval Isemestre2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Evaluación I Semestre 2014</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/INDICADORES_DE_GESTION_2011.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Indicadores de Gestion 2011</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/INDICADORES_DE_GESTION_2012.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Indicadores de Gestion 2012</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/INDICADORES_DE_GESTION_2013.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Indicadores de Gestion 2013</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/austeridad.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Medida de Austeridad, Racionalización y Disciplina en el Gasto Público de la Municipalidad Distrital de Santa Anita para el Año 2015</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/Memoria Anual.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memoria Anual - 2010</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/MEMORIA_ANUAL_2011.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memoria Anual - 2011</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/MEMORIA_ANUAL_2012.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memoria Anual - 2012</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/MEMORIA ANUAL 2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memoria Anual - 2013</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/MEMORIA_ANUAL_2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memoria Anual - 2014</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/MEMORIA ANUAL 2015 LISTO.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memoria Anual - 2015</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/MEMORIA ANUAL 2016.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memoria Anual - 2016</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/MEMORIA ANUAL 2017 final.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Memoria Anual - 2017</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/res_gere_gral343.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Normas para el Protocolo Institucional de Atención al Ciudadano</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/res_gere_gral344.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Normas para la atención preferente</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/descanso_medico.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Normas que Regulan el Procedimiento de los Descansos MÉdicos para los trabajadores</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/Directiva006-2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Otorgamiento de reconocimiento al personal laboral de la municipalidad distrital de Santa Anita</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/plan de manejo residuos.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plan de Manejo de Residuos Sólidos del Distrito de Santa Anita 2015</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/provision_cobranza.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Procedimiento de Determinación de la Provision de Cobranza Dudosa y Tratamiento Contable de las Cuentas por Cobrar</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/progrma de segregacion.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Programa de segregación en la fuente y recolección selectiva de residuos sólidos domiciliarios en viviendas Urbanas - 2015</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/Reglamento Interno de Trabajo.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Reglamento Interno de Trabajo del Personal de la Municipalidad de Santa Anita</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/ORDENANZA00192.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza que regula la prevención y control de ruidos nocivos o molestos en el distrito de Santa Anita</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				
+         				<p th:text=" ${ subPage } "></p>
+         				<div class="col-md-12" th:switch="${ subPage }">
+							<th:block th:case="''">
+								<th:block th:replace="${@helper.vistaWeb('information/zoning-change-process/fragment/inicio')}"></th:block>
+							</th:block>
+							<th:block th:case="'proceso-de-cambio-de-zonificacion'">
+								<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/proceso-de-cambio-de-zonificacion')}"></th:block>
+							</th:block>
+						</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

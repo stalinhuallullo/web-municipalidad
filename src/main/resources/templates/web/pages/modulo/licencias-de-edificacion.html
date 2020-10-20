@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                        	<h3 class="stitle text-center">Licencias de Edificación</h3>
+	                        	
+	                        	<h6 class="title-info">AÑO 2015</h6>
+	                        	<div class="row">
+								    <div class="col-md-12">
+										<ul class="table-info checklist">
+											<li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/modulo/2015/edificaciones.pdf' ) } "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Licencias de edificaciones emitidas 2014-2015</span></a></li>
+											<li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/modulo/2015/urbanas.pdf' ) } "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Licencias de habilitaciones urbanas emitidas 2014-2015</span></a></li>
+										</ul>
+								    </div>
+								</div>
+								
+								<h6 class="title-info">AÑO 2016</h6>
+	                        	<div class="row">
+								    <div class="col-md-12">
+										<ul class="table-info checklist">
+											<li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/modulo/2016/CUADRO 1 Estado de Solicitudes de Licencias de Edificaciones.pdf' ) } "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Licencias de edificaciones emitidas 2015-2016</span></a></li>
+											<li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/modulo/2016/CUADRO 2 Estado de Solicitudes de Licencias de Habilitacion Urbana.pdf' ) } "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Licencias de habilitaciones urbanas emitidas 2015-2016</span></a></li>
+										</ul>
+								    </div>
+								</div>
+								
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>	

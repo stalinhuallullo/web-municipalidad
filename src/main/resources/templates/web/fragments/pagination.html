@@ -1,0 +1,44 @@
+<th:block th:fragment="mifragmento" >
+    <div class="col-md-12" th:if="${ total != null && actual != null &&  total >= actual }">
+        <div class="site-pagination">
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li th:if=" ${actual > 1 && actual <= total} "> 
+                        <a th:if=" ${ pagFormato != null} " th:href="${@helper.getURL( urlPag + '/' + (actual - 1) )}" aria-label="Previous"> <span aria-hidden="true"><i class="fas fa-angle-left"></i></span> </a>
+                        <a th:unless=" ${ pagFormato != null } "  th:href="${@helper.getURL( urlPag + '&pag=' + (actual - 1) )}" aria-label="Previous"> <span aria-hidden="true"><i class="fas fa-angle-left"></i></span> </a>
+                    </li>
+
+                    <li th:if=" ${ (actual-3) >= 1 && actual <= total} "> 
+                        <a th:if=" ${ pagFormato != null} " th:href="${@helper.getURL( urlPag + '/1' )}" aria-label="Next" th:text="1"></a>
+                        <a th:unless=" ${ pagFormato != null } " th:href="${@helper.getURL( urlPag + '&pag=1' )}" aria-label="Next" th:text="1"></a>
+                    </li>
+                    <li th:if=" ${ (actual-3) >= 1 && actual <= total } "> 
+                        <a href="javascript:void(0);">...</a>
+                    </li>
+                    
+                    
+                    <li th:each="i : ${#numbers.sequence( (actual-3), (actual+3) )}" th:classappend="${ i == actual } ? 'active' : ''">
+                        <th:block th:if=" ${ i > 0 && i <= total} ">
+                            <a th:if=" ${ pagFormato != null} " th:href="${@helper.getURL( urlPag + '/' + i )}" aria-label="Previous" th:text="${ i }"></a>
+                            <a th:unless=" ${ pagFormato != null } " th:href="${@helper.getURL( urlPag + '&pag=' + i )}" aria-label="Previous" th:text="${ i }"></a>
+                        </th:block>
+                    </li>
+                    
+                    
+                    <li th:if=" ${ (actual+3) <= total } "> 
+                        <a href="javascript:void(0);">...</a>
+                    </li>
+                    <li th:if=" ${ (actual+3) <= total } "> 
+                        <a th:if=" ${ pagFormato != null} " th:href="${@helper.getURL( urlPag + '/' + total )}" aria-label="Next" th:text="${ total }"></a>
+                        <a th:unless=" ${ pagFormato != null } " th:href="${@helper.getURL( urlPag + '&pag=' + total )}" aria-label="Next" th:text="${ total }"></a>
+                    </li>
+
+                    <li th:if=" ${actual < total} "> 
+                        <a th:if=" ${ pagFormato != null} " th:href="${@helper.getURL( urlPag + '/' + (actual + 1) )}" aria-label="Next"> <span aria-hidden="true"><i class="fas fa-angle-right"></i></span> </a>
+                        <a th:unless=" ${ pagFormato != null } " th:href="${@helper.getURL( urlPag + '&pag=' + (actual + 1) )}" aria-label="Next"> <span aria-hidden="true"><i class="fas fa-angle-right"></i></span> </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</th:block>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{web/layouts/principal/container}">
+
+<head>
+</head>
+
+<body layout:fragment="content" class="haeder-fixed-scroll">
+
+    <div th:replace="web/fragments/banner"></div>
+
+    <div class="main-content p130-50">
+        <section class="team-grid official-members">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-style-3 text-center">
+                            <h3>Alcalde</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div
+                                class="item-team-rv col-md-4 col-sm-4 col-xs-6 col-md-offset-4 col-sm-offset-4 col-xs-offset-3">
+                                <div class="team-box default">
+                                    <div class="team-thumb alcalde">
+                                        <img th:src="${@helper.assetsImg('equipo/alcalde-jose-nole.jpg')}" alt="José Luis Nole Palomino">
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">José Luis Nole Palomino</h6>
+                                        <strong class="dep">Alcalde</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="title-style-3">
+                            <h3>Regidores</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb">
+                                        <img th:src="${@helper.assetsImg('equipo/carlos-antonio-torres-cardenas.jpg')}" alt="Carlos Antonio Torres Cárdenas">
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Carlos Antonio Torres Cárdenas</h6>
+                                        <strong class="dep">Teniente Alcalde</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb">
+                                        <img th:src="${@helper.assetsImg('equipo/juan-carlos-urrutia-de-la-cruz.jpg')}" alt="Juan Carlos Urrutia de la Cruz">
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Juan Carlos Urrutia de la Cruz</h6>
+                                        <strong class="dep">Regidor</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb">
+                                        <img th:src="${@helper.assetsImg('equipo/filomeno-miguel-huaranga-toledo.jpg')}" alt="Filomeno Miguel Huaranga Toledo">
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Filomeno Miguel Huaranga Toledo</h6>
+                                        <strong class="dep">Regidor</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb">
+                                        <img th:src="${@helper.assetsImg('equipo/roberto-nelson-ramos-nunez.jpg')}" alt="Roberto Nelson Ramos Nuñez">
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Roberto Nelson Ramos Nuñez</h6>
+                                        <strong class="dep">Regidor</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb">
+                                        <img th:src="${@helper.assetsImg('equipo/haydee-irma-hilares-madera.jpg')}" alt="Haydee Irma Hilares Madera">
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Haydee Irma Hilares Madera</h6>
+                                        <strong class="dep">Regidor</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb">
+                                        <img th:src="${@helper.assetsImg('equipo/miler-cesar-carbajal-villagomez.jpg')}" alt="Miler César Carbajal Villagómez">
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Miler César Carbajal Villagómez</h6>
+                                        <strong class="dep">Regidor</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb">
+                                        <img th:src="${@helper.assetsImg('equipo/elias-mauro-saico-coronado.jpg')}" alt="Elías Mauro Saico Coronado">
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Elías Mauro Saico Coronado</h6>
+                                        <strong class="dep">Regidor</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb">
+                                        <img th:src="${@helper.assetsImg('equipo/manuel-edgardo-mamani-rodriguez.jpg')}" alt="Manuel Edgardo Mamaní Rodriguez">
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Manuel Edgardo Mamaní Rodriguez</h6>
+                                        <strong class="dep">Regidor</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb">
+                                        <img th:src="${@helper.assetsImg('equipo/edith-luz-mucho-mendoza.jpg')}" alt="Edith Luz Mucho Mendoza">
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Edith Luz Mucho Mendoza</h6>
+                                        <strong class="dep">Regidor</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb">
+                                        <img th:src="${@helper.assetsImg('equipo/nicolas-cubas-tapia.jpg')}" alt="Nicolás Cubas Tapia">
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Nicolás Cubas Tapia</h6>
+                                        <strong class="dep">Regidor</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb">
+                                        <img th:src="${@helper.assetsImg('equipo/zacarias-medina-huaripuma.jpg')}" alt="Zacarías Medina Huaripuma">
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Zacarías Medina Huaripuma</h6>
+                                        <strong class="dep">Regidor</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

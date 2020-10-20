@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                           	<h3 class="stitle text-center">Escudo</h3>
+	                           	
+	                           	<div th:replace="web/fragments/mini-banner"></div>
+	                           	
+	                           	<h6 class="title-info">Definición</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<p>El Escudo es el símbolo de un pueblo, representa a su gente, su cultura, paisaje, religión e idiosincrasia. Un Escudo hermoso y significativo otorga identidad</p>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">Historia</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<p>El Escudo Municipal tiene su origen en el Acuerdo de Concejo <a th:href=" ${@helper.getServerApiRecursos('normas/acu_026_2003.pdf')} " target="_blank">N° 026-2003</a> que aprobó la convocatoria del concurso, en base a un proyecto presentado por la Dirección de Servicios Sociales ( área de Cultura ) y respaldado por la Comisión de Cultura del Cuerpo de Regidores, en el marco de las celebraciones del XIV Aniversario de Creación Política del Distrito
+											El primer premio fue adjudicado al trabajo presentado por Percy Toro Bellido, que fue elegido por un Jurado compuesto por Profesores de la Escuela Nacional de Bellas Artes y Escuela Nacional de Artes Gráficas de Lima.</p>
+										<p>El escudo de Santa Anita tuvo una modificación el año 2007 durante la Gestión del Ing. Osiris Feliciano Muñoz indicando el cambio de de "Ecológico" por el de "Emprendedor" a través de la Ordenanza Municipal N° 0000-2007, debido a los retos que asumía la comunidad para poder colocarse como distrito líder del Cono Este.</p>
+										
+				                     </div>
+								</div>
+								
+								<div class="new-thumb new-thumb-post text-center">
+									<img th:src="${@helper.assetsImg('escudo-de-santa-anita.png')}" alt="" class="w-auto">
+								</div>
+								
+	                        </div>
+	                        
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

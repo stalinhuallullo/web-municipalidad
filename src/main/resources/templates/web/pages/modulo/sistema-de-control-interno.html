@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+    <head>
+        <link rel="stylesheet" type="text/css" th:href="${@helper.assetsVendors('datatables/css/datatables.min.css')}"/>
+		<script type="text/javascript" th:src="${@helper.assetsVendors('datatables/jsc/datatables.min.js')}"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+                $('.table thead tr').clone(true).appendTo( '.table thead' );
+                $('.table thead tr:eq(1) th').each( function (i) {
+                    if(i == 0 || i == 1) {
+                        var placelholder = "";
+                        if(i == 0)  placelholder = "Filtrar por Año";
+                        if(i == 1)  placelholder = "Filtrar por Nombre";
+
+                        $(this).html( '<input type="text" style="width: 100%;" placeholder="'+ placelholder +'" />' );
+                 
+                        $( 'input', this ).on( 'keyup change', function () {
+                            
+                            if ( table.column(i).search() !== this.value ) {
+                                table
+                                    .column(i)
+                                    .search( this.value )
+                                    .draw();
+                            }
+                        } );
+                    } 
+                    else $(this).html( '' );
+                } );
+             
+                var table = $('.table').DataTable( {
+                    orderCellsTop: true,
+                    fixedHeader: true,
+                    pageLength: 25,
+                    "order": [ 0, 'desc' ],
+                    language: { 
+                        "lengthMenu": "Mostrar _MENU_ entradas",
+                        "zeroRecords": "Sin resultados",
+                        "info": "Mostrando la página _PAGE_ de _PAGES_",
+                        "infoEmpty": "No hay registros disponibles",
+                        "infoFiltered": "(filtrado de _MAX_ registros totales)",
+                        "search": "Buscar: ",
+                        paginate: {
+                            sFirst: "Primero",
+                            sLast: "Último",
+                            sNext: "Siguiente",
+                            sPrevious: "Anterior"
+                        }
+                    },
+                    
+                } );
+            } );
+        </script>
+    </head>
+    <body layout:fragment="content" class="haeder-fixed-scroll">
+        
+        <div th:replace="web/fragments/banner"></div>
+        
+         <div class="main-content p130-50">
+            <section class="department-details">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="deprt-txt">
+                                <h3 class="stitle text-center">Implementación de Sistemas de Control Interno - MDSA</h3>
+                                
+                                <div class="row">
+                                    <div class="col-md-12">
+                                       <p>Es un proceso técnico liderado por el títular y funcionarios, con la participación del personal de la MDSA. Consiste en establecer e implantar las políticas de control interno, a fin de crear un ambiente de control que garantice un adecuado uso y rendición de cuentas de los recursos del estado. Así como establecer las estrategias para minimizar los riesgos.</p>
+                                    </div>
+                                </div>
+                                
+                                
+                                <h6 class="title-info">Sistema nacional de control</h6>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>Las presentes normas regulan el ámbito, organización, atribuciones y funcionamiento del Sistema Nacional de Control y de la CGR, como ente técnico rector de dicho sistema. Asimismo, regula las obligaciones y responsabilidades del Titular y funcionarios de las entidades del Estado; así como a los órganos y personal.</p>
+                                        <ul class="table-info checklist">
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/1.1 Ley 27785.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley N° 27785 – “Ley Orgánica del Sistema Nacional de Control y de la Contraloría General de la República”, publicada el 23.JUL.2002</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/1.2 Ley 28396  (modif Art 43 - Ley 27785).pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley N° 28396 – Ley que modifica el Art. 43° de la Ley N° 27785, publicada el 26.NOV.2004</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/1.3 Ley 28422 (modif Art 22 - Ley 27785).pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley N° 28422 – Ley que modifica el Art. 22° de la Ley N° 27785, publicada el 17.DIC.2004</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/2.1  Ley 28716 Ley Control Interno Entid Estado.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley N° 28716 - “Ley de Control Interno de las Entidades del Estado”, publicada el 18.ABR.2006</span></a></li>
+                                            
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/2.2 DU 067-2009 Modif Art.10 Ley 28716.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Decreto de Urgencia N° 067-2009 - “modifica el Art. 10° de la Ley N° 28716”, publicado el 23.JUN.2009</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/RC_038_2004_CG.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 002-2004-CG-SGE "Normas para la atención de Solicitudes de Acciones de Control por parte de entidades sujetos al ámbito del Sistema Nacional de Control ante la Controlaría General de la República"</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/RC_Lineamientos_2017_2019.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Resolución de Contraloría N° 457-2016-CG Lineamientos de política para el Planeamiento de Control Gubernamental a cargo del Sistema Nacional de Control: Período 2017-2019.</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <h6 class="title-info">Sistema nacional de control</h6>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>Constituyen lineamientos, criterios, métodos y disposiciones para la aplicación y regulación del control interno en las principales áreas de la actividad administrativa u operativa. Son aplicables a las entidades del Estado de conformidad a lo establecido por la Ley N° 28716. Agrupan 5 componentes:</p>
+                                        <ul class="checklist ">
+                                            <li class="row">
+                                                <div class="col-md-6"><i class="fas fa-check"></i> Ambiente de Control</div>
+                                                <div class="col-md-6"><i class="fas fa-check"></i> Evaluación de Riesgos</div>
+                                                <div class="col-md-6"><i class="fas fa-check"></i> Actividades de Control Gerencial</div>
+                                                <div class="col-md-6"><i class="fas fa-check"></i> Información y Comunicación</div>
+                                                <div class="col-md-6"><i class="fas fa-check"></i> Supervisión</div>
+                                            </li>  
+                                        </ul>
+                                        <ul class="table-info checklist">
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/2.1 RC 320-2006-CG Normas de Control Interno.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Resolución de Contraloría N° 320-2006-CG - “Normas de Control Interno para las Entidades del Estado”, publicada el 03.NOV.2006</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/2.2 Fe Erratas - RC 320-2006-CG.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Fe de erratas de la RC N° 320-2006-CG, publicada el 16 de Nov, 2006</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/rg_general0099-2011.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva Principios y Valores Que Rigen La Conducta Ética Laboral Del Personal De La Municipalidad Distrital De Santa Anita</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/RC490_2017CG.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Resolución de Contraloría N° 490-2017-CG</span></a></li>
+                                            
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/RCG004_2017_Guia_implemen_SCI.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Resolución de Contraloría N° 004-2017-CG "Guia para la Implementación y Fortalecimiento del Sistema de Control Interno en las Entidades del Estado"</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/RCG149_2016_Directiva_Control_Interno.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Resolución de Contraloría N° 149-2016-CG "Implementación del Sistema de Control Interno en las Entidades del Estado"</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <h6 class="title-info">Comité para Implementación del Sistema de Control Interno</h6>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>La Contraloría General de la República aprueba la "Guía para la Implementación del Sistema de Control Interno de las entidades del Estado"; como documento orientador, para la gestión pública y control gubernamental.</p>
+                                        <ul class="table-info checklist">
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/3. RC 458-2008-CG Guia para Implemen Sis Contr Inter.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Resolución de Contraloría N° 458-2008-CG - “Guía para la Implementación del Sistema de Control Interno de las entidades del Estado”, publicada el 30.OCT.2008</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/RCG004_2017_Guia_implemen_SCI.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Resolución de Contraloría N° 004-2017-CG "Guia para la Implementación y Fortalecimiento del Sistema de Control Interno en las Entidades del Estado"</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/RCG149_2016_Directiva_Control_Interno.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Resolución de Contraloría N° 149-2016-CG "Implementación del Sistema de Control Interno en las Entidades del Estado"</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <h6 class="title-info">Comité para Implementación del Sistema de Control Interno</h6>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                  <th scope="col" width="1">Año</th>
+                                                  <th scope="col">Monto</th>
+                                                  <th scope="col" width="1">Descargar</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">2018</th>
+                                                    <td width="120px">Acta de reunión del 11 de Julio</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta003-2018.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2018</th>
+                                                    <td width="120px">Acta de reunión del 29 de Mayo</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta002-2018.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2018</th>
+                                                    <td width="120px">Acta de reunión del 19 de Febrero</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta001-2018.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2017</th>
+                                                    <td width="120px">Capacitación de criterios de programación para las actividades, productos y programas presupuestales</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/CAPACITACION DE SENSIBILIZACION.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2017</th>
+                                                    <td width="120px">Acta de compromiso individual para la implementación del sistema de control interno en la municipalidad de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA DE COMPROMISO INDIVIDUAL.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2017</th>
+                                                    <td width="120px">Acta de la sexta reunión del comité de control interno de la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA 6° REUNION CCI 2017.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2017</th>
+                                                    <td width="120px">Acta de la quinta reunión del comité de control interno de la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA 5° REUNION CCI 2017.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2017</th>
+                                                    <td width="120px">Acta de la cuarta reunión del comité de control interno de la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA 4° REUNION CCI 2017.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2017</th>
+                                                    <td width="120px">Acta de la tercera reunión del comité de control interno de la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA 3° REUNION CCI 2017.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2017</th>
+                                                    <td width="120px">Acta de la segunda reunión del comité de control interno de la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA 2° REUNION CCI 2017.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2017</th>
+                                                    <td width="120px">Acta de la primera reunión del comité de control interno de la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA 1° REUNION CCI 2017.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2017</th>
+                                                    <td width="120px">Informe de evaluación de la implementación del sistema de control interno en la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Memo_1294.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2016</th>
+                                                    <td width="120px">Informe de diagnostico de control interno en el proceso de contratación pública</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Informe de Diagnostico-Proceso de C.I en Contrataciones Publicas.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2016</th>
+                                                    <td width="120px">Lista de asistencia a la capacitación "Sistema de control interno"</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Informe de Diagnostico-Proceso de C.I en Contrataciones Publicas.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2016</th>
+                                                    <td width="120px">Acta de la quinta reunión del comité de control interno de la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA 5° REUNION CCI 2016.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2016</th>
+                                                    <td width="120px">Acta de la cuarta reunión del comité de control interno de la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA 4° REUNION CCI 2016.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2016</th>
+                                                    <td width="120px">Acta de la tercera reunión del comité de control interno de la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA 3° REUNION CCI 2016.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2016</th>
+                                                    <td width="120px">Acta de la segunda reunión del comité de control interno de la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA 2° REUNION CCI 2016.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2016</th>
+                                                    <td width="120px">Acta de la primera reunión del comité de control interno de la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA 1° REUNION CCI 2016.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2016</th>
+                                                    <td width="120px">Acta de instalación del comité de control interno de la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA INSTALACION CCI 2016.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2016</th>
+                                                    <td width="120px">Acta de compromiso para la implementació del sistema de control interno en la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA DE COMPROMISO 2016.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2016</th>
+                                                    <td width="120px">Comite de control interno de la municipalidad distrital de santa anita</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/RA 123-2016.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2016</th>
+                                                    <td width="120px">Acta de reunió N° 01 del comité de control interno</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/RA 123-2016.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2015</th>
+                                                    <td width="120px">Acta de reunión N° 01 del comité de control interno</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta_01_2015.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2014</th>
+                                                    <td width="120px">Acta de reunión N° 03 del comité de control interno</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta_03_2014.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2014</th>
+                                                    <td width="120px">Acta de reunión N° 02 del comité de control interno</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta_02_2014.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2014</th>
+                                                    <td width="120px">Acta de reunión N° 01 del comité de control interno</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta_01_2014.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2014</th>
+                                                    <td width="120px">Diagnostico del sistema de control interno - MDSA</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/DIAGNOSTICO SCI-MDSA.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2013</th>
+                                                    <td width="120px">Acta N° 13 de reunión</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta 13.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2013</th>
+                                                    <td width="120px">Acta N° 12 de reunión</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta 12.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2013</th>
+                                                    <td width="120px">Acta N° 11 de reunión</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta 11.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2013</th>
+                                                    <td width="120px">Acta N° 10 de reunión</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta 10.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2013</th>
+                                                    <td width="120px">Acta N° 09 de reunión</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta 09.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2013</th>
+                                                    <td width="120px">Acta N° 08 de reunión</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta 08.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2013</th>
+                                                    <td width="120px">Acta N° 07 de reunión</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta 07.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2013</th>
+                                                    <td width="120px">Acta N° 06 de reunión</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta 06.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2013</th>
+                                                    <td width="120px">Acta N° 05 de reunión</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta 05.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2013</th>
+                                                    <td width="120px">Acta N° 04 de reunión</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta 04.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2013</th>
+                                                    <td width="120px">Acta N° 03 de reunión</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta 03.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2013</th>
+                                                    <td width="120px">Acta N° 02 del comité para la implementación del sistema de control interno</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta 2.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2013</th>
+                                                    <td width="120px">Acta N° 01 del comité de control interno</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta 01.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2013</th>
+                                                    <td width="120px">Resolución de gerencia general 00113</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Resolucion gerencial 113.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2012</th>
+                                                    <td width="120px">Acta de reunión N° 001</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/Acta_de_Reunion_001_2012.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2011</th>
+                                                    <td width="120px">Resolución de gerencia general N° 164</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/RGG_N_164_2011.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2011</th>
+                                                    <td width="120px">Resolución de alcaldía N° 184</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/RA_00184-2011.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2009</th>
+                                                    <td width="120px">Acta de compromiso para la implementación del control interno acta N° 001</td>
+                                                    <td class="text-center">
+                                                        <a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/ACTA DE COMPROMISO.pdf')} ">
+                                                            <span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <h6 class="title-info">Comité para Implementación del Sistema de Control Interno</h6>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>La Contraloría General de la República aprueba la "Guía para la Implementación del Sistema de Control Interno de las entidades del Estado"; como documento orientador, para la gestión pública y control gubernamental.</p>
+                                        <ul class="table-info checklist">
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/RESOLU_0025.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Resolución de gerencia general N° 00141-2015 (constituir el comité de riesgos)</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/acta_reunion_01-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acta de Reunión N° 01 del Comité Evaluación de Riesgos Control Interno - 2015</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/acta_reunion_02-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acta de Reunión N° 02 del Comité Evaluación de Riesgos Control Interno - 2015</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/acta_reunion_03-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acta de Reunión N° 03 del Comité Evaluación de Riesgos Control Interno - 2015</span></a></li>
+                                            
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/acta_reunion_04-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acta de Reunión N° 04 del Comité Evaluación de Riesgos Control Interno - 2015</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/acta_reunion_05-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acta de Reunión N° 05 del Comité Evaluación de Riesgos Control Interno - 2015</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/acta_reunion_06-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acta de Reunión N° 06 del Comité Evaluación de Riesgos Control Interno - 2015</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/acta_reunion_07-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acta de Reunión N° 07 del Comité Evaluación de Riesgos Control Interno - 2015</span></a></li>
+                                            
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/acta_reunion_08-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acta de Reunión N° 08 del Comité Evaluación de Riesgos Control Interno - 2015</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/acta_reunion_09-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acta de Reunión N° 09 del Comité Evaluación de Riesgos Control Interno - 2015</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/acta_reunion_10-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acta de Reunión N° 10 del Comité Evaluación de Riesgos Control Interno - 2015</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/acta_reunion_11-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acta de Reunión N° 11 del Comité Evaluación de Riesgos Control Interno - 2015</span></a></li>
+                                            
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/acta_reunion_12-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acta de Reunión N° 12 del Comité Evaluación de Riesgos Control Interno - 2015</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/informe riesgo 1.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">INFORME N° 01 Evaluación del estado de sensibilización respecto de los objetivos de las unidades orgánicas</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/informe riesgo2.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">INFORME N° 02 Identificación de riesgos de las unidades orgánicas de la Municipalidad Distrital de Santa Anita</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/informe riesgo3.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">INFORME N° 03 Evaluación de Riesgos de Control Interno de las Unidades Orgánicas</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/informe riesgo4.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">INFORME N° 04 Respuesta a los riesgos de alta exposición identificados en las unidades orgánicas de la Municipalidad distrital de Santa Anita</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiDataWeb('pdf/sistema-de-control-interno/sensibilizacion.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plan de sensibilización y capacitación en control interno</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+         </div>
+    </body>
+</html> 

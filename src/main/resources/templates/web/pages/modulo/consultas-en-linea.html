@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                        	<h3 class="stitle text-center">Consultas en Línea</h3>
+	                        	
+	                        	
+								<br/>
+	                        	<div class="row">
+								    <div class="col-sm-12">
+								        <div class="panel">
+								            <div class="panel-body">
+								                <div class="row">
+								                    <div class="col-sm-4 col-md-2 ">
+								                        <img class="img-responsive" th:src="${@helper.assetsImg('home.png')}">
+								                    </div>
+								                    <div class="col-sm-8 col-md-10">
+								                        <h5 class="text-primary">Cuenta Corriente</h5>
+								                        <hr class="underline-panel">
+								                        Consulta de Estado de Cuenta Corriente.
+								                    </div>
+								                </div>
+								            </div>
+								            <div class="panel-footer text-right">
+								                <a href="https://pagosenlinea.munisantanita.gob.pe/consultas/estado_cuenta.xhtml" class="btn btn-primary btn-xs" target="_blank">Consultar <i class="icon-chevron-right"></i><i class="icon-chevron-right"></i></a>
+								            </div>
+								        </div>
+								    </div>
+								    <div class="col-sm-12">
+								        <div class="panel">
+								            <div class="panel-body">
+								                <div class="row">
+								                    <div class="col-sm-4 col-md-2 ">
+								                        <img class="img-responsive" th:src="${@helper.assetsImg('jose.png')}">
+								                    </div>
+								                    <div class="col-sm-8 col-md-10">
+								                        <h5 class="text-primary">Expediente/ Doc. Externo</h5>
+								                        <hr class="underline-panel">
+								                        <p class="text-justify">Consulta de estado de expediente / Documento Externo ingresado a la MDSA.</p>
+								                    </div>
+								                </div>
+								            </div>
+								            <div class="panel-footer text-right">
+								                <a href="https://190.12.74.212/Modulo_consulta/inicio_exp.php" class="btn btn-primary btn-xs" target="_blank">Consultar <i class="icon-chevron-right"></i><i class="icon-chevron-right"></i></a>
+								            </div>
+								        </div>
+								    </div>
+								</div>
+
+								<div class="row">
+								    <div class="col-sm-12">
+								        <div class="panel">
+								            <div class="panel-body">
+								                <div class="row">
+								                    <div class="col-sm-4 col-md-2 ">
+								                        <img class="img-responsive" th:src="${@helper.assetsImg('hoja.png')}">
+								                    </div>
+								                    <div class="col-sm-8 col-md-10">
+								                        <h5 class="text-primary">Hoja de Resumen</h5>
+								                        <hr class="underline-panel">
+								                        Consulta de Hoja de Resumen (HR).
+								                    </div>
+								                </div>
+								            </div>
+								            <div class="panel-footer text-right">
+								                <a href="https://190.12.74.212/Modulo_consulta/inicio_HR.php" class="btn btn-primary btn-xs" target="_blank">Consultar <i class="icon-chevron-right"></i><i class="icon-chevron-right"></i></a>
+								            </div>
+								        </div>
+								    </div>
+								    <div class="col-sm-12">
+								        <div class="panel">
+								            <div class="panel-body">
+								                <div class="row">
+								                    <div class="col-sm-4 col-md-2 ">
+								                        <img class="img-responsive" th:src="${@helper.assetsImg('foldertramites.jpg')}">
+								                    </div>
+								                    <div class="col-sm-8 col-md-10">
+								                        <h5 class="text-primary">Licencia de Funcionamiento</h5>
+								                        <hr class="underline-panel">
+								                        <p class="text-justify">Consulta de estado de trámite de Licencia de Funcionamiento.</p>
+								                    </div>
+								                </div>
+								            </div>
+								            <div class="panel-footer text-right">
+								                <a href="https://190.12.74.212/Modulo_consulta/licencias.php" class="btn btn-primary btn-xs" target="_blank">Consultar <i class="icon-chevron-right"></i><i class="icon-chevron-right"></i></a>
+								            </div>
+								        </div>
+								    </div>
+								</div>
+
+								<div class="row">
+								    <div class="col-sm-12">
+								        <div class="panel">
+								            <div class="panel-body">
+								                <div class="row">
+								                    <div class="col-sm-4 col-md-2 ">
+								                        <img class="img-responsive" th:src="${@helper.assetsImg('lam.png')}">
+								                    </div>
+								                    <div class="col-sm-8 col-md-10">
+								                        <h5 class="text-primary">Liquidacíon de Arbitrios</h5>
+								                        <hr class="underline-panel">
+								                        Consulta de Liquidación de Arbitrios Municipales (LAM).
+								                    </div>
+								                </div>
+								            </div>
+								            <div class="panel-footer text-right">
+								                <a href="https://190.12.74.212/Modulo_consulta/inicio_LAM.php" class="btn btn-primary btn-xs" target="_blank">Consultar <i class="icon-chevron-right"></i><i class="icon-chevron-right"></i></a>
+								            </div>
+								        </div>
+								    </div>
+								    <div class="col-sm-12">
+								        <div class="panel">
+								            <div class="panel-body">
+								                <div class="row">
+								                    <div class="col-sm-4 col-md-2 ">
+								                        <img class="img-responsive" th:src="${@helper.assetsImg('libroreclamaciones.jpg')}">
+								                    </div>
+								                    <div class="col-sm-8 col-md-10">
+								                        <h5 class="text-primary">Libro de Reclamaciones</h5>
+								                        <hr class="underline-panel">
+								                        <p class="text-justify">Consulta de estado de Reclamo y Queja.</p>
+								                    </div>
+								                </div>
+								            </div>
+								            <div class="panel-footer text-right">
+								                <a href="https://190.12.74.212/Modulo_consulta/rReclamacion.php" class="btn btn-primary btn-xs" target="_blank">Consultar <i class="icon-chevron-right"></i><i class="icon-chevron-right"></i></a>
+								            </div>
+								        </div>
+								    </div>
+								</div>
+								
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>	

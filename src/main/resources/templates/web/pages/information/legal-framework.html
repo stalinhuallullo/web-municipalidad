@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt gallery">
+	                        	<h3 class="stitle text-center">Información General</h3>
+	                        	
+	                        	<div class="row">
+                                    <div class="col-md-12">
+                                       <p>
+                                       		La publicación de esta Información tiene por finalidad promover la transparencia de los actos de la Municipalidad Distrital de Santa Anita y regular el derecho fundamental del acceso a la información consagrado en el numeral 5 del Artículo 2° de la Constitución Política del Perú.
+											La presente esta Sujeta a la Ley Nº 27806 "Ley de transparencia y acceso a la información pública" y ajustada a los lineamientos de la Directiva N° 004-2008-PCM/SGP.
+                                       </p>
+                                       <p>Enlace al <a href="http://www.serviciosalciudadano.gob.pe/buscador/psce_tramites_buscador.aspx?txt_busqueda_general=municipalidad+de+santa+anita">Portal de Servicios al Ciudadano y Empresas</a></p>
+                                    </div>
+								</div>
+								
+								<h6 class="title-info">Marco Legal</h6>
+								
+								
+								<iframe th:src=" ${@helper.getServerApiRecursos('pdf/transparencia/generales/ley_creacion_distrital.pdf')} " style="width: 100%; height: 600px;"></iframe>
+								
+								<h6 class="title-info">Descargar</h6>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/transparencia/generales/ley_creacion_distrital.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley de Creación de la Municipalidad Distrital de Santa Anita. Ley N°_25116</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								<!--<div class="row">
+                                    <div class="col-md-12">
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('transparencia_docs.php?doc=1')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley de Creación de la Municipalidad Distrital de Santa Anita. Ley N°_25116</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('transparencia_docs.php?doc=3')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley Orgánica de Municipalidades LEY Nº 27972</span></a></li>
+										</ul>
+                                    </div>
+								</div>-->
+								
+								
+								<iframe th:src=" ${@helper.getServerApiRecursos('pdf/transparencia/generales/ley_municipalidades.pdf')} " style="width: 100%; height: 600px;"></iframe>
+								
+								<h6 class="title-info">Descargar</h6>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/transparencia/generales/ley_municipalidades.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley Orgánica de Municipalidades LEY Nº 27972</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+								
+								<h6 class="title-info">Formato de Solicitud de Acceso a la Informacion Pública</h6>
+								
+								<iframe th:src=" ${@helper.getServerApiRecursos('pdf/transparencia/generales/formato_solicitud_acceso_informacion_publica.pdf')} " style="width: 100%; height: 600px;"></iframe>
+								
+								<h6 class="title-info">Descargar</h6>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+										<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/transparencia/generales/formato_solicitud_acceso_informacion_publica.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley de Creación de la Municipalidad Distrital de Santa Anita. Ley N°_25116</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

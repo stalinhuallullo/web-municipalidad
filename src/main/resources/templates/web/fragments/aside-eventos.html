@@ -1,0 +1,15 @@
+<div class="widget" th:fragment="mifragmento">
+    <div class="recent-posts inner">
+        <ul>
+            <li  th:each="i, index : ${ relacionadas }">
+                <a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } ">
+                    <img th:if="${ i.archivo != null }" th:src=" ${ @helper.getServerApiDataWeb('eventos/galeria/' + i.archivo) } " alt="">
+                    <img th:unless="${ i.archivo != null }" th:src="${ @helper.assetsImgDefault() }" alt="">
+                </a>
+                
+                <strong th:text=" ${ @helper.convertirFecha(i.fecha_final) } + ' ' + ${ @helper.convertirHora(i.fecha_final) } "></strong>
+                <h6 class="ellipsis"><a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } " th:text=" ${ i.titulo } "></a></h6>
+            </li>
+        </ul>
+    </div>
+</div>

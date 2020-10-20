@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/bar-menu-category"></div>
+		
+         <div class="main-content p30-20">
+            <!--Events Start-->
+            <div class="news-wrapper news-grid deprt-txt">
+               <div class="container">
+                  <div class="row">
+		                  	
+						<div class="col-sm-12">
+   							<div class="header-category">
+								<h3 class="name" th:text="${nombreCategoria}"></h3>
+   							</div>
+						</div>
+						<div class="col-md-3 col-sm-6" th:each="i : ${data}">
+							<div class="news-box">
+                                <a th:href="${@helper.getURL('noticias/' + i.slug)}">
+                                    <div class="new-thumb card"> 
+                                        <img th:if="${ i.imagen != null }" th:src=" ${ @helper.getServerApiImgNoticias(i.imagen) } " alt=""> 
+                                        <img th:unless="${ i.imagen != null }" th:src="${ @helper.assetsImgDefault() }" alt="">
+                                    </div>
+                                </a>
+								<div class="new-txt">
+									<ul class="news-meta">
+										<li th:text=" ${ @helper.convertirFecha(i.fecha) } "></li>
+									</ul>
+									<h6><a th:href="${@helper.getURL('noticias/' + i.slug)}" th:id="${i.id}"  th:text="${i.titulo}"></a></h6>
+									<p class="ellipsis-height ellipsis text-justify" th:text="${i.resumen}"></p>
+								</div>
+							</div>
+						</div>
+						
+                        <div th:replace="web/fragments/pagination"></div>
+						
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+	</body>
+</html>

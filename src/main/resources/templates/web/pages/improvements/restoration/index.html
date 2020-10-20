@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+		<style>
+			.nextend {
+				
+			}
+			.nextend-accordion {
+				
+			}
+			.nextend-item {
+				margin-bottom: 15px;
+			}
+			.nextend-item:last-child{
+				margin-bottom: 0px;
+			}
+			.nextend-header {
+				
+			}
+			.nextend-nav {
+			}
+			.nextend-nav ul {
+				list-style: none;
+			    display: block;
+			    margin: 0;
+			    padding: 0;
+			}
+			.nextend-nav ul li {
+			    display: block;
+			}
+			.nextend-nav ul li.header a{
+				font-weight: bold;
+				color: #333333;
+			}
+			.nextend-nav ul li a {
+				padding: 2px 0 2px 25px;
+			    display: block;
+			    color: #333333;
+			    font-size: 15px;
+			    text-shadow: none;
+			    font-family: 'Arimo',Arial;
+			    font-style: normal;
+			    text-decoration: none;
+			    text-align: left;
+			    -moz-transition: padding-left 0.4s ease;
+			    -webkit-transition: padding-left 0.4s ease;
+			    -o-transition: padding-left 0.4s ease;
+			    transition: padding-left 0.4s ease;
+			    vertical-align: middle;
+			    position: relative;
+			}
+			.nextend-nav ul li a svg{
+				position: absolute;
+				left: 0;
+				transform: translate(0%, 50%);
+			}
+			.nextend-nav ul li a:hover,
+			.nextend-nav ul li a.active{
+				color: #13640a;
+			}
+		</style>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                          
+                                
+                                <div class="row">
+                                	<div class="col-md-3">
+										<div class="nextend nextend-accordion">
+                                            <div class="nextend-item">
+                                                <div class="nextend-nav">
+                                                    <ul>
+                                                        <li class="header">
+                                                            <a href="javascript:void(0)">
+                                                                Vivero
+                                                                <svg  width="12px" height="12px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 444.815 444.815" style="enable-background:new 0 0 444.815 444.815;" xml:space="preserve">
+                                                                    <path fill="#333333" d="M421.976,196.712L236.111,10.848C228.884,3.615,220.219,0,210.131,0c-9.9,0-18.464,3.615-25.697,10.848L163.023,32.26
+                                                                        c-7.234,6.853-10.85,15.418-10.85,25.697c0,10.277,3.616,18.842,10.85,25.697l83.653,83.937H45.677
+                                                                        c-9.895,0-17.937,3.568-24.123,10.707s-9.279,15.752-9.279,25.837v36.546c0,10.088,3.094,18.698,9.279,25.837
+                                                                        s14.228,10.704,24.123,10.704h200.995L163.02,360.88c-7.234,7.228-10.85,15.89-10.85,25.981c0,10.089,3.616,18.75,10.85,25.978
+                                                                        l21.411,21.412c7.426,7.043,15.99,10.564,25.697,10.564c9.899,0,18.562-3.521,25.981-10.564l185.864-185.864
+                                                                        c7.043-7.043,10.567-15.701,10.567-25.981C432.54,211.939,429.016,203.37,421.976,196.712z"/>
+                                                                </svg>
+                                                            </a>
+                                                        </li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/vivero')}" th:classappend="${ subPage } == vivero ? active : ''">Vivero</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="nextend-item">
+                                                <div class="nextend-nav">
+                                                    <ul>
+                                                        <li class="header">
+                                                            <a href="javascript:void(0)">
+                                                                Parques
+                                                                <svg  width="12px" height="12px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 444.815 444.815" style="enable-background:new 0 0 444.815 444.815;" xml:space="preserve">
+                                                                    <path fill="#333333" d="M421.976,196.712L236.111,10.848C228.884,3.615,220.219,0,210.131,0c-9.9,0-18.464,3.615-25.697,10.848L163.023,32.26
+                                                                        c-7.234,6.853-10.85,15.418-10.85,25.697c0,10.277,3.616,18.842,10.85,25.697l83.653,83.937H45.677
+                                                                        c-9.895,0-17.937,3.568-24.123,10.707s-9.279,15.752-9.279,25.837v36.546c0,10.088,3.094,18.698,9.279,25.837
+                                                                        s14.228,10.704,24.123,10.704h200.995L163.02,360.88c-7.234,7.228-10.85,15.89-10.85,25.981c0,10.089,3.616,18.75,10.85,25.978
+                                                                        l21.411,21.412c7.426,7.043,15.99,10.564,25.697,10.564c9.899,0,18.562-3.521,25.981-10.564l185.864-185.864
+                                                                        c7.043-7.043,10.567-15.701,10.567-25.981C432.54,211.939,429.016,203.37,421.976,196.712z"/>
+                                                                </svg>
+                                                            </a>
+                                                        </li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/asesor-1')}" th:classappend="${ subPage } == asesor-1 ? active : ''">Asesor 1</a></li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/parodi')}" th:classappend="${ subPage } == parodi ? active : ''">Parodi</a></li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/parque-achirana')}" th:classappend="${ subPage } == parque-achirana ? active : ''">Parque Achirana</a></li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/portales-1')}" th:classappend="${ subPage } == portales-1 ? active : ''">Portales 1</a></li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/vinas-6')}" th:classappend="${ subPage } == vinas-6 ? active : ''">Viñas 6</a></li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/perales-1-y-2')}" th:classappend="${ subPage } == perales-1-y-2 ? active : ''">Perales 1 y 2</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="nextend-item">
+                                                <div class="nextend-nav">
+                                                    <ul>
+                                                        <li class="header">
+                                                            <a href="javascript:void(0)">
+                                                                Avenidas
+                                                                <svg  width="12px" height="12px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 444.815 444.815" style="enable-background:new 0 0 444.815 444.815;" xml:space="preserve">
+                                                                    <path fill="#333333" d="M421.976,196.712L236.111,10.848C228.884,3.615,220.219,0,210.131,0c-9.9,0-18.464,3.615-25.697,10.848L163.023,32.26
+                                                                        c-7.234,6.853-10.85,15.418-10.85,25.697c0,10.277,3.616,18.842,10.85,25.697l83.653,83.937H45.677
+                                                                        c-9.895,0-17.937,3.568-24.123,10.707s-9.279,15.752-9.279,25.837v36.546c0,10.088,3.094,18.698,9.279,25.837
+                                                                        s14.228,10.704,24.123,10.704h200.995L163.02,360.88c-7.234,7.228-10.85,15.89-10.85,25.981c0,10.089,3.616,18.75,10.85,25.978
+                                                                        l21.411,21.412c7.426,7.043,15.99,10.564,25.697,10.564c9.899,0,18.562-3.521,25.981-10.564l185.864-185.864
+                                                                        c7.043-7.043,10.567-15.701,10.567-25.981C432.54,211.939,429.016,203.37,421.976,196.712z"/>
+                                                                </svg>
+                                                            </a>
+                                                        </li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/av-eucalipto')}" th:classappend="${ subPage } == av-eucalipto ? active : ''">Av. Eucalipto</a></li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/av-huacanray')}" th:classappend="${ subPage } == av-huacanray ? active : ''">Av. Huacanray</a></li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/av-cascanueces')}" th:classappend="${ subPage } == av-cascanueces ? active : ''">Av. Cascanueces</a></li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/av-colectora')}" th:classappend="${ subPage } == av-colectora ? active : ''">Av. Colectora</a></li>
+                                                        <!--<li><a th:href="${@helper.getPageInfo('restauracion/modificacion')}" th:classappend="${ subPage } == modificacion ? active : ''">Modificación</a></li>-->
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/av-santiago-de-chuco')}" th:classappend="${ subPage } == av-santiago-de-chuco ? active : ''">Av. Santiago De Chuco</a></li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/av-chancas')}" th:classappend="${ subPage } == av-chancas ? active : ''">Av. Chancas</a></li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/av-ruisenores-y-metropolitana')}" th:classappend="${ subPage } == av-ruisenores-y-metropolitana ? active : ''">Av. Ruiseñores Y Metropolitana</a></li>
+                                                        <!-- <li><a th:href="${@helper.getPageInfo('restauracion/santiago-de-chucos')}" th:classappend="${ subPage } == santiago-de-chucos ? active : ''">Santiago De Chucos</a></li> -->
+                                                        <!--<li><a th:href="${@helper.getPageInfo('restauracion/berma-chancas')}" th:classappend="${ subPage } == berma-chancas ? active : ''">Berma Chancas</a></li>-->
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/puente-perales')}" th:classappend="${ subPage } == puente-perales ? active : ''">Puente Perales</a></li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/ovalo-de-santa-anita')}" th:classappend="${ subPage } == ovalo-de-santa-anita ? active : ''">Óvalo de Santa Anita</a></li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/boulevard-de-santa-anita')}" th:classappend="${ subPage } == boulevard-de-santa-anita ? active : ''">Boulevard de Santa Anita</a></li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/av-cesar-vallejo')}" th:classappend="${ subPage } == av-cesar-vallejo ? active : ''">Av. Cesar Vallejo</a></li>
+                                                        <li><a th:href="${@helper.getPageInfo('restauracion/villa-la-achirana')}" th:classappend="${ subPage } == villa-la-achirana ? active : ''">Villa la Achirana</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+											<div class="nextend-item">
+												<div class="nextend-nav">
+													<ul>
+														<li class="header">
+															<a href="javascript:void(0)">
+																Institución
+																<svg  width="12px" height="12px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 444.815 444.815" style="enable-background:new 0 0 444.815 444.815;" xml:space="preserve">
+																	<path fill="#333333" d="M421.976,196.712L236.111,10.848C228.884,3.615,220.219,0,210.131,0c-9.9,0-18.464,3.615-25.697,10.848L163.023,32.26
+																		c-7.234,6.853-10.85,15.418-10.85,25.697c0,10.277,3.616,18.842,10.85,25.697l83.653,83.937H45.677
+																		c-9.895,0-17.937,3.568-24.123,10.707s-9.279,15.752-9.279,25.837v36.546c0,10.088,3.094,18.698,9.279,25.837
+																		s14.228,10.704,24.123,10.704h200.995L163.02,360.88c-7.234,7.228-10.85,15.89-10.85,25.981c0,10.089,3.616,18.75,10.85,25.978
+																		l21.411,21.412c7.426,7.043,15.99,10.564,25.697,10.564c9.899,0,18.562-3.521,25.981-10.564l185.864-185.864
+																		c7.043-7.043,10.567-15.701,10.567-25.981C432.54,211.939,429.016,203.37,421.976,196.712z"/>
+																</svg>
+															</a>
+														</li>
+														<li><a th:href="${@helper.getPageInfo('restauracion/casa-de-la-juventud')}" th:classappend="${ subPage } == casa-de-la-juventud ? active : ''">Casa De La Juventud</a></li>
+														<li><a th:href="${@helper.getPageInfo('restauracion/casa-de-la-mujer')}" th:classappend="${ subPage } == casa-de-la-mujer ? active : ''">Casa De La Mujer</a></li>
+														<li><a th:href="${@helper.getPageInfo('restauracion/municipalidad')}" th:classappend="${ subPage } == municipalidad ? active : ''">Municipalidad</a></li>
+													</ul>
+												</div>
+											</div>
+											
+										</div>
+                                    </div>
+                                    <div class="col-md-9" th:switch="${ subPage }">
+                                    	<th:block th:case="''">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/home')}"></th:block>
+                                    	</th:block>
+                                        
+                                        <!-- Vivero -->
+                                    	<th:block th:case="'vivero'">
+                                            <th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/vivero')}"></th:block>
+                                        </th:block>
+                                        
+                                    	<!-- Parques -->
+                                    	<th:block th:case="'asesor-1'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/asesor-1')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'parodi'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/parodi')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'parque-achirana'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/parque-achirana')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'portales-1'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/portales-1')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'vinas-6'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/vinas-6')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'perales-1-y-2'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/perales-1-y-2')}"></th:block>
+                                    	</th:block>
+                                        
+                                       
+                                    	<!-- Avenidas -->
+                                    	<th:block th:case="'av-eucalipto'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/av-eucalipto')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'av-huacanray'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/av-huacanray')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'av-cascanueces'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/av-cascanueces')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'av-colectora'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/av-colectora')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'av-santiago-de-chuco'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/av-santiago-de-chuco')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'av-chancas'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/av-chancas')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'av-ruisenores-y-metropolitana'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/av-ruisenores-y-metropolitana')}"></th:block>
+                                    	</th:block>
+                                    	
+                                    	<th:block th:case="'puente-perales'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/puente-perales')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'ovalo-de-santa-anita'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/ovalo-de-santa-anita')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'boulevard-de-santa-anita'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/boulevard-de-santa-anita')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'av-cesar-vallejo'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/av-cesar-vallejo')}"></th:block>
+                                    	</th:block>
+                                    	<th:block th:case="'villa-la-achirana'">
+                                    		<th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/villa-la-achirana')}"></th:block>
+                                        </th:block>
+                                        
+                                         <!-- Institución -->
+                                    	<th:block th:case="'casa-de-la-juventud'">
+                                                <th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/casa-de-la-juventud')}"></th:block>
+                                            </th:block>
+                                            <th:block th:case="'casa-de-la-mujer'">
+                                                <th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/casa-de-la-mujer')}"></th:block>
+                                            </th:block>
+                                            <th:block th:case="'municipalidad'">
+                                                <th:block th:replace="${@helper.vistaWeb('improvements/restoration/fragment/municipalidad')}"></th:block>
+                                            </th:block>
+                                    	
+                                    	
+                                    	
+                                    </div>
+                               	</div>
+	                           
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

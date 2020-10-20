@@ -1,0 +1,104 @@
+<ul class="nav navbar-nav" th:fragment="mifragmento">
+	<li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" th:classappend="${menu.module} == municipio ? active : ''" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Municipio <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a th:href="${@helper.getPageInfo('mensaje-de-alcalde')}" th:classappend="${menu.section} == mensaje-de-alcalde ? active : ''">Mensaje</a></li>
+            <li><a th:href="${@helper.getPageInfo('concejo-municipal')}" th:classappend="${menu.section} == concejo-municipal ? active : ''">Concejo municipal</a></li>
+            <li><a th:href="${@helper.getPageInfo('funcionarios')}" th:classappend="${menu.section} == funcionarios ? active : ''">Funcionarios</a></li>
+            <li><a th:href="${@helper.getPageInfo('organigrama')}" th:classappend="${menu.section} == organigrama ? active : ''">Organigrama</a></li>
+            <li><a th:href="${@helper.getPageInfo('comisiones')}" th:classappend="${menu.section} == comisiones ? active : ''">Comisiones</a></li>
+            <li><a th:href="${@helper.getPageInfo('marco-legal')}" th:classappend="${menu.section} == marco-legal ? active : ''">Marco Legal</a></li>
+            <li><a th:href="${@helper.getPageInfo('instalaciones')}" th:classappend="${menu.section} == instalaciones ? active : ''">Instalaciones</a></li>
+			<!-- <li><a th:href="${@helper.getURL('noticias')}" th:classappend="${menu.section} == noticias ? active : ''">Noticias</a></li>-->
+			<!-- <li><a th:href="${@helper.getURL('eventos')}" th:classappend="${menu.section} == eventos ? active : ''">Eventos</a></li>-->
+		</ul>
+	</li>
+	<li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" th:classappend="${menu.module} == servicios ? active : ''" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servicios <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+            <li><a th:href="${@helper.getPageInfo('seguridad-ciudadana')}" th:classappend="${menu.section} == seguridad-ciudadana ? active : ''">Seguridad Ciudadana</a></li>
+			<li><a th:href="${@helper.getPageInfo('centro-cultural')}" th:classappend="${menu.section} == centro-cultural ? active : ''">Centro Cultural</a></li>
+			<li><a th:href="${@helper.getPageInfo('centro-de-desarrollo-para-la-mujer')}" th:classappend="${menu.section} == centro-de-desarrollo-para-la-mujer ? active : ''">Centro de Desarrollo para la Mujer</a></li>
+			<li><a th:href="${@helper.getPageInfo('centro-integral-de-atencion-al-adulto-mayor-ciam')}" th:classappend="${menu.section} == centro-integral-de-atencion-al-adulto-mayor-ciam ? active : ''">Centro Integral de Atenci&oacute;n al Adulto Mayor - CIAM</a></li>
+			<!--<li><a th:href="${@helper.getPageInfo('clinica-municipal')}" th:classappend="${menu.section} == clinica-municipal ? active : ''">Cl&iacute;nica Municipal</a></li>-->
+			<li><a th:href="${@helper.getPageInfo('demuna')}" th:classappend="${menu.section} == demuna ? active : ''">Demuna</a></li>
+			<li><a th:href="${@helper.getPageInfo('guarderia-municipal')}" th:classappend="${menu.section} == guarderia-municipal ? active : ''">Guarder&iacute;a Municipal</a></li>
+			<!--<li><a th:href="${@helper.getPageInfo('resultados-de-olimpiadas')}" th:classappend="${menu.section} == resultados-de-olimpiadas ? active : ''">Resultados de Olimpiadas</a></li>-->
+			
+			<li><a th:href="${@helper.getPageInfo('omaped')}" th:classappend="${menu.section} == omaped ? active : ''">OMAPED</a></li>
+			<li><a th:href="${@helper.getPageInfo('recoleccion-de-recursos-solidos')}" th:classappend="${menu.section} == recoleccion-de-recursos-solidos ? active : ''">Recolecci&oacute;n de RR.SS.</a></li>
+			<li><a href="https://pagosenlinea.munisantanita.gob.pe/pagosenlinea/login.xhtml" target="_blank">Pagos En Línea</a></li>
+			
+			<!--<li><a th:href="${@helper.getPageInfo('servicios-publicos')}" th:classappend="${menu.section} == servicios-publicos ? active : ''">Servicios P&uacute;blicos</a></li>-->
+		</ul>
+	</li>
+	<li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" th:classappend="${menu.module} == tramites ? active : ''" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tr&aacute;mites <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a th:href="${@helper.getPageInfo('obras-privadas')}" th:classappend="${menu.section} == obras-privadas ? active : ''">Obras Pr&iacute;vadas</a></li>
+			<li><a th:href="${@helper.getPageInfo('defensa-civil')}" th:classappend="${menu.section} == defensa-civil ? active : ''">Defensa Civil</a></li>
+			<!-- <li><a th:href="${@helper.getPageInfo('transporte')}" th:classappend="${menu.section} == transporte ? active : ''">Transporte</a></li>-->
+			<li><a th:href="${@helper.getPageInfo('catastro')}" th:classappend="${menu.section} == catastro ? active : ''">Catastro</a></li>
+			<li><a th:href="${@helper.getPageInfo('administracion-tributaria')}" th:classappend="${menu.section} == administracion-tributaria ? active : ''">Administraci&oacute;n Tributaria</a></li>
+			<li><a th:href="${@helper.getPageInfo('fiscalizacion')}" th:classappend="${menu.section} == fiscalizacion ? active : ''">Fiscalizaci&oacute;n</a></li>
+			<li><a th:href="${@helper.getPageInfo('licencias')}" th:classappend="${menu.section} == licencias ? active : ''">Licencias de funcionamiento</a></li>
+            <li><a th:href="${@helper.getPageInfo('divorcio')}" th:classappend="${menu.section} == divorcio ? active : ''">Divorcio</a></li>
+            <li><a th:href="${@helper.getPageInfo('matrimonio-civil')}" th:classappend="${menu.section} == matrimonio-civil ? active : ''">Matrimonio Civil</a></li>
+            <li><a href="https://www.munisantanita.gob.pe/data/web/pdf/resoluciones/2019/RESOLUCION-ALCALDIA/SG/00282-5dfa8f1c1c43u.pdf">T.U.S.N.E</a></li>
+		</ul>
+	</li>
+	<li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" th:classappend="${menu.module} == turismo ? active : ''" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Turismo <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a th:href="${@helper.getPageInfo('lugares-turisticos')}" th:classappend="${menu.section} == lugares-turisticos ? active : ''">Lugares Tur&iacute;sticos</a></li>
+			<li><a th:href="${@helper.getPageInfo('ubicacion')}" th:classappend="${menu.section} == ubicacion ? active : ''">Ubicaci&oacute;n</a></li>
+		</ul>
+	</li>
+	<li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" th:classappend="${menu.module} == distrito ? active : ''" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Distrito <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a th:href="${@helper.getPageInfo('historia-de-santa-anita')}" th:classappend="${menu.section} == historia-de-santa-anita ? active : ''">Historia</a></li>
+			<li><a th:href="${@helper.getPageInfo('geografia-de-santa-anita')}" th:classappend="${menu.section} == geografia-de-santa-anita ? active : ''">Geograf&iacute;a</a></li>
+			<li><a th:href="${@helper.getPageInfo('ubicacion-de-la-municipalidad-de-santa-anita')}" th:classappend="${menu.section} == ubicacion-de-la-municipalidad-de-santa-anita ? active : ''">Mapa Urbano</a></li>
+			<li><a th:href="${@helper.getPageInfo('ley-de-creacion')}" th:classappend="${menu.section} == ley-de-creacion ? active : ''">Ley de Creaci&oacute;n</a></li>
+			<li><a th:href="${@helper.getPageInfo('escudo-digital-municipalidad-de-santa-anita')}" th:classappend="${menu.section} == escudo-digital-municipalidad-de-santa-anita ? active : ''">Escudo Distrital</a></li>
+		</ul>
+	</li>
+	<!--<li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" th:classappend="${menu.module} == obras ? active : ''" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Obras <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a th:href="${@helper.getPageInfo('entregadas')}" th:classappend="${menu.section} == entregadas ? active : ''">Entregadas</a></li>
+			<li><a th:href="${@helper.getPageInfo('en-curso')}" th:classappend="${menu.section} == en-curso ? active : ''">En curso</a></li>
+			<li><a th:href="${@helper.getPageInfo('proyectos')}" th:classappend="${menu.section} == proyectos ? active : ''">Proyectos</a></li>
+		</ul>
+	</li>-->
+	
+	<li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" th:classappend="${menu.module} == mejoras ? active : ''" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mejoras <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a th:href="${@helper.getPageInfo('restauracion/vivero')}" th:classappend="${menu.section} == restauracion ? active : ''">Restauración</a></li>
+		</ul>
+	</li>
+	
+	<li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" th:classappend="${menu.module} == informacion ? active : ''" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Informaci&oacute;n <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a th:href="${@helper.getURL('disposiciones')}" th:classappend="${menu.section} == disposiciones ? active : ''">Disposiciones</a></li>
+			<li><a th:href="${@helper.getPageInfo('directivas')}" th:classappend="${menu.section} == directivas ? active : ''">Directivas</a></li>
+			<li><a th:href="${@helper.getPageInfo('informacion-adicional')}" th:classappend="${menu.section} == informacion-adicional ? active : ''">Informaci&oacute;n Adicional</a></li>
+
+			<li><a th:href="${@helper.getPageInfo('acceso-a-la-informacion')}" th:classappend="${menu.section} == acceso-a-la-informacion ? active : ''">Acceso a la Informaci&oacute;n</a></li>
+			<!--<li><a th:href="${@helper.getPageInfo('proceso-de-cambio-de-zonificacion')}" th:classappend="${menu.section} == proceso-de-cambio-de-zonificacion ? active : ''">Proceso de Cambio de Zonificaci&oacute;n</a></li>-->
+			<!--<li><a th:href="${@helper.getPageInfo('mejoras-implementadas')}" th:classappend="${menu.section} == mejoras-implementadas ? active : ''">Mejoras Implementadas</a></li>-->
+			<li><a th:href="${@helper.getPageInfo('convocatoria-cas')}" th:classappend="${menu.section} == convocatoria-cas ? active : ''">Convocatoria  C.A.S.</a></li>
+            <li><a th:href="${@helper.getPageInfo('seguridad-ciudadana')}" th:classappend="${menu.section} == seguridad-ciudadana ? active : ''">Seguridad Ciudadana</a></li>
+            <li><a th:href="${@helper.getPageInfo('presupuesto-participativo')}" th:classappend="${menu.section} == presupuesto-participativo ? active : ''">Presupuesto Participativo</a></li>
+            
+			
+			<li><a th:href="${@helper.getPageInfo('tupa')}" th:classappend="${menu.section} == tupa ? active : ''">T.U.P.A.</a></li>
+			<li><a th:href="${@helper.getPageInfo('transparencia')}" th:classappend="${menu.section} == transparencia ? active : ''">Transparencia</a></li>
+
+			<li><a th:href="${@helper.getPageInfo('telefonos')}" th:classappend="${menu.section} == telefonos ? active : ''">Teléfonos</a></li>
+			<li><a th:href="${@helper.getPageInfo('ubicacion-de-santa-anita')}" th:classappend="${menu.section} == ubicacion-de-santa-anita ? active : ''">Ubicación</a></li>
+			<li><a th:href="${@helper.getPageInfo('proceso-de-elecciones')}" th:classappend="${menu.section} == proceso-de-elecciones ? active : ''">Proceso de elecciones</a></li>
+			
+		</ul>
+	</li>
+	<li>
+		<a href="http://www.munisantanita.gob.pe/info/portal-de-transparencia">
+			<img th:src="${@helper.assetsImg('logo-portal-transparencia.png')}" style="width: 90px;"/>
+		</a>
+	</li>
+</ul>

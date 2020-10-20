@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+        <style>
+            .panel-heading {
+                padding: 10px 15px !important;
+            }
+            .btn-tags span {
+            	text-transform: capitalize;
+            }
+
+            .title-empty,
+            .text-empty{
+                display: block;
+                font-family: 'Montserrat', sans-serif;
+                position: relative;
+            }
+            .title-empty{
+            	
+			    font-size: 16px;
+			    letter-spacing: 3px;
+			    padding-left: 6px;
+			    vertical-align: middle;
+			    
+			    font-weight: 200;
+			    margin: 0px;
+                margin-bottom: 15px;
+			    color: #211b19;
+			    text-transform: uppercase;
+            }
+            .text-empty{
+                font-size: 14px;
+            }
+            .content-select{
+                margin-bottom: 15px;
+            }
+            .select-width{
+                width: 130px;
+                display: inline-block;
+            }
+            	
+            @media (max-width: 406px)
+			{
+				.select-width{
+	                width: 86px;
+	            }
+			}
+			.pl-0{
+				
+			}
+        </style>
+        <script type="text/javascript">
+        	jQuery(document).ready(function($) {
+        		
+        		$('.btn-tags.area').find('.value-t').text($('select#area option:selected').text());
+        		$('.btn-tags.tipo').find('.value-t').text($('select#tipo option:selected').text());
+        		$('.btn-tags.electronico').find('.value-t').text($('select#chk-electronico option:selected').text());
+
+        		$('.btn-tags.area').find('.key-t').text('Área');
+        		$('.btn-tags.electronico').find('.key-t').text('Electrónico');
+        		$('.btn-tags.anio').find('.key-t').text('Año');
+        		
+        		
+        		$('.btn-tags.palabra').find('.value-t').text(  $('.btn-tags.palabra').find('.value-t').text().replace('%20',' ') );
+        		
+        		$('.btn-download-pdf').click(function(event) {
+        			
+        			event.preventDefault(); 
+        		
+        			const link = document.createElement('a');
+                    link.href = event.target.href;
+                    link.download = event.target.href.split("/").pop();
+                    link.click();
+                    
+        		});
+        		
+        		$('.btn-tags').click(function(event) {
+        			event.preventDefault();
+        			
+        			var t = $(this);
+        			var tag = t.attr('data-key') + '=' + t.attr('data-value');
+        			var url = ""; 
+        			var cadena = event.target.baseURI;
+                    //console.log("cadena", cadena);
+                    var indices = [];
+
+                    var countIndex = 0;
+
+                    /*var param = ["tipo", "area", "numero", "anio", "palabra", "electronico"];
+                    if(cadena.indexOf("orderby")) countIndex++;
+                    if(cadena.indexOf("orden")) countIndex++;*/
+                
+        			for(var i = 0; i < cadena.length; i++) if (cadena[i].toLowerCase() === "&") indices.push(i);
+                    
+        			if(indices.length >= 1) url = event.target.baseURI.replace("&"+tag, '').replace(tag+"&", '').replace(tag, '');
+        			else url = event.target.baseURI.replace("?"+tag, '');
+        			//console.log("url", url);
+        			window.location = url;
+        			
+        		});
+        		
+        		$('.btn-filter').click(function(event) {
+        			location();
+        		});
+
+                $('.select-change').on('change', function() {
+                    location();
+                });
+
+                function location(){
+                    var slcTipoDoc = $("#tipo").val();
+        			var area = $("#area").val();
+        			var slcAnio = $("#slc-anio").val();
+        			var inputNumero = $("#input-numero").val();
+        			var inputPalabra = $("#input-palabra").val();
+        			var chkElectronico = $('#chk-electronico').val();
+        			var pathQuery = "";
+        			
+        			if(slcTipoDoc.length > 0)	pathQuery += "tipo=" + slcTipoDoc + "&";
+        			if(area != "")				pathQuery += "area=" + area + "&";
+        			if(inputNumero != "")		pathQuery += "numero=" + inputNumero + "&";
+        			if(slcAnio.length > 0)		pathQuery += "anio=" + slcAnio + "&";
+        			if(inputPalabra != "")		pathQuery += "palabra=" + inputPalabra + "&";
+                    if(chkElectronico != '')	pathQuery += "electronico="+chkElectronico+"&";
+                    
+                    if($("#categoria").length > 0 && $("#orden").length > 0){
+                        pathQuery += (pathQuery.length > 0) ? "orderby=" + $("#categoria").val() + "&orden=" + $("#orden").val() + "&" : "";
+                    }
+        			
+                    var url = BASE_URL + "disposiciones?" + pathQuery;
+                    //if( pathQuery != "") 
+        			window.location = url.substr(0, url.length - 1);
+                }
+
+                /*function removeParam(key, sourceURL) {
+                    var rtn = sourceURL.split("?")[0],
+                        param,
+                        params_arr = [],
+                        queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
+                    if (queryString !== "") {
+                        params_arr = queryString.split("&");
+                        for (var i = params_arr.length - 1; i >= 0; i -= 1) {
+                            param = params_arr[i].split("=")[0];
+                            if (param === key) {
+                                params_arr.splice(i, 1);
+                            }
+                        }
+                        rtn = rtn + "?" + params_arr.join("&");
+                    }
+                    return rtn;
+                }*/
+        	});
+        </script>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		<div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+						
+                        <div class="col-md-3" style="border-right: 1px solid hsl(0, 0%, 90%);">
+                            <div class="well well-sm transparent border-none box-shadow-none">
+                            		
+	                                <div class="form-group">
+	                                    <label>Tipo de documento</label>
+	                                    <select id="tipo" class="form-control form-select" name="tipo">
+	                                    	<option value="">Seleccionar</option>
+	                                    	<option th:each=" type : ${ type } " th:value=" ${ type.id } " th:text=" ${ type.nombre } " th:selected=" ${ type.id.toString() == #httpServletRequest.getParameter('tipo') } ">seleccion</option>
+	                                    </select>
+	                                </div>
+	                                <div class="form-group">
+	                                    <label>Area</label>
+	                                    <select id="area" class="form-control form-select" name="area">
+	                                    	<option value="">Seleccionar</option>
+	                                    	<option th:each=" area : ${ area } " th:value=" ${ area.id } " th:text=" ${ area.nombre } " th:selected=" ${ area.id.toString() == #httpServletRequest.getParameter('area') } ">seleccion</option>
+	                                    </select>
+	                                </div>
+	                                <div class="form-group">
+	                                    <label>Año</label>
+	                                    
+	                                    <select id="slc-anio" class="form-control form-select" name="anio" aria-invalid="false">
+                                            <option th:each="anio: ${# numbers.sequence( #dates.year(#dates.createNow()), 2008 )}" th:value="${ anio }" th:text="${ anio }" th:selected="${anio.toString() == #httpServletRequest.getParameter('anio') }"></option>
+                                        </select>
+	                                </div>
+	                                <div class="form-group">
+	                                    <label>Número</label>
+	                                    <input type="number" id="input-numero" class="form-control form-input" name="numero" th:value=" ${ #httpServletRequest.getParameter('numero') } " placeholder="Ingrese número" />
+	                                </div>
+	                                <div class="form-group">
+	                                    <label>Texto</label>
+	                                    <input type="text" id="input-palabra" class="form-control form-input" name="palabra" th:value=" ${ #httpServletRequest.getParameter('palabra') } " placeholder="Ingrese palabra a buscar" />
+	                                </div>
+	                                <div class="form-group">
+	                                    <div class="custom-control custom-checkbox">
+										    <label>¿Electronico?</label>
+										    <select id="chk-electronico" class="form-control form-select" name="electronico">
+		                                    	<option value="">Seleccionar</option>
+		                                    	<option value="1" th:selected=" ${ '1' == #httpServletRequest.getParameter('electronico') } ">Si</option>
+		                                    	<option value="0" th:selected=" ${ '0' == #httpServletRequest.getParameter('electronico') } ">No</option>
+		                                    </select>
+										</div>
+	                                </div>
+	                                <br/>
+	                                <div class="form-group">
+	                                    <button class="btn btn-primary btn-block btn-filter"><span class="fa fa-filter"></span> Filtrar</button>
+	                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div id="selected-filters"  th:if=" ${tags != null} ">
+                                        <div class="content-select text-right">
+                                        	<label class="mr-10">Ordenar por: </label>
+                                            <select id="categoria" name="categoria" class="form-control form-select select-width mr-10 select-change">
+                                            	<option value="nro_resolucion" th:selected=" ${ 'nro_resolucion' == #httpServletRequest.getParameter('orderby') } ">Número</option>
+                                                <option value="anio" th:selected=" ${ 'anio' == #httpServletRequest.getParameter('orderby') } ">Año</option>
+                                            </select>
+                                            <select id="orden" name="orden" class="form-control form-select select-width mr-10 select-change">
+                                                <option value="desc" th:selected=" ${ 'desc' == #httpServletRequest.getParameter('orden') } ">Descendente</option>
+                                                <option value="asc" th:selected=" ${ 'asc' == #httpServletRequest.getParameter('orden') } ">Ascendente</option>
+                                            </select>
+                                        </div>
+                                    	<p class="total-result"><span class="total-number" th:text=" ${ totalResultados } "></span> resultados</p>
+                                    	<div class="selected-filters-wrapper" >
+                                    		<a th:each=" i : ${ tags } "   th:class="${'btn btn-xs btn-default wrapper btn-tags ' + i.key } " th:data-value=" ${ i.value } " th:data-key=" ${ i.key } ">
+                                    			<span class="key-t" th:text=" ${ i.key } "></span>: <span class="value-t" th:text=" ${ i.value } "></span>
+                                    			<span class="fa fa-times ml-7"></span>
+                                    		</a>
+                                    		
+                                    		<a class="clear" th:href=" ${@helper.getURL('disposiciones')} ">Limpiar todo</a>
+                                    	</div>
+                                    </div>
+                
+                                    <div class="">
+
+											<th:block th:if="${ datos != null }" th:each=" d : ${ datos } ">
+	                                            <div class="row">
+	                                               <div class="col-md-12 p0">
+	                                               		 <div class="col-md-10 col-xs-10 result-left">
+		                                                    <div class="row">
+		                                                        <div class="col-md-1 col-xs-1 result-img"><img class="img-responsive center-block" th:src=" ${ @helper.assets('images/pdf.png') } "></div>
+		                                                        <div class="col-md-11 col-xs-11 result-content">
+		                                                            <h2 th:text=" ${ d.detalle } "></h2>
+		                                                            <p> <span th:text=" ${ d.tipo_nombre } "></span> | <span class="badge badge-light"  th:text=" ${ d.anio } "></span></p>
+		                                                            <p style="text-align: justify;"><i th:text=" ${ d.sumilla } "></i></p>
+		                                                        </div>
+		                                                    </div>
+		                                                </div>
+		                                                <div class="col-md-2 col-xs-2 result-right">
+		                                                    <a th:href=" ${ @helper.getServerApiPDF( d.anio + '/' + d.archivo ) } " class="btn btn-light btn-block" target="_blank"><span class="fa fa-globe"></span> Abrir</a>
+		                                                    <a th:href=" ${ @helper.getServerApiPDF( d.anio + '/' + d.archivo ) } " class="btn btn-success btn-block btn-download-pdf"  rel="button" download="mey.pdf"><span class="fa fa-download"></span> Descargar</a>
+		                                                </div>
+	                                               </div>
+	                                            </div>
+	                                            <hr/>
+	                                        </th:block>
+	                                        <th:block th:unless="${ datos != null }">
+	                                         	<div class="content-text-empty">
+                                                    <div>
+                                                    	<span class="title-empty text-center">NORMAS Y DOCUMENTOS EMITIDOS</span>     
+                                                    	<span class="text-empty text-center">Por favor, seleccione los filtros para realizar la búsqueda</span>
+                                                    </div>
+                                                </div>
+	                                         </th:block>
+                                            
+                                        <div th:replace="web/fragments/pagination"></div>
+                                    </div>
+                                </div>
+                
+                            </div>
+                        </div>
+
+                     </div>
+                 </div>
+             </section>
+		</div>
+	</body>
+</html>

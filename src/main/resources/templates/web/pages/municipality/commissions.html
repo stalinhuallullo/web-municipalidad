@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}" th:with="modulo='usuarios',submodulo='roles'">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+	
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+         					<div class="local-brands">
+								<div class="title-style-1">
+								  <h3 class="stitle text-center">Comision de Regidores - Municipalidad de Santa Anita</h3>
+								</div>
+							</div>
+         				</div>
+				              
+						
+						<ul class="lb-ser-box  lb-ser-box-column row">
+						   <li class="col-md-6 col-sm-6">
+						   	<div class="col-md-3">
+						   		<span class="lb-icon"><img th:src="${@helper.assetsImg('local-icon1.png')}" alt=""></span>
+						   	</div> 
+						   	<div class="col-md-9">
+						    	<h6>Comisión de obras y desarrollo urbano</h6>
+						    	<ul class="checklist">
+									<li><i class="fas fa-check"></i> Reg. CARLOS ANTONIO TORRES CÁRDENAS</li>
+									<li><i class="fas fa-check"></i> Reg. JUAN CARLOS URRUTIA DE LA CRUZ</li>
+									<li><i class="fas fa-check"></i> Reg. NICOLÁS CUBAS TAPIA</li>
+								</ul>
+						   	</div>
+						   </li>
+						   
+						   <li class="col-md-6 col-sm-6">
+						   	<div class="col-md-3">
+						   		<span class="lb-icon"><img th:src="${@helper.assetsImg('local-icon2.png')}" alt=""></span>
+						   	</div> 
+						   	<div class="col-md-9">
+						    	<h6>Comisión de seguridad ciudadana</h6>
+						    	<ul class="checklist">
+									<li><i class="fas fa-check"></i> Reg. JUAN CARLOS URRUTIA DE LA CRUZ</li>
+									<li><i class="fas fa-check"></i> Reg. HAYDEE IRMA HILARES MADERA</li>
+									<li><i class="fas fa-check"></i> Reg. ROBERTO NELSON RAMOS NUÑEZ</li>
+								</ul>
+						   	</div>
+						   </li>
+						   
+						   <li class="col-md-6 col-sm-6">
+						   	<div class="col-md-3">
+						   		<span class="lb-icon"><img th:src="${@helper.assetsImg('local-icon3.png')}" alt=""></span>
+						   	</div> 
+						   	<div class="col-md-9">
+						    	<h6>Comisión de salud y desarrollo humano</h6>
+						    	<ul class="checklist">
+									<li><i class="fas fa-check"></i> Reg. HAYDEE IRMA HILARES MADERA</li>
+									<li><i class="fas fa-check"></i> Reg. CARLOS ANTONIO TORRES CÁRDENAS</li>
+									<li><i class="fas fa-check"></i> Reg. MANUEL EDGARDO MAMANI RODRÍGUEZ</li>
+								</ul>
+						   	</div>
+						   </li>
+						   
+						   <li class="col-md-6 col-sm-6">
+						   	<div class="col-md-3">
+						   		<span class="lb-icon"><img th:src="${@helper.assetsImg('local-icon4.png')}" alt=""></span>
+						   	</div> 
+						   	<div class="col-md-9">
+						    	<h6>Comisión de servicios públicos y saniamiento ambiental</h6>
+						    	<ul class="checklist">
+									<li><i class="fas fa-check"></i> Reg. NICOLÁS CUBAS TAPIA</li>
+									<li><i class="fas fa-check"></i> Reg. MILER CÉSAR CARBAJAL VILLAGÓMEZ</li>
+									<li><i class="fas fa-check"></i> Reg. ZACARIAS MEDINA HUARIPUMA</li>
+								</ul>
+						   	</div>
+						   </li>
+						   
+						   <li class="col-md-6 col-sm-6">
+						   	<div class="col-md-3">
+						   		<span class="lb-icon"><img th:src="${@helper.assetsImg('local-icon5.png')}" alt=""></span>
+						   	</div> 
+						   	<div class="col-md-9">
+						    	<h6>Comisión de rentas y desarrollo ecónomico</h6>
+						    	<ul class="checklist">
+									<li><i class="fas fa-check"></i> Reg. MILER CÉSAR CARBAJAL VILLAGÓMEZ</li>
+									<li><i class="fas fa-check"></i> Reg. ELIAS MAURO SAICO CORONADO</li>
+									<li><i class="fas fa-check"></i> Reg. MANUEL EDGARDO MAMANI RODRÍGUEZ</li>
+								</ul>
+						   	</div>
+						   </li>
+						   
+						   <li class="col-md-6 col-sm-6">
+						   	<div class="col-md-3">
+						   		<span class="lb-icon"><img th:src="${@helper.assetsImg('local-icon6.png')}" alt=""></span>
+						   	</div> 
+						   	<div class="col-md-9">
+						    	<h6>Comisión de administración, planificación, presupuesto e informática</h6>
+						    	<ul class="checklist">
+									<li><i class="fas fa-check"></i> Reg. ELIAS MAURO SAICO CORONADO</li>
+									<li><i class="fas fa-check"></i> Reg. JUAN CARLOS URRUTIA DE LA CRUZ</li>
+									<li><i class="fas fa-check"></i> Reg. EDITH LUZ MUCHO MENDOZA</li>
+								</ul>
+						   	</div>
+						   </li>
+						   
+						   <li class="col-md-6 col-sm-6">
+						   	<div class="col-md-3">
+						   		<span class="lb-icon"><img th:src="${@helper.assetsImg('local-icon1.png')}" alt=""></span>
+						   	</div> 
+						   	<div class="col-md-9">
+						    	<h6>Comisión de asuntos legales</h6>
+						    	<ul class="checklist">
+									<li><i class="fas fa-check"></i> Reg. ROBERTO NELSON RAMOS NUÑEZ</li>
+									<li><i class="fas fa-check"></i> Reg. FILOMENO MIGUEL HUARANGA TOLEDO</li>
+									<li><i class="fas fa-check"></i> Reg. ZACARIAS MEDINA HUARIPUMA</li>
+								</ul>
+						   	</div>
+						   </li>
+						   
+						   <li class="col-md-6 col-sm-6">
+						   	<div class="col-md-3">
+						   		<span class="lb-icon"><img th:src="${@helper.assetsImg('local-icon2.png')}" alt=""></span>
+						   	</div> 
+						   	<div class="col-md-9">
+						    	<h6>Comisión de programa sociales</h6>
+						    	<ul class="checklist">
+									<li><i class="fas fa-check"></i> Reg. FILOMENO MIGUEL HUARANGA TOLEDO</li>
+									<li><i class="fas fa-check"></i> Reg. CARLOS ANTONIO TORRES CÁRDENAS</li>
+									<li><i class="fas fa-check"></i> Reg. EDITH LUZ MUCHO MENDOZA</li>
+								</ul>
+						   	</div>
+						   </li>
+						</ul>
+						
+						<div class="col-md-12">Conforme al Acuerdo de Concejo N000002 -2019/MDSA de fecha 28 Enero del 2019.</div>
+				            
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+		<link rel="stylesheet" type="text/css" th:href="${@helper.assetsVendors('datatables/css/datatables.min.css')}"/>
+		<script type="text/javascript" th:src="${@helper.assetsVendors('datatables/jsc/datatables.min.js')}"></script>
+
+        <style>
+            .modal-header{
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: start;
+                align-items: flex-start;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                padding: 1rem 1rem;
+                border-bottom: 1px solid #dee2e6;
+                border-top-left-radius: calc(.3rem - 1px);
+                border-top-right-radius: calc(.3rem - 1px);
+            }
+            .w-100 {
+                width: 100%!important;
+            }
+            .modal-header .close {
+                padding: 1rem 1rem;
+            }
+            .table-info li a{
+                font-size: 13px;
+            }
+            .border-green th,
+            .border-green td{
+                border-bottom: 2px solid #00AD46 !important;
+            }
+        </style>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+			  
+			    $('.table thead tr').clone(true).appendTo( '.table thead' );
+			    $('.table thead tr:eq(1) th').each( function (i) {
+			    	if(i == 0 || i == 11) {
+                        var placelholder = "";
+                        if(i == 0)  placelholder = "Filtrar por Código";
+                        if(i == 11)  placelholder = "Filtrar por Estado";
+
+				        $(this).html( '<input type="text" style="width: 100%;" placeholder="'+ placelholder +'" />' );
+				 
+				        $( 'input', this ).on( 'keyup change', function () {
+				        	
+				            if ( table.column(i).search() !== this.value ) {
+				                table
+				                    .column(i)
+				                    .search( this.value )
+				                    .draw();
+				            }
+				        } );
+			        } 
+                    else $(this).html( '' );
+			    } );
+
+                var table = $('.table').DataTable( {
+			        orderCellsTop: true,
+			        fixedHeader: true,
+			        pageLength: 50,
+			        order: [
+				        [0, 'desc']
+				    ],
+			        language: { 
+			            "lengthMenu": "Mostrar _MENU_ entradas",
+			            "zeroRecords": "Sin resultados",
+			            "info": "Mostrando la página _PAGE_ de _PAGES_",
+			            "infoEmpty": "No hay registros disponibles",
+			            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+			            "search": "Buscar: ",
+			            paginate: {
+			                sFirst: "Primero",
+			                sLast: "Último",
+			                sNext: "Siguiente",
+			                sPrevious: "Anterior"
+			            }
+			        },
+			        
+			    } ).search('Vigente').draw();
+				//.draw(); 
+                
+
+                $(".btn-convocatoria").on('click', function() {
+                    $('#convocatoriaModal').modal('show');
+                } );
+                $(".btn-prontaConvocatoria2").on('click', function() {
+                    $('#convocatoria2Modal').modal('show');
+                } );
+                $(".btn-prontaConvocatoria3").on('click', function() {
+                    $('#convocatoria3Modal').modal('show');
+                } );
+                $(".btn-prontaConvocatoria4").on('click', function() {
+                    $('#convocatoria4Modal').modal('show');
+                } );
+                $(".btn-prontaConvocatoria5").on('click', function() {
+                    $('#convocatoria5Modal').modal('show');
+                } );
+
+
+                $(".btn-prontaConvocatoria6").on('click', function() {
+                    $('#convocatoria6Modal').modal('show');
+                } );
+
+                
+                //$(".btn-prontaConvocatoria7").on('click', function() {
+                    //$('#convocatoria7Modal').modal('show');
+                //});
+                
+                $(".btn-prontaConvocatoria8").on('click', function() {
+                    $('#convocatoria8Modal').modal('show');
+                } );
+
+                
+                
+                $(".btn-prontaConvocatoria").on('click', function() {
+                    $('#prontaConvocatoriaModal').modal('show');
+                } );
+                $(".btn-prontaConvocatoria2-aviso").on('click', function() {
+                    $('#prontaConvocatoria2Modal').modal('show');
+                } );
+
+
+                $(".btn-finalizadoConvocatoriaModal").on('click', function() {
+                    $('#finalizadoConvocatoriaModal').modal('show');
+                } );
+                
+                
+                
+			} );
+		</script>
+		<style>
+			table.dataTable tbody th, table.dataTable tbody td{
+				display: table-cell;
+				vertical-align: middle;
+			}
+			table.dataTable tbody th img, table.dataTable tbody td img {
+			    width: 20px;
+			    opacity: .5;
+			}
+		</style>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+                                <h6 class="title-info text-center" style="color: #00AD46;">Convocatorias de Personal CAS - Subgerencia de Recursos Humanos</h6>
+                                <br>
+                                <br>
+                                <br>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+										<div class="row col-md-12">
+											<div> <!--  class="table-responsive" -->
+												<table class="table" >
+													<thead>
+														<tr>
+															<th scope="col" width="50px">Código</th>
+												            <th scope="col">Descripción</th>
+												            <th scope="col">Área Solicitante</th>
+												            <th scope="col" width="40px">Bases</th>
+												            <th scope="col" width="40px">Postular</th>
+												            <th scope="col" width="40px">Postulantes Admitidos</th>
+												            <th scope="col" width="40px">Resultado de Evaluación Técnica</th>
+												            <th scope="col" width="40px">Resultado de Evaluación Curricular</th>
+												            <th scope="col" width="40px">Resultado de Entrevista Personal</th>
+												            <th scope="col" width="40px">Resultado Final del Proceso</th>
+												            <th scope="col" width="40px">Observaciones</th>
+												            <th scope="col" width="80px">Estado</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<th scope="row">031-2020</th>
+															<td>CONTRATACIÓN DE 20 FISCALIZADORES MUNICIPALES</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 10-16-2020 19.20.17.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary btn-prontaConvocatoria8">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Vigente</td>
+                                                        </tr>
+														<tr>
+															<th scope="row">030-2020</th>
+															<td>CONTRATACION DE 28 FISCALIZADORES MUNICIPALES</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/bases de 28 fiscalizadores.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary btn-finalizadoConvocatoriaModal">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 10-09-2020 23.29.53_1.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+                                                        </tr>
+														<tr>
+															<th scope="row">029-2020</th>
+															<td>CONTRATACION DE 65 FISCALIZADORES MUNICIPALES</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/BASE-CONTRATACION DE 65 FISCALIZADORES MUNICIPALES.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary btn-finalizadoConvocatoriaModal">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 10-07-2020 22.40.50.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+                                                        </tr>
+													
+													
+														<tr>
+															<th scope="row">028-2020</th>
+															<td>CONTRATACION DE 7 SUPERVISORES DE FISCALIZACION MUNICIPAL</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 10-02-2020 23.37.36.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary btn-finalizadoConvocatoriaModal">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 10-04-2020 17.27.16.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+                                                        </tr>
+														<tr>
+															<th scope="row">027-2020</th>
+															<td>CONTRATACION DE 119 FISCALIZADORES MUNICIPALES</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 10-02-2020 23.35.11.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary btn-finalizadoConvocatoriaModal">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 10-04-2020 17.50.33.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+                                                        </tr>
+														<tr>
+															<th scope="row">026-2020</th>
+															<td>CONTRATACION DE 20 SUPERVISORES DE FISCALIZACION MUNICIPAL</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/BASES DE 20 SUPERVISORES_.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary btn-finalizadoConvocatoriaModal">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 10-01-2020 15.45.42.pdf' ) } ">
+																<!--<a href="javascript:void(0);">-->
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+                                                        </tr>
+                                                        <tr>
+															<th scope="row">025-2020</th>
+															<td>CONTRATACION DE 200 FISCALIZADORES MUNICIPALES</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/BASES NUEVASSSS DE 200 FISCALIZADORES.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary btn-finalizadoConvocatoriaModal">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 10-01-2020 17.02.15.pdf' ) } ">
+																<!--<a href="javascript:void(0);">-->
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+                                                        </tr>
+                                                        <tr>
+															<th scope="row">024-2020</th>
+															<td>ESPECIALISTA TRIBUTARIO</td>
+															<td>Subgerencia de Registro, Control y Recaudación Tributaria</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/BASES DEL PROCESO CAS 024_ ESPECIALISTA TRIBUTARIO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><a th:href="${@helper.getURL('postulacion-cas/?codigo=024-2020&puesto=ESPECIALISTA TRIBUTARIO')}" target="_blank" class="btn btn-primary">Postular</a></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 10-02-2020 20.18.33.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/evaluacion tecnica.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/evaluacion curricular.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/entrevista_especialista tributario1.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/RESULTADO FINAL _especialista tributario1.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+                                                        </tr>
+                                                        <tr>
+															<th scope="row">023-2020</th>
+															<td>SUPERVISOR DE CAJA</td>
+															<td>Sub Gerencia de Tesorería</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/PROCESO CAS 23 SUPERVISOR DE CAJA.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><a th:href="${@helper.getURL('postulacion-cas/?codigo=023-2020&puesto=SUPERVISOR DE CAJA')}" target="_blank" class="btn btn-primary">Postular</a></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-24-2020 22.54.42.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-25-2020 16.50.55_1.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-25-2020 17.16.46.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-28-2020 17.22.59_1.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-28-2020 17.23.41_1.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+                                                        </tr>
+                                                        <tr>
+															<th scope="row">022-2020</th>
+															<td>SECRETARIO TÉCNICO DE LOS ÓRGANOS INSTRUCTORES DE PROCEDIMIENTOS DICIPLINARIOS</td>
+															<td>Sub Gerencia de Recursos Humanos</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/PROCESO CAS 22 SECRETARIO TECNICO PAD.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><a th:href="${@helper.getURL('postulacion-cas/?codigo=022-2020&puesto=SECRETARIO TÉCNICO DE LOS ÓRGANOS INSTRUCTORES DE PROCEDIMIENTOS DICIPLINARIOS')}" target="_blank" class="btn btn-primary">Postular</a></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-24-2020 23.10.39.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-25-2020 16.48.57_2.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-25-2020 16.50.55_3.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-28-2020 17.21.14_1.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-28-2020 17.21.14_2.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+                                                        </tr>
+                                                        <tr class="border-green">
+															<th scope="row">021-2020</th>
+															<td>ASISTENTE ADMINISTRATIVO</td>
+															<td>Gerencia de Obras y Desarrollo Urbano</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/PROCESO CAS 21 ASISTENTE ADMINISTRATIVO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><a th:href="${@helper.getURL('postulacion-cas/?codigo=021-2020&puesto=ASISTENTE ADMINISTRATIVO')}" target="_blank" class="btn btn-primary">Postular</a></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CAS_021_ASISTENTE _POSTULANTES ADMITIDOS.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-25-2020 16.48.57.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-25-2020 16.50.55_2.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-28-2020 17.34.06_1.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-28-2020 17.34.06_2.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+                                                        </tr>
+                                                        <tr>
+															<th scope="row">020-2020</th>
+															<td>ANALISTA TRIBUTARIO</td>
+															<td>Sub Gerencia de Registro, Control y Recaudación Tributaria</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/PROCESO CAS 20 ANALISTA TRIBUTARIO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary btn-prontaConvocatoria">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+                                                        </tr>
+                                                        <tr>
+															<th scope="row">019-2020</th>
+															<td>(01) RESPONSABLE DE LA DEFENSORIA MUNICIPAL DE LA NIÑA, NIÑO Y ADOLESCENTE</td>
+															<td>Subgerencia de Participación Ciudadana, Bienestar Social y DEMUNA</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 003-2020 - 01 RESPONSABLE.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+                                                        </tr>
+                                                        <tr>
+															<th scope="row">018-2020</th>
+															<td>(40) OPERARIO DE ÁREAS VERDES</td>
+															<td>Subgerencia de Limpieza Publica, Áreas Verdes y Medio Ambiente.</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 018-2020 - 40 OPERARIO DE AREAS VERDES.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+                                                        </tr>
+                                                        <tr>
+															<th scope="row">017-2020</th>
+															<td>(02) CHOFER DE VEHÍCULO MAYOR</td>
+															<td>Subgerencia de Limpieza Publica, Áreas Verdes y Medio Ambiente.</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 017-2020 - 02 CHOFER DE VEHICULO MAYOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+                                                        </tr>
+                                                        <tr>
+															<th scope="row">016-2020</th>
+															<td>(50) OPERARIO DE LIMPIEZA PUBLICA</td>
+															<td>Subgerencia de Limpieza Publica, Áreas Verdes y Medio Ambiente.</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 016-2020 - 50 OPERARIO DE BARRIDO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+                                                        </tr>
+                                                        <tr>
+															<th scope="row">015-2020</th>
+															<td>(06) CHOFER DE VEHÍCULO MAYOR - ÁREA DE FISCALIZACIÓN MUNICIPAL</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 015-2020 - 06  CHOFER FISCALIZADOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">014-2020</th>
+															<td>(02) COORDINADOR DE FISCALIZADORES MUNICIPALES</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 014-2020 - 02 COORDINADOR FISCALIZADOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">013-2020</th>
+															<td>(27) FISCALIZADOR MUNICIPAL</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 013-2020 - 27 FISCALIZADOR MUNICIPAL.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">012-2020</th>
+															<td>(05) CHOFER DE VEHÍCULO MAYOR – ÁREA DE TRANSPORTE</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 012-2020 - 05 CHOFER VEHICULO MAYO - TRANSPORTE.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary btn-prontaConvocatoria2">Postular</button></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/POSTULANTES ADMITIDOS_CAS12.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/EVALUACION CURRICULAR CAS-12-2020-5 CHOFERES.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/PROCESO CAS 012_RESULTADO DE LA ENTREVISTA.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/PROCESO CAS 012_ RESULTADOS FINALES.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<p style="color: #00AD46;">Nuevas bases</p>
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/cas 12_2020 choferes.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td>Finalizado</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">011-2020</th>
+															<td>(04) SUPERVISOR DE INSPECTORES MUNICIPALES DE TRANSPORTE</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 011-2020 - 04 SUPERVISOR DE INSPECTORES.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary btn-prontaConvocatoria3">Postular</button></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/PROCESO CAS 011_POSTULANTES ADMITIDOS.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>  
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-23-2020 20.42.51_2.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-25-2020 17.16.46_2.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-25-2020 18.51.56_1.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+                                                                <p style="color: #00AD46;">Nuevas bases</p>
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/BASES DEL PROCESO CAS 011_04 SUPERVIORES DE INSPECTORES MUNICIPALES DE TRANSPORTE.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+                                                            </td>
+															<td>Finalizado</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">010-2020</th>
+															<td>(35) INSPECTOR MUNICIPAL DE TRANSPORTE</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 010-2020 - 35 INSPECTORES MUNICIPALES DE TRANSPORTE.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary btn-prontaConvocatoria3">Postular</button></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/PROCESO CAS 10_POSTULANTES ADMITIDOS.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-23-2020 20.42.51.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-25-2020 18.51.56_3.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-25-2020 18.51.56_4.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+                                                                <p style="color: #00AD46;">Nuevas bases</p>
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/BASES DEL PROCESO CAS 010_35 INSPECTORES MUNICIPALES DE TRANSPORTE.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+                                                            </td>
+															<td>Finalizado</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">009-2020</th>
+															<td>(01) COORDINADOR DE CENTRAL DE VIDEO CÁMARA</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 009-2020 - 01 COORDINADOR DE CENTRAL DE VIDEO CAMARA .pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">008-2020</th>
+															<td>(34) OPERADOR DE VIDEOCÁMARA</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 008-2020 - 01 OPERADOR DE VIDEOCAMARA.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">007-2020</th>
+															<td>(01) COORDINADOR DE BRIGADA CANINA</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 007-2020 - 01 COORDINADOR BRIGADA CANINA.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">006-2020</th>
+															<td>(02) COORDINADOR DE SECTOR - ÁREA SERENAZGO</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 006-2020 - 02 COORDINADOR DE SECTOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">005-2020</th>
+															<td>(20) CHOFER DE VEHICULO MAYOR</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 005-2020 -20 CHOFER VEHICULO MAYOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">004-2020</th>
+															<td>(50) CHOFER DE VEHICULO MENOR</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 004-2020 -50 CHOFER VEHICULO MENOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">003-2020</th>
+															<td>(09) AGENTE DE SERENAZGO</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 003-2020 - 09 AGENTE DE SERENAZGO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary">Postular</button></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"></td>
+															<td>Suspendida</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">002-2020</th>
+															<td>(01) AUXILIAR COACTIVO</td>
+															<td>Subgerencia de Ejecutoria Coactiva</td>
+															<td class="text-center">
+                                                                <a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 002-2020 - 01 AUXILIAR COACTIVO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary btn-convocatoria">Postular</button></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/PROCESO CAS Nº 02-2020-MDSA.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/RESULTADO DE EVALUACION TECNICA_CAS 02.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('calendar.svg')}" width="36px"/></td>
+															<td class="text-center">
+                                                                <p style="color: #00AD46;">Nuevas bases</p>
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/PROCESO CAS 02 AUXILIAR COACTIVO FINAL.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+																<p style="color: #ad0000;">Desierto</p>
+                                                            </td>
+															<td>Concluidas</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">001-2020</th>
+															<td>(01) EJECUTOR COACTIVO</td>
+															<td>Subgerencia de Ejecutoria Coactiva</td>
+															<td class="text-center">
+                                                                <a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 001-2020 - 01 EJECUTOR COACTIVO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><button class="btn btn-primary btn-convocatoria">Postular</button></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/PROCESO CAS Nº 01-2020-MDSA.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/RESULTADO EVALUACION TECNICA_ CAS 01.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/RESULTADO EVALUACION CURRICULAR_CAS_01.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-18-2020 17.24.52.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CamScanner 09-18-2020 17.27.58_1.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+                                                                <p style="color: #00AD46;">Nuevas bases</p>
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/PROCESO CAS  01 EJECUTOR COACTIVO FINAL (3).pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+                                                            </td>
+															<td>Concluidas</td>
+														</tr>
+														<tr>
+															<th scope="row">001-2019</th>
+															<td>(50) Agente de serenazgo</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria-001-2019-50-agentesDeSerenazgo.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/resultadoEvaluacion-001-2019.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/resultadoFinal-001-2019.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">002-2019</th>
+															<td>(16) Chóferes de vehículo mayor</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria-002-2019-16-choferesVehiculoMayor.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/resultadoEvaluacion-002-2019.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/resultadoFinal-002-2019.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">003-2019</th>
+															<td>(02) Chóferes de vehículo menor</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria-003-2019-02-choferesVehiculoMenor.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/resultadoEvaluacion-003-2019.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/resultadoFinal-003-2019.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">004-2019</th>
+															<td>(37) Agente de serenazgo</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA-004-2019-37-AGENTE-DE-SERENAZGO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA-DE-RESULTADO-DE-EVALUCION-CURRICULAR-004-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 004-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/FEDEERRATAACTADERESULTADODEEVALUCIONCURRICULAR004-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">005-2019</th>
+															<td>(29) Chóferes de vehículo mayor</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA-005-2019-29-CHOFERES-VEHICULO-MAYOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA-DE-RESULTADO-DE-EVALUCION-CURRICULAR-005-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA-DE-RESULTADO-DE-RESULTADOS-FINALES-005-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/FEDEERRATASACTADERESULTADODEEVALUCIONCURRICULAR005-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">006-2019</th>
+															<td>(34) Chóferes de vehículo menor</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA-006-34-CHOFERES-VEHICULO-MENOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA-DE-RESULTADO-DE-EVALUCION-CURRICULAR-006-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA-DE-RESULTADO-DE-RESULTADOS-FINALES-006-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">007-2019</th>
+															<td>(01) Supervisor del personal de seguridad interna</td>
+															<td>Subgerencia de Logística</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 007-01-SUPERVISOR-DE-SEG-INTERNA12-09-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 007-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 007-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">008-2019</th>
+															<td>(01) Entrenador de fútbol en menores</td>
+															<td>Subgerencia de Educación, Cultura, Deporte, Juventud y Turismo</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 008-01-ENTRENADOR-DE-FUTBOL.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 008-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 008-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">009-2019</th>
+															<td>(01) Coordinador de programas alimentarios</td>
+															<td>Subgerencia de Salud y Programas Alimentarios</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 009 - 01 COORD PROGRAMAS ALIM.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 009-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 009-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">010-2019</th>
+															<td>(01) Coordinador de programas sociales</td>
+															<td>Subgerencia de Participación Ciudadana, Bienestar Social y Demuna</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 010 - 01 COORD PROGRAMAS SOCIALES.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 010-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 010-19-01.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">011-2019</th>
+															<td>(01) Coordinador administrativo</td>
+															<td>Subgerencia de Atención al Ciudadano y Gestión Documentaria</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 011 - 01 COORD ADMINISTRATIVO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 011-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 010-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">012-2019</th>
+															<td>(01) Especialista administrativo</td>
+															<td>Gerencia de Planeamiento y Presupuesto</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 012 - 01 ESPECILISTA ADMINISTRATIVO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 012-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 012-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">013-2019</th>
+															<td>(01) Responsable de desarrollo educativo</td>
+															<td>Subgerencia de Educación, Cultura, Deporte, Juventud y Turismo</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 013 - 01 RESP. DE DESARROLLO EDUCATIVO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 013-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 013-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">014-2019</th>
+															<td>(01) Coordinador de imagen institucional</td>
+															<td>Subgerencia de Relaciones Públicas e Imagen Institucional</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 014 - 01 COORDINADOR DE IMAGEN INST.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 014-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 014-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/FE DE ERRATAS - ACTA DE RESULTADO DE EVALUCION CURRICULAR 014-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">015-2019</th>
+															<td>(06) Agente de serenazgo</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 015 - 06 AGENTE DE SERENAZGO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td>En proceso</td>
+														</tr>
+														<tr>
+															<th scope="row">016-2019</th>
+															<td>(09) Chóferes vehículo mayor</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 016 - 09 CHOFERES VEHICULO MAYOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td>En proceso</td>
+														</tr>
+														<tr>
+															<th scope="row">017-2019</th>
+															<td>(08) Chóferes vehículo menor</td>
+															<td>Subgerencia de Serenazgo, Fiscalización y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 017 - 08 CHOFERES VEHICULO MENOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td class="text-center"><img th:src="${@helper.assetsImg('line.svg')}" width="24px" height="36px"/></td>
+															<td>En proceso</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+                                    </div>
+								</div>
+								
+	                        	
+								
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+
+         <!-- Modal -->
+         <div class="modal fade" id="prontaConvocatoriaModal" tabindex="-1" role="dialog" aria-labelledby="conditionsModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title w-100" id="exampleModalLongTitle">Comunicado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 2rem">
+                        <p>La convocatoria estará disponible según las bases y cronogramas establecidas respectivamente.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Continuar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="modal fade" id="prontaConvocatoria2Modal" tabindex="-1" role="dialog" aria-labelledby="conditionsModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title w-100" id="exampleModalLongTitle">Comunicado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 2rem">
+                        <p>Los resultados de la evaluación curricular, se publicarán el día 01 de octubre del presente año al medio día por esta página.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+        
+        <div class="modal fade" id="finalizadoConvocatoriaModal" tabindex="-1" role="dialog" aria-labelledby="conditionsModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title w-100" id="exampleModalLongTitle">Comunicado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 2rem">
+                        <p>El procesado de la convocatoria ha sido finalizado.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="modal fade" id="convocatoriaModal" tabindex="-1" role="dialog" aria-labelledby="conditionsModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title w-100" id="exampleModalLongTitle">Comunicado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 2rem">
+                        <h1 style="font-size: 13px; margin-bottom: 15px;">DESCARGAR ANEXOS</h1>
+                        <ul class="table-info">
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO.pdf' ) } " target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM</span></a></li>
+                        </ul>
+                        <br>
+                        <p style="margin: 0;">Fecha: 11 de setiembre 2020</p>
+                        <p>Horario de recepción: 08:00 am a 05:00 pm</p>
+                        <p>La presentación de los documentos será de forma digital únicamente en la fecha señalada, enviado al siguiente correo <a href="mailto:convocatoriascas@munisantanita.gob.pe">convocatoriascas@munisantanita.gob.pe</a> al momento de remitir el correo, Indicar en ASUNTO el número y puesto de convocatoria de su elección.</p>
+                        <p>Pasado la fecha y hora indicada, la postulación se entenderá como NO PRESENTADA</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="convocatoria2Modal" tabindex="-1" role="dialog" aria-labelledby="conditionsModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title w-100" id="exampleModalLongTitle">Comunicado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 2rem">
+                        <h1 style="font-size: 13px; margin-bottom: 15px;">DESCARGAR ANEXOS</h1>
+                        <ul class="table-info">
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO.pdf' ) } " target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM</span></a></li>
+                        </ul>
+                        <br>
+                        <p style="margin: 0;">Fecha: 21 de setiembre 2020</p>
+                        <p>Horario de recepción: 08:00 am a 05:00 pm</p>
+                        <p>La presentación de los documentos será de forma digital únicamente en la fecha señalada, enviado al siguiente correo <a href="mailto:convocatoriascas@munisantanita.gob.pe">convocatoriascas@munisantanita.gob.pe</a> al momento de remitir el correo, Indicar en ASUNTO el número y puesto de convocatoria de su elección.</p>
+                        <p>Pasado la fecha y hora indicada, la postulación se entenderá como NO PRESENTADA</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="convocatoria3Modal" tabindex="-1" role="dialog" aria-labelledby="conditionsModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title w-100" id="exampleModalLongTitle">Comunicado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 2rem">
+                        <h1 style="font-size: 13px; margin-bottom: 15px;">DESCARGAR ANEXOS</h1>
+                        <ul class="table-info">
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO.pdf' ) } " target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM</span></a></li>
+                        </ul>
+                        <br>
+                        <p style="margin: 0;">Fecha: 22 de setiembre 2020</p>
+                        <p>Horario de recepción: 08:00 am a 05:00 pm</p>
+                        <p>La presentación de los documentos será de forma digital únicamente en la fecha señalada, enviado al siguiente correo <a href="mailto:convocatoriascas@munisantanita.gob.pe">convocatoriascas@munisantanita.gob.pe</a> al momento de remitir el correo, Indicar en ASUNTO el número y puesto de convocatoria de su elección.</p>
+                        <p>Pasado la fecha y hora indicada, la postulación se entenderá como NO PRESENTADA</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="convocatoria4Modal" tabindex="-1" role="dialog" aria-labelledby="conditionsModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title w-100" id="exampleModalLongTitle">Comunicado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 2rem">
+                        <h1 style="font-size: 13px; margin-bottom: 15px;">DESCARGAR ANEXOS</h1>
+                        <ul class="table-info">
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO.pdf' ) } " target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM</span></a></li>
+                        </ul>
+                        <br>
+                        <p style="margin: 0;">Fecha: 30 de setiembre 2020</p>
+                        <p>Horario de recepción: 00:00 am a 08:00 pm</p>
+                        <p>la presentación de los documentos será de forma digital en la fecha señalada, enviando al siguiente correo electrónico: <a href="mailto:convocatoriascas@munisantanita.gob.pe">convocatoriascas@munisantanita.gob.pe</a>. AL momento de remitir al correo, indicar el ASUNTO , y el numero y puesto de convocatoria de su elección.</p>
+                        <p>Asimismo, también podrá postular presentando de manera física los documentos requeridos en las bases a la Sub Gerencia de Recursos Humanos de la MDSA. Indicando el ASUNTO, numero y puesto al que postula.</p>
+                        <p>Pasada la fecha y hora indicada, la postulación se entenderá como NO PRESENTADA</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="convocatoria5Modal" tabindex="-1" role="dialog" aria-labelledby="conditionsModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title w-100" id="exampleModalLongTitle">Comunicado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 2rem">
+                        <h1 style="font-size: 13px; margin-bottom: 15px;">DESCARGAR ANEXOS</h1>
+                        <ul class="table-info">
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO.pdf' ) } " target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM</span></a></li>
+                        </ul>
+                        <br>
+                        <p style="margin: 0;">Fecha: 03 de octubre 2020</p>
+                        <p>Horario de recepción: 00:00 am a 08:00 pm</p>
+                        <p>la presentación de los documentos será de forma digital en la fecha señalada, enviando al siguiente correo electrónico: <a href="mailto:convocatoriascas@munisantanita.gob.pe">convocatoriascas@munisantanita.gob.pe</a>. AL momento de remitir al correo, indicar el ASUNTO , y el numero y puesto de convocatoria de su elección.</p>
+                        <p>Asimismo, también puede postular a la convocatoria de su elección , presentando los documentos respectivos de manera física a la Sub gerencia de Recursos Humanos hasta las 13:00 horas de la fecha indicada</p>
+                        <p>Pasada la fecha y hora indicada, la postulación se entenderá como NO PRESENTADA</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="modal fade" id="convocatoria6Modal" tabindex="-1" role="dialog" aria-labelledby="conditionsModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title w-100" id="exampleModalLongTitle">Comunicado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 2rem">
+                        <h1 style="font-size: 13px; margin-bottom: 15px;">DESCARGAR ANEXOS</h1>
+                        <ul class="table-info">
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO.pdf' ) } " target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM</span></a></li>
+                        </ul>
+                        <br>
+                        <p style="margin: 0;">Fecha: 07 de octubre 2020</p>
+                        <p>Horario de recepción: 00:00 AM a 05:00 PM</p>
+                        <p>la presentación de los documentos será de forma digital en la fecha señalada, enviando al siguiente correo electrónico: <a href="mailto:convocatoriascas@munisantanita.gob.pe">convocatoriascas@munisantanita.gob.pe</a>. AL momento de remitir al correo, indicar el ASUNTO , y el numero y puesto de convocatoria de su elección.</p>
+                        <p>Asimismo, también puede postular a la convocatoria de su elección , presentando los documentos respectivos de manera física a la Sub gerencia de Recursos Humanos hasta las 05:00 PM horas de la fecha indicada</p>
+                        <p>Pasada la fecha y hora indicada, la postulación se entenderá como NO PRESENTADA</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="convocatoria7Modal" tabindex="-1" role="dialog" aria-labelledby="conditionsModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title w-100" id="exampleModalLongTitle">Comunicado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 2rem">
+                        <h1 style="font-size: 13px; margin-bottom: 15px;">DESCARGAR ANEXOS</h1>
+                        <ul class="table-info">
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO.pdf' ) } " target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM</span></a></li>
+                        </ul>
+                        <br>
+                        <p style="margin: 0;">Fecha: 09 de octubre 2020</p>
+                        <p>Horario de recepción: 00:00 AM a 13:00 PM</p>
+                        <p>la presentación de los documentos será de forma digital en la fecha señalada, enviando al siguiente correo electrónico: <a href="mailto:convocatoriascas@munisantanita.gob.pe">convocatoriascas@munisantanita.gob.pe</a>. AL momento de remitir al correo, indicar el ASUNTO , y el numero y puesto de convocatoria de su elección.</p>
+                        <p>Asimismo, también puede postular a la convocatoria de su elección , presentando los documentos respectivos de manera física a la Sub gerencia de Recursos Humanos hasta las 13:00 PM horas de la fecha indicada</p>
+                        <p>Pasada la fecha y hora indicada, la postulación se entenderá como NO PRESENTADA</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="convocatoria8Modal" tabindex="-1" role="dialog" aria-labelledby="conditionsModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title w-100" id="exampleModalLongTitle">Comunicado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 2rem">
+                        <h1 style="font-size: 13px; margin-bottom: 15px;">DESCARGAR ANEXOS</h1>
+                        <ul class="table-info">
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO.pdf' ) } " target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">1-DECLARACIÓN JURADA DE NO TENER IMPEDIMENTO PARA CONTRATAR CON EL ESTADO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">2-DECLARACION JURADA DE AUSENCIA DE NEPOTISMO</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">3-DECLARACION JURADA DE NO TENER ANTECEDENTES PENALES, POLICIALES</span></a></li>
+                            <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria/4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM.pdf' ) } "  target="_blank"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">4-DECLARACION  JURADA DE NO ENCONTRARSE INSCRITO EN EL REGISTRO DE DEUDORES ALIMENTARIOS MOROSOS-REDAM</span></a></li>
+                        </ul>
+                        <br>
+                        <p class="black"><strong>PRESENTACIÓN DE CURRICULUM VITAE DOCUMENTADO DE MANERA VIRTUAL</strong></p>
+                        <p style="margin: 0;">FECHA: 17 al 19 de Octubre de 2020</p>
+                        <p>HORARIO DE RECEPCIÓN: 00:00 AM a 05:00 PM</p> 
+                        <p>La presentación de los documentos será de forma digital en la fecha señalada, enviando al siguiente correo electrónico: <a href="mailto:convocatoriascas@munisantanita.gob.pe">convocatoriascas@munisantanita.gob.pe</a>. Al momento de remitir al correo, indicar el ASUNTO, y el número y puesto de convocatoria de su elección.</p>
+                        
+                        <p class="black"><strong>PRESENTACIÓN DE CIRRICULUM VITAE DOCUMENTADO DE MANERA FISICA</strong></p>
+                        <p style="margin: 0;">FECHA: 17 Y 19 de Octubre de 2020</p>
+                        <p>HORARIO DE RECEPCION: 08:00 AM a 01:00 PM</p> 
+                        <p>Asimismo, también puede postular a la convocatoria de su elección, presentando los documentos respectivos de manera física a la Sub Gerencia de Recursos Humanos desde las 08:00 am hasta las 01:00 pm de la fecha indicada. </p>
+						<br/>
+						<p>Pasada la fecha y hora indicada, la postulación se entenderá como NO PRESENTADA. </p>
+						<p class="black">NOTA: ES IMPORTANTE QUE LOS POSTULANTES TENGAN RUC ACTIVO.</p>                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        
+
+	</body>
+</html>

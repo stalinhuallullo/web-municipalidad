@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                           	<h3 class="stitle text-center">Historia de Santa Anita</h3>
+	                           	
+								<div class="row">
+									<div class="col-md-12">
+										<p>Santa Anita es uno de los distritos más jóvenes del departamento de Lima; su creación se dio el 25 de Octubre de 1989, por ley N°. 25116, siendo Presidente Constitucional de la República el Dr. Alan García Pérez y Alcalde de Lima Metropolitana el Dr. Jorge del Castillo Gálvez.</p>
+										<p>Hasta los Años 80, Santa Anita pertenecía a los distritos de Ate y El Agustino. Pero gracias a los pobladores, quienes se organizaron en Comités Pro-creación del distrito y demás, se logró realizar el objetivo. Santa Anita ya es un Distrito.</p>
+										<p>El 25 de Octubre de 1999 se inauguró el Centro Cívico Municipal; éste se encuentra ubicado en la cuadra 12 s/n de la Av. Los Eucaliptos, en la Coop. Universal</p>
+				                     </div>
+								</div>
+								
+								
+								<h6 class="title-info">¿De dónde proviene el nombre de santa anita?</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<p>En l964, los hermanos Ferrer, conformados por Fernando, Alfredo y Beatriz. Constituyeron la Empresa Lotizadora "Santa Anita", nombre inspirado en su señora Madre.</p>
+										<p>Desde entonces el nombre de Santa Anita se institucionalizó a pesar de varios intentos por cambiar su nombre. Antiguamente estos terrenos pertenecían a la Agrícola Santa Anita.</p>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">Pobladores</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<p>Su población está conformada básicamente por inmigrantes de todo el Perú, con mayor incidencia de la zona central; Junín, Ayacucho, Apurímac y Huancavelica. Siendo el promedio de edad, de 25 a 35 años, lo que constituye a una población básicamente joven.</p>
+				                     </div>
+								</div>
+	                        </div>
+	                        
+         				</div>
+         			</div>
+         			
+         			<div class="row">
+						<div class="img-gallery style-2 gallery">
+							<div class="portfolio classic-gallery">
+								<div class="isotope items">
+									<div class="item width2">
+										<div class="gallery-thumb"> 
+											<a th:href="${@helper.assetsImg('historia/historia-1.jpg')}" data-rel="prettyPhoto[gallery]">
+												<i class="fas fa-search"></i>
+											</a> 
+											<img th:src="${@helper.assetsImg('historia/historia-1.jpg')}" alt=""> 
+										</div>
+									</div>
+									<div class="item width2">
+										<div class="gallery-thumb"> 
+											<a th:href="${@helper.assetsImg('historia/tanque.jpg')}" data-rel="prettyPhoto[gallery]">
+												<i class="fas fa-search"></i>
+											</a> 
+											<img th:src="${@helper.assetsImg('historia/tanque.jpg')}" alt=""> 
+										</div>
+									</div>
+									<div class="item width2">
+										<div class="gallery-thumb"> 
+											<a th:href="${@helper.assetsImg('historia/historia central.jpg')}" data-rel="prettyPhoto[gallery]">
+												<i class="fas fa-search"></i>
+											</a> 
+											<img th:src="${@helper.assetsImg('historia/historia central.jpg')}" alt=""> 
+										</div>
+									</div>
+								</div>
+							</div>
+			            </div>
+					</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

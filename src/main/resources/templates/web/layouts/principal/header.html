@@ -1,0 +1,40 @@
+<header id="haeder-fixed" th:fragment="MiHeader" class="wf100 header-two">
+<style>
+.escarapela-c{
+position: absolute;
+left: 0;
+top: 0;
+
+}
+@media (max-width: 1150px){
+	.escarapela-c img{
+		width: 80%;
+	}
+}
+</style>
+<!-- <div class="escarapela-c"><img th:src="${@helper.assetsImg('escarapela.png')}" alt=""></div>-->
+    <div class="h3-navbar wf100 haeder-fixed-nav">
+      <div class="container">
+        <nav class="navbar">
+          <div class="navbar-header">
+            <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>-->
+           
+            <label class="menu-btn" for="checked">
+		        <span class="bar top"></span>
+		        <span class="bar middle"></span>
+		        <span class="bar bottom"></span>
+		        <span class="menu-btn__text">MENU</span>
+		    </label>
+          </div>
+          
+          <div class="navbar-collapse navbar-left">
+            <!--<a th:href="${@helper.getURL('')}"><img th:src="${@helper.assetsImg('logo_munisantanita_transparent.webp')}" alt="" style="width: 138px;"></a>-->
+            <a th:href="${@helper.getURL('')}"><img th:src="${@helper.assetsImg('logo-munisantanita-coronavirus-3.png')}" alt="" style="width: 180px;"></a>
+          </div>
+          <div class="navbar-right navbar-right-drawer-hide" id="bs-example-navbar-collapse-1">
+            <div th:replace="web/fragments/menu"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+</header>

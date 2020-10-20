@@ -1,0 +1,1302 @@
+ @media (min-width: 1200px) and (max-width: 1400px) {
+    .h3-slider-caption {
+        top: 50px;
+    }
+    .h3-slider-caption strong {
+        font-size: 32px;
+        line-height: 36px;
+    }
+    .h3-slider-caption p {
+        font-size: 18px;
+    }
+    .h3-slider-caption a {
+        display: none;
+    }
+}
+@media (max-width: 1350px)
+{
+	
+}
+ @media (min-width: 992px) and (max-width: 1199px) {
+
+	.city-highlights .owl-carousel .owl-nav button.owl-next {
+		right: 0;
+	}
+	.city-highlights .owl-carousel .owl-nav button.owl-prev {
+		left: 0px;
+	}
+	.title-style-2 h2 {
+		font-size: 32px;
+	}
+	.title-style-2 p {
+		margin-top: 0;
+	}
+	.department-box ul, .department-box h6 {
+		padding: 10px;
+		font-size: 16px;
+	}
+	.department-box a {
+		font-size: 12px;
+	}
+	.emergency-info .panel-group .panel-heading h6 {
+		font-size: 16px;
+	}
+	.query h5 {
+		font-size: 20px;
+	}
+	.fact-box strong {
+		font-size: 28px;
+	}
+	.team-box .team-thumb {
+		width: 45%;
+	}
+	.team-box .team-txt {
+		width: 55%;
+		padding: 15px;
+	}
+	.call2action p {
+		font-size: 30px;
+	}
+	.main-footer {
+		margin: 0 !important;
+	}
+	#call-2-action {
+		position: inherit;
+	}
+	.slider-caption {
+		top: 50px;
+	}
+	.slider-caption strong {
+		font-size: 32px;
+		line-height: 36px;
+	}
+	.slider-caption p {
+		font-size: 16px;
+		line-height: 28px;
+	}
+	.slider-caption a {
+		display: none;
+	}
+	.e-numbers .em-box, .news-post .news-post-txt, .h2-Mayor-msg {
+		padding: 15px;
+	}
+	.e-numbers .info-num h3 {
+		font-size: 16px;
+	}
+	.event-post-full .thumb {
+		width: 45%;
+	}
+	.event-post-full .event-post-content {
+		width: 55%;
+	}
+	.event-post-full .event-post-txt {
+		padding: 15px 15px 0 15px;
+		width: 100%;
+	}
+	.image-post .news-post-txt p {
+		display: none;
+	}
+	.event-meta li {
+		margin: 0;
+		display: inline-block;
+	}
+	.event-post-txt h5 {
+		font-size: 20px;
+	}
+	.community-box ul {
+		padding: 10px;
+	}
+	.community-box ul li a {
+		font-size: 12px;
+	}
+	.community-box h6 {
+		line-height: 40px;
+		padding: 0 10px;
+		font-size: 16px;
+	}
+	.some-facts strong {
+		font-size: 28px;
+	}
+	.team-heading {
+		padding: 0;
+	}
+	/*************************/
+	
+	.h3-logo-row ul.quick-links {
+		width: 100%;
+	}
+	.header-contact li {
+		padding: 7px 10px;
+	}
+	.h3-navbar ul.navbar-right li.search-form {
+		width: 190px;
+	}
+	.h3-navbar ul.navbar-right li.donate-btn {
+		display: none;
+	}
+	.h3-navbar .navbar .navbar-nav>li>a {
+		padding: 0px 3px;
+		line-height: 60px;
+	}
+	 
+	.h3-navbar ul.navbar-right {
+		margin: 15px 0;
+	}
+	/*.Mayor-video-msg .city-tour {
+		margin: 0px;
+	}*/
+	.h3-slider-caption {
+		top: 50px;
+	}
+	.h3-slider-caption strong {
+		font-size: 32px;
+		line-height: 36px;
+	}
+	.h3-slider-caption p {
+		font-size: 18px;
+	}
+	.h3-slider-caption a {
+		display: none;
+	}
+	.community-links-style-two, .recent-event-block, .news-box {
+		margin: 0 0 30px;
+	}
+	.deprt-icon-box h6 {
+		font-size: 14px;
+	}
+	ul.reports a {
+		padding: 0 10px;
+	}
+	.recent-events .tab-content {
+		padding: 20px;
+	}
+	.recent-events .event-list:after{
+		left: -20px;
+	}
+	.recent-events .event-list li {
+		margin-right: 5px;
+	}
+	.community-links-style-two {
+		padding: 10px;
+	}
+	.community-links-style-two li a {
+		font-size: 14px;
+	}
+	.department-links li a {
+		font-size: 14px;
+	}
+	.fact-box strong {
+		font-size: 18px;
+	}
+	.fact-box span {
+		font-size: 12px;
+	}
+	.team-box .team-txt h5 {
+		font-size: 20px;
+	}
+	.official-members .team-box .team-txt {
+		padding: 17px 15px;
+	}
+	.team-details-txt .panel-heading .panel-title {
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.team-details-txt .panel {
+		box-shadow: none;
+		margin: 5px 0 !important;
+	}
+	.classic-gallery .isotope .item.width2 {
+		width: 50%;
+		height: auto;
+	}
+	.filter-gallery .isotope .item, .filter-gallery .isotope .item.height2, .classic-gallery .isotope .item {
+		height: auto;
+	}
+	.filter-gallery .isotope .item.width2 {
+		width: 66.6666%;
+		height: auto;
+	}
+	.cs-txt .countdown.is-countdown {
+		width: 100%;
+		float: left;
+		margin: 0 0 70px;
+		padding: 0 50px;
+	}
+	.cs-txt .countdown-section {
+		width: 140px;
+		height: 140px;
+		border: 6px solid #f73859;
+		display: inline-block;
+		border-radius: 100%;
+		margin: 0 5px;
+		padding: 20px 0 0;
+	}
+	.cs-txt .countdown-amount {
+		display: block;
+		color: #fff;
+		font-family: 'Poppins', sans-serif;
+		font-size: 40px;
+		font-weight: 800;
+		line-height: 60px;
+	}
+	.cs-txt .countdown-period {
+		display: block;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 16px;
+		font-weight: 500;
+		font-family: 'Poppins', sans-serif;
+	}
+	.add-box {
+		padding: 15px;
+	}
+	.add-box h5 {
+		font-size: 20px;
+	}
+		
+}
+@media (max-width: 1199px){
+	.city-tour a {
+	    width: 60px;
+	}
+	.new-txt h6{
+		line-height: 18px;
+	    font-size: 16px;
+	    margin: 0 0 10px;
+	    height: 53px;
+	}
+	body h6 {
+	    font-size: 16px;
+	}
+	body h5{
+		font-size: 22px;
+	}
+	body h3 {
+	    font-size: 28px;
+	}
+	.Mayor-welcome p {
+	    font-size: 15px;
+	}
+	.h3-navbar .navbar .navbar-nav>li>a{
+		font-size: 13px;
+	}
+	.title-style-3 p{
+		font-size: 14px;
+	}
+	
+	.recent-events .nav-tabs>li>a{
+	    line-height: 45px;
+		font-size: 14px;
+	}
+	
+	/* contents */
+	.drawer-content {
+		position: relative;
+		right: 0;
+	    box-shadow: 0 0 50px 0 rgba(0,0,0,.8);
+	    -webkit-transition-property: all;
+	    transition-property: all;
+	    -webkit-transition-delay: .3s;
+	    transition-delay: .3s;
+	    -webkit-transition-duration: .5s;
+	    transition-duration: .5s;
+	    
+	}
+	
+	.drawer-menu{
+		display: block !important;
+	}
+	/* drawer menu */
+	.drawer-menu {
+	    box-sizing: border-box;
+	    position: fixed;
+	    top: 0;
+	    bottom: 0;
+	    right: 0;
+	    width: 240px;
+	    height: 100vh;
+	    background: #222;
+		overflow-y: auto;
+	    overflow-x: hidden;
+	    -webkit-transition-property: all;
+	    transition-property: all;
+	    -webkit-transition-duration: .5s;
+	    transition-duration: .5s;
+	    -webkit-transition-delay: 0s;
+	    transition-delay: 0s;
+	    -webkit-transform-origin: right center;
+	    -ms-transform-origin: right center;
+	    transform-origin: right center;
+	    -webkit-transform: perspective(500px) rotateY(-90deg);
+	    transform: perspective(500px) rotateY(-90deg);
+	    opacity: 0;
+	}
+	.navbar-nav{
+		float: inherit;
+	    width: 100%;
+	}
+	.drawer-content .h3-navbar{
+		padding: 20px 0 !important;
+	}
+	.drawer-menu .navbar-nav > li{
+		width: 100%;
+	}
+	.drawer-menu .navbar-nav > li a{
+		text-align: center;
+		color: #777777;
+	}
+	.drawer-menu .navbar-nav > li a:hover,
+	.drawer-menu .navbar-nav > li a:focus{
+		background-color: transparent;
+	}
+	.drawer-menu .navbar-nav > li.open > a{
+		background-color: #eee;
+	}
+	.drawer-menu .navbar-nav > li > .dropdown-menu{
+		position: inherit;
+		width: 100%;
+		border: none;
+		margin: 0;
+	    padding: 0;
+	    border-radius: 0;
+	    padding-bottom: 15px;
+	    background-color: #fff;
+	}
+	.drawer-menu .navbar-nav > li > .dropdown-menu a{
+		width: 100%;
+	    display: block;
+	    white-space: inherit;
+		line-height: 20px !important;
+    	padding: 10px 15px !important;
+	}
+	.drawer-menu .navbar-nav > li > a.active{
+		color: #00AD46 !important;
+		background: #eee;
+	}
+	.drawer-menu .navbar-nav > li > .dropdown-menu a.active{
+		background-color: #00AD46 !important;
+    	color: #fff;
+	}
+	
+	
+	
+	/* menu button - label tag */
+	.menu-btn {
+	    position: absolute;
+	    display: block;
+	    top: 0;
+	    right: 0;
+	    display: block !important;
+	    width: 40px;
+	    height: 100%;
+	    font-size: 10px;
+	    text-align: center;
+	    cursor: pointer;
+	    z-index: 3;
+	    margin: 0;
+	}
+	.navbar-right-drawer-hide{
+		display: none !important;
+	}
+	
+	.bar {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    display: block;
+	    width: 40px;
+	    height: 1px;
+	    background: #fff;
+	    -webkit-transition: all .5s;
+	    transition: all .5s;
+	    -webkit-transform-origin: left top;
+	    -ms-transform-origin: left top;
+	    transform-origin: left top;
+	}
+	
+	.bar.middle {
+	    top: 15px;
+	    opacity: 1;
+	}
+	
+	.bar.bottom {
+	    top: 30px;
+	    -webkit-transform-origin: left bottom;
+	    -ms-transform-origin: left bottom;
+	    transform-origin: left bottom;
+	}
+	
+	.menu-btn__text {
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    color: #fff;
+	    -webkit-transition: all .5s;
+	    transition: all .5s;
+	    display: block;
+	    visibility: visible;
+	    opacity: 1;
+	}
+	
+	.menu-btn:hover .bar {
+	    background: #999;
+	}
+	
+	.menu-btn:hover .menu-btn__text {
+	    color: #999;
+	}
+	
+
+	.check:checked ~ .drawer-content {
+	    -webkit-transition-delay: 0s;
+	    transition-delay: 0s;
+	    /*-webkit-transform: translateX(-300px);
+	    -ms-transform: translateX(-300px);
+	    transform: translateX(-300px);*/
+	    right: 240px;
+	}
+	.check:checked ~ .drawer-menu {
+	    -webkit-transition-delay: .3s;
+	    transition-delay: .3s;
+	    -webkit-transform: none;
+	    -ms-transform: none;
+	    transform: none;
+	    opacity: 1;
+	    z-index: 2;
+	}
+	
+	
+	.check:checked ~ .drawer-content .menu-btn .menu-btn__text {
+	    visibility: hidden;
+	    opacity: 0;
+	}
+	
+	.check:checked ~ .drawer-content .menu-btn .bar.top {
+	    width: 56px;
+	    -webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	    transform: rotate(45deg);
+	}
+	
+	.check:checked ~ .drawer-content .menu-btn .bar.middle {
+	    opacity: 0;
+	}
+	
+	.check:checked ~ .drawer-content .menu-btn .bar.bottom {
+	    width: 56px;
+	    top: 40px;
+	    -webkit-transform: rotate(-45deg);
+	    -ms-transform: rotate(-45deg);
+	    transform: rotate(-45deg);
+	}
+	
+	.check:checked ~ .close-menu {
+	    -webkit-transition-duration: 1s;
+	    transition-duration: 1s;
+	    -webkit-transition-delay: .3s;
+	    transition-delay: .3s;
+	    background: rgba(0,0,0,.5);
+	    visibility: visible;
+	    opacity: 1;
+	    z-index: 300;
+	}
+}
+
+@media (max-width: 991px){
+	.home3.footer .copyr{
+		margin-bottom: 10px;
+	}
+	.home3.footer .copyr,
+	.home3.footer .footer-social{
+		text-align: center;
+	}
+	/*#section-banner {
+	    height: 570px;
+	}*/
+	.result-left{
+		width: calc(100% - 142px) !important;
+	}
+	.result-left .result-img{
+		width: 137px !important;
+	}
+	.result-left .result-content{
+		width: calc(100% - 137px) !important;
+	}
+	
+	.result-right{	
+		width: 142px !important;
+	}
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .header .container {
+        width: 100%;
+    }
+    .logo-nav-row .navbar-nav>li>a {
+        padding: 10px 5px;
+    }
+    .logo-nav-row ul.nav.navbar-nav.navbar-right .bars-btn a, .logo-nav-row ul.nav.navbar-nav.navbar-right .search-btn a {
+        line-height: 40px;
+    }
+    .topbar ul.left-links li:after {
+        padding: 0 5px;
+    }
+    .right-links li {
+        padding: 0 5px;
+    }
+    .logo-nav-row .bars-btn, .logo-nav-row .search-btn {
+        height: 40px;
+    }
+    .navbar-nav>li:last-child .dropdown-menu {
+        left: inherit;
+        right: 0;
+    }
+    .navbar-nav>li:nth-last-child(2) .dropdown-menu {
+        left: inherit;
+        right: 0;
+    }
+    .dropdown-menu .sub-menu {
+        left: inherit;
+        right: 0;
+    }
+    .Mayor-msg {
+        margin: 30px 0 0 0;
+    }
+    .event-post-txt {
+        padding: 15px;
+    }
+    .event-post-loc a, .latest-updates ul {
+        padding: 0 10px;
+    }
+    .latest-updates ul li strong {
+        font-size: 16px;
+    }
+    .city-highlights .container-fluid {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .white-text p {
+        width: 100%;
+    }
+    .department-box ul {
+        padding: 12px 10px 12px;
+    }
+    .department-box a {
+        font-size: 13px;
+    }
+    .emergency-info {
+        margin: 30px 0;
+    }
+    .call2action p {
+        font-size: 30px;
+    }
+    .main-footer {
+        margin: 0 !important;
+    }
+    #call-2-action {
+        position: inherit;
+    }
+    .slider-caption {
+        top: 50px;
+    }
+    .slider-caption strong {
+        font-size: 32px;
+        line-height: 36px;
+    }
+    .slider-caption p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .slider-caption a {
+        display: none;
+    }
+    .h2-Mayor-msg {
+        padding: 15px;
+    }
+    .h2-Mayor-msg .Mayor-txt p {
+        font-size: 16px;
+    }
+    .e-numbers .em-box {
+        padding: 10px;
+    }
+    .e-numbers .info-num {
+        position: relative;
+        right: 0;
+        top: 0;
+        text-align: left;
+        margin: 20px 0;
+    }
+    .footer-widget, .community-box, .event-post-full {
+        margin: 0 0 30px;
+    }
+    .event-post-full .thumb {
+        width: 45%;
+    }
+    .event-post-full .event-post-content {
+        width: 55%;
+    }
+    .news-post .news-post-txt {
+        padding: 20px;
+    }
+    .some-facts strong {
+        font-size: 20px;
+    }
+    .team-heading {
+        padding: 0;
+        margin: 0 0 30px;
+    }
+    /************* Home3 ***********/
+
+    .h3-logo-row ul.quick-links {
+        width: 100%;
+    }
+    li.header-weather {
+        display: none;
+    }
+    .h3-navbar .navbar .navbar-nav>li>a {
+        padding: 0px 10px;
+        line-height: 40px;
+    }
+    .h3-navbar ul.navbar-right {
+        margin: 15px 0;
+    }
+    .Mayor-video-msg .city-tour {
+        margin: 0px;
+    }
+    .h3-slider-caption {
+        top: 50px;
+    }
+    .h3-slider-caption strong {
+        font-size: 32px;
+        line-height: 36px;
+    }
+    .h3-slider-caption p {
+        font-size: 18px;
+    }
+    .h3-slider-caption a {
+        display: none;
+    }
+    .community-links-style-two, .recent-event-block, .news-box {
+        margin: 0 0 30px;
+    }
+    .deprt-icon-box h6 {
+        font-size: 16px;
+    }
+    /*******************************/
+
+    .subheader {
+        padding: 50px 0;
+    }
+    .depart-info .deprt-icon-box {
+        padding: 20px;
+    }
+    .community-links-style-two {
+        padding: 15px;
+    }
+    .community-links-style-two li a {
+        font-size: 14px;
+    }
+    .events-wrapper .event-post-full .event-post-content {
+        width: 55%;
+    }
+    .events-wrapper .event-post-full .thumb {
+        width: 45%;
+    }
+    .service-page-bottom .newsletter-form, .event-list-box {
+        padding: 10px;
+    }
+    .event-list-box .event-title {
+        width: 41%;
+    }
+    .city-updates {
+        margin: 0 0 30px;
+    }
+    .department-links li a {
+        font-size: 14px;
+    }
+    .fact-box strong {
+        font-size: 18px;
+    }
+    .service-page-bottom .emergency-info {
+        margin: 0px;
+    }
+    .campaign-txt h5 {
+        font-size: 20px;
+    }
+    .sdb-left {
+        width: 100%;
+    }
+    .sdb-right {
+        width: 100%;
+        padding: 10px 0 0 0;
+    }
+    .filter-gallery .isotope .item.height2, .filter-gallery .isotope .item, .classic-gallery .isotope .item {
+        height: auto;
+    }
+    .classic-gallery .isotope .item.width2 {
+        width: 50%;
+        height: auto;
+    }
+    .filter-gallery .isotope .item.width2 {
+        width: 66%;
+        height: auto;
+    }
+    .donator-details li.half, .payment-method li.half {
+        width: 100%;
+        padding: 0px;
+        margin: 0 0 10px;
+    }
+    .radio-boxes input[type=radio].css-radio+label.css-label {
+        width: 82px;
+        font-size: 16px;
+    }
+    .login-account {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    .page-404 {
+        overflow: hidden;
+    }
+    .wrap-404 {
+        margin: 50px auto;
+    }
+    .wrap-404 strong.title-404 {
+        font-size: 125px;
+        line-height: 100px;
+    }
+    .wrap-404 input.form-control {
+        width: 70%;
+    }
+    .search-form {
+        padding: 0 15px;
+    }
+    .cs-txt {
+        width: 100%;
+        padding-top: 50px;
+    }
+    .cs-newsletter-form button.subscribe {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    .cs-newsletter-form {
+        width: 100%;
+        margin: 0 0 30px;
+    }
+    .cs-txt .countdown.is-countdown {
+        width: 100%;
+        float: left;
+        margin: 0 0 70px;
+        padding: 0 50px;
+    }
+    .cs-txt .countdown-section {
+        width: 140px;
+        height: 140px;
+        border: 6px solid #f73859;
+        display: inline-block;
+        border-radius: 100%;
+        margin: 0 5px;
+        padding: 20px 0 0;
+    }
+    .cs-txt .countdown-amount {
+        display: block;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 60px;
+    }
+    .cs-txt .countdown-period {
+        display: block;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+    }
+    .add-box {
+        padding: 10px;
+    }
+    .add-box h5 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 767px){
+	.informatin-card{
+		margin-bottom: 25px;
+		text-align: center;
+	}
+	.informatin-card:last-child{
+		margin-bottom: 0px;
+	}
+	.Mayor-video-msg .city-tour{
+		width: 290px;
+	    margin: 0 auto;
+	    margin-bottom: 30px;
+	    float: none;
+	}
+	.Mayor-welcome{
+		text-align: center;
+	}
+	.Mayor-welcome h6:after{
+		content: initial;
+	}
+	.Mayor-video-msg .city-tour{
+		margin-top: -90px;
+	}
+	/*#section-banner{
+		height: 470px;
+	}*/
+	
+	.escudo{
+		width: 200px !important;
+	    left: calc(50% - calc(200px / 2));
+    	top: calc(50% - calc(200px / 2));
+	}
+	
+	.Mayor-welcome p{
+	    font-size: 14px;
+	}
+	.title-style-3 p{
+	    font-size: 14px;
+	}
+	.new-txt p {
+	    line-height: 16px;
+	    font-size: 14px;
+	}
+	body h3 {
+	    font-size: 25px;
+	}
+	body h5 {
+	    font-size: 20px;
+	}
+	body h6 {
+	    font-size: 16px;
+	}
+	.footer-widget,
+	.textwidget{
+	    text-align: center;
+	}
+	.textwidget address ul li{
+		padding: 0;
+	}
+	.textwidget address ul li i{
+		display: none;
+	}
+	.team-box .team-thumb,
+	.team-box .team-thumb.alcalde{
+	    width: 250px !important;
+	    margin: 0 auto;
+	 	float: none;
+	}
+}
+@media (max-width: 680px){
+	.recent-events .nav-tabs>li{
+		width: calc(100% / 2) !important;
+	}
+}
+
+@media (max-width: 560px){
+	.team-thumb-responsive{
+		width: 150px !important;
+    	height: 150px !important;
+	}
+	.team-box .team-thumb,
+	.team-box .team-thumb.alcalde{
+		width: 100% !important;
+	}
+	
+	
+	.team-box .team-txt strong{
+		height: 177px;
+	}
+	
+	.official-members .team-box .team-txt .name{
+		height: 100px;
+	}
+	.recent-events .event-list li:last-child{
+	    display: none;
+	}
+	.event-list li.el-title{
+		width: calc(100% - (calc(80px*2) + calc(15px*2)) );
+	}
+}
+@media (max-width: 530px){
+	body h3 {
+	    font-size: 22px;
+	}
+	.title-style-3 p {
+	    font-size: 13px;
+	}
+	.result-left{
+		width: 100% !important;
+	}
+	.result-right{	
+		width: 100% !important;
+	}
+}
+
+@media (max-width: 500px)
+{
+	.navbar-toggle {
+	    display: none;
+	}
+	
+	.escudo{
+		width: 170px !important;
+	    left: calc(50% - calc(170px / 2));
+    	top: calc(50% - calc(170px / 2));
+	}
+}
+@media (max-width: 430px)
+{
+	.result-left .result-img{
+		width: 100% !important;
+	}
+	.result-left .result-content{
+		width: 100% !important;
+	}
+	.result-left .result-content h2{
+	    margin: 5px 0;
+	}
+}
+
+@media (max-width: 400px)
+{
+	.emergency-number{
+		width: 100% !important;
+	}
+	.recent-events .event-list{
+		text-align: center;
+	}
+	.recent-events .event-list li {
+	    margin-right: 0;
+	    width: 100% !important;
+	    margin-bottom: 15px;
+	}
+	.recent-events .nav-tabs>li>a {
+	    font-size: 12px;
+	}
+}
+@media (max-width: 360px){
+	.team-thumb-responsive{
+		width: 130px !important;
+	    height: 130px !important;
+	}
+}
+
+@media (min-width: 280px) and (max-width: 767px) {
+    .logo-nav-row ul.nav.navbar-nav.navbar-right, .header .topbar ul.right-links {
+        display: none;
+    }
+    .topbar ul.left-links li:after {
+        padding: 0 2px;
+    }
+    .logo-nav-row .navbar-brand {
+        margin: 0px;
+    }
+    .logo-nav-row .navbar-toggle {
+        background: #144b8c;
+        margin: 25px 0 0 0;
+    }
+    .logo-nav-row .navbar-toggle .icon-bar {
+        background: #fff;
+    }
+    .logo-nav-row .navbar-nav>li>a {
+        padding: 10px 0;
+    }
+    .dropdown-menu .sub-menu {
+        position: relative;
+        left: 0;
+        top: 100%;
+        display: block;
+        padding: 0px;
+        width: 199px;
+        box-shadow: none;
+    }
+    .dropdown-menu .sub-menu a {
+        font-size: 12px;
+        background: #fff;
+        border-bottom: 2px solid #f1f1f1;
+    }
+    .department-box, .event-post, .latest-updates {
+        margin: 0 0 30px;
+    }
+    .city-highlights .container-fluid {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0px;
+    }
+    .city-highlights .owl-carousel .owl-nav button.owl-next {
+        right: 0;
+    }
+    .city-highlights .owl-carousel .owl-nav button.owl-prev {
+        left: 0px;
+    }
+    .city-highlights .owl-carousel .owl-nav button.owl-next, .city-highlights .owl-carousel .owl-nav button.owl-prev {
+        width: 35px;
+        height: 35px;
+        border-radius: 0px;
+    }
+    .team-box .team-thumb, .team-box .team-txt, .city-team .title-style-1 p, .white-text p {
+        width: 100%;
+    }
+    .team-box .team-txt {
+        padding: 27px 30px 10px 30px;
+    }
+    #call-2-action {
+        position: inherit;
+    }
+    .h2-Mayor-msg .Mayor-txt, .h2-Mayor-msg {
+        padding: 15px;
+    }
+    .h2-Mayor-msg .Mayor-txt, .h2-Mayor-msg .Mayor-img {
+        width: 100%;
+    }
+    .e-numbers .em-box, .h2-Mayor-msg {
+        margin: 0 0 30px;
+    }
+    .e-numbers {
+        margin: 30px 0 0;
+    }
+    .e-numbers .info-num {
+        position: inherit;
+        text-align: left;
+        margin: 0 0 30px;
+    }
+    .h3-logo-row ul.quick-links, .some-facts ul li, .event-post-full .event-post-content, .event-post-full .thumb {
+        width: 100%;
+    }
+    .header-two .topbar p {
+        font-size: 12px;
+    }
+    .become-vol {
+        line-height: 34px;
+        font-weight: 600;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+    .cross-btn {
+        font-size: 12px;
+        width: 34px;
+        line-height: 34px;
+    }
+    .banner-tags, .owl-carousel .owl-item .slider-caption img {
+        display: none;
+    }
+    .footer-widget, .textwidget, .official-members .team-box, .community-box, .event-post-full {
+        margin: 0 0 30px;
+    }
+    .news-post.image-post p, .image-post .news-post-txt .news-meta {
+        display: none;
+    }
+    .some-facts ul li {
+        border: 0px;
+    }
+    .team-heading {
+        padding: 0;
+        margin: 0 0 30px;
+    }
+    .main-footer {
+        margin: 0 !important;
+    }
+    .call2action p {
+        font-size: 18px;
+        line-height: 28px;
+        padding: 15px;
+    }
+    /******** Home 3 ********/
+
+    .h3-logo-row ul.quick-links li {
+        float: left;
+        margin: 0 2px 5px 0;
+    }
+    .header-contact li {
+        padding: 5px 7px;
+        font-size: 13px;
+    }
+    .h3-navbar .navbar-toggle {
+        background: #12498a;
+    }
+    .h3-navbar .navbar-toggle .icon-bar {
+        background: #fff;
+    }
+    .h3-navbar .navbar .navbar-nav>li>a {
+        line-height: 40px;
+    }
+    .h3-navbar .dropdown-menu .sub-menu {
+        display: block;
+        min-width: 100%;
+        background: #fff;
+    }
+    .h3-navbar .dropdown-menu .sub-menu li a {
+        background: #f1f1f1;
+        padding: 0 30px;
+    }
+    .h3-navbar ul.navbar-right {
+        display: none;
+    }
+    .recent-event-block, .news-box {
+        margin: 0 0 30px;
+    }
+    .event-cap {
+        padding: 10px;
+    }
+    .event-cap h5 {
+        font-size: 18px;
+    }
+    .community-links-style-two, .recent-events .tab-content {
+        padding: 15px;
+    }
+    .community-links-style-two li {
+        width: 100%;
+    }
+    .site-pagination, .community-links-style-two {
+        margin: 0 0 30px;
+    }
+    .subheader {
+        padding: 50px 0;
+    }
+    .subheader h2 {
+        font-size: 28px;
+    }
+    .newsletter-form button {
+        margin: 10px 0 0;
+    }
+    .community-links-style-two.col3, .department-links li, .events-wrapper .event-post-full .event-post-content, .events-wrapper .event-post-full .thumb {
+        width: 100%;
+    }
+    .event-gallery, .event-list-box {
+        padding: 10px;
+    }
+    .event-details .event-counter {
+        width: 100%;
+        top: 0px;
+        padding: 0 10px;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .event-counter .countdown-amount {
+        font-size: 28px;
+    }
+    ul.funds li strong, .event-counter .countdown-period {
+        font-size: 12px;
+    }
+    .event-content {
+        padding: 0px;
+    }
+    .event-content .event-date-share {
+        display: none;
+    }
+    .city-updates, .h3-team-box {
+        margin: 0 0 30px;
+    }
+    .service-page-bottom .newsletter-form, .facts-counter {
+        padding: 20px;
+    }
+    .img-right {
+        max-width: 100%;
+        height: auto;
+    }
+    .causes-listing .campaign-txt h4 {
+        font-size: 24px;
+    }
+    .sdb-left, .sdb-right, .causes-listing .campaign-thumb, .causes-listing .campaign-txt, .community-links-style-two.col3 li, .event-counter li.first-col, .event-counter li.snd-col, .event-counter li.trd-col, .event-list-box .event-title, .event-list-box ul li {
+        width: 100%;
+    }
+    .sdb-right {
+        padding: 20px 0 0;
+    }
+    .single-donation-box .radio-boxes li {
+        padding: 0 3px 5px;
+    }
+    .team-details-txt .panel-heading .panel-title {
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .team-details-txt .panel {
+        box-shadow: none;
+        margin: 5px 0 !important;
+    }
+    .filter-gallery .isotope .item, .filter-gallery .isotope .item.height2, .filter-gallery .isotope .item.width2, .classic-gallery .isotope .item.width2, .classic-gallery .isotope .item {
+        width: 100%;
+        height: auto;
+    }
+    .donations .radio-boxes li {
+        padding: 0px 5px 5px 0;
+    }
+    .donator-details li.half, .payment-method li.half {
+        width: 100%;
+        padding: 0px;
+        margin: 0 0 10px;
+    }
+    .login-account {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    .page-404 {
+        overflow: hidden;
+    }
+    .wrap-404 {
+        width: 100%;
+        margin: 50px 0;
+    }
+    .wrap-404 strong.title-404 {
+        font-size: 125px;
+        line-height: 100px;
+    }
+    .wrap-404 input.form-control {
+        width: 70%;
+    }
+    .search-form {
+        padding: 0 15px;
+    }
+    .cs-txt {
+        width: 100%;
+        padding-top: 50px;
+    }
+    .cs-newsletter-form button.subscribe {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    .add-box-2, .contact-form, .cs-newsletter-form {
+        width: 100%;
+        margin: 0 0 30px;
+    }
+    .map {
+        clear: both;
+    }
+    .slider-caption, .h3-slider-caption {
+        top: 20px;
+    }
+    .slider-caption strong, .h3-slider-caption strong {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .slider-caption p, .slider-caption a, .h3-logo-row ul.quick-links, .header-contact, .h3-slider-caption a, .h3-slider-caption p {
+        display: none;
+    }
+    .city-tour img {
+        width: 100%;
+        height: auto;
+    }
+
+    .slide-content-box h1 {font-size:14px !important; line-height:20px !important; margin:0 0 10px !important;}
+    .slide-content-box p {display:none;}
+
+    .slide-content-box a {
+        font-size: 12px !important;
+        line-height: 24px !important;
+        padding: 0 20px !important;
+    }
+
+    .lb-ser-box { margin-bottom:30px;}
+
+    header .navbar-nav {
+        margin: 0;
+    }
+
+}

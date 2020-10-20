@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	
+	<style>
+        /* body{
+            background: #f8f9fa
+        } */
+        label, p{
+            margin-bottom: 0rem;
+        }
+        label{
+            color: #000000a3;
+        }
+        p{
+            font-weight: 600;
+        }
+        .pb-1{
+            margin-bottom: 1rem;
+        }
+        .form-group {
+            margin-bottom: .5rem;
+        }
+        .item{
+            border: 1px solid #0000004f;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .error{
+            color: #ff0000;
+        }
+
+
+
+        /* general */
+        .buttonContainer {
+        text-align: center;
+        margin: 32px 0;
+        }
+        /* PARAMETERS */
+        /* KEYFRAMES */
+        .btn-enviardoc {
+            text-align: center;
+            display: inline-block;
+            font: 18px 'Open Sans', 'Century Gothic', 'arial' semibold;
+            text-transform: uppercase;
+            color: #fff;
+            line-height: 3rem;
+            background: #095805;
+            border-radius: 4rem;
+            cursor: pointer;
+            height: 4rem;
+            -webkit-transition: all 0.4s cubic-bezier(0.9, 0.1, 0.1, 0.9);
+            transition: all 0.4s cubic-bezier(0.9, 0.1, 0.1, 0.9);
+            width: 16rem;
+            font-size: 1.5rem;
+            border: none;
+            outline: none !important;
+        }
+        .btn-enviardoc span {
+        opacity: 1;
+        -webkit-transition: 0.2s 0.4s ease;
+        transition: 0.2s 0.4s ease;
+        }
+        .btn-enviardoc.loading {
+        background: #fb0;
+        width: 6rem;
+        height: 6rem;
+        padding: 0rem;
+        -webkit-transition: all 0.4s 0.2s cubic-bezier(0.9, 0.1, 0.1, 0.9);
+        transition: all 0.4s 0.2s cubic-bezier(0.9, 0.1, 0.1, 0.9);
+        -webkit-animation: loadingAnimation 2s 0.48s infinite;
+                animation: loadingAnimation 2s 0.48s infinite;
+        }
+        .btn-enviardoc.loading span {
+        opacity: 0;
+        -webkit-transition: 0.2s ease;
+        transition: 0.2s ease;
+        }
+        .btn-enviardoc.success {
+        position: relative;
+        background: #3dcb5f;
+        width: 6rem;
+        height: 6rem;
+        -webkit-animation: none;
+                animation: none;
+        -webkit-transition: all 0.4s cubic-bezier(0.9, 0.1, 0.1, 0.9);
+        transition: all 0.4s cubic-bezier(0.9, 0.1, 0.1, 0.9);
+        }
+        .btn-enviardoc.success span {
+        opacity: 0;
+        -webkit-transition: 0.2s ease;
+        transition: 0.2s ease;
+        }
+        .btn-enviardoc.success::before,
+        .btn-enviardoc.success::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        height: 6px;
+        background: #fff;
+        -webkit-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+        z-index: 10;
+        -webkit-animation: showPseudos 0.4s 0.2s cubic-bezier(0.9, 0.1, 0.1, 0.9) forwards;
+                animation: showPseudos 0.4s 0.2s cubic-bezier(0.9, 0.1, 0.1, 0.9) forwards;
+        opacity: 0;
+        left: 48%;
+        bottom: 2rem;
+        }
+        .btn-enviardoc.success::before {
+        width: 14px;
+        -webkit-transform: rotate(-135deg);
+                transform: rotate(-135deg);
+        }
+        .btn-enviardoc.success::after {
+        margin-left: -3px;
+        width: 24px;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        }
+        .btn-enviardoc.error {
+        position: relative;
+        background: #da3b3b;
+        width: 6rem;
+        height: 6rem;
+        -webkit-animation: none;
+                animation: none;
+        -webkit-transition: all 0.4s cubic-bezier(0.9, 0.1, 0.1, 0.9);
+        transition: all 0.4s cubic-bezier(0.9, 0.1, 0.1, 0.9);
+        }
+        .btn-enviardoc.error span {
+        opacity: 0;
+        -webkit-transition: 0.2s ease;
+        transition: 0.2s ease;
+        }
+        .btn-enviardoc.error::before,
+        .btn-enviardoc.error::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        height: 4px;
+        width: 2rem;
+        left: 50%;
+        margin-left: -1.0rem;
+        background: #fff;
+        -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+        z-index: 10;
+        -webkit-animation: showPseudos 0.4s 0.2s cubic-bezier(0.9, 0.1, 0.1, 0.9) forwards;
+                animation: showPseudos 0.4s 0.2s cubic-bezier(0.9, 0.1, 0.1, 0.9) forwards;
+        opacity: 0;
+        top: 50%;
+        margin-top: -2px;
+        }
+        .btn-enviardoc.error::before {
+        -webkit-transform: rotate(-135deg);
+                transform: rotate(-135deg);
+        }
+        .btn-enviardoc.error::after {
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        }
+        @-webkit-keyframes loadingAnimation {
+        0% {
+            box-shadow: 0px 0px 0px 0px #fb0;
+        }
+        100% {
+            box-shadow: 0px 0px 0px 1rem rgba(255,187,0,0);
+        }
+        }
+        @keyframes loadingAnimation {
+        0% {
+            box-shadow: 0px 0px 0px 0px #fb0;
+        }
+        100% {
+            box-shadow: 0px 0px 0px 1rem rgba(255,187,0,0);
+        }
+        }
+        @-webkit-keyframes showPseudos {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+        }
+        @keyframes showPseudos {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+        }
+
+		input[type=file].form-control {padding: .2rem !important;}
+
+        .modal-header {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            padding: 1rem 1rem;
+            border-bottom: 1px solid #dee2e6;
+            border-top-left-radius: calc(.3rem - 1px);
+            border-top-right-radius: calc(.3rem - 1px);
+        }
+        .modal-title {
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+        .modal-header .close {
+            padding: 2rem 2rem;
+            margin: -1rem -1rem -1rem auto;
+        }
+        .close {
+            float: right;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            opacity: .5;
+        }
+        .modal-header .close {
+            padding: 2rem 2rem;
+            margin: -1rem -1rem -1rem auto;
+        }
+    </style>
+    
+    <script>
+        var onloadCallback = function() {
+            grecaptcha.render('html_element', {
+            'sitekey' : '6LcR3PcUAAAAADWmX_bj5vQ0Nksb9cqUTFWtZz1V'
+            });
+        };
+        function soloNumeros(e){
+            var key = e.charCode;
+            if (!(key >= 48 && key <= 57)){
+                e.preventDefault();
+            }
+        }
+
+        function soloTexto(event){
+            var regex = new RegExp("^[a-zA-Z ]+$");
+            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        }
+
+        var states = ["error","success"], curState = 0;
+
+        $(document).ready(function() {
+        	function mostrarFechaActual(){
+            	var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+                var f=new Date();
+                $(".fecha-actual").html(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+            }
+            mostrarFechaActual();
+
+            
+            $.validator.methods.email = function( value, element ) {
+                return this.optional(element) || /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(?:[A-Z]{2,5})$/i.test(value);
+            }
+            $( "#form-datos" ).validate({
+            	ignore: ".ignore",
+                rules: {
+                	local: { 
+                        required: true
+                    },
+                    tipoPersona: { 
+                        required: true
+                    },
+                    dni: { 
+                        required: function(element) {
+                            return $("select[name='tipoPersona'] option:selected").val() == "NAT";
+                        }, 
+                        minlength: 8, 
+                        maxlength: 8 
+                    },
+                    apePaterno: { 
+                        required: function(element) {
+                            return $("select[name='tipoPersona'] option:selected").val() == "NAT";
+                        }, 
+                        minlength: 3, 
+                        maxlength: 70
+                    },
+                    apeMaterno: { 
+                        required: function(element) {
+                            return $("select[name='tipoPersona'] option:selected").val() == "NAT";
+                        }, 
+                        minlength: 3, 
+                        maxlength: 70
+                    },
+                    nombre: { 
+                        required: function(element) {
+                            return $("select[name='tipoPersona'] option:selected").val() == "NAT";
+                        }
+                    },
+
+                    ruc: { 
+                        required: function(element) {
+                            return $("select[name='tipoPersona'] option:selected").val() == "JUR";
+                        }, 
+                        minlength: 11, 
+                        maxlength: 11 
+                    },
+                    razonSocial: { 
+                        required: function(element) {
+                            return $("select[name='tipoPersona'] option:selected").val() == "JUR";
+                        },
+                        minlength: 4, 
+                        maxlength: 150 
+                    },
+                    repreDni: { 
+                        required: function(element) {
+                            return $("select[name='tipoPersona'] option:selected").val() == "JUR";
+                        },
+                        minlength: 8, 
+                        maxlength: 8 
+                    },
+                    repreNombreCompleto: { 
+                        required: function(element) {
+                            return $("select[name='tipoPersona'] option:selected").val() == "JUR";
+                        },
+                        minlength: 4, 
+                        maxlength: 150 
+                    },
+                    direccion: { required: true, minlength: 8, maxlength: 250 },
+                    correo: { 
+                        required: true, 
+                        email: true,
+                        maxlength: 100 
+                    },
+                    telefono: { 
+                        required: false,
+                        maxlength: 9
+                    },
+                    local: { required: true, maxlength: 35 },
+                    asunto: { required: true, maxlength: 500 },
+                    "g-recaptcha-response": { required: true }
+                    /*hiddenRecaptcha: {
+                        required: function () {
+                            return (grecaptcha.getResponse() == '') ? true: false;
+                        }
+                    }*/
+                },
+                messages: {
+                	local: { 
+                        required: "Seleccione el Local"
+                    },
+                    tipoPersona: {
+                        required: "Seleccione el tipo de persona"
+                    },
+                    dni: {
+                        required: "Ingrese el dni",
+                        minlength: "El dni debe tener 8 dígitos",
+                        maxlength: "El dni debe tener 8 dígitos"
+                    },
+                    apePaterno: {
+                        required: "Ingrese el apellido paterno",
+                        minlength: "El apellido paterno no es válido",
+                        maxlength: "El apellido paterno es muy largo"
+                    },
+                    apeMaterno: {
+                        required: "Ingrese el apellido materno",
+                        minlength: "El apellido materno no es válido",
+                        maxlength: "El apellido materno es muy largo"
+                    },
+                    nombre: {
+                        required: "Ingrese el nombre",
+                        minlength: "El nombre no es válido",
+                        maxlength: "El nombre es muy largo"
+                    },
+                    ruc: {
+                        required: "Ingrese el ruc",
+                        minlength: "El ruc no es válido",
+                        maxlength: "El ruc es muy largo"
+                    },
+                    razonSocial: {
+                        required: "Ingrese la razón social",
+                        minlength: "La razón social no es válido",
+                        maxlength: "La razón social es muy largo"
+                    },
+                    repreDni: {
+                        required: "Ingrese el dni del representante legal",
+                        minlength: "La razón social no es válido",
+                        maxlength: "La razón social es muy largo"
+                    },
+                    repreNombreCompleto: {
+                        required: "Ingrese el nombre completo del representante legal",
+                        minlength: "La razón social no es válido",
+                        maxlength: "La razón social es muy largo"
+                    },
+                    direccion: {
+                        required: "Ingrese la dirección",
+                        minlength: "La dirección no es válido",
+                        maxlength: "La dirección es muy largo"
+                    },
+                    correo: {
+                        required: "Ingrese el correo",
+                        email: "Formato de correo invalido",
+                        minlength: "El correo no es válido",
+                        maxlength: "El correo es muy largo"
+                    },
+                    telefono: {
+                        maxlength: "El telefono es muy largo"
+                    },
+                    
+                    local: {
+                        required: "Seleccione el local"
+                    },
+                    asunto: {
+                        required: "Ingrese el asunto",
+                        minlength: "El asunto no es válido",
+                        maxlength: "El asunto es muy largo"
+                    },
+                    "g-recaptcha-response": {
+                        required: "El campo de recaptcha es obligatorio"
+                    }
+                },
+                submitHandler: function() {
+                 
+                    var obj = {};
+                    Array.prototype.forEach.call(document.getElementById("form-datos").elements, function (element) {
+                        if( ['text', 'textarea', 'number', 'select-one'].includes(element.type) ) obj[element.name] = element.value;
+                    });
+
+                    obj["fecha"] = "";
+                    console.log("obj", obj);
+                    console.log("stringify obj", JSON.stringify(obj));
+                    $(".btn-enviardoc").addClass("loading").prop( "disabled", true);
+	
+                    $.ajax({
+                        url: 'https://www.munisantanita.gob.pe/ApiLibroDeReclamaciones/reclamo',  
+                        type: 'POST',
+                        data: JSON.stringify(obj),
+                        contentType: "application/json",
+                        crossOrigin: true,
+                        cache: false,
+                        processData: false,
+                        success: function(data){ 
+                            console.log("data", data);
+                            $('#modalConfirmacion').modal('show');
+                            $(".btn-enviardoc").removeClass("loading").addClass("success");
+                        }, 
+                        error: function(jqXHR, exception) {
+                            console.log("jqXHR", jqXHR);
+                            $(".btn-enviardoc").removeClass("loading").addClass("error").prop( "disabled", false);
+                            setTimeout(function(){ $(".btn-enviardoc").removeClass("error"); }, 3000);
+                            var obj = jqXHR.responseJSON;
+                            if(obj.error == "invalidInputs"){
+                                var msjObj = "";
+                                for(var i in obj.message) {
+                                    msjObj += '"'+ obj.message[i].field +'":"'+ obj.message[i].msg+'",';
+                                }
+                                var listObj = "{" + msjObj.substr(0, (msjObj.length - 1) ) + "}";
+                                $("#form-datos").validate().showErrors(JSON.parse(listObj));
+                                
+                            }
+                            else console.log("Error", jqXHR.responseJSON);   
+                        }
+                    });
+
+                },
+                errorElement: 'span',
+                    errorPlacement: function (error, element) {
+                        error.addClass('invalid-feedback');
+                        element.after(error);
+                    },
+                    highlight: function (element, errorClass, validClass) {
+                        $(element).addClass('is-invalid');
+                    },
+                    unhighlight: function (element, errorClass, validClass) {
+                        $(element).removeClass('is-invalid');
+                    }
+            });
+            
+            $( "select[name='tipoPersona']" ).change(function() {
+                console.log("aa", $(this).val());
+                if($(this).val() == "NAT") {
+                    console.log("NAT");
+                    $(".control-tipo-persona").toggle("d-none");
+                    $(".control-tipo-persona-juridica").toggle("d-none");
+                } else {
+                    console.log("JUR");
+                    $(".control-tipo-persona").toggle("d-none");
+                    $(".control-tipo-persona-juridica").toggle("d-none");
+                }
+                //$(this).val
+                //control-tipo-persona-juridica
+            });
+
+
+            /*$("select[name=tipoPersona]").val("NAT");
+            $("input[name='dni']").val("74899896");
+            $("input[name='apePaterno']").val("HHH");
+            $("input[name='apeMaterno']").val("BBBB");
+            $("input[name='nombre']").val("STA");
+            $("input[name='ruc']").val("");
+            $("input[name='razonSocial']").val("");
+            $("input[name='repreDni']").val("");
+            $("input[name='repreNombreCompleto']").val("");
+            $("input[name='direccion']").val("MZ H1 lt 15 asd sd");
+            $("input[name='correo']").val("anto@gmail.com");
+            $("select[name=local]").val("5");
+            $("textarea[name='asunto']").val("Mensaje de prueba dsad sda s");*/
+
+        });
+
+        /*function recaptchaCallback() {
+            console.log("recaptchaCallback");
+        	  $('#hiddenRecaptcha').valid();
+        	};*/
+
+        $(document).on("click", ".btn-finalizar", function(e) {
+            e.preventDefault();
+            $('#modalConfirmacion').modal('hide');
+            location.reload(true);
+        });
+
+        $(document).on("click", "#btn-validate-dni", function(e) {
+            e.preventDefault();
+            //alert("click en el boton");
+            if($("input[name='dni']").val().length > 0){
+                $.getJSON('https://api.reniec.cloud/dni/' + $("input[name='dni']").val(), function(data){
+                	alert("dni");
+                    var res = 0;
+                    if(data.nombres.length > 0 && data.apellido_materno.length > 0 && data.apellido_paterno.length > 0 ) res++;
+					
+                    $("input[name='activo']").val( (res > 0) ? "ACTIVO" : "" );
+                    $("input[name='apePaterno']").val( (res > 0) ? data.apellido_paterno : "");
+                    $("input[name='apeMaterno']").val((res > 0) ? data.apellido_materno : "");
+                    $("input[name='nombre']").val((res > 0) ? data.nombres : "");
+                })
+                .done(function(data) {
+                	var res = 0;
+                    if(data.nombres.length > 0 && data.apellido_materno.length > 0 && data.apellido_paterno.length > 0 ) res++;
+					
+                    $("input[name='activo']").val( (res > 0) ? "ACTIVO" : "" );
+                    $("input[name='apePaterno']").val( (res > 0) ? data.apellido_paterno : "");
+                    $("input[name='apeMaterno']").val((res > 0) ? data.apellido_materno : "");
+                    $("input[name='nombre']").val((res > 0) ? data.nombres : "");
+			  })
+			  .fail(function(jqxhr, textStatus, error) {
+				  console.log( "jqxhr ", jqxhr );
+				  console.log( "textStatus " + textStatus );
+			  })
+			  .always(function() {
+				  
+			  });
+                alert("salida " + $("input[name='dni']").val());
+            }
+            else alert("Ingresar dni para buscar");
+        });
+        
+        $(document).on("click", "#btn-validate-ruc", function(e) {
+            e.preventDefault();
+            if($("input[name='ruc']").val().length > 0){
+                $.getJSON('https://api.sunat.cloud/ruc/' + $("input[name='ruc']").val(), function(data){
+                    $("input[name='activo']").val( (data.razon_social.length > 0 ) ? "ACTIVO" : "" );
+                    $("input[name='razonSocial']").val( (data.razon_social.length > 0 ) ? data.razon_social : "");
+                });
+            }
+            else alert("Ingresar ruc para buscar");
+        });
+
+        
+    </script>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+               <div class="container">
+                  <div class="row" style="padding: 0 15px;">
+                     <div class="col-md-12">
+                        <div class="section-title">
+                           <h3 class="stitle text-center text-uppercase">Libro de Reclamaciones Virtual</h3>
+                        </div>
+                     </div>
+                     
+                  	<br>     
+		            <br>     
+		
+		            <form id="form-datos" novalidate>
+		                <div id="html_element"></div>
+		                <div class="row">
+		
+		                    <div class="col-md-12 text-right">
+		                        <span>Fecha: </span> <strong class="fecha-actual" style="color: #008b31;font-size: 16px;"></strong>
+		                        <!-- <p>Número de reclamo: <strong>01</strong></p> -->
+		                    </div>
+		
+		                    
+		                    
+		                    <div class="col-md-12 pb-1">
+		                        <!-- <hr> -->
+		                        <br>
+		                        <h5>1. IDENTIFICACIÓN DE LA ATENCIÓN BRINDADA</h5>
+		                    </div>
+		                    
+		                    <div class="col-md-12">
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-2 col-form-label">Local</label>
+		                            <div class="col-sm-10">
+		                                <select id="local" name="local" class="form-control" data-msg="">
+		                                    <option value="" selected="selected">Seleccionar</option>
+		                                    <option value="PALACIO MUNICIPAL">PALACIO MUNICIPAL</option>
+		                                    <option value="CLINICA MUNICIPAL">CLINICA MUNICIPAL</option>
+		                                    <option value="CASA DE LA MUJER">CASA DE LA MUJER</option>
+		                                    <option value="CASA DEL ADULTO MAYOR">CASA DEL ADULTO MAYOR</option>
+		                                    <option value="GUARDERIA MUNICIPAL">GUARDERIA MUNICIPAL</option>
+		                                </select>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    
+		
+		                    <div class="col-md-12 pb-1">
+		                        <!-- <hr> -->
+		                        <br>
+		                        <h5>2. IDENTIFICACIÓN DEL USUARIO</h5>
+		                    </div>
+		                    
+		                    <div class="col-md-12">
+		                        <br>
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-2 col-form-label">Tipo de persona</label>
+		                            <div class="col-sm-10">
+		                                <select id="tipoPersona" name="tipoPersona" class="form-control">
+		                                    <option value="NAT" selected>Persona Natural</option>
+		                                    <option value="JUR">Persona Jurídica</option>
+		                                </select>
+		                            </div>
+		                        </div>
+		                        <br>
+		                    </div>
+		                    
+		                    <p class="col-md-12 text-primary">Datos del contribuyente:</p>
+		                    <div class="col-md-12 control-tipo-persona">
+		                    	<br>
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-2 col-form-label">DNI</label>
+		                            <div class="col-sm-10">
+		                                <input type="text" name="dni" id="dni" maxlength="8" class="form-control" onkeypress="soloNumeros(event)">
+		                            </div>
+		                            <!--<div class="col-md-2">
+		                                <button id="btn-validate-dni" type="button" class="btn btn-primary btn-block">
+		                                    <svg version="1.1" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 407.007 407.007" style="enable-background:new 0 0 407.007 407.007;margin-top: -5px;" xml:space="preserve">
+		                                        <path fill="#fff" d="M271.422,30.844h-29.78c-3.716-0.115-6.909-2.67-7.837-6.269c-2.822-14.661-15.903-25.082-30.824-24.555
+		                                            c-15.011-0.263-28.028,10.327-30.824,25.078c-0.966,3.5-4.209,5.878-7.837,5.747h-28.735v52.245h135.837V30.844z"/>
+		                                        <path fill="#fff" d="M355.014,382.974V83.611c0.032-11.83-9.533-21.446-21.363-21.478c-0.542-0.001-1.084,0.018-1.625,0.057h-44.931v26.645
+		                                            c0,4.18-2.612,9.927-6.792,9.927H126.181c-4.18,0-6.269-5.747-6.269-9.927V62.191H74.981
+		                                            c-11.798-0.866-22.065,7.997-22.93,19.796c-0.04,0.541-0.059,1.083-0.057,1.625v299.363
+		                                            c-0.292,12.981,9.995,23.741,22.976,24.032c0.004,0,0.008,0,0.012,0h257.045c12.981-0.285,23.273-11.04,22.988-24.021
+		                                            C355.014,382.982,355.014,382.978,355.014,382.974z M161.185,314.011l-40.751,38.139c-1.303,1.559-3.196,2.505-5.224,2.612
+		                                            c-2.183-0.086-4.246-1.024-5.747-2.612l-21.42-21.943c-2.847-3.188-2.614-8.069,0.522-10.971c3.047-2.987,7.924-2.987,10.971,0
+		                                            l15.673,16.718l35.527-33.437c3.562-2.458,8.443-1.564,10.901,1.998C163.643,307.421,163.457,311.309,161.185,314.011z
+		                                             M161.185,230.419L161.185,230.419l-40.751,38.139c-1.303,1.559-3.196,2.505-5.224,2.612c-2.183-0.086-4.246-1.024-5.747-2.612
+		                                            l-21.42-21.943c-2.847-3.188-2.614-8.069,0.522-10.971c3.047-2.987,7.924-2.987,10.971,0l15.673,16.718l35.527-33.437
+		                                            c3.562-2.458,8.443-1.564,10.901,1.998C163.643,223.829,163.457,227.717,161.185,230.419z M161.185,146.827l-40.751,38.139
+		                                            c-1.303,1.559-3.196,2.505-5.224,2.612c-2.183-0.086-4.246-1.024-5.747-2.612l-21.42-21.943
+		                                            c-2.847-3.188-2.614-8.069,0.522-10.971c3.047-2.987,7.924-2.987,10.971,0l15.673,16.718l35.527-33.437
+		                                            c3.562-2.458,8.443-1.564,10.901,1.998C163.643,140.237,163.457,144.125,161.185,146.827z M313.218,344.313H193.054
+		                                            c-4.328,0-7.837-3.509-7.837-7.837s3.509-7.837,7.837-7.837h120.163c4.328,0,7.837,3.509,7.837,7.837
+		                                            S317.546,344.313,313.218,344.313z M313.218,260.721H193.054c-4.328,0-7.837-3.509-7.837-7.837c0-4.328,3.509-7.837,7.837-7.837
+		                                            h120.163c4.328,0,7.837,3.509,7.837,7.837C321.054,257.212,317.546,260.721,313.218,260.721z M313.218,177.129H193.054
+		                                            c-4.328,0-7.837-3.509-7.837-7.837c0-4.328,3.509-7.837,7.837-7.837h120.163c4.328,0,7.837,3.509,7.837,7.837
+		                                            C321.054,173.621,317.546,177.129,313.218,177.129z"/>
+		                                    </svg>
+		                                    Validar
+		                                </button>
+		                            </div>-->
+		                        </div> 
+		                    </div>
+		                    <div class="col-md-12 control-tipo-persona-juridica" style="display: none;">
+		                    <br>
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-2 col-form-label">N° RUC</label>
+		                            <div class="col-sm-10">
+		                                <input type="text" name="ruc" id="ruc" maxlength="11" class="form-control" onkeypress="soloNumeros(event)">
+		                            </div>
+		                            <!--<div class="col-md-2">
+		                                <button id="btn-validate-ruc" type="button" class="btn btn-primary btn-block">
+		                                    <svg version="1.1" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 407.007 407.007" style="enable-background:new 0 0 407.007 407.007;margin-top: -5px;" xml:space="preserve">
+		                                        <path fill="#fff" d="M271.422,30.844h-29.78c-3.716-0.115-6.909-2.67-7.837-6.269c-2.822-14.661-15.903-25.082-30.824-24.555
+		                                            c-15.011-0.263-28.028,10.327-30.824,25.078c-0.966,3.5-4.209,5.878-7.837,5.747h-28.735v52.245h135.837V30.844z"/>
+		                                        <path fill="#fff" d="M355.014,382.974V83.611c0.032-11.83-9.533-21.446-21.363-21.478c-0.542-0.001-1.084,0.018-1.625,0.057h-44.931v26.645
+		                                            c0,4.18-2.612,9.927-6.792,9.927H126.181c-4.18,0-6.269-5.747-6.269-9.927V62.191H74.981
+		                                            c-11.798-0.866-22.065,7.997-22.93,19.796c-0.04,0.541-0.059,1.083-0.057,1.625v299.363
+		                                            c-0.292,12.981,9.995,23.741,22.976,24.032c0.004,0,0.008,0,0.012,0h257.045c12.981-0.285,23.273-11.04,22.988-24.021
+		                                            C355.014,382.982,355.014,382.978,355.014,382.974z M161.185,314.011l-40.751,38.139c-1.303,1.559-3.196,2.505-5.224,2.612
+		                                            c-2.183-0.086-4.246-1.024-5.747-2.612l-21.42-21.943c-2.847-3.188-2.614-8.069,0.522-10.971c3.047-2.987,7.924-2.987,10.971,0
+		                                            l15.673,16.718l35.527-33.437c3.562-2.458,8.443-1.564,10.901,1.998C163.643,307.421,163.457,311.309,161.185,314.011z
+		                                             M161.185,230.419L161.185,230.419l-40.751,38.139c-1.303,1.559-3.196,2.505-5.224,2.612c-2.183-0.086-4.246-1.024-5.747-2.612
+		                                            l-21.42-21.943c-2.847-3.188-2.614-8.069,0.522-10.971c3.047-2.987,7.924-2.987,10.971,0l15.673,16.718l35.527-33.437
+		                                            c3.562-2.458,8.443-1.564,10.901,1.998C163.643,223.829,163.457,227.717,161.185,230.419z M161.185,146.827l-40.751,38.139
+		                                            c-1.303,1.559-3.196,2.505-5.224,2.612c-2.183-0.086-4.246-1.024-5.747-2.612l-21.42-21.943
+		                                            c-2.847-3.188-2.614-8.069,0.522-10.971c3.047-2.987,7.924-2.987,10.971,0l15.673,16.718l35.527-33.437
+		                                            c3.562-2.458,8.443-1.564,10.901,1.998C163.643,140.237,163.457,144.125,161.185,146.827z M313.218,344.313H193.054
+		                                            c-4.328,0-7.837-3.509-7.837-7.837s3.509-7.837,7.837-7.837h120.163c4.328,0,7.837,3.509,7.837,7.837
+		                                            S317.546,344.313,313.218,344.313z M313.218,260.721H193.054c-4.328,0-7.837-3.509-7.837-7.837c0-4.328,3.509-7.837,7.837-7.837
+		                                            h120.163c4.328,0,7.837,3.509,7.837,7.837C321.054,257.212,317.546,260.721,313.218,260.721z M313.218,177.129H193.054
+		                                            c-4.328,0-7.837-3.509-7.837-7.837c0-4.328,3.509-7.837,7.837-7.837h120.163c4.328,0,7.837,3.509,7.837,7.837
+		                                            C321.054,173.621,317.546,177.129,313.218,177.129z"/>
+		                                    </svg>
+		                                    Validar
+		                                </button>
+		                            </div>-->
+		                        </div> 
+		                    </div>
+		                  
+		                    
+		                    <!-- <div class="col-md-6">
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-4 col-form-label">Activo</label>
+		                            <div class="col-sm-8">
+		                                <input type="text" name="activo" id="activo" class="form-control" onkeypress="soloTexto(event)">
+		                            </div>
+		                        </div> 
+		                    </div> -->
+		
+		                    <div class="col-md-12 control-tipo-persona-juridica" style="display: none;">
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-2 col-form-label">Razón social</label>
+		                            <div class="col-sm-10">
+		                                <input type="text" name="razonSocial" id="razonSocial" class="form-control" onkeypress="soloTexto(event)">
+		                            </div>
+		                        </div> 
+		                        <br>
+		                    </div>
+		
+		                    <p class="col-md-12 control-tipo-persona-juridica text-primary" style="display: none;">Representante Legal de la Razón Social:</p>
+		                    
+		                    <div class="col-md-12"><br></div>
+		                    <div class="col-md-6 control-tipo-persona-juridica" style="display: none;">
+		                    	
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-4 col-form-label">DNI</label>
+		                            <div class="col-sm-8">
+		                                <input type="text" name="repreDni" id="repreDni" class="form-control" onkeypress="soloNumeros(event)">
+		                            </div>
+		                        </div> 
+		                    </div>
+		                    <div class="col-md-6 control-tipo-persona-juridica" style="display: none;">
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-4 col-form-label">Nombre Completo</label>
+		                            <div class="col-sm-8">
+		                                <input type="text" name="repreNombreCompleto" id="repreNombreCompleto" class="form-control" onkeypress="soloTexto(event)">
+		                            </div>
+		                        </div> 
+		                    </div>
+		                    
+		                    
+		                    <div class="col-md-6 control-tipo-persona">
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-4 col-form-label">Apellido paterno</label>
+		                            <div class="col-sm-8">
+		                                <input type="text" name="apePaterno" id="apePaterno" class="form-control" onkeypress="soloTexto(event)" >
+		                            </div>
+		                        </div> 
+		                    </div>
+		                    <div class="col-md-6 control-tipo-persona">
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-4 col-form-label">Apellido materno</label>
+		                            <div class="col-sm-8">
+		                                <input type="text" name="apeMaterno" id="apeMaterno" class="form-control" onkeypress="soloTexto(event)" >
+		                            </div>
+		                        </div> 
+		                    </div>
+		                    <div class="col-md-12 control-tipo-persona">
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-2 col-form-label">Nombre</label>
+		                            <div class="col-sm-10">
+		                                <input type="text" name="nombre" id="nombre" class="form-control" onkeypress="soloTexto(event)" >
+		                            </div>
+		                        </div> 
+		                        <br>
+		                    </div>
+		
+		
+		                    
+		                   
+		                    <p class="col-md-12 text-primary">Datos adicionales:</p>
+		                    <div class="col-md-12">
+		                    <br>
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-2 col-form-label">Dirección</label>
+		                            <div class="col-sm-10">
+		                                <input type="text" name="direccion" id="direccion" class="form-control">
+		                            </div>
+		                        </div> 
+		                    </div>
+		
+		                    <div class="col-md-6">
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-4 col-form-label">Correo</label>
+		                            <div class="col-sm-8">
+		                                <input type="text" name="correo" id="correo" class="form-control">
+		                            </div>
+		                        </div> 
+		                    </div>
+		                    <div class="col-md-6">
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-4 col-form-label">Teléfono</label>
+		                            <div class="col-sm-8">
+		                                <input type="text" name="telefono" id="telefono" class="form-control" onkeypress="soloNumeros(event)">
+		                            </div>
+		                        </div> 
+		                    </div>
+		                    
+		
+		                    <div class="col-md-12 pb-1">
+		                        <!-- <hr> -->
+		                        <br>
+		                        <h5>3. DESCRIPCION DEL RECLAMO</h5>
+		                    </div>
+		                    
+		                    <div class="col-md-12">
+		                        <div class="form-group row">
+		                            <label for="" class="col-sm-2 col-form-label">Asunto</label>
+		                            <div class="col-sm-10">
+		                                <textarea name="asunto" id="asunto" class="form-control" cols="30" rows="4" placeholder="Caracteres maximo 500"></textarea>
+		                                <div class="alert alert-warning" role="alert">Caracteres maximo 500</div>
+		                            </div>
+		                        </div> 
+		                    </div>
+		                    
+		                    <div class="col-md-12 pb-1">
+		                        <!-- <hr> -->
+		                        <br>
+		                        <h5>4. ACCIONES ADOPTADAS POR LA ENTIDAD</h5>
+		                    </div>
+		                    
+		                    <div class="col-md-12">
+		                        <div class="form-group row">
+		                            <div class="col-md-12"><p class="text-primary" style="font-size: 1.6rem;">Se le informará al correo electrónico las acciones adoptadas por la Municipalidad Distrital de Santa Anita.</p></div>
+		                        </div> 
+		                    </div>
+		
+		                    <div class="col-md-12 pb-1">
+		                        <br>
+		                        <h5>5. CODIGO DE VERIFICACIÓN</h5>
+		                        <br>
+		                        <div class="g-recaptcha" data-sitekey="6LcR3PcUAAAAADWmX_bj5vQ0Nksb9cqUTFWtZz1V" data-callback="recaptchaCallback"></div>
+		                        <!-- <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha"> -->
+		                    </div>
+		
+		                    <div class="col-md-12 text-center">
+		                        <br>
+		                        <br>
+		                        <hr>
+		
+		                        <button type="submit" id="btn-enviar" class="btn-enviardoc">
+		                            <span>Enviar reclamo</span>
+		                        </button>
+		                    </div>
+		
+		                    <div style="height: 200px;"></div>
+		
+		                </div>
+		            </form>
+		            
+                  </div>
+               </div>
+            </section>
+            
+            <!-- Modal -->
+		    <div class="modal fade" id="modalConfirmacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		        <div class="modal-dialog modal-dialog-centered" role="document">
+		            <div class="modal-content">
+		                <div class="modal-header">
+		                    <h5 class="modal-title" id="exampleModalLongTitle">AVISO</h5>
+		                    <button type="button" class="close btn-finalizar" data-dismiss="modal" aria-label="Close">
+		                        <span aria-hidden="true">&times;</span>
+		                    </button>
+		                </div>
+		                <div class="modal-body">
+		                    <div style="font-size: 2rem;" class="text-center" id="msjRespuesta">El reclamo fue enviado satisfactoriamente, el personal de la Subgerencia de Atención al Ciudadano atenderá su solicitud en la mayor brevedad posible.</div>
+		                </div>
+		                <div class="modal-footer">
+		                    <button type="button" class="btn btn-primary btn-finalizar" data-dismiss="modal">ACEPTAR</button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    
+         </div>
+	</body>
+</html>

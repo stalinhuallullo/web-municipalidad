@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                        	<h3 class="stitle text-center">Directivas</h3>
+	                        	
+	                        	<div th:replace="web/fragments/mini-banner"></div>
+	                        	
+	                        	<h6 class="title-info">2020</h6>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/1. GM.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Acta de asamblea ordinaria del comité de salud y seguridad en el trabajo</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/3. GM.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plan para la vigilancia, prevención y control del COVID-19 en el trabajo</span></a></li>
+										</ul>
+                                    </div>
+                                </div>
+                                
+	                        	<h6 class="title-info">2019</h6>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/directiva-1.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Normas para la administración de la caja chica</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/directiva-2.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva para la ejecución de obras públicas en la modalidad de ejecución presupuestaria directa</span></a></li>
+										</ul>
+                                    </div>
+                                </div>
+                                
+	                        	<h6 class="title-info">2018</h6>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/MEMO_0294-2018-GM.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plan operativo informático 2018</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/Res_489_2018.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva del sistema de gestión documental</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/MEMO_0699-2018.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva que norma los procedimientos para la aprobación de adicionales de obra, deductivos, ampliaciones del plazo y valorizaciones de obra; bajo la modalidad de contrata</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/MEMO_0700-2018.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva que norma los procedimientos para la recepción de obra</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/MEMO_0701-2018.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva que norma los procedimientos para la elaboración y aprobación de expedientes técnicos o estudios definitivos</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/MEMO_0702-2018.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva que norma los procedimientos para la ejecución de obras públicas bajo la modalidad ejecución presupuestaria indirecta (por contrata) en la municipalidad distrital de Santa Anita</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/Politicas de la Calidad -MDSA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Política de la calidad de la municipalidad de Santa Anita</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/ordenanza243.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ordenanza que aprueba el plan de contingencia del distrito de santa anita 2018, el plan de operaciones de emergencia del distrito de santa anita 2017 - 2018 y el plan de contingencia frente al fenómeno de la niña costera 2018, del distrito de Santa Anita</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/PLAN_ANUAL.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plan anual de evaluación y fiscalización ambiental planeta - 2018</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+	                        	<h6 class="title-info">2017</h6>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/Directiva0012017.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 0001-2017-GPPR/MDSA "formulación, seguimiento, evaluación y modificación del plan operativo institucional (POI) de la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/MEMO-164.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 0003-2017-GA/MDSA "directiva para la asistencia alimentaria de los beneficiarios del programa de alimentación y nutrición para el paciente ambulatorio con tuberculosis y familia-pantbc"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/MEMO-252.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plan operativo informático 2017</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/DIRECTIVA04-2017.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 0004-2017-GA-GG/MDSA "elaboración del cuadro de necesidades de la municipalidad distrital de Santa Anita"</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/DIRECTIVA 05-2017.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 0005-2017-GA/MDSA "directiva general para requerimiento y contrataciones de bienes y servicios para montos iguales o menores a 8uit y requerimientos con el uso obligatorio del siga"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/DIRECTIVA 06-2017.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 0006-2017-GA-GG/MDSA  "lineamientos para la elaboración de las especificaciones técnicas y los términos de referencia en la indagación de mercado y la determinación del valor estimado para bienes y servicios de la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/directiva8.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 0008-2017-GA-GG/MDSA  "procedimientos de determinación, provisión, castigo y quiebre de deudas de cobranza dudosa y de recuperación onerosa"</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+								<h6 class="title-info">2016</h6>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/res_alc_0019.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 001-2016-GA-GG/MDSA "normas y procedimientos para la administración del fondo fijo para caja chica en la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/Politicas_seguridad.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 001-2016-GPPR/MDSA "políticas y procedimientos para la seguridad de la información de la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/RGG_00109.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plan operativo informático - 2016 de la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/MEMO_0466.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 001-2016-GODU/MDSA "directiva que norma el procedimiento para las transferencias de obras públicas a otras entidades del estado"</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/MEMO_0467.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 002-2016-GODU/MDSA "directiva para normar la ejecución de obras por administración directa en la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/MEMO_0468.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 003-2016-GA/MDSA "directiva que establece los procedimientos técnicos a seguir por los comités de selección designados para llevar a cabo los procesos de selección para la adquisición de bienes; contratación de servicios y obras"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/MEMO_1013.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 002-2016-GPPR/MDSA "directiva de ejecución presupuestaria con enfoque multianual"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/PEGE_2017.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plan estratégico de gobierno electrónico 2017-2018</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+								<h6 class="title-info">2015</h6>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/PLAN OPERATIVO.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plan operativo informático</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/Directiva.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N°0001-2015-GPPR/MDSA "normas que regulan el uso de uniforme institucional y vestimenta de trabajo en la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/resolucion034-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N°0002-2015-GA/MDSA "medida de austeridad, racionalización y disciplina en el gasto público de la municipalidad distrital de Santa Anita para el año 2015"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/Directiva_0003.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N°0003-2015-GPPR/MDSA "normas para la gestión de reclamaciones, quejas y sugerencias en la municipalidad distrital de Santa Anita"</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/Directiva-0004.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N°0004-2015-GPPR/MDSA "normas para la medición de la gestión referido a la atención ciudadana en la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/rg_general0262-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N°0004-2015-GA-GG/MDSA "normas para disposiciones para la toma de inventario físico de infraestructura pública en la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/rg_general0343-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N°0005-2015-GA/MDSA "normas para el protocolo institucional de atención al ciudadano de la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/rg_general0344-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N°0006-2015-GA/MDSA "normas para la atención preferente a los administrados con discapacidad, madres gestantes, las niñas, los niños, los adultos mayores en la dependencia administrada por la municipalidad distrital de Santa Anita"</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/rg_general0814-2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva n°0002-2015-gppr/mdsa "normas que establece políticas relacionadas con la prestación de servicios públicos de recolección de residuos sólidos, respecto a la determinación del costo, la programación presupuestal y la ejecución del servicio"</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+								<h6 class="title-info">2014</h6>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/rg_general0279-2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N°0001-2014-GPPR/MDSA "normas para la evaluación presupuestaria para el año fiscal 2014"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/rg_general0353-2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N°0002-2014-GG/MDSA "normas para el procedimiento de autorización, uso y cancelación de los certificados digitales en la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/defensa_civil/provision_cobranza.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N°0004-2014-GA-GG/MDSA "procedimiento de determinación de la provisión de cobranza dudosa y tratamiento contable de las cuentas por cobrar de la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/rg_general0278-2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 0005-2014-GA/MDSA "normas para la evaluación del desempeño laboral"</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/resolucion139-2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva que regula el otorgamiento de viáticos y rendición de cuentas para comisión de servicios dentro y fuera del país"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/resolucion142-2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva "procedimiento para la presentación de información financiero presupuestal en la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/resolucion143-2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva "procedimiento de atención a los usuarios de los servicios informáticos en la municipalidad distrital de santa anita" que tiene como objetivo establecer el procedimiento de atención a los usuarios de los servicios informáticos que brinda la oficina de informática de la municipalidad distrital de Santa Anita</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/resolucion144-2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">"directiva sobre costo beneficio de la implementación de actividades o procedimientos de control interno en la municipalidad distrital de Santa Anita"</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/resolucion145-2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">"Directiva que norma que regula la aplicación de procedimiento administrativo sancionador en la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/resolucion146-2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">"Directiva para la revisión y/o mantenimiento de los sistemas de la información en la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/rg_general0781-2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">"Plan de contingencia informático municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/PORTAL DE TRANSPARENCIA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plan operativo informático</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+								<h6 class="title-info">2013</h6>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('Resoluciones_gerencias/rg_general0281-2013.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 001-2013-GPPR-GG/MDSA normas para la publicación y actualización de información en el portal de transparencia estándar y el portal institucional de la municipalidad distrital de Santa Anita</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/austeridad.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 003-2013-GA/MDSA normas para el control y mantenimiento de la flota vehicular</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+								<h6 class="title-info">2011</h6>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/rg_general0116-2011.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 002-2011-GA/MDSA medidas de austeridad, racionalidad y disciplina en el gasto público de la municipalidad distrital de santa anita para el año 2011</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/rg_general0681-2011.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 003-2011-GA/MDSA implementación de las medidas de ecoeficiencia en la municipalidad distrital de Santa Anita</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/Directiva_Res-N 99.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva n° 004-2011-ga/mdsa procedimientos generales para la asignacion y control de bienes patrimoniales de la municipalidad distrital de santa anita</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/uso_correo_electronico_corporativo_mdsa.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva n° 002-2011-gppr/mdsa "principios y valores que rigen la conducta ética laboral del personal de la municipalidad distrital de Santa Anita"</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/descanso_medico.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 001-2011- GPPR-GG/MDSA "uso de correo electrónico corporativo de la municipalidad distrital de Santa Anita"</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('Secretaria_General/PLAN DE CONTINGENCIA INFORMATICO.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Directiva N° 005-2011 GPPR-GG/MDSA "normas que regulan el procedimiento de los descansos médicos para los trabajadores de la municipalidad distrital de Santa Anita"</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                           	<h3 class="stitle text-center">Licencias de funcionamiento</h3>
+	                           	<style>
+	                           	
+									.cmsmasters_table {
+									    width: 100%;
+									    border-collapse: unset;
+									}
+									.cmsmasters_table{
+									    border-collapse: collapse;
+									    border-spacing: 0;
+									    vertical-align: middle;
+									}
+									.cmsmasters_table thead .cmsmasters_table_row_header th:first-child {
+									    -webkit-border-radius: 3px 0 0 0;
+									    border-radius: 3px 0 0 0;
+									}
+									.cmsmasters_table tr td.cmsmasters_table_cell_alignleft, .cmsmasters_table tr th.cmsmasters_table_cell_alignleft {
+									    text-align: left;
+									}
+									.cmsmasters_table tr td:first-child, .cmsmasters_table tr th:first-child {
+									    border-left-width: 1px;
+									    border-left-style: solid;
+									}
+									.cmsmasters_table thead .cmsmasters_table_row_header th {
+									    padding: 15px 25px;
+									}
+									.cmsmasters_table .cmsmasters_table_row_header th {
+									    border-color: #00AD46;
+										background-color: #00AD46;
+										color: #fafafa;
+									}
+									
+									.cmsmasters_table tbody tr td {
+									    padding: 13px 25px;
+									}
+									.cmsmasters_table .cmsmasters_table_row_header th{
+										text-align: left;
+									}
+									.cmsmasters_table tbody tr td, 
+									.cmsmasters_table tfoot tr td {
+									    border-bottom-width: 1px;
+									    border-bottom-style: solid;
+									}
+									.cmsmasters_table tr td:last-child, 
+									.cmsmasters_table tr th:last-child {
+									    border-right-width: 1px;
+									    border-right-style: solid;
+									}
+									.cmsmasters_table tr td{
+										border-color: #dedede;
+									}
+                                </style> 
+                                   
+
+                                <table class="cmsmasters_table">
+                                        <caption><h6 class="title-info">Formularios</h6></caption>
+                                        <thead>
+                                            <tr class="cmsmasters_table_row_header">
+                                                <th class="cmsmasters_table_cell_alignleft">Descripción</th>
+                                                <th class="cmsmasters_table_cell_aligncenter" width="50px">Enlace</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Solicitud para la obtención de Licencia de Funcionamiento</strong></td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/Solicitud para la obtención de Licencia de Funcionamiento 2019.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Declaración Jurada de Condiciones Básicas de Seguridad</strong></td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/Declaracion Jurada de Cumplimiento de las Condiciones de Seguridad en la Edificacion.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Formato de Declaración Jurada para Solicitar el Desarrollo de Giros Afines o Complementarios a la Licencia de Funcionamiento</strong></td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ANEXO1.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Formato de Declaración Jurada para Informar el Desarrollo de Actividades Simultaneas y Adicionales a la Licencia de Funcionamiento</strong></td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ANEXO 2.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Formato de Declaración Jurada para Solicitar el Cambio de Giro de la Licencia de Funcionamiento</strong></td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/FORMATO DE DECLARACION JURADA PARA SOLICITAR EL CAMBIO DE GIRO.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <!-- <table class="cmsmasters_table">
+                                        <caption><h6 class="title-info">Proceso de tramite de licencia de funcionamiento</h6></caption>
+                                        <thead>
+                                            <tr class="cmsmasters_table_row_header">
+                                                <th class="cmsmasters_table_cell_alignleft">Descripción</th>
+                                                <th class="cmsmasters_table_cell_aligncenter" width="50px">Enlace</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Proceso de Tramite de una licencia de Funcionamiento (TRIPTICO)</strong></td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/triptico actual.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>-->
+
+                                    <table class="cmsmasters_table">
+                                        <caption><h6 class="title-info">Legislación</h6></caption>
+                                        <thead>
+                                            <tr class="cmsmasters_table_row_header">
+                                                <th class="cmsmasters_table_cell_alignleft">Descripción</th>
+                                                <th class="cmsmasters_table_cell_aligncenter" width="50px">Enlace</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ley orgánica de municipalidades, ley N° 27972</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/LEY ORGÁNICA DE MUNICIPALIDADES LEY Nº 27972.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft">Ley N° 28976, ley marco de licencia de funcionamiento</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ley_nro_28976.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>DECRETO SUPREMO N° 006-2013-PCM -</strong> Aprueba la relación de autorizaciones sectoriales de las Entidades del Poder Ejecutivo, que deben ser exigidas como requisito previo para el otorgamiento de la licencia de funcionamiento, de acuerdo a la Ley N° 28976, Ley Marco de Licencia de Funcionamiento</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/DS-006-2013-PCM.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>DECRETO SUPREMO N° 058-2014-PCM -</strong> Decreto Supremo que aprueba el Reglamento de Inspecciones Técnicas de Seguridad en Edificaciones</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/DS-058-2014-PCM.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>LEY N° 30230 -</strong> Ley que establece medidas tributarias, simplificación de procedimientos y permisos para la promoción y dinamización de la inversión en el País</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/Ley30230.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Decreto Legislativo Nº 1200</strong>, Decreto Legislativo que modifica los artículos 2, 3, 6, 7, 8, 9, 11, 13 y 15 de la Ley N° 28976, Ley Marco de Licencias de Funcionamiento y los artículos 12 y 14 de la Ley N° 29664, Ley que crea el Sistema Nacional de Gestión del Riesgo de Desastres</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/DECRETO LEGISLATIVO N 1200.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft">Decreto supremo N° 004-2011-vivienda</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/DS 004_2011_VIVIENDA.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza Nro. 1025 - MML</strong> Aprueban reajuste integral de zonificación de ajuste de suelos en los distritos de El Agustino, y de Santa Anita que forman parte del área de tratamiento normativo I de Lima Metropolitana</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ORD-1025.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza Nro. 1015 - MML</strong> - Normas de zonificación</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ORD-1015.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza Nro. 933 - MML</strong> - indice de usos para la Ubicación de Actividades Urbanas</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ORD_933_MML.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza N° 00099 /MDSA-2012</strong> Aprueba la modificación de los artículos 13°, 40° y 42° de la Ordenanza N° 00096/MDSA que regula el otorgamiento de licencia y/o autorización municipal de funcionamiento en el distrito de Santa Anita</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ordenanza0099_mdsa.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza N° 00173/MDSA</strong> Modifican el Reglamento para el otorgamiento de licencia y/o autorización municipal de funcionamiento en el distrito de Santa Anita(modifica la Ordenanza N° 00096/MDSA-2012</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ORD  173 - DEROGAR HORARIO.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza N° 0043/MDSA-2009</strong> Ordenanza que aprueba el texto único de Procedimientos Administrativos de la Municipalidad Distrital de Santa Anita</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ordenanza0043_mdsa.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza N° 0211/MDSA-2016</strong> Ordenanza que aprueba el T.U.P.A. de la Municipalidad</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ORD_211.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza N° 00104 /MDSA-2012</strong> Declarar zona rigidas, no accesibles para el comercio ambulatorio las siguientes vias</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ordenanza0104_mdsa.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Ordenanza N° 00131 /MDSA-2013</strong> Regula el otorgamiento de licencias de funcionamiento, anuncios publicitarios y toldos en forma conjunta para establecimientos comerciales en la jurisdicción del distrito de Santa Anita</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/ordenanza131-2013.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Decreto de Alcaldía Nº 00012-2015/MDSA</strong>, Modifican el texto único de Procedimientos Administrativos de la Municipalidad Distrital de Santa Anita</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/D A  N 12-15-MDSA (TUPA).pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft"><strong>Decreto de Alcaldía Nº 00011-2016/MDSA</strong>, Modifican el texto único de Procedimientos Administrativos de la Municipalidad Distrital de Santa Anita</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/dec_11_2016.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft">Preguntas frecuentes</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/Preguntas_frecuentes.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft">Plano de Zonificación</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/zonifica.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cmsmasters_table_cell_alignleft">Indice de Uso de Suelos</td>
+                                                <td class="cmsmasters_table_cell_aligncenter">
+                                                    <a th:href=" ${@helper.getServerApiRecursos('pdf/licencia/indice_uso.pdf')} " target="_blank" rel="noopener noreferrer"><i class="ico file-pdf"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                    
+                                    <h6 class="title-info">Procedimiento</h6>
+                                    <h6 class="title-info">Requisitos para solicitar la licencia de funcionamiento (Edificaciones calificadas con nivel de riesgo bajo o medio)</h6>
+                                    
+                                    <div class="row">
+										<div class="col-md-12">
+											<ul class="checklist table-info">
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Solicitud de Licencia de Funcionamiento, con carácter de Declaración Jurada, que incluya</span>
+											        <ul class="checklist table-info">
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>1:</strong></u></span> Tratándose de personas jurídicas u otros entes colectivos: su número de R.U.C. y el número de D.N.I. o Carné de Extranjería de su representante legal.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>2:</strong></u></span> Tratándose de personas naturales: su número de R.U.C y el número D.N.I. o Carné de Extranjería, y el número de D.N.I. o Carné de Extranjería del representante en caso actúen mediante representación.</li>
+													</ul>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">En el caso de personas jurídicas u otros entes colectivos, Declaración Jurada del representante legal o apoderado señalando que su poder se encuentra vigente, consignando el número de Partida Electrónica y asiento de inscripción en la Superintendencia Nacional de Registros Públicos (SUNARP). Tratándose de representación de personas naturales, adjuntar carta poder simple firmada por el poderdante indicando de manera obligatoria su número de documento de identidad, salvo que se trate de apoderados con poder inscrito en SUNARP, en cuyo caso basta una Declaración Jurada en los mismos términos establecidos para personas jurídicas.</span>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Derecho de pago</span>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Adjuntar los  Anexos 2 y 3 debidamente llenados.</span>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Declaración Jurada del cumplimiento de las condiciones de seguridad en la edificación para edificaciones calificadas con riesgo bajo o medio. (ANEXO 4)</span>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Requisitos especiales: en los supuestos que a continuación se indican, son exigibles 	los siguientes requisitos</span>
+											        <ul class="checklist table-info">
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>1:</strong></u></span> Declaración jurada de contar con título profesional vigente y encontrarse habilitado por el colegio profesional correspondiente, en el caso de servicios relacionados con la salud.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>2:</strong></u></span> Declaración Jurada de contar con el número de estacionamientos exigible, de conformidad con el artículo 9-A de la presente Ley.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>3:</strong></u></span> Declaración jurada de contar con la autorización sectorial respectiva en el caso de aquellas actividades que conforme a Ley la requieran de manera previa al otorgamiento de la licencia de funcionamiento.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>4:</strong></u></span> Cuando se trate de un inmueble declarado Monumento integrante del Patrimonio Cultural de la Nación, presentar copia simple de la autorización expedida por el Ministerio de Cultura, conforme a la Ley 28296, Ley General del Patrimonio Cultural de la Nación, excepto en los casos en que el Ministerio de Cultura haya participado en las etapas de remodelación y monitoreo de ejecución de obras previas inmediatas a la solicitud de la licencia del local. La exigencia de la autorización del Ministerio de Cultura para otorgar licencias de funcionamiento se aplica exclusivamente para los inmuebles declarados Monumentos integrantes del Patrimonio Cultural de la Nación.</li>
+													</ul>
+											    </li>
+											</ul>
+	                                    </div>
+                                    </div>
+                                    
+                                    <h6 class="title-info">Requisitos para solicitar la licencia y certificado itse para edificaciones calificadas con nivel de riesgo alto o muy alto</h6>
+                                    <div class="row">
+										<div class="col-md-12">
+											<ul class="checklist table-info">
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Solicitud de Licencia de Funcionamiento, con carácter de Declaración Jurada y Solicitud de Certificado ITSE (anexo 1), que incluya</span>
+											        <ul class="checklist table-info">
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>1:</strong></u></span> Tratándose de personas jurídicas u otros entes colectivos: su número de R.U.C. y el número de D.N.I. o Carné de Extranjería de su representante legal.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>2:</strong></u></span> Tratándose de personas naturales: su número de R.U.C y el número D.N.I. o Carné de Extranjería, y el número de D.N.I. o Carné de Extranjería del representante en caso actúen mediante representación.</li>
+													</ul>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">En el caso de personas jurídicas u otros entes colectivos, Declaración Jurada del representante legal o apoderado señalando que su poder se encuentra vigente, consignando el número de Partida Electrónica y asiento de inscripción en la Superintendencia Nacional de Registros Públicos (SUNARP). Tratándose de representación de personas  naturales, adjuntar carta poder simple firmada por el poderdante indicando de manera obligatoria su número de documento de identidad, salvo que se trate de apoderados con poder inscrito en SUNARP, en cuyo caso basta una Declaración Jurada en los mismos términos establecidos para personas jurídicas.</span>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Anexo 2 y anexo 3 debidamente llenados.</span>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Derecho de pago</span>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Adjuntar toda la documentación señalada en el Reglamento de Inspecciones Técnicas de Seguridad en Edificaciones (D.S. Nº 002-2018-PCM/Resolución Jefatural Nº 016-2018-CENEPRED/J)</span>
+											        <ul class="checklist table-info">
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>1:</strong></u></span> Croquis de ubicación.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>2:</strong></u></span> Plano de arquitectura de la distribución existente y detalle del cálculo de aforo.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>3:</strong></u></span> Plano de distribución de tableros eléctricos, diagramas unifilares y cuadro de cargas.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>4:</strong></u></span> Certificado vigente de medición de resistencia del sistema de puesta a tierra.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>5:</strong></u></span> Plan de Seguridad del Establecimiento Objeto de Inspección.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>6:</strong></u></span> Memoria o protocolos de pruebas de operatividad y/o mantenimiento de los equipos de seguridad y protección contra incendio.</li>
+													</ul>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Requisitos especiales: en los supuestos que a continuación se indican, son exigibles 	los siguientes requisitos</span>
+											        <ul class="checklist table-info">
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>1:</strong></u></span> Declaración jurada de contar con título profesional vigente y encontrarse habilitado por el colegio profesional correspondiente, en el caso de servicios relacionados con la salud.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>2:</strong></u></span> Declaración Jurada de contar con el número de estacionamientos exigible, de conformidad con el artículo 9-A de la presente Ley.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>3:</strong></u></span> Declaración jurada de contar con la autorización sectorial respectiva en el caso de aquellas actividades que conforme a Ley la requieran de manera previa al otorgamiento de la licencia de funcionamiento.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>4:</strong></u></span> Cuando se trate de un inmueble declarado Monumento integrante del Patrimonio Cultural de la Nación, presentar copia simple de la autorización expedida por el Ministerio de Cultura, conforme a la Ley 28296, Ley General del Patrimonio Cultural de la Nación, excepto en los casos en que el Ministerio de Cultura haya participado en las etapas de remodelación y monitoreo de ejecución de obras previas inmediatas a la solicitud de la licencia del local. La  exigencia de la autorización del Ministerio de Cultura para otorgar licencias de funcionamiento se aplica exclusivamente para los inmuebles declarados Monumentos integrantes del Patrimonio Cultural de la Nación.</li>
+													</ul>
+											    </li>
+											</ul>
+										</div>
+									</div>
+									
+									<h6 class="title-info">Costos por derecho de licencia de funcionamiento</h6>
+                                    <div class="row">
+										<div class="col-md-12">
+											<ul class="checklist table-info">
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Riesgo bajo (Incluye inspección de seguridad) S/ 149.50</span>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Riesgo medio (Incluye inspección de seguridad) S/ 166.90</span>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Riesgo alto (Incluye inspección de seguridad) S/ 320.50</span>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Riesgo muy alto (Incluye inspección de seguridad) S/ 622.00</span>
+											    </li>
+											</ul>
+										</div>
+									</div>
+									
+									<h6 class="title-info">Licencia de funcionamiento - CESIONARIOS</h6>
+									<h6 class="title-info">Licencia de funcionamiento - CESIONARIOS CALIFICADOS RIESGO MEDIO,ALTO, MUY ALTO</h6>
+                                    <div class="row">
+										<div class="col-md-12">
+											<ul class="checklist table-info">
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Solicitud de Licencia de Funcionamiento, con carácter de Declaración Jurada, que incluya</span>
+											        <ul class="checklist table-info">
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>1:</strong></u></span> Tratándose de personas jurídicas u otros entes colectivos: su número de R.U.C. y el número de D.N.I. o Carné de Extranjería de su representante legal.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>2:</strong></u></span> Tratándose de personas naturales: su número de R.U.C y el número D.N.I. o Carné de Extranjería, y el número de D.N.I. o Carné de Extranjería del representante en caso actúen mediante representación.</li>
+													</ul>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">En el caso de personas jurídicas u otros entes colectivos, Declaración Jurada del representante legal o apoderado señalando que su poder se encuentra vigente, consignando el número de Partida Electrónica y asiento de inscripción en la Superintendencia Nacional de Registros Públicos (SUNARP). Tratándose de representación de personas naturales, adjuntar carta poder simple firmada por el poderdante indicando de manera obligatoria su número de documento de identidad, salvo que se trate de apoderados con poder inscrito en SUNARP, en cuyo caso basta una Declaración Jurada en los mismos términos establecidos para personas jurídicas.</span>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Declaración Jurada del cumplimiento de las condiciones de seguridad en la edificación para edificaciones calificadas con riesgo bajo o medio. Para el caso de edificaciones con riesgo alto o muy alto, adjuntar la documentación señalada en el Reglamento de Inspecciones Técnicas de Seguridad en Edificaciones.</span>
+											    </li>
+											</ul>
+											<p>En el caso que se haya emitido informe favorable respecto de las condiciones de seguridad de la edificación y no el correspondiente certificado de inspección técnica de seguridad en edificaciones en el plazo de tres (3) días hábiles de finalizada la diligencia de inspección, el administrado se encuentra facultado a solicitar la emisión de la licencia de funcionamiento, siempre que se cumplan con los otros requisitos señalados en la presente Ley. En tal caso, es obligación del funcionario competente de la Municipalidad emitir la licencia de funcionamiento, bajo responsabilidad.</p>
+											<ul class="checklist table-info">
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Requisitos especiales: en los supuestos que a continuación se indican, son exigibles los siguientes requisitos</span>
+											        <ul class="checklist table-info">
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>1:</strong></u></span> Declaración jurada de contar con título profesional vigente y encontrarse habilitado por el colegio profesional correspondiente, en el caso de servicios relacionados con la salud.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>2:</strong></u></span> Declaración jurada de contar con la autorización sectorial respectiva en el caso de aquellas actividades que conforme a Ley la requieran de manera previa al otorgamiento de la licencia de funcionamiento.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>3:</strong></u></span> Cuando se trate de un inmueble declarado Monumento integrante del Patrimonio Cultural de la Nación, presentar copia simple de la autorización expedida por el Ministerio de Cultura, conforme a la Ley 28296, Ley General del Patrimonio Cultural de la Nación, excepto en los casos en que el Ministerio de Cultura haya participado en las etapas de remodelación y monitoreo de ejecución de obras previas inmediatas a la solicitud de la licencia del local. La exigencia de la autorización del Ministerio de Cultura para otorgar licencias de funcionamiento se aplica exclusivamente para los inmuebles declarados Monumentos integrantes del Patrimonio Cultural de la Nación.</li>
+													</ul>
+											    </li>
+											</ul>
+											<p><strong>NOTA.-</strong> La licencia de funcionamiento para cesionarios permite a un tercero la realización de actividades simultáneas y adicionales en un establecimiento que ya cuenta con licencia de funcionamiento. No se requiere solicitar una modificación ,ampliación, o una nueva licencia.</p>
+										</div>
+									</div>
+									
+									<h6 class="title-info">Costos</h6>
+                                    <div class="row">
+										<div class="col-md-12">
+											<ul class="checklist table-info">
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Riesgo medio (Incluye inspección de seguridad) S/ 162.90</span>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Riesgo alto (Incluye inspección de seguridad) S/ 310.10</span>
+											    </li>
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Riesgo muy alto (Incluye inspección de seguridad) S/ 605.70</span>
+											    </li>
+										    </ul>
+									    </div>
+								    </div>
+								    
+								    <h6 class="title-info">Autorización de anuncio publicitario simple (Adosado a fachada) Y/O toldo</h6>
+                                    <div class="row">
+										<div class="col-md-12">
+											<ul class="checklist table-info">
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Presentar las vistas siguientes</span>
+											        <ul class="checklist table-info">
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>1:</strong></u></span> Diseño (dibujo) del anuncio y/o toldo, con sus dimensiones; así como la indicación de los materiales de fabricación.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>2:</strong></u></span> Una fotografía donde se aprecie el entorno urbano y la edificación donde se ubicará el anuncio y/o toldo considerando su posicionamiento virtual a partir de un montaje (dibujo)</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>3:</strong></u></span> En caso de representación, copia de carta poder con firma del administrado.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>4:</strong></u></span> Copia de Licencia de Funcionamiento Municipal de Funcionamiento, si se ubica en un establecimiento que opera fuera de la jurisdicción del distrito. Si el establecimiento opera dentro del distrito en la solicitud de autorización se consignará el número de Licencia de Funcionamiento y fecha de expedición.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>5:</strong></u></span> Derecho de trámite S/ 130.50</li>
+													</ul>
+											    </li>
+										    </ul>
+									    </div>
+								    </div>
+								    
+								    
+								    <h6 class="title-info">Autorización de anuncio publicitario luminoso, iluminado o especial</h6>
+                                    <div class="row">
+										<div class="col-md-12">
+											<ul class="checklist table-info">
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Con áreas de exhibición mayores a 12.00 M2</span>
+											        <ul class="checklist table-info">
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>1:</strong></u></span> Diseño (dibujo) del anuncio con sus dimensiones; así como la indicación de los materiales de fabricación.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>2:</strong></u></span> Memoria Descriptiva y Especificaciones Técnicas, refrendado por un Ing. Electricista</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>3:</strong></u></span> Plano de Instalaciones eléctricas, a escala conveniente, refrendado por un Ingeniero.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>4:</strong></u></span> Derecho de trámite S/ 144.90</li>
+													</ul>
+											    </li>
+										    </ul>
+									    </div>
+								    </div>
+								    
+								    
+								    <h6 class="title-info">Autorización de anuncio publicitario en afiches o banderolas de campaña y eventos temporales</h6>
+                                    <div class="row">
+										<div class="col-md-12">
+											<ul class="checklist table-info">
+											    <li>
+											        <span class="table-item-ico left"><i class="fas fa-check"></i></span>
+											        <span class="table-item-text">Con áreas de exhibición mayores a 12.00 M2</span>
+											        <ul class="checklist table-info">
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>1:</strong></u></span> Solicitud simple</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>2:</strong></u></span> Diseño del elemento en el que se debe precisar la ubicación exacta del área, colores y material.</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>3:</strong></u></span> En caso de representación carta poder</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>4:</strong></u></span> Copia de la licencia de funcionamiento</li>
+														<li><i class="fas fa-check"></i> <span class="mr-10"><u><strong>5:</strong></u></span> Derecho de trámite S/ 57.70</li>
+													</ul>
+											    </li>
+										    </ul>
+									    </div>
+								    </div>
+
+								</div>
+								
+	                        </div>
+	                        
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+        
+        <style>
+            .gallery-instalaciones li > a{
+                display: block;
+                height: 200px;
+            }
+            .btn-green{
+                color: #fff;
+                background-color: #00ad46 !important;
+                border-color: #00ad46 !important;
+            }
+            .btn-green:hover{
+                color: #fff;
+                background-color: #039c41 !important;
+                border-color: #039c41 !important;
+            }
+        </style>
+         <div class="main-content p130-50">
+            <div class="team-details">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div class="team-details-txt m40">
+                           <h3 class="stitle text-center">Instalaciones</h3>
+                           
+			               <br/>
+			               <br/>
+			               <ul class="gallery-3-col float-none gallery-instalaciones">
+								<li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/biblioteca-municipal.png') }">
+										<img th:src="${ @helper.assetsImg('locales/biblioteca-municipal.png') }" alt="title here">
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="https://www.google.com/maps?cid=10049910227969502440" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Biblioteca Municipal
+                                        </a>
+                                    </div>
+								</li>
+								<li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/casa-de-la-mujer.jpeg') }">
+										<img th:src="${ @helper.assetsImg('locales/casa-de-la-mujer.jpeg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="https://www.google.com/maps/place/Casa+de+la+Mujer/@-12.138789,-77.0222993,17z/data=!4m8!1m2!2m1!1sCasa+de+la+Mujer+de+Santa+Anita!3m4!1s0x9105b7fae675a2cb:0x8c4c31f367f6ac9b!8m2!3d-12.138789!4d-77.0201106" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Casa de la Mujer
+                                        </a>
+                                    </div>
+								</li>
+								<li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/casa-del-adulto-mayor.png') }">
+										<img th:src="${ @helper.assetsImg('locales/casa-del-adulto-mayor.png') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="https://www.google.com/maps/place/Centro+De+Desarrollo+Para+La+Mujer/@-12.0317436,-76.948163,17z/data=!4m12!1m6!3m5!1s0x0:0x5a0356ceb7521d25!2sPiscina+Municipal+de+Santa+Anita!8m2!3d-12.0308569!4d-76.9473744!3m4!1s0x9105c426da37fbf9:0x9eeedb98951d375c!8m2!3d-12.0334897!4d-76.9477835" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Casa del Adulto Mayor
+                                        </a>
+                                    </div>
+								</li>
+								<li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/clinica-municipal.jpeg') }">
+										<img th:src="${ @helper.assetsImg('locales/clinica-municipal.jpeg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="https://www.google.com/maps/place/Clinica+Municipal+De+Santa+Anita/@-12.0355346,-76.9540193,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x527727c0120d27f9!8m2!3d-12.0355346!4d-76.9518306" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Clinica Municipal
+                                        </a>
+                                    </div>
+								</li>
+								<li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/estadio-chancas-de-andahuaylas.jpg') }">
+										<img th:src="${ @helper.assetsImg('locales/estadio-chancas-de-andahuaylas.jpg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="https://www.google.com/maps/place/Estadio+Municipal+De+Santa+Anita/@-12.0435958,-76.9795057,10z/data=!4m8!1m2!2m1!1sEstadio+Chancas+de+Andahuaylas++santa+anita!3m4!1s0x9105c5d4db19d64d:0x216d41f0f145a09e!8m2!3d-12.0342649!4d-76.9652507" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Estadio Chancas de Andahuaylas
+                                        </a>
+                                    </div>
+								</li>
+								<li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/palacio-municipal.jpeg') }">
+										<img th:src="${ @helper.assetsImg('locales/palacio-municipal.jpeg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="https://www.google.com/maps?cid=10049910227969502440" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Palacio Municipal
+                                        </a>
+                                    </div>
+								</li>
+								<li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/piscina-universal.jpeg') }">
+										<img th:src="${ @helper.assetsImg('locales/piscina-universal.jpeg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="javascript:void(0)" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Piscina Universal
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/piscina-alameda.jpeg') }">
+										<img th:src="${ @helper.assetsImg('locales/piscina-alameda.jpeg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="javascript:void(0)" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Piscina Alameda
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/campo-de-grass-sintetico-huascar.jpeg') }">
+										<img th:src="${ @helper.assetsImg('locales/campo-de-grass-sintetico-huascar.jpeg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="javascript:void(0)" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Campo de Grass Sintetico Huascar
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/centro-cultural.jpg') }">
+										<img th:src="${ @helper.assetsImg('locales/centro-cultural.jpg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="javascript:void(0)" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Centro Cultural
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/estado-manuel-correa.jpeg') }">
+										<img th:src="${ @helper.assetsImg('locales/estado-manuel-correa.jpeg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="javascript:void(0)" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Estadio Manuel Correa
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/gimnacio-municipal.jpeg') }">
+										<img th:src="${ @helper.assetsImg('locales/gimnacio-municipal.jpeg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="javascript:void(0)" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Gimnasio Municipal
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/huaca-bella-vista.jpeg') }">
+										<img th:src="${ @helper.assetsImg('locales/huaca-bella-vista.jpeg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="javascript:void(0)" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Huaca Bella Vista
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/huaca-perales.jpeg') }">
+										<img th:src="${ @helper.assetsImg('locales/huaca-perales.jpeg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="javascript:void(0)" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Huaca Perales
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/parque-de-la-familia.jpeg') }">
+										<img th:src="${ @helper.assetsImg('locales/parque-de-la-familia.jpeg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="javascript:void(0)" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Parque de la Familia
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/polideportivo-ruisenores.jpeg') }">
+										<img th:src="${ @helper.assetsImg('locales/polideportivo-ruisenores.jpeg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="javascript:void(0)" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Polideportivo Ruiseñores
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+									<a rel='prettyPhoto[antes]' th:href="${ @helper.assetsImg('locales/veterinaria-municipal.jpeg') }">
+										<img th:src="${ @helper.assetsImg('locales/veterinaria-municipal.jpeg') }" alt=""> 
+                                    </a>
+                                    <div class="mt-5 mb-10 text-center">
+                                        <a href="javascript:void(0)" class="btn btn-block btn-primary btn-green" target="_blank">
+                                            <span class="fa-map-marked-alt fas mr-10"></span> Veterinaria Municipal
+                                        </a>
+                                    </div>
+                                </li>
+
+							</ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+	</body>
+</html>

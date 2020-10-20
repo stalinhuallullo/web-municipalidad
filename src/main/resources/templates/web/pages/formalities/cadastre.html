@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                           	<h3 class="stitle text-center">Subgerencia de Catastro y Habilitaciones Urbanas</h3>
+
+								<div th:replace="web/fragments/mini-banner"></div>
+								
+								<h6  class="title-info">Formularios para descargar</h6>
+								<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Formularios/RM-326-2015-VIVIENDA-APROBACION DE FORMULARIOS.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Resolucion Ministerial N° 326-2015-vivienda</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Formularios/FORMULARIO UNICO DE HABILITACION URBANA-FUHU LICENCIA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Anexo I: Formulario unico de habilitacion urbana-fuhu: licencia</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Formularios/FORMULARIO UNICO DE HABILITACION URBANA-FUHU RECEPCION DE OBRAS.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Anexo III: Formulario unico de habilitacion urbana-fuhu: recepcion de obras</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Formularios/Anexo V FORMULARIO ANEXO A DATOS DE CONDOMINOS PERSONA NATURAL.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Anexo V: Formulario anexo a -datos de condominos: personas naturales</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Formularios/Anexo VI FORMULARIO ANEXO B DATOS DE CONDOMINOS PERSONAS JURIDICAS.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Anexo VI: Formulario anexo b -datos de condominos: personas juridicas</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Formularios/Anexo VIII FORMULARIO ANEXO E INDEPENDIZACION DE TERRENO RUSTICO HABILITACION URBANA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Anexo VIII: Formulario anexo e: independizacion de terreno rustico/ habilitacion urbana</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Formularios/Anexo IX FORMULARIO ANEXO F SUBDIVISION DE LOTE URBANO.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Anexo IX: Formulario anexo f: subdivision de lote urbano</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Formularios/Anexo X FORMULARIO ANEXO G REGULARIZACION DE HABILITACION URBANA EJECUTADA.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Anexo X: Formulario anexo g: regularizacion de habilitacion urbana ejecutada</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+								<h6 class="title-info">Legislación para descargar</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<ul class="table-info">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/1_Ley 29090.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley no 29090: Ley de regulacion de habilitaciones urbanas y edificaciones (25/09/2007)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/2_ley_29476 LEY QUE MODIFICA Y COMPLEMENTA LA LEY 29090.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley no 29476: Ley que modifica y complementa la ley no 29090 , ley de regulacion de habilitaciones urbanas y de edificaciones (18/12/2009)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/3_ley_29566_MODIFICA DIVERSAS DISPOSICIONES EN LA LEY 29090.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley no 29566: Ley que modifica diversas disposiciones con el objeto de mejorar el clima de inversion y facilitar el cumplimiento de obligaciones tributarias (28/07/2010)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/4_ley_29898_LEY QUE MODIFICA LA LEY 29090.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley no 29898: Ley que modifica la ley 29090, ley de regulacion de habilitaciones urbanas y de edificaciones y establece el procedimiento de habilitacion urbana de oficio (11/07/2012)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/5_ley_30056_LEY QUE MODIFICA DIVERSAS LEYES PARA FACILITAR LA INVERSION.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley no 30056: Ley que modifica diversas leyes para facilitar la inversion, impulsar el desarrollo productivo y el crecimiento empresarial (02/07/2013)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/6_Decreto Legislativo_1225 MODIFICA LEY 29090 (25092015).pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Decreto legislativo no 1225: Modifica la ley no 29090, ley de regulacion de habilitaciones urbanas y de edificaciones (25/09/2015)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/7_Decreto Supremo 024-2008_REGLAMENTO DE LICENCIAS Y HABILITACIONES URBANAS (DEROGADO).pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Decreto supremo no 024-2008-vivienda: Reglamento de licencias de habilitaciones urbanas y edificacion (27/09/2008)- derogado</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/8_Decreto Supremo 003-2010_MODIFICA REGLAMENTO DE LICENCIAS DE HABILITACION URBANA Y EDIFICACION (DEROGADO).pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Decreto supremo 003-2010-vivienda: Modifican el reglamento de licencias de habilitacion urbana y licencias de edificacion (07/02/2010) - derogado</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/9_Decreto Supremo 008-2013_REGLAMENTO DE LICENCIAS DE HABILITACION URBANA Y EDIFICACION.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Decreto supremo no 008-2013-vivienda: Reglamento de licencias de habilitacion urbana y licencias de edificacion (04/05/2013)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/10_Decreto Supremo 012-2013_MODIFICAN REGLAMENTO DE LICENCIAS DE HABILITACION URBANA Y EDIFICACION.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Decreto supremo no 012-2013-vivienda: Modifican el reglamento de licencias de habilitacion urbana y licencias de edificacion, aprobado mediante decreto supremo no 008-2013-vivienda (03/10/2013)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/11_Decreto Supremo 013-2013_APRUEBAN REGLAMENTO ESPECIAL DE HABILITACION URBANA Y EDIFICACION.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Decreto supremo no 013-2013-vivienda: Aprueban reglamento especial de habilitacion urbana y edificacion (12/10/2013)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/12_Decreto Supremo 014-2015_MODIFICA REGLAMENTO APROBADO POR 008 Y MODIFICADO POR 012.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Decreto supremo no 014-2015-vivienda: Decreto supremo que modifica el relamento de licencias de habilitacion urbana y licencias de edificacion, aprobado por decreto supremo no 008-2013-vivienda, modificado por decreto supremo no 012-2013-vivienda</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">Tupa vigente para descargar</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<ul class="table-info">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/TUPA VIGENTE 21.12.2016.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Tupa vigente 21/12/2016</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">Medios de difusion para descargar</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<ul class="table-info">
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/Licencia de Habilitacion urbana Modalidad A-SGCHU.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Licencia de habilitacion urbana modalidad a</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/Licencia de Habilitacion urbana Modalidad B C o D por Revisores Urbanos.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Licencia de habilitacion urbana modalidad b (aprobacion previa de proyecto con evaluacion por la municipalidad)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/Licencia de Habilitacion urbana Modalidad B evaluacion Municipalidad.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Licencia de habilitacion urbana modalidad b, c o d aprobacion de proyecto con evaluacion previa por los revisores urbanos)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/Licencia de Habilitacion Urbana Modalidad C y D por Comision Tecnica.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Licencia de habilitacion urbana modalidad c y d (aprobacion de proyecto con evaluacion previa por la comision tecnica)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/Modificacion de Proyectos de Habilitacion Urbana las 3 modalidades.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Modificacion de proyectos de habilitacion urbana(1. Modalidad b, 2. Modalidad b, c y d con evaluacion de los revisores urbanos y 3. Modalidad c y d con evaluacion previa previa del proyecto de la comision tecnica)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/Recepcion de obras de habilitacion urbana Sin variaciones ABC y D.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Recepcion de obras de habilitacion urbana sin variaciones (modalidades a, b, c y d)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/Recepcion de obras de habilitacion urbana Con Variaciones ABC y D Revisores y Comision.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Recepcion de obras de habilitacion urbana con variaciones (modalidades a, b, c y d con revisores urbanos y comision tecnica)</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('pdf/Habilitaciones_Urbanas/Normativa/Regularizacion de habilitaciones urbanas ejecutadas.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Regularizacion de habilitaciones urbanas ejecutadas</span></a></li>
+										</ul>
+				                     </div>
+								</div>
+	                           
+	                        </div>
+	                        
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

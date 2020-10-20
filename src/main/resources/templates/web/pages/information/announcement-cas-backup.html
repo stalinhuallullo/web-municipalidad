@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+		<link rel="stylesheet" type="text/css" th:href="${@helper.assetsVendors('datatables/css/datatables.min.css')}"/>
+		<script type="text/javascript" th:src="${@helper.assetsVendors('datatables/jsc/datatables.min.js')}"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+			    $('.table thead tr').clone(true).appendTo( '.table thead' );
+			    $('.table thead tr:eq(1) th').each( function (i) {
+			    	if(i == 0 || i == 1 || i == 2 || i == 7) {
+                        var placelholder = "";
+                        if(i == 0)  placelholder = "Filtrar por CÃ³digo";
+                        if(i == 1)  placelholder = "Filtrar por DescripciÃ³n";
+                        if(i == 2)  placelholder = "Filtrar por Ã�rea Solicitante";
+                        if(i == 7)  placelholder = "Filtrar por Estado";
+
+				        $(this).html( '<input type="text" style="width: 100%;" placeholder="'+ placelholder +'" />' );
+				 
+				        $( 'input', this ).on( 'keyup change', function () {
+				        	
+				            if ( table.column(i).search() !== this.value ) {
+				                table
+				                    .column(i)
+				                    .search( this.value )
+				                    .draw();
+				            }
+				        } );
+			        } 
+                    else $(this).html( '' );
+			    } );
+			 
+			    var table = $('.table').DataTable( {
+			        orderCellsTop: true,
+			        fixedHeader: true,
+			        pageLength: 50,
+			        order: [
+				        [0, 'desc']
+				    ],
+			        language: { 
+			            "lengthMenu": "Mostrar _MENU_ entradas",
+			            "zeroRecords": "Sin resultados",
+			            "info": "Mostrando la pÃ¡gina _PAGE_ de _PAGES_",
+			            "infoEmpty": "No hay registros disponibles",
+			            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+			            "search": "Buscar: ",
+			            paginate: {
+			                sFirst: "Primero",
+			                sLast: "Ãšltimo",
+			                sNext: "Siguiente",
+			                sPrevious: "Anterior"
+			            }
+			        },
+			        
+			    } ).search('2020').draw();
+			} );
+		</script>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                        	<h3 class="stitle text-center">Convocatoria CAS</h3>
+	                        	
+	                        	
+	                        	
+	                        	<h6 class="title-info">Formatos y documentos requeridos para la convocatoria CAS</h6>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+                                    	<ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/cas/formatos/MEMBRETE.docx?version=1.0000')} "><span class="table-item-ico left"><i class="ico file-word"></i></span><span class="table-item-text">Membrete para Convocatoria</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/cas/formatos/ANEXO 01.docx?version=1.0000')} "><span class="table-item-ico left"><i class="ico file-word"></i></span><span class="table-item-text">Anexo NÂ°01-Carta de PresentaciÃ³n del Postulante</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/cas/formatos/ANEXO 02.docx?version=1.0000')} "><span class="table-item-ico left"><i class="ico file-word"></i></span><span class="table-item-text">Anexo NÂ°02-DeclaraciÃ³n Jurada de Domicilio</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/cas/formatos/ANEXO 03.docx?version=1.0000')} "><span class="table-item-ico left"><i class="ico file-word"></i></span><span class="table-item-text">Anexo NÂ°03-DeclaraciÃ³n Jurada de Antecedentes Policiales</span></a></li>
+											
+											<li><a th:href=" ${@helper.getServerApiDataWeb('pdf/cas/formatos/ANEXO 04.docx?version=1.0000')} "><span class="table-item-ico left"><i class="ico file-word"></i></span><span class="table-item-text">Anexo NÂ°04-DeclaraciÃ³n Jurada No Encontrarse Inscrito en el Registro de Deudores</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+								<h6 class="title-info">Cuadro de Convocatoria de Personal CAS - Subgerencia de RRHH</h6>
+	                        	<div class="row">
+                                    <div class="col-md-12">
+										<div class="row col-md-12">
+											<div class="table-responsive">
+												<table class="table" >
+													<thead>
+														<tr>
+															<th scope="col" width="50px">CÃ³digo</th>
+															<th scope="col">DescripciÃ³n</th>
+															<th scope="col">Ã�rea Solicitante</th>
+															<th scope="col" width="40px">Convocatoria</th>
+															<th scope="col" width="40px">Resultado</th>
+															<th scope="col" width="40px">PublicaciÃ³n Final</th>
+															<th scope="col" width="40px">Observaciones</th>
+															<th scope="col" width="80px">Estado</th>
+														</tr>
+													</thead>
+													<tbody>
+                                                        <tr>
+															<th scope="row">019-2020</th>
+															<td>(01) RESPONSABLE DE LA DEFENSORIA MUNICIPAL DE LA NIÃ‘A, NIÃ‘O Y ADOLESCENTE</td>
+															<td>Subgerencia de ParticipaciÃ³n Ciudadana, Bienestar Social y DEMUNA</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 003-2020 - 01 RESPONSABLE.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+                                                        </tr>
+                                                        <tr>
+															<th scope="row">018-2020</th>
+															<td>(40) OPERARIO DE Ã�REAS VERDES</td>
+															<td>Subgerencia de Limpieza Publica, Ã�reas Verdes y Medio Ambiente.</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 018-2020 - 40 OPERARIO DE AREAS VERDES.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+                                                        </tr>
+                                                        <tr>
+															<th scope="row">017-2020</th>
+															<td>(02) CHOFER DE VEHÃ�CULO MAYOR</td>
+															<td>Subgerencia de Limpieza Publica, Ã�reas Verdes y Medio Ambiente.</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 017-2020 - 02 CHOFER DE VEHICULO MAYOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+                                                        </tr>
+                                                        <tr>
+															<th scope="row">016-2020</th>
+															<td>(50) OPERARIO DE LIMPIEZA PUBLICA</td>
+															<td>Subgerencia de Limpieza Publica, Ã�reas Verdes y Medio Ambiente.</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 016-2020 - 50 OPERARIO DE BARRIDO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+                                                        </tr>
+                                                        <tr>
+															<th scope="row">015-2020</th>
+															<td>(06) CHOFER DE VEHÃ�CULO MAYOR - Ã�REA DE FISCALIZACIÃ“N MUNICIPAL</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 015-2020 - 06  CHOFER FISCALIZADOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">014-2020</th>
+															<td>(02) COORDINADOR DE FISCALIZADORES MUNICIPALES</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 014-2020 - 02 COORDINADOR FISCALIZADOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">013-2020</th>
+															<td>(27) FISCALIZADOR MUNICIPAL</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 013-2020 - 27 FISCALIZADOR MUNICIPAL.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">012-2020</th>
+															<td>(05) CHOFER DE VEHÃ�CULO MAYOR â€“ Ã�REA DE TRANSPORTE</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 012-2020 - 05 CHOFER VEHICULO MAYO - TRANSPORTE.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">011-2020</th>
+															<td>(04) SUPERVISOR DE INSPECTORES MUNICIPALES DE TRANSPORTE</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 011-2020 - 04 SUPERVISOR DE INSPECTORES.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">010-2020</th>
+															<td>(35) INSPECTOR MUNICIPAL DE TRANSPORTE</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 010-2020 - 35 INSPECTORES MUNICIPALES DE TRANSPORTE.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">010-2020</th>
+															<td>(35) INSPECTOR MUNICIPAL DE TRANSPORTE</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 010-2020 - 35 INSPECTORES MUNICIPALES DE TRANSPORTE.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">009-2020</th>
+															<td>(01) COORDINADOR DE CENTRAL DE VIDEO CÃ�MARA</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 009-2020 - 01 COORDINADOR DE CENTRAL DE VIDEO CAMARA .pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">008-2020</th>
+															<td>(34) OPERADOR DE VIDEOCÃ�MARA</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 008-2020 - 01 OPERADOR DE VIDEOCAMARA.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">007-2020</th>
+															<td>(01) COORDINADOR DE BRIGADA CANINA</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 007-2020 - 01 COORDINADOR BRIGADA CANINA.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">006-2020</th>
+															<td>(02) COORDINADOR DE SECTOR - Ã�REA SERENAZGO</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 006-2020 - 02 COORDINADOR DE SECTOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">005-2020</th>
+															<td>(20) CHOFER DE VEHICULO MAYOR</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 005-2020 -20 CHOFER VEHICULO MAYOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">004-2020</th>
+															<td>(50) CHOFER DE VEHICULO MENOR</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 004-2020 -50 CHOFER VEHICULO MENOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">003-2020</th>
+															<td>(09) AGENTE DE SERENAZGO</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 003-2020 - 09 AGENTE DE SERENAZGO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">002-2020</th>
+															<td>(01) AUXILIAR COACTIVO</td>
+															<td>Subgerencia de Ejecutoria Coactiva</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 002-2020 - 01 AUXILIAR COACTIVO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+                                                        <tr>
+															<th scope="row">001-2020</th>
+															<td>(01) EJECUTOR COACTIVO</td>
+															<td>Subgerencia de Ejecutoria Coactiva</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 001-2020 - 01 EJECUTOR COACTIVO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+														<tr>
+															<th scope="row">001-2019</th>
+															<td>(50) Agente de serenazgo</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria-001-2019-50-agentesDeSerenazgo.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/resultadoEvaluacion-001-2019.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/resultadoFinal-001-2019.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">002-2019</th>
+															<td>(16) ChÃ³feres de vehÃ­culo mayor</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria-002-2019-16-choferesVehiculoMayor.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/resultadoEvaluacion-002-2019.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/resultadoFinal-002-2019.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">003-2019</th>
+															<td>(02) ChÃ³feres de vehÃ­culo menor</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/convocatoria-003-2019-02-choferesVehiculoMenor.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/resultadoEvaluacion-003-2019.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/resultadoFinal-003-2019.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">004-2019</th>
+															<td>(37) Agente de serenazgo</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA-004-2019-37-AGENTE-DE-SERENAZGO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA-DE-RESULTADO-DE-EVALUCION-CURRICULAR-004-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 004-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/FEDEERRATAACTADERESULTADODEEVALUCIONCURRICULAR004-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">005-2019</th>
+															<td>(29) ChÃ³feres de vehÃ­culo mayor</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA-005-2019-29-CHOFERES-VEHICULO-MAYOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA-DE-RESULTADO-DE-EVALUCION-CURRICULAR-005-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA-DE-RESULTADO-DE-RESULTADOS-FINALES-005-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/FEDEERRATASACTADERESULTADODEEVALUCIONCURRICULAR005-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">006-2019</th>
+															<td>(34) ChÃ³feres de vehÃ­culo menor</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA-006-34-CHOFERES-VEHICULO-MENOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA-DE-RESULTADO-DE-EVALUCION-CURRICULAR-006-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA-DE-RESULTADO-DE-RESULTADOS-FINALES-006-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">007-2019</th>
+															<td>(01) Supervisor del personal de seguridad interna</td>
+															<td>Subgerencia de LogÃ­stica</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 007-01-SUPERVISOR-DE-SEG-INTERNA12-09-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 007-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 007-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">008-2019</th>
+															<td>(01) Entrenador de fÃºtbol en menores</td>
+															<td>Subgerencia de EducaciÃ³n, Cultura, Deporte, Juventud y Turismo</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 008-01-ENTRENADOR-DE-FUTBOL.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 008-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 008-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">009-2019</th>
+															<td>(01) Coordinador de programas alimentarios</td>
+															<td>Subgerencia de Salud y Programas Alimentarios</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 009 - 01 COORD PROGRAMAS ALIM.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 009-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 009-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">010-2019</th>
+															<td>(01) Coordinador de programas sociales</td>
+															<td>Subgerencia de ParticipaciÃ³n Ciudadana, Bienestar Social y Demuna</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 010 - 01 COORD PROGRAMAS SOCIALES.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 010-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 010-19-01.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">011-2019</th>
+															<td>(01) Coordinador administrativo</td>
+															<td>Subgerencia de AtenciÃ³n al Ciudadano y GestiÃ³n Documentaria</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 011 - 01 COORD ADMINISTRATIVO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 011-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 010-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">012-2019</th>
+															<td>(01) Especialista administrativo</td>
+															<td>Gerencia de Planeamiento y Presupuesto</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 012 - 01 ESPECILISTA ADMINISTRATIVO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 012-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 012-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">013-2019</th>
+															<td>(01) Responsable de desarrollo educativo</td>
+															<td>Subgerencia de EducaciÃ³n, Cultura, Deporte, Juventud y Turismo</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 013 - 01 RESP. DE DESARROLLO EDUCATIVO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 013-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 013-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">014-2019</th>
+															<td>(01) Coordinador de imagen institucional</td>
+															<td>Subgerencia de Relaciones PÃºblicas e Imagen Institucional</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 014 - 01 COORDINADOR DE IMAGEN INST.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE EVALUCION CURRICULAR 014-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/ACTA DE RESULTADO DE RESULTADOS FINALES 014-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/FE DE ERRATAS - ACTA DE RESULTADO DE EVALUCION CURRICULAR 014-19.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td>Finalizado</td>
+														</tr>
+														<tr>
+															<th scope="row">015-2019</th>
+															<td>(06) Agente de serenazgo</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 015 - 06 AGENTE DE SERENAZGO.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+														<tr>
+															<th scope="row">016-2019</th>
+															<td>(09) ChÃ³feres vehÃ­culo mayor</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 016 - 09 CHOFERES VEHICULO MAYOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+														<tr>
+															<th scope="row">017-2019</th>
+															<td>(08) ChÃ³feres vehÃ­culo menor</td>
+															<td>Subgerencia de Serenazgo, FiscalizaciÃ³n y Transporte</td>
+															<td class="text-center">
+																<a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/cas/CONVOCATORIA 017 - 08 CHOFERES VEHICULO MENOR.pdf' ) } ">
+																	<span class="table-item-ico left"><i class="ico file-pdf"></i></span>
+																</a>
+															</td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td class="text-center"></td>
+															<td>En proceso</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+                                    </div>
+								</div>
+								
+	                        	
+								
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

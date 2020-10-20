@@ -1,0 +1,92 @@
+<div th:fragment="miFooter">
+        <footer class="home3 main-footer wf100">
+            <div class="container">
+              <div class="row"> 
+    
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="textwidget"> <img th:src="${@helper.assetsImg('logo-munisantanita-coronavirus-3.png')}" alt="" style="width: 180px;">
+                    <address>
+                        <ul>
+                          <li> <i class="fas fa-university"></i> <strong>Direcci&oacute;n</strong> Av. Los Eucaliptos Cdra. 12 Santa Anita</li>
+                          <li> <i class="fas fa-envelope"></i> <strong>Atención</strong> Lun. a Vie. 8:00 a.m. - 4:00 p.m. <br/>Sab. 9:00 a.m. - 12:00 p.m.</li>
+                          <li> <i class="fas fa-phone"></i> <strong>Tel&eacute;fono:</strong> (01) 362-9439</li>
+                        </ul>
+                    </address>
+                  </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="footer-widget">
+                    <h6>Enlaces externos</h6>
+                    <ul>
+                      <li><a href="http://www.sunat.gob.pe/" target="_blank"><i class="fas fa-star"></i>Sunat</a></li>
+                      <li><a href="https://www.inei.gob.pe/" target="_blank"><i class="fas fa-star"></i>Inei</a></li>
+                      <li><a href="https://www.mef.gob.pe/es/" target="_blank"><i class="fas fa-star"></i>Mef</a></li>
+                      <li><a href="http://www.trabajo.gob.pe/migrante/" target="_blank"><i class="fas fa-star"></i>Ministerio de Trabajo</a></li>
+                      
+                      <li><a href="https://www.gob.pe/mtpe" target="_blank"><i class="fas fa-star"></i>Mintra</a></li>
+                      <li><a href="http://www.peru.gob.pe/" target="_blank"><i class="fas fa-star"></i>Sistema de Control Interno</a></li>
+                      <li><a href="https://www.indecopi.gob.pe/inicio" target="_blank"><i class="fas fa-star"></i>Indecopi</a></li>
+                      <li><a href="https://www.indeci.gob.pe/" target="_blank"><i class="fas fa-star"></i>Indeci</a></li>
+                      
+                      <li><a href="https://www.sunarp.gob.pe/index.asp" target="_blank"><i class="fas fa-star"></i>Sunarp</a></li>
+                      <li><a href="https://www.reniec.gob.pe/" target="_blank"><i class="fas fa-star"></i>Reniec</a></li>
+                      <li><a href="https://portal.osce.gob.pe/osce/" target="_blank"><i class="fas fa-star"></i>Osce</a></li>
+                      <li><a href="http://www.onpe.gob.pe/" target="_blank"><i class="fas fa-star"></i>Onpe</a></li>
+                      
+                      
+                      <li><a href="https://elperuano.pe/" target="_blank"><i class="fas fa-star"></i>El Peruano</a></li>
+                    </ul>
+                  </div>
+                </div>
+    
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="footer-widget">
+                    <h6>Municipalidad</h6>
+                    <ul>
+                      <li><a href="http://mail.munisantanita.gob.pe" target="_blank"><i class="fas fa-star"></i>Correo Institucional</a></li>
+                      <li><a href="http://doc.contraloria.gob.pe/Control-Interno/web/index.html" target="_blank"><i class="fas fa-star"></i>Control Interno</a></li>
+                      
+                      <li><a th:href="${@helper.getPageInfo('licencias')}" target="_blank"><i class="fas fa-star"></i>Licencia de Funcionamiento</a></li>
+                      <li><a th:href="${@helper.getPageInfo('administracion-tributaria')}" target="_blank"><i class="fas fa-star"></i>Tributos Municipales</a></li>
+                      
+                      <li><a href="https://pagosenlinea.munisantanita.gob.pe/pagosenlinea/login.xhtml" target="_blank"><i class="fas fa-star"></i>Pagos En Línea</a></li>
+                      <li><a th:href="${@helper.getURL('modulo/licencias-de-edificacion')}" target="_blank"><i class="fas fa-star"></i>Licencias de Edificación</a></li>
+                      <li><a th:href=" ${ @helper.getServerApiDataWeb( 'pdf/Solicitud de Ratificacion Ord 250-MDSA.pdf' ) } " target="_blank"><i class="fas fa-star"></i>Ratificacion de Ordenanza</a></li>
+                      
+                      <li><a th:href="${@helper.getURL('modulo/consultas-en-linea')}" target="_blank"><i class="fas fa-star"></i>Consultas en L&iacute;nea</a></li>
+
+                      <li><a th:href="${@helper.getPageInfo('telefonos')}" ><i class="fas fa-star"></i> Teléfonos</a></li>
+                      <li><a th:href="${@helper.getURL('libro-de-reclamaciones')}"><i class="fas fa-star"></i>Libro de Reclamaciones Virtual</a></li>
+                      <!--<li><a th:href="${@helper.getURL('talleres')}" target="_blank"><i class="fas fa-star"></i>Registro de talleres</a></li>-->
+                      <li><a th:href="${@helper.getURL('mesa-de-partes')}" target="_blank"><i class="fas fa-star"></i>Mesa de Partes Virtual</a></li>
+                      <li><a th:href="${@helper.getURL('coronavirus')}" target="_blank"><i class="fas fa-star"></i>Información de Coronavirus</a></li>
+                      
+						<li><a th:href="${@helper.getPageInfo('beneficiarios-de-las-canastas-basicas')}" ><i class="fas fa-star"></i> Beneficiarios de las canastas básicas</a></li>
+                    </ul>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </footer>
+    
+          <footer class="home3 footer wf100">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-7 col-sm-12">
+                  <p class="copyr">&copy; Todos los Derechos Reservados <a th:href="${@helper.getURL('')}"><strong>Municipalidad de Santa Anita</strong></a></p>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                  <ul class="footer-social">
+                    <li><a href="https://www.facebook.com/MuniSantaAnita" class="fb" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <!-- <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#" class="linken"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+      </div>

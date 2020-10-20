@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+                                <h3 class="stitle text-center">Subgerencia de Gestión del Riesgo de Desastres e Inspecciones Técnicas de Seguridad en Edificaciones</h3>
+
+                                <h4>DOCUMENTOS</h4>
+								<h6  class="title-info">RENOVACION DE CERTIFICADO ITSE INDETERMINADO</h6>
+								
+								<div class="row">
+                                    <div class="col-md-12">
+                                        <p>Los certificados de Inspección Técnica de Seguridad en Edificaciones–ITSE, emitidos con vigencia indeterminada, vencen indefectiblemente el 24 de enero del 2020, por lo que deberán tramitar la renovación de su certificado de ITSE o nueva ITSE, acercándose a la plataforma de Atención al Ciudadano, RENUEVE AHORA Y EVITE MULTAS Y/O SANCIONES.</p>
+
+										<ul class="checklist table-info">
+                                            <li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/RENOVACION DE CERTIFICADO ITSE INDETERMINADO.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Renovación de certificado ITSE Indeterminada</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+
+								<h6  class="title-info">Normas años anteriores</h6>
+								
+								<div class="row">
+                                    <div class="col-md-12">
+										<ul class="checklist table-info">
+                                            <li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/Decreto-Supremo-002-2018-PCM-ITSE.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Decreto Supremo N° 002-2018-PCM</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/Manual-ITSE-RJ-016-2018-CENEPRED-J.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Resolución Jefatura N° 016-2018-CENEPRED/J</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/Anexo1.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Anexo 1: Formato de Solicitud de ITSE y ECSE</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/Anexo2.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Anexo 2: Formato de Información de Nivel de Riesgo</span></a></li>
+
+                                            <li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/Anexo3.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Anexo 3: Formato de Reporte del Nivel de Riesgo del Establecimiento</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/Anexo4.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Anexo 4: Formato de Declaración Jurada del Cumplimiento de Seguridad</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/Anexo15.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Anexo 15: Cálculo de Aforo</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/Anexo16.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Anexo 16: Actividades CIIU asociadas a cada función de la Matriz de Riesgo</span></a></li>
+
+                                            <li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/Anexo17.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Anexo 17: Marco Teórico y Conceptual para ITSE y ECSE</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/LEY 29664.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley N° 29664</span></a></li>
+                                            <li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/DS-048-2011-PCM.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Decreto Supremo N° 048-2011-PCM</span></a></li>
+
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/Directiva_N_007-2016-CENEPRED.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">DIRECTIVA N 007-2016-CENEPRED: Normas para la ejecución y administración de las inspecciones técnicas</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/Manual_Ejecucion_ITSE 2016.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Manual de ejecución de inspección técnica de seguridad en edificaciones</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/Resolucion_Jefatural_N_066-2016-CENEPRED.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">RESOLUCIÓN JEFATURA N° 066 - 2016 - CENEPRED / J</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/1-DS-058-2014-PCM.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">DECRETO SUPREMO N° 058-2014-PCM: Aprueba el Reglamento de Inspecciones Técnicas de Seguridad en Edificaciones</span></a></li>
+
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/5-LEY_SINAGERD.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">LEY QUE CREA EL SISTEMA NACIONAL DE GESTIÓN DEL RIESGO DE DESASTRES</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/Ley-30230.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Ley que establece medidas tributaria, simplificación de procedimientos y permisos para la inversión en el país - ley 30230</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/FORMATO_ITSE_2019.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Formato de Solicitud de ITSE - ANEXO 1</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/ANEXO_3_2019.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ANEXO N° 03 : Reporte de nivel de riesgo del establecimiento objeto de inspección</span></a></li>
+
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/ANEXO_4_2019.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ANEXO N° 04 : Declaración jurada de cumplimiento de las condiciones de serguridad en la edificación</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/TUPA ITSE2.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">TUPA ITSE</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/plamsta.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Plan de contingencia fenómeno del niño 2015-2016 distrito de santa anita</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/cart.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Cartilla informativa</span></a></li>
+
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/ENERO 2016 AL 16 DE DICIEMBRE DEL 2016.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Inspección técnica / inspección técnica de seguridad en edificaciones - 2016</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/ENERO -16 DE DICIEMBRE DEL 2015.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Inspección técnica / inspección técnica de seguridad en edificaciones - 2015</span></a></li>
+											<li><a th:href=" ${@helper.getServerApiRecursos('files/pdf/DefensaCivil2019/CUADRO_ITSE_2014.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Inspección técnica / inspección técnica de seguridad en edificaciones - 2014</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+	                           
+	                        </div>
+	                        
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

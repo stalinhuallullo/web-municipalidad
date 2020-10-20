@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                           	<h3 class="stitle text-center">Creación del distrito de Santa Anita</h3>
+	                           	<p class="text-center">Ley N° 25116</p>
+	                           	
+	                           	<div th:replace="web/fragments/mini-banner"></div>
+	                           	
+	                           	<h6 class="title-info">Artículo 1°.- Creación del Distrito</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<p>Créase en la provincia y departamento de Lima, el distrito de Santa Anita cuya capital será el núcleo urbano Santa Anita- Los Ficus.</p>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">Artículo 2°.- Límites Distritales</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<p>Los Límites del distrito de Santa Anita han sido trazados en el Plano de Lima Metropolitana y alrededores, levantados a escala 1:5,000 hojas 22-h, 22-i, 22-j, 23-h, 23-i, elaborados por el Instituto Geográfico Militar (Hoy Instituto Geográfico Nacional) en 1979 y son como sigue:</p>
+										<p><strong>Por el Norte:</strong> Con el distrito de El Agustino, a partir de la intersección de la Avenida Circunvalación (Vía de Evitamiento) y Avenida La Atarjea, el límite describe una dirección general NE, siguiendo el eje de la Avenida La Atarjea, hasta su intersección con la calle que colinda con la oficina de Estación de Aforos de Servicios de Agua Potable y Alcantarillado (SEDAPAL); de este lugar, el límite sigue el eje de esta calle, hacia su intersección con la línea férrea, hasta la intersección con la Avenida 26 de Mayo.</p>
+										<p><strong>Por el Noreste y Este:</strong> Con el distrito de Ate: A partir del último lugar, el límite describe una dirección general Sur, que pasa por el eje de la Avenida 26 de Mayo, hasta llegar a la intersección con la calle que conduce a la actual fábrica de cocinas Surge (Límite Oeste de la Urbanización Zavaleta); de este lugar se sigue por el eje de esta calle, hasta su intersección con la Avenida Ceres, continúa por el eje de esta avenida, hasta su intersección con la Avenida 22 de Julio; desde este lugar el límite sigue por el eje de esta avenida, hasta la intersección con la Carretera Central del Perú.</p>
+										<p><strong>Por el Sureste y Sur:</strong> Con el Distrito de Ate, el Límite lo constituye el eje de la Carretera Central del Perú, siguiendo una dirección general SO, desde el lugar antes mencionado hasta su intersección con la Avenida Circunvalación (Vía de evitamiento) altura del Puente Santa Anita.</p>
+										<p><strong>Por el Suroeste, Oeste y Noroeste:</strong> Con el distrito de El Agustino, a partir del último lugar nombrado el límite, describe una dirección Norte, que pasa por el eje de la Avenida Circunvalación, hasta la intersección con la calle Los Nogales; de este lugar, el límite continúa por el eje de la calle Los Nogales, y por su proyección hasta el cerro El Agustino (cota 458 m.s.n.m.) de este lugar el límite sigue una dirección NO por las divisorias del cerro El Agustino, hasta llegar a la cumbre (cota 489 m.s.n.m); de este lugar, el límite sigue una dirección NNE, por divisorias hasta llegar a la Avenida José Carlos Mariategui, continúa por el eje de esta avenida hasta la intersección con la Avenida Circunvalación (Vía de Evitamiento); de este lugar el límite sigue por el eje de la Avenida Circunvalación hasta su intersección con la Avenida La Atarjea.</p>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">Dispociones transitorias y finales</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<p><strong>PRIMERA: </strong> El Poder Ejecutivo dictará las disposiciones correspondientes a fin de dotar de las autoridades político-administrativas a la nueva circunscripción que se crea por la presénte Ley.</p>
+										<p><strong>SEGUNDA: </strong> En tanto se elijan e instalen las autoridades municipales en el nuevo distrito, la administración y la prestación de servicios de los centros poblados conformantes, seguirán siendo atendidas por los concejos distritales de El Agustino y de Ate respectivamente.</p>
+										<p><strong>TERCERA: </strong> Encárgase al Jurado Nacional de Elecciones, a fin de que se efectúen las acciones conducentes a la dotación de las autoridades municipales en el nuevo distrito.</p>
+										<p><strong>CUARTA: </strong> Deróganse los dispositivos que se opongan a la presente Ley.</p>
+				                     </div>
+								</div>
+								
+								<div class="row">
+									<div class="col-md-12">
+										<p>Comuníquese al Presidente de la República para su Promulgación.</p>
+										<span><strong>Por tanto:</strong></span>
+										<p>Mando se publique y cumpla </p>
+										<p>Lima, 25 de Octubre de 1989</p>
+										<div>
+											<span><strong>ALAN GARCÍA PÉREZ</strong></span>
+											<p>Presidente Constitucional de la República</p>
+										</div>
+										<div>
+											<span><strong>GUILLERMO LARCO COX.</strong></span>
+											<div>Presidente del Concejo de Ministros y Ministro de Relaciones Exteriores.</div>
+										</div>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">Ley de creación distrital</h6>
+								<div class="row">
+                                    <div class="col-md-12">
+                                       <ul class="table-info checklist">
+											<li><a th:href=" ${@helper.getServerApiRecursos('normas/ley_creacion_distrital.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">Descargue aquí 36Kb</span></a></li>
+										</ul>
+                                    </div>
+								</div>
+								
+	                        </div>
+	                        
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

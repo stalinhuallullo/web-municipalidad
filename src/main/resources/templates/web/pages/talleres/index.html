@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Registro de talleres 2020 - Municipalidad Santa Anita</title>
+	<meta name="robots" content="noindex, nofollow"/>
+
+    <link th:href="${@helper.assets('talleres-fonts/material-design-iconic-font/css/material-design-iconic-font.css')}" rel="stylesheet">
+	<link th:href="${@helper.assetsCss('talleres-estilo.css?version=1.0.0.4')}" rel="stylesheet">
+	
+
+    <script th:src="${@helper.assetsJsc('jquery-3.3.1.min.js')}"></script>
+    <script th:src="${@helper.assetsJsc('jquery.steps.js?version=1.0.0.1')}"></script>
+    <script th:src="${@helper.assetsJsc('main.js?version=1.0.0.19')}"></script>
+    
+</head>
+
+<body>
+    <div class="wrapper">
+    	
+        <form action="" id="form">
+            <div id="wizard">
+                <!-- SECTION 1 -->
+                <h4></h4>
+                <section>
+                    <div class="checkbox-circle form-row form-group">
+                        <div class="form-holder">
+                            <label class="active">
+                                <input type="radio" class="element-tipo" name="billing" value="codigo">Por código
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="form-holder">
+                            <label>
+                                <input type="radio" class="element-tipo" name="billing" value="lista" checked>Por Lista de talleres
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="element-codigo" class="form-row d-none">
+                        <label for="">Ingresar codigo de taller</label>
+                        <div>
+                            <div class="col-md-7">
+                                <input type="text" id="input-codigo-taller" class="form-control" placeholder="xxxxxx" size="12" maxlength="12" onkeypress="return numeros(event)">
+                                <span></span>
+                            </div>
+                            <div class="col-md-3"><a href="javascript:void(0);" id="btn-buscar-taller" class="btn btn-default">Buscar</a></div>
+                            <div class="content-detalles-taller"></div>
+                        </div>
+                    </div>
+
+                    <div id="element-lista">
+                        <div class="form-row">
+                            <label for="">Nombre del taller</label>
+                            <div class="form-holder">
+                                <select name="" id="select-nombre-taller" class="form-control">
+                                    <option value="">Seleccionar</option>
+                                </select>
+                                <i class="zmdi zmdi-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label for="">Categoria</label>
+                            <div class="form-holder">
+                                <select name="" id="select-categoria-taller" class="form-control">
+                                    <option value="">Seleccionar</option>
+                                </select>
+                                <i class="zmdi zmdi-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="content-card"></div>
+                    </div>
+                    <div style="clear: both"></div>
+                </section>
+
+                <!-- SECTION 2 -->
+                <h4></h4>
+                <section>
+                    <div class="form-row">
+                        <label for="">Nombres *</label>
+                        <input type="text" id="nom_alumno" class="form-control">
+                    </div>
+                    <div class="form-row">
+                        <label for="">Apellidos *</label>
+                        <input type="text" id="ape_alumno" class="form-control">
+                    </div>
+                    <div class="form-row">
+                        <label for="">Dirección * </label>
+                        <input type="text" id="direccion" class="form-control">
+                    </div>
+                    <div class="form-row form-group">
+                        <div class="form-holder">
+                            <label for="">Distrito *</label>
+                            <input type="text" id="distrito" class="form-control">
+                        </div>
+                        <div class="form-holder">
+                            <label for="">D.N.I *</label>
+                            <input type="text" id="dni" class="form-control" placeholder="xxxxxx" size="8" maxlength="8" onkeypress="return numeros(event)">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label for="">Teléfono</label>
+                        <input type="text" id="telefono" class="form-control" placeholder="xxxxxx">
+                    </div>
+                    <div class="form-row form-group">
+                        <div class="form-holder">
+                            <label for="">Correo</label>
+                            <input type="text" id="correo" class="form-control">
+                        </div>
+                        <div class="form-holder">
+                            <label for="">Sexo *</label>
+                            <select name="" id="sexo" class="form-control">
+                                <option value="">Seleccionar</option>
+                                <option value="M">Hombre</option>
+                                <option value="F">Mujer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label for="">Fecha de Nacimiento *</label>
+                        <input type="date" id="fec_nac" class="form-control">
+                    </div>
+                    <div class="form-row">
+                        <label for="">Centro de Estudios</label>
+                        <input type="text" id="alu_centroestudio" class="form-control">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="">Tipo de seguro médico</label>
+                        <input type="text" id="alu_segmedico" class="form-control">
+                    </div>
+                    <div class="form-row">
+                        <label for="">Enfermedad(es) y/o Alergias que padece el postulante</label>
+                        <input type="text" id="alu_enfermedades" class="form-control">
+                    </div>
+                    <div class="form-row">
+                        <label for="">Antibióticos y/o medicinas que deba ser suministradas</label>
+                        <input type="text" id="alu_antibioticos" class="form-control">
+                    </div>
+                    <div class="form-row">
+                        <label for="">Tipo de grupo sanguíneo</label>
+                        <select name="" id="alu_gruposanguineo" class="form-control">
+                        	<option value="">Seleccionar</option>
+                            <option value="No recuerdo">No recuerdo</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                </section>
+
+                <!-- SECTION 3 -->
+                <h4></h4>
+                <section>
+                    <div class="form-row">
+                        <label for="">D.N.I *</label>
+                        <input type="text" id="dniapo" class="form-control" placeholder="xxxxxx" size="8" maxlength="8" onkeypress="return numeros(event)">
+                    </div>
+                    <div class="form-row form-group">
+                        <div class="form-holder">
+                            <label for="">Teléfono Móvil *</label>
+                            <input type="text" id="tflapo" class="form-control" placeholder="xxxxxx">
+                        </div>
+                        <div class="form-holder">
+                            <label for="">Teléfono Fijo</label>
+                            <input type="text" id="apo_fijo" class="form-control" placeholder="xxxxxx">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label for="">Nombre Apoderado *</label>
+                        <input type="text" id="apoderado" class="form-control">
+                    </div>
+                    <div class="form-row">
+                        <label for="">Parentesco *</label>
+                        <input type="text" id="parentesco" class="form-control">
+                    </div>
+                    <div class="form-row">
+                        <label for="">Correo Apoderado</label>
+                        <input type="text" id="apo_correo" class="form-control">
+                    </div>
+                </section>
+
+                <!-- SECTION 4 -->
+                <h4></h4>
+                <section>
+                    <div class="content-detalles-taller"></div>
+
+                    <br>
+                    <h4>Datos estudiante</h4>
+                    <p><span>Nombres: </span><strong class="txt-nom_alumno"></strong></p>
+                    <p><span>Apellidos: </span><strong class="txt-ape_alumno"></strong></p>
+                    <p><span>Dirección: </span><strong class="txt-direccion"></strong></p>
+                    <p><span>Distrito: </span><strong class="txt-distrito"></strong></p>
+                    <p><span>D.N.I: </span><strong class="txt-dni"></strong></p>
+                    <p><span>Teléfono: </span><strong class="txt-telefono"></strong></p>
+                    <p><span>Correo: </span><strong class="txt-correo"></strong></p>
+                    <p><span>Sexo: </span><strong class="txt-sexo"></strong></p>
+                    <p><span>Fecha de Nacimiento: </span><strong class="txt-fec_nac"></strong></p>
+                    <p><span>Centro de Estudios: </span><strong class="txt-alu_centroestudio"></strong></p>
+
+                    <p><span>Tipo de seguro médico: </span><strong class="txt-alu_segmedico"></strong></p>
+                    <p><span>Enfermedad(es) y/o Alergias que padece el postulante: </span><strong class="txt-alu_enfermedades"></strong></p>
+                    <p><span>Antibióticos y/o medicimas que deba ser suministradas: </span><strong class="txt-alu_antibioticos"></strong></p>
+                    <p><span>Tipo de grupo sanguíneo: </span><strong class="txt-alu_gruposanguineo"></strong></p>
+
+                    <br>
+                    <h4>Datos apoderado</h4>
+                    <p><span>D.N.I: </span><strong class="txt-dniapo"></strong></p>
+                    <p><span>Teléfono Móvil: </span><strong class="txt-tflapo"></strong></p>
+                    <p><span>Teléfono Fijo: </span><strong class="txt-apo_fijo"></strong></p>
+                    <p><span>Nombre Apoderado: </span><strong class="txt-apoderado"></strong></p>
+                    <p><span>Parentesco: </span><strong class="txt-parentesco"></strong></p>
+                    <p><span>Correo Apoderado: </span><strong class="txt-apo_correo"></strong></p>
+                    
+                    <br/>
+                    <div id="log"></div>
+                </section>
+            </div>
+        </form>
+    </div>
+
+    <div id="talleresModal" class="modal">
+        <div class="modal-content">
+            <center>
+                <p>Su codigo es</p>
+                <h1 class="taller-codigo">0</h1>
+                <p>Con este código acercarse a ventanilla para cancelar y hacer efectivo la matricula</p>
+                <br>
+                <button class="btn btn-default" id="btn-finalizar">Finalizar</button>
+                <button class="btn btn-primary" id="btn-registrar-nuevo">Registrar nuevo estudiante</button>
+                <span style="font-size: 11px;display: block;">Llenar solo datos del estudiante</span>
+            </center>
+        </div>
+    </div>
+
+	<div id="siecarga" style="display: none;">
+		<div id="siecarga-content">
+			<div class="sieload"></div>
+		</div>
+	</div>
+</body>
+
+</html>

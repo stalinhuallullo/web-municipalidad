@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+<head>
+</head>
+    <body layout:fragment="content" class="haeder-fixed-scroll">
+                
+        <div th:replace="web/fragments/bar-menu-category"></div>
+                
+        <div class="main-content">
+            <!--Events Start-->
+            <div class="events-wrapper p130-50">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="row">
+                                
+                                <th:block th:if="${ !listEventos1.isEmpty() }">
+                                    <div class="col-sm-12 mt-15">
+                                        <div class="header-category">
+                                            <h3 class="name">Centro Cultural</h3>
+                                            <div class="control">
+                                                <a th:href="${@helper.getURL('eventos/categoria/centro-cultural')}" class="c2">Ver más</a>
+                                            </div>                                          
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-3 col-sm-6" th:each="i : ${listEventos1}">
+                                        <div class="event-post">
+                                            <div class="thumb">
+                                                <a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } "><i class="fas fa-link"></i></a>
+                                                <img th:if="${ i.archivo != null }" th:src=" ${ @helper.getServerApiImgEventos(i.archivo) } " alt=""> 
+                                                <img th:unless="${ i.archivo != null }" th:src="${ @helper.assetsImgDefault() }" alt=""> 
+                                            </div>
+                                            <div class="event-post-txt">
+                                                <h5 class="ellipsis text-justify"><a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } " th:text=" ${ i.titulo } "></a></h5>
+                                                <ul class="event-meta">
+                                                    <li><i class="far fa-calendar-alt"></i> <span th:text=" ${ @helper.convertirFecha(i.fecha_final) } "></span></li>
+                                                    <li><i class="far fa-clock"></i> <span th:text=" ${ @helper.convertirHora(i.fecha_final) } "></span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th:block>
+                                            
+                                <th:block th:if="${ !listEventos2.isEmpty() }">
+                                    <div class="col-sm-12 mt-15">
+                                        <div class="header-category">
+                                            <h3 class="name">Bienestar Social</h3>
+                                            <div class="control">
+                                                <a th:href="${@helper.getURL('eventos/categoria/bienestar-social')}" class="c2">Ver más</a>
+                                            </div>                                          
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-3 col-sm-6" th:each="i : ${listEventos2}">
+                                        <div class="event-post">
+                                            <div class="thumb">
+                                                <a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } "><i class="fas fa-link"></i></a>
+                                                <img th:if="${ i.archivo != null }" th:src=" ${ @helper.getServerApiImgEventos(i.archivo) } " alt=""> 
+                                                <img th:unless="${ i.archivo != null }" th:src="${ @helper.assetsImgDefault() }" alt=""> 
+                                            </div>
+                                            <div class="event-post-txt">
+                                                <h5 class="ellipsis text-justify"><a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } " th:text=" ${ i.titulo } "></a></h5>
+                                                <ul class="event-meta">
+                                                    <li><i class="far fa-calendar-alt"></i> <span th:text=" ${ @helper.convertirFecha(i.fecha_final) } "></span></li>
+                                                    <li><i class="far fa-clock"></i> <span th:text=" ${ @helper.convertirHora(i.fecha_final) } "></span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th:block>
+
+                                <th:block th:if="${ !listEventos3.isEmpty() }">
+                                    <div class="col-sm-12 mt-15">
+                                        <div class="header-category">
+                                            <h3 class="name">Izamientos</h3>
+                                            <div class="control">
+                                                <a th:href="${@helper.getURL('eventos/categoria/izamientos')}" class="c2">Ver más</a>
+                                            </div>                                          
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-3 col-sm-6" th:each="i : ${listEventos3}">
+                                        <div class="event-post">
+                                            <div class="thumb">
+                                                <a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } "><i class="fas fa-link"></i></a>
+                                                <img th:if="${ i.archivo != null }" th:src=" ${ @helper.getServerApiImgEventos(i.archivo) } " alt=""> 
+                                                <img th:unless="${ i.archivo != null }" th:src="${ @helper.assetsImgDefault() }" alt=""> 
+                                            </div>
+                                            <div class="event-post-txt">
+                                                <h5 class="ellipsis text-justify"><a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } " th:text=" ${ i.titulo } "></a></h5>
+                                                <ul class="event-meta">
+                                                    <li><i class="far fa-calendar-alt"></i> <span th:text=" ${ @helper.convertirFecha(i.fecha_final) } "></span></li>
+                                                    <li><i class="far fa-clock"></i> <span th:text=" ${ @helper.convertirHora(i.fecha_final) } "></span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th:block>
+                            
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

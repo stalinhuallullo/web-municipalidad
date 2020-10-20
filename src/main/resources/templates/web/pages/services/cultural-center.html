@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+    <head>
+    </head>
+    <body layout:fragment="content" class="haeder-fixed-scroll">
+        
+         <div th:replace="web/fragments/banner"></div>
+         
+         <div class="main-content p130-50">
+            <section class="department-details">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="deprt-txt">
+                                <h3>CENTRO CULTURAL DE LA MUNICIPALIDAD DE SANTA ANITA</h3>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>Inauguraci&oacute;n de los talleres culturales, educativos y juveniles: Verano 2020. ffff Dando el inicio, el regidor: profesor Miguel Huaranga en representaci&oacute;n de Jose Luis Nole, alcalde de Santa Anita y el subgerente de Cultura; Felipe Lic. Enr&iacute;quez Ponce.</p>
+                                    </div>
+                                </div>
+
+                                <div th:replace="web/fragments/mini-banner"></div>
+
+
+                                <!-- <div class="row">
+                                    <div class="col-md-3 card-talleres">Baile</div>
+                                    <div class="col-md-3 card-talleres">Música</div>
+                                    <div class="col-md-3 card-talleres">Educativo</div>
+                                    <div class="col-md-3 card-talleres">Artístico</div>
+                                    <div class="col-md-3 card-talleres">Tecnología</div>
+                                    <div class="col-md-3 card-talleres">Deportes (por sedes)</div>
+                                    <div class="col-md-3 card-talleres">Preparación</div>
+                                </div> -->
+                                <div class="col-md-12 row department-links">
+                                    <ul>
+                                        <li><a class="c1" href="javascript:void(0)">Baile</a></li>
+                                        <li><a class="c2" href="javascript:void(0)">Música</a></li>
+                                        <li><a class="c3" href="javascript:void(0)">Educativo</a></li>
+                
+                                        <li><a class="c4" href="javascript:void(0)">Artístico</a></li>
+                                        <li><a class="c5" href="javascript:void(0)">Tecnología</a></li>
+                                        <li><a class="c6" href="javascript:void(0)">Deportes (por sedes)</a></li>
+
+                                        <li><a class="c7" href="javascript:void(0)">Preparación</a></li>
+
+                                    </ul>
+                                </div>
+                                <h6 class="title-info">Talleres:</h6>
+                                <style type="text/css">
+                                    td {
+                                        color: #5C3F4B;
+                                        padding: 10px 0px;
+                                        border-bottom: 1px solid #CDC1C6;
+                                        line-height: 20px;
+                                    }
+                                    .table-style-horario{
+                                        margin: 0;
+                                    }
+                                    .table-titulo td {
+                                        font-family: 'oswaldregular';
+                                        font-size: 16px;
+                                        color: #CA0058;
+                                        padding: 3px;
+                                        background: #fff;
+                                        border-bottom: 3px solid #333;
+                                    }
+                                    .table-horario-pe {
+                                        padding-left: 15px !important;
+                                    }
+                                    .table-titulo .t-1 {
+                                    }
+                                    .table-titulo .t-2,
+                                    .table-horario{
+                                        width: 400px;
+                                    }
+                                    .table-titulo .t-3,
+                                    .table-fecha {
+                                        width: 180px;
+                                    }
+                                    .table-titulo .t-4,
+                                    .table-inscripcion {
+                                        width: 300px;
+                                    }
+                                    .table-curso, tr.odd .table-curso {
+                                        background: #E5DFE1;
+                                        padding: 10px;
+                                        color: #5C3F4B;
+                                        font-weight: bold;
+                                        line-height: 1.3em;
+                                    }
+                                    .table-curso-pe {
+                                        vertical-align: top !important;
+                                    }
+                                    .table-horario {
+                                        padding-left: 15px !important;
+                                        padding-right: 15px;
+                                    }
+                                    .table-horario ul{
+                                        margin: 0;
+                                        padding: 0;
+                                        list-style: none;
+                                    }
+                                    .table-horario ul li{
+
+                                    }
+                                    .table-fecha{
+                                        padding-right: 15px;
+                                    }
+                                    .table-inscripcion {
+                                        width: 90px;
+                                        padding-right: 15px;
+                                        text-align: center;
+                                    }
+                                    .table-inversion {
+                                        width: 105px !important;
+                                        padding-left: 10px !important;
+                                        vertical-align: top !important;
+                                    }
+                                </style>
+                                <div class="table-responsive" style="display: none">
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="table-style-horario">
+                                        <tbody>
+                                            <tr class="table-titulo">
+                                                <td class="t-1">CURSO</td>
+                                                <td class="table-horario-pe t-2">HORARIO</td>
+                                                <td class="t-3">DURACIÓN</td>
+                                                <td class="t-4">SEDE</td>
+                                                <td class="table-inversion t-5">INVERSIÓN</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Baby ballet para niños de 3 a 4 años</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 08:30 a.m. a 10:00 a.m.</li>
+                                                        <li>Martes y jueves, 10:10 a.m. a 11:40 a.m.</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 27 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Ballet para niños de 5 a 8 años</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 10:10 a.m. a 11:40 a.m.</li>
+                                                        <li>Lunes y miércoles, 11:50 a.m. a 01:20 p.m.</li>
+                                                        <li>Martes y jueves, 11:50 a.m. a 01:20 p.m.</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 27 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Marinera básica para niños</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 08:30 a.m. a 10:00 a.m.  (4 a 6 años)</li>
+                                                        <li>Lunes y miércoles, 10:10 a.m. a 11:40 a.m.  (7 a 10 años)</li>
+                                                        <li>Lunes y miércoles, 11:50 a.m. a 01:20 p.m. (11 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 26 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Marinera intermedia</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Martes y jueves, 08:30 a.m. a 10:00 a.m.  (6 a 9 años)</li>
+                                                        <li>Martes y jueves, 10:10 a.m. a 11:40 a.m.  (10 a 15 años)</li>
+                                                        <li>Martes y jueves, 11:50 a.m. a 01:20 p.m. (16 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 07 de ene al 27 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Danza moderna y tradicional</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Martes y jueves, 08:30 a.m. a 10:00 a.m.  (4 a 8 años)</li>
+                                                        <li>Martes y jueves, 10:10 a.m. a 11:40 a.m.  (9 a 12 años)</li>
+                                                        <li>Martes y jueves, 11:50 a.m. a 01:20 p.m. (13 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 07 de ene al 27 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Danza folklore de 17 años a más</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Miércoles y viernes, 05:30 p.m. a 07:20 p.m.</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 08 de ene al 28 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Caporales de 12 a 23 años</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Martes y jueves, 05:50 p.m. a 07:20 p.m.</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 07 de ene al 27 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Danza árabe</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Martes y jueves, 02:30 p.m. a 04:00 p.m. (4 a 7 años)</li>
+                                                        <li>Martes y jueves, 04:10 p.m. a 05:40 p.m. (8 a 11 años)</li>
+                                                        <li>Miércoles y viernes, 10:10 a.m. a 11:40 a.m.  (12 a 16 años)</li>
+                                                        <li>Miércoles y viernes, 11:50 a.m. a 01:20 p.m. (17 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 07 de ene al 28 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Salsa</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Viernes y sábado, 02:30 p.m. a 04:00 p.m. (15 años a más)</li>
+                                                        <li>Viernes y sábado, 04:10 p.m. a 05:40 p.m. (15 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 10 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Bachata</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Martes y jueves, 05:50 p.m. a 07:20 p.m. (15 a 40 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 07 de ene al 27 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Danza urbana</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 08:30 a.m. a 10:00 a.m. (7 a 11 años)</li>
+                                                        <li>Lunes y miércoles, 10:10 a.m. a 11:40 a.m. (12 a 16 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 26 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Electrodance</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 02:30 p.m. a 04:00 p.m. (12 a 14 años)</li>
+                                                        <li>Lunes y miércoles, 04:10 p.m. a 05:40 p.m. (15 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 26 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Break dance</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 05:50 p.m. a 07:20 p.m. (10 a 18 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 26 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">k-pop básico</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 02:30 p.m. a 04:00 p.m. (12 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 26 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">k-pop intermedio</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 04:10 p.m. a 05:40 p.m. (12 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 26 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Oratoria</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Viernes y sábado, 08:30 a.m. a 10:00 a.m. (5 a 7 años)</li>
+                                                        <li>Viernes y sábado, 10:10 a.m. a 11:40 a.m. (8 a 12 años)</li>
+                                                        <li>Viernes y sábado, 11:50 a.m. a 01:20 p.m. (13 a 16 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 10 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Oratoria y liderazgo</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Miércoles, 05:00 p.m. a 08:00 p.m. (17 a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 08 de ene al 26 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Dibujo y pintura</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Martes y jueves, 08:30 a.m. a 10:00 a.m. (9 a 12 años)</li>
+                                                        <li>Martes y jueves, 10:10 a.m. a 11:40 a.m. (9 a 12 años)</li>
+                                                        <li>Viernes y sábado, 08:30 a.m. a 10:00 a.m. (4 a 8 años)</li>
+                                                        <li>Viernes y sábado, 10:10 a.m. a 11:40 a.m. (4 a 8 años)</li>
+                                                        <li>Viernes y sábado, 11:50 a.m. a 01:20 p.m. (13 a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 07 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Guitarra</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 08:30 a.m. a 10:00 a.m. (5 a 7 años)</li>
+                                                        <li>Lunes y miércoles, 10:10 a.m. a 11:40 a.m. (7 a 10 años)</li>
+                                                        <li>Lunes y miércoles, 11:50 a.m. a 01:20 p.m.(11 a 16 años)</li>
+                                                        <li>Viernes y sábado, 08:30 a.m. a 10:00 a.m. (7 a 10 años)</li>
+                                                        <li>Viernes y sábado, 10:10 a.m. a 11:40 a.m. (9 a 12 años)</li>
+                                                        <li>Viernes y sábado, 11:50 a.m. a 01:20 p.m. (13 a 16 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Órgano electrónico</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Viernes y sábado, 08:30 a.m. a 10:00 a.m. (4 a 8 años)</li>
+                                                        <li>Viernes y sábado, 10:10 a.m. a 11:40 a.m. (9 a 12 años)</li>
+                                                        <li>Viernes y sábado, 11:50 a.m. a 01:20 p.m. (13 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 10 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Teatro</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Martes y jueves, 08:30 a.m. a 10:00 a.m. (4 a 7 años)</li>
+                                                        <li>Martes y jueves, 10:10 a.m. a 11:40 a.m. (8 a 11 años)</li>
+                                                        <li>Martes y jueves, 11:50 a.m. a 01:20 p.m. (12 a 15 años)</li>
+                                                        <li>Viernes y sábado , 04:10 p.m. a 05:40 p.m. (12 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Impro y claun</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 08:30 a.m. a 10:00 a.m. (4 a 7 años)</li>
+                                                        <li>Lunes y miércoles, 10:10 a.m. a 11:40 a.m. (8 a 11 años)</li>
+                                                        <li>Lunes y miércoles, 01:50 a.m. a 01:20 p.m. (12 a 16 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 26 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Canto</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Martes y jueves, 08:30 a.m. a 10:00 a.m. (7 a 10 años)</li>
+                                                        <li>Martes y jueves, 10:10 a.m. a 11:40 a.m. (11 a 16 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 07 de ene al 27 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Canto y expresión</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Viernes, 10:00 a.m. a 01:00 p.m. (14 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 10 de ene al 28 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Cuenta cuentos y motrocidad</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Martes y jueves, 08:30 a.m. a 10:00 a.m. (4 a 6 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 07 de ene al 27 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Lectura lúdica</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Martes y jueves, 10:10 a.m. a 11:40 a.m. (7 a 11 años)</li>
+                                                        <li>Martes y jueves, 11:50 a.m. a 01:20 p.m. (12 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 07 de ene al 27 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Robótica</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Viernes y sábado, 08:30 a.m. a 10:00 a.m. (6 a 8 años)</li>
+                                                        <li>Viernes y sábado, 10:10 a.m. a 11:40 a.m. (9 a 13 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 10 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Reforzamiento de inglés</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 02:30 a.m. a 04:00 p.m. (4 a 8 años)</li>
+                                                        <li>Lunes y miércoles, 04:10 a.m. a 05:40 a.m. (9 a 13 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 26 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Ortografía y redacción</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Miércoles y viernes, 04:10 a.m. a 05:40 p.m. (12 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 08 de ene al 28 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Comprensión de lectura</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Miércoles y viernes, 02:30 a.m. a 04:00 p.m. (12 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 08 de ene al 28 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Quechua</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 07:00 p.m. a 08:30 p.m. (12 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 26 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Ballet</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 02:30 p.m. a 04:00 p.m. (3 a 4 años)</li>
+                                                        <li>Lunes y miércoles, 04:00 p.m. a 05:30 p.m. (5 a 8 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 26 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Robótica</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 08:30 a.m. a 10:00 a.m. (6 a 8 años)</li>
+                                                        <li>Lunes y miércoles, 10:00 a.m. a 11:30 a.m. (9 a 13 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 26 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Oratoria</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes y miércoles, 11:30 a.m. a 01:00 p.m. (8 a 12 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 26 de feb</td>
+                                                <td class="table-inscripcion" valign="top">CASA DE LA JUVENTUD: (Av. Avutardas, Cda. 7 s/n COOP. MIGUEL GRAU)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Natación</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes, miércoles y viernes o martes, jueves y sábado de 6 a 18 años</li>
+                                                        <li>08:00 a.m. a 09:00 a.m.</li>
+                                                        <li>09:00 a.m. a 10:00 a.m.</li>
+                                                        <li>10:00 a.m. a 11:00 a.m.</li>
+                                                        <li>11:00 a.m. a 12:00 p.m. (1 a 3 años)</li>
+                                                        <li>11:00 a.m. a 12:00 p.m.</li>
+                                                        <li>12:00 p.m. a 01:00 p.m.</li>
+                                                        <li>03:00 p.m. a 04:00 p.m.</li>
+                                                        <li>04:00 p.m. a 05:00 p.m.</li>
+                                                        <li>05:00 p.m. a 06:00 p.m.</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">Piscina “Universal” (mañana y tarde) y Piscina “Alameda” (sólo mañanas)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Fútbol</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes, miércoles y viernes o martes, jueves y sábado</li>
+                                                        <li>08:00 a.m. a 09:30 a.m. (5 a 12 años)</li>
+                                                        <li>09:30 a.m. a 11:00 a.m. (5 a 12 años)</li>
+                                                        <li>11:00 a.m. a 12:30 p.m. (13 a 17 años)</li>
+                                                        <li>03:00 p.m. a 04:30 p.m. (6 a 12 años)</li>
+                                                        <li>04:30 p.m. a 06:00 p.m. (13 a 17 años)</li>
+
+                                                        <li>Lunes, miércoles y viernes o martes, jueves y sábado</li>
+                                                        <li>08:00 a.m. a 09:30 a.m. (5 a 12 años)</li>
+                                                        <li>09:30 a.m. a 11:00 a.m. (5 a 12 años)</li>
+                                                        <li>11:00 a.m. a 12:30 p.m. (13 a 17 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">Estadio “Los Chancas de Andahuaylas” y Estadio “Manuel Correa”</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Futbol 7 (Fulbito)</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes, miércoles y viernes o martes, jueves y sábado</li>
+                                                        <li>08:00 a.m. a 09:30 a.m. (5 a 12 años)</li>
+                                                        <li>09:30 a.m. a 11:00 a.m. (5 a 12 años)</li>
+                                                        <li>11:00 a.m. a 12:30 p.m. (13 a 17 años)</li>
+                                                        <li>03:00 p.m. a 04:30p.m. (6 a 9 años)</li>
+                                                        <li>04:30 p.m. a 06:00 p.m. (5 a 12 años)</li>
+                                                        <li>06:30 p.m. a 07:30 p.m. (10 a 12 años)</li>
+
+                                                        <li>Lunes, miércoles y viernes</li>
+                                                        <li>09:30 a.m. a 11:00 a.m. (6 a 7 años)</li>
+                                                        <li>11:00 a.m. a 12:30 p.m. (8 a 12 años)</li>
+
+                                                        <li>Martes, jueves y sábado</li>
+                                                        <li>08:00 a.m. a 09:30 a.m. (5 a 12 años)</li>
+                                                        <li>09:30 a.m. a 11:00 a.m. (5 a 12 años)</li>
+                                                        <li>11:00 a.m. a 12:30 p.m. (13 a 17 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">Polideportivo “Los Ruiseñores”, Campo Deportivo “Parodi” y Campo de Grass Sintético “Huáscar”</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Basquetball</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes, miércoles y viernes o martes, jueves y sábado</li>
+                                                        <li>08:00 a.m. a 09:30 a.m. (5 a 12 años)</li>
+                                                        <li>09:30 a.m. a 11:00 a.m.  (5 a 12 años)</li>
+                                                        <li>11:00 a.m. a 12:30 p.m. (13 a 17 años)</li>
+                                                        <li>03:00 p.m. a 04:30 p.m. (5 a 12 años)</li>
+                                                        <li>04:30 p.m. a 06:00 p.m. (12 a 14 años)</li>
+                                                        <li>06:00 p.m. a 07:30 p.m. (15 a 17 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">Estadio municipal “Manuel Correa” y Polideportivo “Los Ruiseñores”</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Aeróbicos</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes, miércoles y viernes</li>
+                                                        <li>03:00 p.m. a 04:30 p.m.(6 a 14 años)</li>
+                                                        <li>04:30 p.m. a 06:00 p.m.(15 años a más)</li>
+
+                                                        <li>Martes, jueves y sábado</li>
+                                                        <li>04:00 p.m.a 05:30 p.m.(6 a 14 años)</li>
+                                                        <li>05:30 p.m.a 07:00 p.m.(15 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">Palacio Municipal y Casa de la Mujer</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Voleibol</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes, miércoles y viernes o martes, jueves y sábado</li>
+                                                        <li>08:00 a.m. a 09:30 a.m. (5 a 12 años)</li>
+                                                        <li>09:30 a.m. a 11:00 a.m. (5 a 12 años)</li>
+                                                        <li>11:00 a.m. a 12:30 p.m. (13 a 17 años)</li>
+                                                        <li>03:00 p.m. a 04:30 p.m. (5 a 12 años)</li>
+                                                        <li>04:30 p.m. a 06:00 p.m. (12 a 14 años)</li>
+                                                        <li>06:00 p.m. a 07:30 p.m. (15 a 17 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">Polideportivo “Los Ruiseñores”, Estadio “Manuel Correa” y Casa de la Mujer</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Ajedrez</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes, miércoles y viernes o martes, jueves y sábado</li>
+                                                        <li>08:00 a.m. a 09:30 a.m. (9 a 12 años)</li>
+                                                        <li>09:30 a.m. a 11:00 a.m. (5 a 8 años)</li>
+                                                        <li>11:00 a.m. a 12:00 p.m. (13 a 17 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">Biblioteca Municipal (2do piso)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Karate</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes, miércoles y viernes</li>
+                                                        <li>08:00 a.m. a 09:30 a.m. (9 a 12 años)</li>
+                                                        <li>09:30 a.m. a 11:00 a.m. (5 a 8 años)</li>
+                                                        <li>11:00 a.m. a 12:30 p.m. (13 a 17 años) </li>
+                                                        <li>03:00 p.m.a 04:30 p.m. (5 a 10 años)</li>
+                                                        <li>04:30 p.m.a 06:00 p.m. (11 a 17 años)</li>
+
+                                                        <li>Martes, jueves y sábado</li>
+                                                        <li>03:00 p.m.a 04:30 p.m. (5 a 10 años)</li>
+                                                        <li>04:30 p.m.a 06:00 p.m. (11 a 17 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 06 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">Palacio Municipal y Casa de la Mujer</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Boxeo</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Martes, jueves y sábado</li>
+                                                        <li>04:00 p.m. a 05:30 p.m. (8 a 12 años)</li>
+                                                        <li>05:30 p.m. a 07:00 p.m. (13 a 17 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 07 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">Palacio Municipal (4to piso)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Gimnasia deportiva</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Martes, jueves y sábado</li>
+                                                        <li>08:00 a.m. a 09:30 a.m. (9 a 12 años)</li>
+                                                        <li>09:30 a.m. a 11:00 a.m. (5 a 8 años)</li>
+                                                        <li>11:00 a.m. a 12:30 p.m. (13 a 17 años)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 07 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">Palacio Municipal (4to piso)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-curso table-curso-pe" valign="top">Tennis de mesa</td>
+                                                <td class="table-horario">
+                                                    <ul>
+                                                        <li>Lunes, miércoles y viernes</li>
+                                                        <li>08:00 a.m. a 09:30 a.m. (6 a 9 años)</li>
+                                                        <li>09:30 a.m. a 11:00 a.m. (10 a 13 años)</li>
+                                                        <li>11:00 a.m. a 12:30 p.m. (14 años a más)</li>
+                                                    </ul>
+                                                </td>
+                                                <td class="table-fecha" valign="top">Del 07 de ene al 29 de feb</td>
+                                                <td class="table-inscripcion" valign="top">Palacio Municipal (3er piso)</td>
+                                                <td class="table-inversion" valign="top">S/ 100.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <br/>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                       <div class="rel-box">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6 informatin-card">
+                                                    <h6>Horario de atención:</h6>
+                                                    <div>Lunes a Viernes de 8:00 a 17:00 horas</div>
+                                                    <div>Sábados de 8:00 a 13:00 horas</div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 informatin-card">
+                                                    <h6>Dirección:</h6>
+                                                    <div><strong>DIRECCIÓN: </strong> Jr. Santiago de Chuco S/N</div>
+                                                    <div><strong>REFERENCIA: </strong> Teatro Municipal Santa Anita</div>
+                                                </div>
+                                            </div>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section> 
+         </div>
+    </body>
+</html>	

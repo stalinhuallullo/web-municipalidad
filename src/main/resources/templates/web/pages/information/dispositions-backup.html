@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                          
+                                
+                                <div class="row">
+                                	<div class="col-md-3">
+	                                	<div class="sidebar widget">
+	                                    	<div class="emergency-info emergency-info-white lb">
+											    <div class="panel-group archives" id="accordion" role="tablist" aria-multiselectable="true">
+											    	<div class="panel">
+													    <div class="panel-heading link">
+															<a href="javascript:void(0)">Secretaria general</a> 
+													    </div>
+													</div>
+													<div class="panel">
+													    <div class="panel-heading link">
+															<a href="javascript:void(0)">Gerenciales</a> 
+													    </div>
+													</div>
+													<div class="panel">
+													    <div class="panel-heading link">
+															<a href="javascript:void(0)">Subgerenciales</a> 
+													    </div>
+													</div> 
+											    </div>
+											</div>
+										</div>
+                                    </div>
+                                    <div class="col-md-9">
+                                    	<!--<div class="single-post-tags"> 
+                                    		<a href="#">Secretaria general</a> 
+                                    		<a href="#">Gerenciales</a> 
+                                    		<a href="#">Subgerenciales</a> 
+                                    	</div>-->
+                                    	<div class="single-donation-box wf100 float-left">
+										        	
+										            <div class="col-sm-2">
+										            	<select name="anho" class="custom-select custom-select-lg mb-10" required="">
+																<option value="">Seleccionar Año</option>
+																<option value="2022">2022</option>
+																<option value="2021">2021</option>
+																<option value="2020">2020</option>
+																<option value="2019">2019</option>
+															</select>
+														
+										            </div>
+										            <div class="col-sm-2">
+														<select name="mes" class="custom-select custom-select-lg mb-10" required="">
+															<option value="">Seleccionar Mes</option>
+															<option value="1">Enero</option>
+															<option value="2">Febrero</option>
+															<option value="3">Marzo</option>
+															<option value="4">Abril</option>
+															<option value="5">Mayo</option>
+															<option value="6">Junio</option>
+															<option value="7">Julio</option>
+															<option value="8">Agosto</option>
+															<option value="9">Setiembre</option>
+															<option value="10">Octubre</option>
+															<option value="11">Noviembre</option>
+															<option value="12">Diciembre</option>
+														</select>
+										            </div>
+										            <div class="col-sm-1 form-submit">
+										                <button class="btn btn-primary" type="submit"><i class="fas fa-search mr-10"></i> Buscar</button>
+										            </div>
+										            
+										        </div>
+                                    	
+
+										<h6 class="title-info">Resultado de la busqueda :</h6>
+                                    	
+                                    	
+										     
+                                    	<ul class="checklist table-info">
+											<li>
+												<a href="javascript:void(0)"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">CONVENIO Nro° 0001-2019/MDSA</span></a>
+												<ul class="checklist">
+													<li><p>EL RENIEC es un organismo autónomo creado por mandato de la Constitución Política del Perú de 1993, regulado por las Leyes N° 26497 y N° 26859, y el Decreto Supremo N° 015-98-PCM, como organismo público encargado, entre otras funciones, de organizar y , mantener el Registro Único de Identificación de las Personas Naturales, así como de elaborar y mantener actualizado el Padrón Electoral.</p></li>
+												</ul>
+											</li>
+											<li>
+												<a href="javascript:void(0)"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">CONVENIO Nro° 0002-2019/MDSA</span></a>
+												<ul class="checklist">
+													<li><p>CONVENIO DE COOPERACIÓN INTERINSTITUCIONAL QUE CELEBRA LA AUTORIDAD AUTONOMA DEL SISTEMA ELECTRICO DE TRANSPORTE MASIVO DE LIMA Y CALLAO CON LA MUNICIPALIDAD DISTRITAL DE SANTA ANITA.</p></li>
+												</ul>
+											</li>
+											<li>
+												<a href="javascript:void(0)"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">CONVENIO Nro° 0003-2019/MDSA</span></a>
+												<ul class="checklist">
+													<li><p>CONVENIO DE GESTIÓN ENTRE EL MINISTERIO DE DESARROLLO E INCLUSIÓN SOCIAL Y LA MUNICIPALIDAD DISTRITAL SANTA ANITA - LIMA PARA LA GESTIÓN DEL PROGRAMA DE COMPLEMENTACIÓN ALIMENTARIA (PCA) PARA EL AÑO 2019</p></li>
+												</ul>
+											</li>
+											<li>
+												<a href="javascript:void(0)"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">CONVENIO Nro° 0004-2019/MDSA</span></a>
+												<ul class="checklist">
+													<li><p>EL CENTRO PREUNIVERSITARIO DE LA UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS, es una institución privada adscrito a la Universidad Nacional Mayor de San Marcos con personería jurídica de derecho público interno. Tiene autonomía técnica, administrativa y económica; y actúa en concordancia de la política educativa y cultural que fija la Alta Dirección del Sector.</p></li>
+												</ul>
+											</li>
+											<li>
+												<a href="javascript:void(0)"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">CONVENIO Nro° 0005-2019/MDSA</span></a>
+												<ul class="checklist">
+													<li><p>Es un órgano de gobierno local, regulado bajo el marco de la ley Orgánica de las Municipalidades - Ley Nº 27972, la cual establece entre sus funciones la de promover la cultura de la prevención mediante la educación para la preservación del medio ambiente.</p></li>
+												</ul>
+											</li>
+											<li>
+												<a href="javascript:void(0)"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">CONVENIO Nro° 0006-2019/MDSA</span></a>
+												<ul class="checklist">
+													<li><p>LA SUNARP, creada por Ley Nº 26366, es un organismo público descentralizado autónomo del sector Justicia y ente rector del Sistema Nacional de Registros Públicos, dotado de personería jurídica de derecho público.</p></li>
+												</ul>
+											</li>
+											<li>
+												<a href="javascript:void(0)"><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">CONVENIO Nro° 0007-2019/MDSA</span></a>
+												<ul class="checklist">
+													<li><p>LA MUNICIPALIDAD, de acuerdo a Ley Nº 27972 Ley Orgánica de Municipalidades, es un órgano de Gobierno Local, con personería jurídica de derecho público y plena capacidad para el cumplimiento de sus fines, con autonomía política, económica y administrativa en asuntos de su competencia.</p></li>
+												</ul>
+											</li>
+										</ul>
+										
+										<div class="site-pagination">
+					                        <nav aria-label="Page navigation">
+					                           <ul class="pagination">
+					                              <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">«</span> </a> </li>
+					                              <li><a href="#">1</a></li>
+					                              <li><a href="#">2</a></li>
+					                              <li class="active"><a href="#">3</a></li>
+					                              <li><a href="#">4</a></li>
+					                              <li><a href="#">5</a></li>
+					                              <li> <a href="#" aria-label="Next"> <span aria-hidden="true">»</span> </a> </li>
+					                           </ul>
+					                        </nav>
+					                     </div>
+                                    </div>
+                               	</div>
+	                           
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

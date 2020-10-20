@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                           <h3 class="stitle text-center">Guarderia Municipal</h3>
+
+								<div th:replace="web/fragments/mini-banner"></div>
+								
+								<h6  class="title-info">Servicios</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<ul class="checklist">
+										   <li class="row">
+										   		<div class="col-md-4 col-sm-6" th:each="i : ${data}">
+										   			<i class="fas fa-check"></i> <span th:text="${i.name}"></span>
+										   		</div>
+										   </li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="img-gallery style-2 gallery">
+										<div class="portfolio classic-gallery">
+											<div class="isotope items">
+												<div class="item width2">
+													<div class="gallery-thumb"> 
+														<a th:href="${@helper.assetsImg('guarderia-municipal/guarderia.jpg')}"  alt="">
+															<i class="fas fa-search"></i>
+														</a> 
+														<img th:src="${@helper.assetsImg('guarderia-municipal/guarderia.jpg')}"  alt=""> 
+													</div>
+												</div>
+												<div class="item width2">
+													<div class="gallery-thumb"> 
+														<a th:href="${@helper.assetsImg('guarderia-municipal/sguarderia1.jpg')}"  alt="">
+															<i class="fas fa-search"></i>
+														</a> 
+														<img th:src="${@helper.assetsImg('guarderia-municipal/sguarderia1.jpg')}"  alt=""> 
+													</div>
+												</div>
+												<div class="item width2">
+													<div class="gallery-thumb"> 
+														<a th:href="${@helper.assetsImg('guarderia-municipal/sguarderia2.jpg')}"  alt="">
+															<i class="fas fa-search"></i>
+														</a> 
+														<img th:src="${@helper.assetsImg('guarderia-municipal/sguarderia2.jpg')}"  alt=""> 
+													</div>
+												</div>
+												<div class="item width2">
+													<div class="gallery-thumb"> 
+														<a th:href="${@helper.assetsImg('guarderia-municipal/sguarderia3.jpg')}"  alt="">
+															<i class="fas fa-search"></i>
+														</a> 
+														<img th:src="${@helper.assetsImg('guarderia-municipal/sguarderia3.jpg')}"  alt=""> 
+													</div>
+												</div>
+												<div class="item width2">
+													<div class="gallery-thumb"> 
+														<a th:href="${@helper.assetsImg('guarderia-municipal/sguarderia5.jpg')}"  alt="">
+															<i class="fas fa-search"></i>
+														</a> 
+														<img th:src="${@helper.assetsImg('guarderia-municipal/sguarderia5.jpg')}"  alt=""> 
+													</div>
+												</div>
+												<div class="item width2">
+													<div class="gallery-thumb"> 
+														<a th:href="${@helper.assetsImg('guarderia-municipal/sguarderia6.jpg')}"  alt="">
+															<i class="fas fa-search"></i>
+														</a> 
+														<img th:src="${@helper.assetsImg('guarderia-municipal/sguarderia6.jpg')}"  alt=""> 
+													</div>
+												</div>
+											</div>
+										</div>
+						            </div>
+								</div>
+								
+								
+	                           
+								<div class="row">
+                                    <div class="col-md-12">
+                                       <div class="rel-box">
+                                          	<div class="row">
+                                          		<div class="col-md-6 col-xs-12 informatin-card">
+                                          			<h6>Dirección:</h6>
+                                          			<div>Funciona en el Centro de Desarrollo Para la Mujer (Casa de la Mujer)</div>
+                                          			<div>Jr. San Isidro Cuadra 2 S/N Urb. Residencial Risso (Av. Los Virreyes, altura del paradero Botica Carrión)</div>
+                                          		</div>
+                                          		<div class="col-md-6 col-xs-12 informatin-card">
+                                          			<h6>Horario de atención:</h6>
+                                          			<div>Lunes a Viernes de 8:00 a 01:00 PM y de 2:00 a 4:00 PM</div>
+                                          			<div>Teléfono: (01) 343-0366</div>
+                                          		</div>
+                                          	</div>
+                                       </div>
+                                    </div>
+								</div>
+	                        </div>
+	                        
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

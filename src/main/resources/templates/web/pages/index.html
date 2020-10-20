@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{web/layouts/principal/container}">
+
+<head>
+    <link rel="stylesheet" th:href="${@helper.assetsVendors('swiper-4.4.6/css/swiper.min.css')}">
+    
+    
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script th:src="${@helper.assetsVendors('swiper-4.4.6/js/swiper.min.js')}"></script>
+    <script th:src="${@helper.assetsVendors('youtube/script.youtube.js')}"></script>
+    
+    
+    <script type="text/javascript">
+        
+
+        $("document").ready(function() {
+
+            $('.v-siguiente').on('click', function () {
+                player.nextVideo()
+            });
+
+            $('.v-anterior').on('click', function () {
+                player.previousVideo()
+            });
+
+            $('#swiper-anuncios .swiper-slide').click((e) => {
+                let selSwipper = e.currentTarget
+                let selectedImg = e.currentTarget.firstElementChild
+                let ftarget = '_blank';
+
+                if (selSwipper.dataset.opensamewindow == 'true') {
+                    ftarget = '_self'
+                }
+                if (selSwipper.classList.contains('max-enabled')) {
+                    $('#modalwganuncio .content .content-anucios').html('')
+                    let imgsrc = selectedImg.src
+                    let embedHTML = ''
+                    if (selectedImg.dataset.imgbig != '') {
+                        imgsrc = selectedImg.dataset.imgbig
+                    }
+                    if (selSwipper.dataset.redirect != '') {
+                        embedHTML += '<a target="' + ftarget + '" href="' + selSwipper.dataset.redirect + '"><img src="' + imgsrc + '" style="width: 100%;"></a>'
+                    } else {
+                        embedHTML += '<img src="' + imgsrc + '" style="width: 100%;">'
+                    }
+                    if (selSwipper.dataset.textextra != '') {
+                        embedHTML += '<br>' + selSwipper.dataset.textextra
+                    }
+                    $('#modalwganuncio .content .content-anucios').html(embedHTML)
+                    $('#modalwganuncio').modal({
+                        onHide: function() {
+                            $('#modalwganuncio .content .content-anucios').html('')
+                        }
+                    }).modal('show')
+                } else {
+                    if (selSwipper.dataset.redirect != '') {
+                        window.open(selSwipper.dataset.redirect, ftarget);
+                    }
+                }
+
+            });
+
+
+            if ($('#tab-eventos').length) {
+                $('#tab-eventos').owlCarousel({
+                    loop: false,
+                    dots: false,
+                    margin: 5,
+                    responsiveClass: true,
+                    nav: false,
+                    autoWidth:false,
+                    navText : [
+                                '<svg height="12px" width="12px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">'+
+                                        '<path fill="#fff" d="M198.608,246.104L382.664,62.04c5.068-5.056,7.856-11.816,7.856-19.024c0-7.212-2.788-13.968-7.856-19.032l-16.128-16.12'+
+                                            'C361.476,2.792,354.712,0,347.504,0s-13.964,2.792-19.028,7.864L109.328,227.008c-5.084,5.08-7.868,11.868-7.848,19.084'+
+                                            'c-0.02,7.248,2.76,14.028,7.848,19.112l218.944,218.932c5.064,5.072,11.82,7.864,19.032,7.864c7.208,0,13.964-2.792,19.032-7.864'+
+                                            'l16.124-16.12c10.492-10.492,10.492-27.572,0-38.06L198.608,246.104z"/>'+
+                                '</svg>', 
+                                '<svg height="12px" width="12px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">'+
+                                        '<path fill="#fff" d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12'+
+                                            'c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028'+
+                                            'c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265'+
+                                            'c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>'+
+                                '</svg>'
+                    ],
+                    responsive: {
+                        500: {
+                            items: 2
+                        },
+                        600: {
+                            items: 5
+                        },
+                        800: {
+                            items: 3
+                        },
+                        1199: {
+                            items: 4
+                        }
+                    }
+                })
+            }
+
+            //$('#modalwgCombocatoria').modal('show');
+            
+        });
+        
+        $(window).on("scroll", function() {
+            var fromTop = $(window).scrollTop();
+            if (fromTop >= 300) {
+                $("body").addClass("haeder-fixed-scroll");
+            } else {
+                if ($("body").hasClass("haeder-fixed-scroll")) $("body").removeClass("haeder-fixed-scroll");
+            }
+        });
+
+    </script>
+    
+    <style>
+    	canvas{
+    		height: 100%;
+    	}
+        .btn-green{
+            border: 1px solid #088a08;
+            padding: 5px 25px;
+            color: #088a08;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .btn-green:hover, .btn-green:focus, .btn-green.active {
+            background: #088a08;
+            color: #ffffff;
+        }
+        .contenedor-escudo {
+            display: block;
+            height: 100%;
+        }
+        .videos-mdsa:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            content: "";
+            background: -moz-linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 25%,rgba(0, 0, 0, 0.4) 80%);
+            background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 25%,rgba(0, 0, 0, 0.4) 80%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 25%,rgba(0, 0, 0, 0.4) 80%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6000000', endColorstr='#00000000',GradientType=0 );
+        }
+        .contenedor-scroll{
+            width: 100%;
+            height: 70px;
+            z-index: 1;
+            position: relative;
+            bottom: calc(70px + 50px);
+            text-align: center;
+            
+        }
+        .ic-scroll{
+            width: 70px !important;
+            height: 70px !important;
+        }
+        #banner-video{
+            position: relative;
+        }
+        .owl-banner-escudo{
+            position: relative; 
+        }
+        .owl-banner-escudo .owl-nav button{
+            background: #ffffff1a;
+            position: absolute;
+            top: 47%;
+            font-size: 25px;
+            color: white;
+            padding: 18px !important;
+        }
+        .owl-banner-escudo .owl-nav button.owl-next{
+            right: 0;
+        }
+        
+
+        .videos-mdsa li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .videos-mdsa li video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+
+        .pag-videos span {
+	        position: relative;
+	        width: 4px;
+	        height: 4px;
+	        cursor: pointer;
+	        margin-left: 1rem;
+	        background-color: hsla(0,0%,100%,.5);
+	        border: 2px solid hsla(0,0,0,0);
+	        border-radius: 50%;
+	        display: inline-block;
+	        transition: background-color 0.6s ease;
+	        margin-top: 2px; 
+	        margin-bottom: 2px; 
+        }
+
+        .pag-videos span.activo, .pag-videos span:hover {
+	        border: 2px solid #fff;
+	        margin-top: 0px; 
+	        margin-bottom: 0px;
+	        background-color: rgba(0,0,0,0);
+
+        }
+        .v-anterior, .v-siguiente {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            z-index: 2;
+        }
+
+        .v-siguiente {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        .v-anterior:hover, .v-siguiente:hover {
+        background-color: rgba(0,0,0,0.8);
+        }
+
+
+
+        .progreso {
+            position: absolute;   
+            height: 36px;
+            width: 36px;
+            cursor: pointer;
+            top: calc( 35% - calc(36px / 2) );
+            left: calc( 50% - calc(36px / 2) );
+            z-index: 2;
+            display: none;
+        }
+
+        .progreso-circulo {
+        transform: rotate(-90deg);
+        }
+
+        .progreso-circulo-back {
+            fill: none; 
+            stroke: #D2D2D2;
+            stroke-width:2px;
+        }
+
+        .progreso-circulo-prog {
+            fill: none; 
+            stroke: #00AD46;
+            stroke-width: 2px;  
+            stroke-dasharray: 0 999;    
+            stroke-dashoffset: 0px;
+            transition: stroke-dasharray 0.4s linear 0s;
+        }
+        
+		.video-background {
+			background: #000;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -99;
+		}
+		.video-foreground,
+		.video-background iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 105%;
+			pointer-events: none;
+		}
+		
+		@media (min-aspect-ratio: 16/9) {
+			.video-foreground {
+			    height: 330%;
+			    top: -120%;
+			}
+		}
+		@media (max-aspect-ratio: 16/9) {
+			.video-foreground {
+			    width: 330%;
+			    left: -120%;
+			}
+		}
+		@media all and (max-width: 600px) {
+			.vid-info {
+			    width: 50%;
+			    padding: 0.5rem;
+			}
+			.vid-info h1 {
+			    margin-bottom: 0.2rem;
+			}
+		}
+		@media all and (max-width: 500px) {
+			.vid-info .acronym {
+			    display: none;
+			}
+		}
+		
+
+    </style>
+    
+</head>
+
+<body layout:fragment="content" class="background">
+	<span class="hidden" id="snowflake">&#10052;</span>
+    <div class="main-slider wf100">
+        <div class="home2-slider rev_slider_wrapper">
+            <div class="rev_slider_wrapper fullwidthbanner-container">
+                <div class="rev_slider fullwidthabanner">
+                    
+                    <div class="videos-mdsa">
+                        <div class="contenedor-escudo tilt"><img th:src="${ @helper.assetsImg('escudo1.png') }" class=" escudo"/></div>
+                            <div class="video-background">
+                                <div class="video-foreground">
+                                    <div id="video-placeholder"></div>
+                                </div>
+                            </div>
+                        <a class="v-anterior">&#10094;</a>
+                        <a class="v-siguiente">&#10095;</a>
+                        <div class="contenedor-scroll"><img th:src="${ @helper.assetsImg('ic_scroll.svg') }" class="ic-scroll"/></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+        <section class="wf100 city-news deprt-txt p-relative">
+
+                <div class="container p75-50">
+                	<!--<div class="row">
+	                	<div class="col-md-12 col-sm-12" style="margin-top: -25px; margin-bottom: 25px; ">
+					        	<img th:src="${@helper.assetsImg('amnistia-banner-2.jpg')}" style="width: 100%;">
+					    </div>
+                	</div>-->
+				    
+				    <!--<div id="news-slider" class="owl-carousel owl-theme carrousel-slider"  style="margin-bottom: 25px; ">
+                        <div class="">
+	                		<a th:href="${@helper.getURL('coronavirus')}" target="_blank">
+					        	<img th:src="${@helper.assetsImg('banerweb.png')}" style="width: 100%;">
+					        </a>
+					    </div>
+					    <div class="">
+	                		<a th:href="${@helper.getURL('mesa-de-partes')}" target="_blank">
+					        	<img th:src="${@helper.assetsImg('MESA_DE_PARTE.png')}" style="width: 100%;">
+					        </a>
+					    </div>
+                    </div>-->
+                    
+                    
+                    <div class="title-style-3">
+                        <h3 class="sub-title p-relative">
+                            <svg height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.867 477.867" style="enable-background:new 0 0 477.867 477.867;" xml:space="preserve">
+
+                                    <path fill="#138943" d="M460.8,119.467h-85.333v-102.4C375.467,7.641,367.826,0,358.4,0H17.067C7.641,0,0,7.641,0,17.067V409.6
+                                        c0,37.703,30.564,68.267,68.267,68.267H409.6c37.703,0,68.267-30.564,68.267-68.267V136.533
+                                        C477.867,127.108,470.226,119.467,460.8,119.467z M136.533,85.333h102.4c9.426,0,17.067,7.641,17.067,17.067
+                                        s-7.641,17.067-17.067,17.067h-102.4c-9.426,0-17.067-7.641-17.067-17.067S127.108,85.333,136.533,85.333z M290.133,409.6h-204.8
+                                        c-9.426,0-17.067-7.641-17.067-17.067s7.641-17.067,17.067-17.067h204.8c9.426,0,17.067,7.641,17.067,17.067
+                                        S299.559,409.6,290.133,409.6z M290.133,341.333h-204.8c-9.426,0-17.067-7.641-17.067-17.067c0-9.426,7.641-17.067,17.067-17.067
+                                        h204.8c9.426,0,17.067,7.641,17.067,17.067C307.2,333.692,299.559,341.333,290.133,341.333z M290.133,273.067h-204.8
+                                        c-9.426,0-17.067-7.641-17.067-17.067c0-9.426,7.641-17.067,17.067-17.067h204.8c9.426,0,17.067,7.641,17.067,17.067
+                                        C307.2,265.426,299.559,273.067,290.133,273.067z M290.133,204.8h-204.8c-9.426,0-17.067-7.641-17.067-17.067
+                                        c0-9.426,7.641-17.067,17.067-17.067h204.8c9.426,0,17.067,7.641,17.067,17.067C307.2,197.159,299.559,204.8,290.133,204.8z
+                                        M443.733,409.6c0,18.851-15.282,34.133-34.133,34.133s-34.133-15.282-34.133-34.133v-256h68.267V409.6z"/>
+                            </svg>
+                                                    
+                            Noticias Santa Anita
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mb-40" th:if="${ news != null && !news.isEmpty() }">
+                        <div class="cityscapes wf100">
+                            <div class="row">
+                                <!--Item Start-->
+                                <th:block th:each=" item, i : ${news}">
+                                    <div th:classappend=" ${ (i.index == 0 ? 'col-md-7 col-sm-6 col-xs-12 p5' : '') + ((i.index == 1 || i.index == 2) ? 'col-md-5 col-sm-6 col-xs-12 p5' : '') + ((i.index > 2) ? 'col-md-4 col-sm-4 col-xs-12 p5' : '') } ">
+                                        <div th:classappend=" ${ (i.index == 0 ? 'ch-box ch ch-primary' : 'ch-box ch ch-secondary') } ">
+                                            <div class="ch-thumb">
+                                                <img th:if="${ item.imagen != null }" th:src=" ${ @helper.getServerApiImgNoticias(item.imagen) } " alt=""> 
+                                                <img th:unless="${ item.imagen != null }" th:src="${ @helper.assetsImgDefault() }" alt="">
+                                            </div>
+                                            <p th:text="  ${item} "></p>
+                                            <p th:text="  ${i.index} "></p>
+                                            <div class="ch-txt">
+                                                <h5><a th:href="${@helper.getURL('noticias/' + item.slug)}" th:text="${item.titulo}"></a></h5>
+                                                <ul>
+                                                    <li><a th:href="${@helper.getURL('noticias/' + item.slug)}" th:text=" ${ item.categoria } "></a></li>
+                                                </ul>
+                                                <p class="ellipsis-height ellipsis text-justify" th:text="${item.resumen}"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th:block>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="group-button see-more text-center p-relative"><a th:href="${@helper.getURL('noticias')}" class="btn btn-green">Ver más</a></div>
+                </div>
+            
+                
+        </section>
+
+        <section class="wf100 recent-events p-relative">
+            <div class="shadow-recent"></div>
+            <div class="container p75">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h3>Anuncios</h3>
+                        <div id="swiper-anuncios" class="recent-event-block" th:if=" anuncios != null ">
+
+                            <div class="recent-event-slider">
+                                <div class="event-big swiper-slide max-enabled" data-redirect="" data-opensamewindow="true" data-textextra="" th:each=" i : ${ anuncios } ">
+                                    <img th:src=" ${ @helper.getServerApiImgEventos(i.archivo) } " alt="" th:data-imgbig=" ${ @helper.getServerApiImgEventos(i.archivo) } ">
+                                </div>
+                            </div>
+
+                            <div class="recent-event-slider-nav">
+                                <div th:each=" i : ${ anuncios } " class="item">
+                                    <img th:src=" ${ @helper.getServerApiImgEventos(i.archivo) } " alt="">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-7">
+                        <h3>Eventos</h3>
+                        <ul  class="nav nav-tabs tab-eventos" role="tablist">
+                            <li role="presentation" class="tab-eventos active"><a href="#todos" class="tab-eventos-item" aria-controls="todos" role="tab" data-toggle="tab">Todos</a></li>
+                            <li role="presentation" class="tab-eventos"><a href="#centro-cultural" class="tab-eventos-item" aria-controls="centro-cultural" role="tab" data-toggle="tab">Centro Cultural</a></li>
+                            <li role="presentation" class="tab-eventos"><a href="#bienestar-social" class="tab-eventos-item" aria-controls="bienestar-social" role="tab" data-toggle="tab">Bienestar Social</a></li>
+                            <li role="presentation" class="tab-eventos"><a href="#izamientos" class="tab-eventos-item" aria-controls="izamientos" role="tab" data-toggle="tab">Izamientos</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="todos" th:if=" todos != null ">
+                                <ul class="event-list" th:each=" i : ${ todos } ">
+                                    <li> <strong class="edate" th:text=" ${ @helper.convertirFecha(i.fecha_inicio) } "></strong> <strong class="etime" th:text=" ${ @helper.convertirHora(i.fecha_inicio) } "></strong> </li>
+                                    <li><img th:src=" ${ @helper.getServerApiImgEventos(i.archivo) } " alt=""></li>
+                                    <li class="el-title">
+                                        <h6><a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } " th:text=" ${ i.titulo } "></a></h6>
+                                        <p><i class="fas fa-map-marker-alt"></i> <span th:text=" ${ i.direccion } "></span></p>
+                                    </li>
+                                    <li> <a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } " class="joinnow">Ver más</a> </li>
+                                </ul>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane" id="centro-cultural"  th:if=" centroCultural != null ">
+                                <ul class="event-list" th:each=" i : ${ centroCultural } ">
+                                    <li> <strong class="edate" th:text=" ${ @helper.convertirFecha(i.fecha_inicio) } "></strong> <strong class="etime" th:text=" ${ @helper.convertirHora(i.fecha_inicio) } "></strong> </li>
+                                    <li><img th:src=" ${ @helper.getServerApiImgEventos(i.archivo) } " alt=""></li>
+                                    <li class="el-title">
+                                        <h6><a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } " th:text=" ${ i.titulo } "></a></h6>
+                                        <p><i class="fas fa-map-marker-alt"></i> <span th:text=" ${ i.direccion } "></span></p>
+                                    </li>
+                                    <li> <a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } " class="joinnow">Ver más</a> </li>
+                                </ul>
+                            </div>
+                            
+                            <div role="tabpanel" class="tab-pane" id="bienestar-social"  th:if=" bienestarSocial != null ">
+                                <ul class="event-list" th:each=" i : ${ bienestarSocial } ">
+                                    <li> <strong class="edate" th:text=" ${ @helper.convertirFecha(i.fecha_inicio) } "></strong> <strong class="etime" th:text=" ${ @helper.convertirHora(i.fecha_inicio) } "></strong> </li>
+                                    <li><img th:src=" ${ @helper.getServerApiImgEventos(i.archivo) } " alt=""></li>
+                                    <li class="el-title">
+                                        <h6><a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } " th:text=" ${ i.titulo } "></a></h6>
+                                        <p><i class="fas fa-map-marker-alt"></i> <span th:text=" ${ i.direccion } "></span></p>
+                                    </li>
+                                    <li> <a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } " class="joinnow">Ver más</a> </li>
+                                </ul>
+                            </div>
+                            
+                            <div role="tabpanel" class="tab-pane" id="izamientos"  th:if=" izamientos != null ">
+                                <ul class="event-list" th:each=" i : ${ izamientos } ">
+                                    <li> <strong class="edate" th:text=" ${ @helper.convertirFecha(i.fecha_inicio) } "></strong> <strong class="etime" th:text=" ${ @helper.convertirHora(i.fecha_inicio) } "></strong> </li>
+                                    <li><img th:src=" ${ @helper.getServerApiImgEventos(i.archivo) } " alt=""></li>
+                                    <li class="el-title">
+                                        <h6><a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } " th:text=" ${ i.titulo } "></a></h6>
+                                        <p><i class="fas fa-map-marker-alt"></i> <span th:text=" ${ i.direccion } "></span></p>
+                                    </li>
+                                    <li> <a th:href=" ${ @helper.getURL('eventos/') + i.id + '/' + @helper.seo_url(i.titulo) } " class="joinnow">Ver más</a> </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wf100 p-relative explore-city">
+            <div class="container p75">
+                <div class="wf100 department-links">
+                    <div class="title-style-3">
+                        <h3>N&uacute;meros de utilidad</h3>
+                        <p>Atención inmediata </p>
+                    </div>
+
+                    <ul>
+                        <li><a class="c1" href="tel:(01) 363-0396"><span>Serenazgo 01 Santa Anita:</span><span>(01) 363-0396</span></a></li>
+                        <li><a class="c2" href="tel:(01) 363-0397"><span>Serenazgo 02 Santa Anita:</span><span>(01) 363-0397</span></a></li>
+                        <li><a class="c3" href="tel:(01) 478-2232"><span>Comisar&iacute;a de Santa Anita:</span><span>(01) 478-2232</span></a></li>
+
+                        <li><a class="c4" href="tel:(01) 622-3121"><span>Atenci&oacute;n al Contribuyente:</span><span>(01) 622-3121</span></a></li>
+                        <li><a class="c5" href="tel:(01) 362-1060"><span>Gerencia de Rentas:</span><span>(01) 362-1060</span></a></li>
+                        <li><a class="c6" href="tel:(01) 362-9439"><span>Central de Emergencia:</span><span>116</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="wf100 depart-info p-relative">
+            <div class="shadow-departaments p-absolute"></div>
+            <div class="container p75-50">
+            	<div class="row">
+                	<div class="col-md-12 col-sm-12" style="margin-top: -25px; margin-bottom: 25px; ">
+                		<a th:href="${@helper.getURL('mesa-de-partes')}" target="_blank" style="display: block; border: 1px solid black;">
+				        	<img th:src="${@helper.assetsImg('mesa-de-partes-3.jpg')}" style="width: 100%;">
+				        </a>
+				    </div>
+               	</div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-style-3">
+                            <h3>Servicios</h3>
+                            <p>Todos los servicios que ofrecemos</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-4 col-xs-6 emergency-number">
+                                <div class="deprt-icon-box">
+                                    <a th:href="${@helper.getPageInfo('defensa-civil')}"><img th:src="${@helper.assetsImg('servicios/defensa-civil.webp')}" alt=""></a>
+                                    <h6> <a th:href="${@helper.getPageInfo('defensa-civil')}">Defensa Civil</a> </h6>
+                                    <a class="rm" th:href="${@helper.getPageInfo('defensa-civil')}">Leer más</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 emergency-number">
+                                <div class="deprt-icon-box">
+                                    <a th:href="${@helper.getPageInfo('centro-cultural')}"><img th:src="${@helper.assetsImg('servicios/talleres.webp')}" alt=""></a>
+                                    <h6> <a th:href="${@helper.getPageInfo('centro-cultural')}">Talleres</a> </h6>
+                                    <a class="rm" th:href="${@helper.getPageInfo('centro-cultural')}">Leer más</a>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-3 col-sm-4 col-xs-6 emergency-number">
+                                <div class="deprt-icon-box">
+                                    <a th:href="${@helper.getPageInfo('alerta-policial')}"><img th:src="${@helper.assetsImg('servicios/alerta-predial.webp')}" alt=""></a>
+                                    <h6> <a th:href="${@helper.getPageInfo('alerta-policial')}">Alerta Predial</a> </h6>
+                                    <a class="rm" th:href="${@helper.getPageInfo('alerta-policial')}">Leer más</a>
+                                </div>
+                            </div> -->
+                            
+                            <div class="col-md-3 col-sm-4 col-xs-6 emergency-number">
+                                <div class="deprt-icon-box">
+                                    <a th:href="${@helper.getPageInfo('sistema-de-control-interno')}"><img th:src="${@helper.assetsImg('servicios/sistema-predial.webp')}" alt=""></a>
+                                    <h6> <a th:href="${@helper.getPageInfo('sistema-de-control-interno')}">Sistema de Control Interno</a> </h6>
+                                    <a class="rm" th:href="${@helper.getPageInfo('sistema-de-control-interno')}">Leer más</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 emergency-number">
+                                <div class="deprt-icon-box">
+                                    <a href="https://www.facebook.com/CentroCulturalDeSantaAnita/" target="_blank"><img th:src="${@helper.assetsImg('servicios/centro-cultural.webp')}" alt=""></a>
+                                    <h6> <a href="https://www.facebook.com/CentroCulturalDeSantaAnita/" target="_blank">Centro Cultural</a> </h6>
+                                    <a class="rm" href="https://www.facebook.com/CentroCulturalDeSantaAnita/" target="_blank">Leer más</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 emergency-number">
+                                <div class="deprt-icon-box">
+                                    <a th:href="${@helper.getPageInfo('formatos-tupa')}"><img th:src="${@helper.assetsImg('servicios/tupa.png')}" alt=""></a>
+                                    <h6> <a th:href="${@helper.getPageInfo('formatos-tupa')}">Formatos Tupa</a> </h6>
+                                    <a class="rm" th:href="${@helper.getPageInfo('formatos-tupa')}">Leer más</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 emergency-number">
+                                <div class="deprt-icon-box">
+                                    <a th:href="${@helper.getPageInfo('presupuesto-participativo')}"><img th:src="${@helper.assetsImg('servicios/presupuesto.webp')}" alt=""></a>
+                                    <h6> <a th:href="${@helper.getPageInfo('presupuesto-participativo')}">Presupuesto Participativo</a> </h6>
+                                    <a class="rm" th:href="${@helper.getPageInfo('presupuesto-participativo')}">Leer más</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 emergency-number">
+                                <div class="deprt-icon-box">
+                                    <a th:href="${@helper.getPageInfo('seguridad-ciudadana')}"><img th:src="${@helper.assetsImg('servicios/seguridad-ciudadana.webp')}" alt=""></a>
+                                    <h6> <a th:href="${@helper.getPageInfo('seguridad-ciudadana')}">Seguridad Ciudadana</a> </h6>
+                                    <a class="rm" th:href="${@helper.getPageInfo('seguridad-ciudadana')}">Leer más</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 emergency-number">
+                                <div class="deprt-icon-box">
+                                    <a href="http://gis.goldenberry.pe/distritos/CNC%20-%20SANTA%20ANITA.html" target="_blank"><img th:src="${@helper.assetsImg('servicios/zonificacion.webp')}" alt=""></a>
+                                    <h6> <a href="http://gis.goldenberry.pe/distritos/CNC%20-%20SANTA%20ANITA.html" target="_blank">Visor de Zonificacion</a> </h6>
+                                    <a class="rm" href="http://gis.goldenberry.pe/distritos/CNC%20-%20SANTA%20ANITA.html" target="_blank">Leer más</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 emergency-number">
+                                <div class="deprt-icon-box">
+                                    <a th:href="${@helper.getPageInfo('cabildo-abierto')}"><img th:src="${@helper.assetsImg('servicios/cabildo_abierto.png')}" alt=""></a>
+                                    <h6> <a th:href="${@helper.getPageInfo('cabildo-abierto')}">Cabildo Abierto</a> </h6>
+                                    <a class="rm" th:href="${@helper.getPageInfo('cabildo-abierto')}">Leer más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <div class="container p75">
+	        <div id="news-slider" class="owl-carousel owl-theme carrousel-slider"  style="margin-bottom: 25px; ">
+				<div class="item item-referencias">
+					<a href="https://www.onpe.gob.pe/" target="_blank">
+			        	<img th:src="${@helper.assetsImg('ompe.png')}">
+			        </a>
+			    </div>
+			    <div class="item item-referencias">
+					<a href="https://conasec.mininter.gob.pe/" target="_blank">
+			        	<img th:src="${@helper.assetsImg('conasec.png')}">
+			        </a>
+			    </div>
+			    <div class="item item-referencias">
+					<a href="https://www.xn--sealesdealerta-rnb.pe/" target="_blank">
+			        	<img th:src="${@helper.assetsImg('señales-de-alerta.png')}">
+			        </a>
+			    </div>
+			    <div class="item item-referencias">
+					<a href="https://www.inei.gob.pe/" target="_blank">
+			        	<img th:src="${@helper.assetsImg('inei.png')}">
+			        </a>
+			    </div>
+			    <!-- <div class="item item-referencias">
+					<a href="http://serviciosvirtuales.trabajo.gob.pe/extranet/web/citas/" target="_blank">
+			        	<img th:src="${@helper.assetsImg('servicios virtuales del mtpe.png')}">
+			        </a>
+			    </div>-->
+			</div>
+        </div>
+
+		
+    </div>
+
+    <div id="modalwganuncio" class="modalwganuncio ui basic modal center">
+        <div class="content">
+            <div class="content-anucios"></div>
+            <div class="actions">
+                <div class="ui ok inverted button" data-dismiss="modal" aria-label="Close">
+                    <i class="times icon"></i> Cerrar
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="modalwgCombocatoria" class="modalwganuncio ui basic modal center">
+        <div class="content">
+            <div class="content-anucios"><a href="https://www.munisantanita.gob.pe/info/convocatoria-cas"><img src="https://www.munisantanita.gob.pe/data/web/recursos/banner-20-fiscalizadores.jpeg" style="width: 100%;"></a></div>
+            <div class="actions">
+                <div class="ui ok inverted button" data-dismiss="modal" aria-label="Close">
+                    <i class="times icon"></i> Cerrar
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--<script th:src="${@helper.assetsVendors('confetti/js/jquery.confetti.js')}"></script>-->
+    
+</body>
+
+</html>

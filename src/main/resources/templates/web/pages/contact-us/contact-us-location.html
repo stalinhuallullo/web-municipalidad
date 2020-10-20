@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                        	<h3 class="stitle text-center">Ubicación</h3>
+	                        	
+	                        	<div class="row">
+                                    <div class="col-md-12">
+										<iframe src="https://mapsengine.google.com/map/embed?mid=z4LoqRB_OIII.kReI2BpL0TLQ" width="100%" height="480"></iframe>
+                                    </div>
+								</div>
+								
+								
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

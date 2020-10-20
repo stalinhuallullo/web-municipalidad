@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                           	<h3 class="stitle text-center">Geografia de Santa Anita</h3>
+	                           	
+	                           	<div th:replace="web/fragments/mini-banner"></div>
+	                           	
+	                           	<h6 class="title-info">Referencia geográfica</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<span><strong>Ubicación:</strong></span>
+										<ul class="checklist table-info table-info-border-none">
+											<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Cono Este de Lima Metropolitana, en la Región Costa, Provincia y Departamento de Lima - Perú</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+                                     	<span><strong>Superficie:</strong></span>
+										<ul class="checklist table-info table-info-border-none">
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">10.69 Km2.</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+                                     	<span><strong>Altitud:</strong></span>
+										<ul class="checklist table-info table-info-border-none">
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">195 m. s. n. m.</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+                                     	<span><strong>Capital:</strong></span>
+										<ul class="checklist table-info table-info-border-none">
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Santa Anita - los Ficus.</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+                                     	<span><strong>Reconocimiento:</strong></span>
+										<ul class="checklist table-info table-info-border-none">
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Decreto Ley Nº 25116 del 25 de Octubre de 1989</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+                                     	<span><strong>Límites:</strong></span>
+										<ul class="checklist table-info">
+											<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text"><strong>Por el Norte :</strong> Con El Agustino, intersección de la Av. Circunvalación (Vía Evitamiento) y la Atarjea</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text"><strong>Por el Norte y Este :</strong> Con Ate, el límite está con la Urb. Ceres, hasta la intersección con la Carretera Central.</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text"><strong>Por el Sureste y Sur :</strong> Con Ate, intersección de la Carretera Central con la Av. Circunvalación (Puente Santa Anita).</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text"><strong>Por el Suroeste, Oeste y Norte :</strong> Con El Agustino, límite con el eje de la Av. Circunvalación, hasta la intersección con la Calle Los Nogales, proyectándose hacia el cerro el Agustino, hasta las Av. Mariátegui, Circunvalación, hasta su intersección con la Av. La Atarjea.</span>
+                                       		</li>
+										</ul>
+										
+										<div class="new-thumb new-thumb-post text-center">
+											<img th:src="${@helper.assetsImg('geografia/geografia-de-santa-anita.jpg')}" alt="" class="w-auto">
+										</div>
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">Habitantes</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<span><strong>Población:</strong></span>
+										<ul class="checklist table-info">
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">160,777 Hab. Fuente : INEI - Censo 2005</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+                                     	<span><strong>Superficie:</strong></span>
+										<ul class="checklist table-info">
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">10.69 Km2.Fuente : INEI</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+                                     	<span><strong>Población Electoral:</strong></span>
+										<ul class="checklist table-info">
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">99,016 Hab. (Fuente Onpe - 2003)</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+                                     	<span><strong>Densidad de la Población:</strong></span>
+										<ul class="checklist table-info">
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">15,039.9 Hab. /Km2. Fuente : INEI 2005</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+                                     	<span><strong>Edad Promedio:</strong></span>
+										<ul class="checklist table-info">
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">De 25 a 35 años, lo que constituye una población básicamente joven</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+                                     	<span><strong>Origen Poblacional:</strong></span>
+										<ul class="checklist table-info">
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Básicamente son inmigrantes de todo el Perú, con mayor incidencia de la zona central de Junín, Ayacucho, Apurímac y Huancavelica.</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+                                     	<span><strong>Conformación Físico Urbana:</strong></span>
+										<ul class="checklist table-info">
+											<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">26 Asociaciones de Vivienda</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">14 Cooperativas de Vivienda</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">17 Asentamiento Humanos (AA.HH.)</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">11 Urbanizaciones</span>
+                                       		</li>
+                                       		
+                                       		
+                                       		
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">5 Agrupaciones de Viviendas</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+				                     </div>
+								</div>
+								
+								<h6 class="title-info">Aspectos generales</h6>
+								<div class="row">
+									<div class="col-md-12">
+										<p>El desarrollo económico del distrito se basa principalmente en las actividades comerciales, ubicadas en este distrito; uno de los más importantes es el Mercado Mayorista, que genera uno de los mayores ingresos económicos al distrito; también encontramos: depósito de aduanas, laboratorios, farmacias, industrias textiles, transportes terrestres, industrias plásticas, etc. Siendo El Óvalo de Santa Anita la zona comercial más importante del distrito, ubicado en el Km. 1 de la Carretera Central.</p>
+										
+										<span><strong>Campo Educacional:</strong></span>
+										<ul class="checklist table-info">
+											<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Campus de la Universidad Particular San Martín de Porres</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Instituto Superior Tecnológico TECSUP</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Colegios nacionales y particulares</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Biblioteca San Clemente de la parroquia San Alfonso María de Ligorio</span>
+                                       		</li>
+                                       		
+                                       		
+                                       		
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Biblioteca Pública Municipal</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+                                     	<span><strong>Campo de la Salud:</strong></span>
+										<ul class="checklist table-info">
+											<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Hospital Emilio Valdizán, nosocomio que brinda servicio de salud mental</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Hospital Jorge Voto Bernales de ESSALUD</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">Postas Médicas y Centros de Salud en diferentes sectores</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+                                     	<span><strong>Aspecto Cultural:</strong></span>
+										<ul class="checklist table-info">
+											<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">La Huaca Bellavista ubicada en la Urb. Alameda de Ate</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">La Huaca Perales (Zona arqueológica Perales), ubicada en la Coop. de Vivienda Universal</span>
+                                       		</li>
+                                     	</ul>
+                                     	
+                                     	<span><strong>Seguridad Ciudadana:</strong></span>
+										<ul class="checklist table-info">
+											<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">La Comisaría de Santa Anita</span>
+                                       		</li>
+                                       		<li>
+                                       			<span class="table-item-ico left"><i class="fas fa-check"></i></span>
+                                       			<span class="table-item-text">La Comisaría de Villa Hermosa</span>
+                                       		</li>
+                                     	</ul>
+				                     </div>
+				                     <div class="col-md-6">
+				                     	<div class="new-thumb new-thumb-post text-center">
+											<img th:src="${@helper.assetsImg('geografia/tecsup.jpg')}" alt="" class="w-auto">
+											<p>Instituto Superior Tecnológico TECSUP</p>
+										</div>
+				                     </div>
+				                     <div class="col-md-6">
+				                     	<div class="new-thumb new-thumb-post text-center">
+											<img th:src="${@helper.assetsImg('geografia/parroquia-ligornio.jpg')}" alt="" class="w-auto">
+											<p>Parroquia San Alfonso María de Ligorio</p>
+										</div>
+				                     </div>
+								</div>
+								
+	                        </div>
+	                        
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+         					<div class="deprt-txt">
+	                           <p>Pagina vacia</p>
+	                        </div>
+	                        <!--<div class="deprt-txt">
+	                           <h3 class="stitle text-center">Entregadas</h3>
+
+								<div th:replace="web/fragments/mini-banner"></div>
+								
+								<br>
+								<br>
+								<br>
+								
+								<div class="row">
+									<div class="img-gallery style-2 gallery">
+										<div class="portfolio classic-gallery">
+											<div class="isotope items">
+												<div class="item width3" th:each="i : ${gallery}">
+													<p class="text-center"><strong th:text="${i.name}"></strong></p>
+													<div class="gallery-thumb"> 
+														<a th:href="${@helper.assetsImg(i.image)}" data-rel="prettyPhoto[gallery]">
+															<i class="fas fa-search"></i>
+														</a> 
+														<img th:src="${@helper.assetsImg(i.image)}"  alt="">
+													</div>
+												</div>
+											</div>
+										</div>
+						            </div>
+								</div>
+								
+	                        </div>-->
+	                        
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

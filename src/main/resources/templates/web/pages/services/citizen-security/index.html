@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                          
+                                
+                                <div class="row">
+                                	<div class="col-md-3">
+                                		<div class="sidebar widget">
+	                                    	<div class="emergency-info emergency-info-white lb">
+											    <div class="panel-group archives" id="accordion" role="tablist" aria-multiselectable="true"> 
+											
+													<div class="panel">
+													    <div class="panel-heading link">
+															<a th:href="${@helper.getPageInfo('seguridad-ciudadana/inicio')}" th:classappend=" (${ subPage } == inicio ? active : '') + (${ subPage } == '' ? active : '') ">Inicio</a>
+													    </div>
+                                                    </div>
+                                                    
+                                                    <!-- <div class="panel">
+													    <div class="panel-heading link">
+															<a th:href="${@helper.getPageInfo('seguridad-ciudadana/codisec-2020')}" th:classappend="${ subPage } == codisec-2020 ? active : ''">CODISEC - 2020</a> 
+													    </div>
+													</div>-->
+													
+													<div class="panel">
+											            <div class="panel-heading" role="tab" id="heading2">
+											                <h6> 
+											                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2" class="collapsed"
+											                    	th:classappend="|${subPage == 'directorio-telefonico' ? 'active' : ''} ${subPage == 'sesion-ordinaria' ? 'active' : ''} ${subPage == 'consulta-publica' ? 'active' : ''} ${subPage == 'informe-periodico-de-evaluacion' ? 'active' : ''}  ${subPage == 'plan-de-accion-distrital' ? 'active' : ''}|">CODISEC - 2020</a> 
+											                </h6>
+											            </div>
+											            <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2" aria-expanded="false">
+											                <div class="panel-body">
+											                    <ul>
+											                    	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/directorio-telefonico')}" th:classappend="${ subPage } == directorio-telefonico ? active : ''">Directorio</a></li>
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/sesion-ordinaria')}" th:classappend="${ subPage } == sesion-ordinaria ? active : ''">Sesión Ordinaria</a></li>
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/consulta-publica')}" th:classappend="${ subPage } == consulta-publica ? active : ''">Consulta Pública</a></li>
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/informe-periodico-de-evaluacion')}" th:classappend="${ subPage } == informe-periodico-de-evaluacion ? active : ''">Informe Periódico de Evaluación</a></li>
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/plan-de-accion-distrital')}" th:classappend="${ subPage } == plan-de-accion-distrital ? active : ''">Plan de Acción Distrital de Seguridad Ciudadana</a></li>
+																</ul>
+											                </div>
+											            </div>
+											        </div>
+													
+													<div class="panel">
+													    <div class="panel-heading link">
+															<a th:href="${@helper.getPageInfo('seguridad-ciudadana/codisec-2019')}" th:classappend="${ subPage } == codisec-2019 ? active : ''">CODISEC - 2019</a> 
+													    </div>
+													</div>
+													
+											        <div class="panel">
+											            <div class="panel-heading" role="tab" id="headingOne">
+											                <h6> 
+											                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed"
+											                    	th:classappend="|${subPage == 'codisec-2018' ? 'active' : ''}  ${subPage == 'directorio-de-integrantes' ? 'active' : ''} ${subPage == 'plsc-2018' ? 'active' : ''} ${subPage == 'sesiones-y-acuerdos' ? 'active' : ''} ${subPage == 'informes-de-evaluacion-de-desempenos' ? 'active' : ''}|">CODISEC - 2018</a> 
+											                </h6>
+											            </div>
+											            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
+											                <div class="panel-body">
+											                    <ul>
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/codisec-2018')}" th:classappend="${ subPage } == codisec-2018 ? active : ''">CODISEC - 2018</a></li>
+																	
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/directorio-de-integrantes')}" th:classappend="${ subPage } == directorio-de-integrantes ? active : ''">Directorio de integrantes</a></li>
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/plsc-2018')}" th:classappend="${ subPage } == plsc-2018 ? active : ''">PLSC 2018</a></li>
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/sesiones-y-acuerdos')}" th:classappend="${ subPage } == sesiones-y-acuerdos ? active : ''">Sesiones y acuerdos</a></li>
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/informes-de-evaluacion-de-desempenos')}" th:classappend="${ subPage } == informes-de-evaluacion-de-desempenos ? active : ''">Informes de evaluación de desempeño</a></li>
+																</ul>
+											                </div>
+											            </div>
+											        </div>
+													
+													<!--<div class="panel">
+													    <div class="panel-heading link">
+															<a th:href="${@helper.getPageInfo('seguridad-ciudadana/base-legal')}" th:classappend="${ subPage } == base-legal ? active : ''">Base Legal</a> 
+													    </div>
+													</div>-->
+													
+													
+											        <!--<div class="panel">
+											            <div class="panel-heading" role="tab" id="heading2">
+											                <h6> 
+											                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2" class="collapsed"
+											                    	th:classappend="|${subPage == 'serenazgo' ? 'active' : ''} ${subPage == 'funciones-del-serenazgo' ? 'active' : ''} ${subPage == 'patrullaje-movil' ? 'active' : ''} ${subPage == 'patrullaje-motorizado' ? 'active' : ''} ${subPage == 'serenos-de-pie' ? 'active' : ''} ${subPage == 'goes' ? 'active' : ''}|">Serenazgo</a> 
+											                </h6>
+											            </div>
+											            <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2" aria-expanded="false">
+											                <div class="panel-body">
+											                    <ul>
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/serenazgo')}" th:classappend="${ subPage } == serenazgo ? active : ''">Serenazgo</a></li>
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/funciones-del-serenazgo')}" th:classappend="${ subPage } == funciones-del-serenazgo ? active : ''">Funciones del serenazgo</a></li>
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/patrullaje-movil')}" th:classappend="${ subPage } == patrullaje-movil ? active : ''">Patrullaje Movil</a></li>
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/patrullaje-motorizado')}" th:classappend="${ subPage } == patrullaje-motorizado ? active : ''">Patrullaje Motorizado</a></li>
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/serenos-de-pie')}" th:classappend="${ subPage } == serenos-de-pie ? active : ''">Serenos de Pie</a></li>
+																	<li><a th:href="${@helper.getPageInfo('seguridad-ciudadana/goes')}" th:classappend="${ subPage } == goes ? active : ''">GOES</a></li>
+																</ul>
+											                </div>
+											            </div>
+											        </div>-->
+											        
+											        <!--<div class="panel">
+													    <div class="panel-heading link">
+															<a th:href="${@helper.getPageInfo('seguridad-ciudadana/transporte')}" th:classappend="${ subPage } == transporte ? active : ''">Transporte</a> 
+													    </div>
+													</div>-->
+													
+													<!--<div class="panel">
+													    <div class="panel-heading link">
+															<a th:href="${@helper.getPageInfo('seguridad-ciudadana/fiscalizacion')}" th:classappend="${ subPage } == fiscalizacion ? active : ''">Fiscalización</a> 
+													    </div>
+													</div>-->
+													
+													<!--<div class="panel">
+													    <div class="panel-heading link">
+															<a th:href="${@helper.getPageInfo('seguridad-ciudadana/defensa-civil')}" th:classappend="${ subPage } == defensa-civil ? active : ''">Defensa Civil</a> 
+													    </div>
+													</div>-->
+													
+													<!-- <div class="panel">
+													    <div class="panel-heading link">
+															<a th:href="${@helper.getPageInfo('seguridad-ciudadana/cemvi')}" th:classappend="${ subPage } == cemvi ? active : ''">CEMVI</a> 
+													    </div>
+													</div> -->
+													
+													<!--<div class="panel">
+													    <div class="panel-heading link">
+															<a th:href="${@helper.getPageInfo('seguridad-ciudadana/juntas-vecinales')}" th:classappend="${ subPage } == juntas-vecinales ? active : ''">Juntas Vecinales</a> 
+													    </div>
+													</div> -->
+											
+											    </div>
+											</div>
+			                           </div>
+			                           
+                                    </div>
+                                    <div class="col-md-9" th:switch="${ subPage }">
+                                    	<th:block th:case="''">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/home')}"></th:block>
+										</th:block>
+                                    	<th:block th:case="'inicio'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/home')}"></th:block>
+                                        </th:block>
+
+                                        <!-- codisec-2020 -->
+										<th:block th:case="'codisec-2020'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/codisec-2020')}"></th:block>
+										</th:block>
+										<th:block th:case="'directorio-telefonico'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/codisec-2020/directorio-telefonico')}"></th:block>
+										</th:block>
+										<th:block th:case="'sesion-ordinaria'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/codisec-2020/sesion-ordinaria')}"></th:block>
+										</th:block>
+										<th:block th:case="'consulta-publica'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/codisec-2020/consulta-publica')}"></th:block>
+										</th:block>
+										<th:block th:case="'informe-periodico-de-evaluacion'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/codisec-2020/informe-periodico-de-evaluacion')}"></th:block>
+										</th:block>
+										<th:block th:case="'plan-de-accion-distrital'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/codisec-2020/plan-de-accion-distrital')}"></th:block>
+										</th:block>
+										
+                                        
+                                        <!-- codisec-2019 -->
+										<th:block th:case="'codisec-2019'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/codisec-2019')}"></th:block>
+										</th:block>
+										
+										<!-- codisec-2018 -->
+										<th:block th:case="'codisec-2018'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/codisec-2018/codisec-2018')}"></th:block>
+										</th:block>
+										<th:block th:case="'directorio-de-integrantes'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/codisec-2018/directorio-de-integrantes')}"></th:block>
+										</th:block>
+										<th:block th:case="'plsc-2018'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/codisec-2018/plsc-2018')}"></th:block>
+										</th:block>
+										<th:block th:case="'sesiones-y-acuerdos'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/codisec-2018/sesiones-y-acuerdos')}"></th:block>
+										</th:block>
+										<th:block th:case="'informes-de-evaluacion-de-desempenos'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/codisec-2018/informes-de-evaluacion-de-desempenos')}"></th:block>
+										</th:block>
+										
+										
+										
+										<!-- legal base -->
+										<th:block th:case="'base-legal'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/base-legal')}"></th:block>
+										</th:block>
+										
+										<!-- Serenazgo -->
+										<th:block th:case="'serenazgo'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/serenazgo/serenazgo')}"></th:block>
+										</th:block>
+										<th:block th:case="'funciones-del-serenazgo'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/serenazgo/funciones-del-serenazgo')}"></th:block>
+										</th:block>
+										<th:block th:case="'patrullaje-movil'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/serenazgo/patrullaje-movil')}"></th:block>
+										</th:block>
+										<th:block th:case="'patrullaje-motorizado'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/serenazgo/patrullaje-motorizado')}"></th:block>
+										</th:block>
+										<th:block th:case="'serenos-de-pie'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/serenazgo/serenos-de-pie')}"></th:block>
+										</th:block>
+										<th:block th:case="'goes'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/serenazgo/goes')}"></th:block>
+										</th:block>
+										
+										<!-- transporte -->
+										<th:block th:case="'transporte'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/transporte')}"></th:block>
+										</th:block>
+										
+										<!-- fiscalizacion -->
+										<th:block th:case="'fiscalizacion'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/fiscalizacion')}"></th:block>
+										</th:block>
+										
+										<!-- defensa-civil -->
+										<th:block th:case="'defensa-civil'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/defensa-civil')}"></th:block>
+										</th:block>
+										
+										<!-- cemvi -->
+										<th:block th:case="'cemvi'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/cemvi')}"></th:block>
+										</th:block>
+										
+										<!-- juntas-vecinales -->
+										<th:block th:case="'juntas-vecinales'">
+											<th:block th:replace="${@helper.vistaWeb('services/citizen-security/fragment/juntas-vecinales')}"></th:block>
+										</th:block>
+                                    </div>
+                               	</div>
+	                           
+	                        </div>
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

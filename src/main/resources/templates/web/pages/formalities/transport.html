@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{web/layouts/principal/container}">
+	<head>
+	</head>
+	<body layout:fragment="content" class="haeder-fixed-scroll">
+		
+		<div th:replace="web/fragments/banner"></div>
+		
+         <div class="main-content p130-50">
+         	<section class="department-details">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-md-12">
+	                        <div class="deprt-txt">
+	                           	<h3 class="stitle text-center">Subgerencia de Obras Públicas y Proyectos</h3>
+
+								<div th:replace="web/fragments/mini-banner"></div>
+								
+								<h6  class="title-info">Tabla de montos para el pago de documentos.</h6>
+								
+								<div class="row">
+                                    <div class="col-md-12">
+										<table class="table">
+											<thead>
+												<tr>
+												  <th scope="col">Concepto de pago</th>
+												  <th scope="col" width="120px">Monto</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th scope="row">Permiso de Operacion Para prestar el servicio de Transporte Publico Especial en Vehiculos Menores(es decir la Resolucion de Circulacion)</th>
+													<td width="120px"><span class="text-right d-block">S/ 136 .00</span></td>
+												</tr>
+												<tr>
+													<th scope="row">Renovacion de Resolución de Circulación</th>
+													<td width="120px"><span class="text-right d-block">S/ 35.50</span></td>
+												</tr>
+												<tr>
+													<th scope="row">Modificación de Registro o Padron</th>
+													<td width="120px"><span class="text-right d-block">S/ 00 .00</span></td>
+												</tr>
+												<tr>
+													<th scope="row">Modificacion de paradero y/o zona de trabajo(es decir paradero adicional)</th>
+													<td width="120px"><span class="text-right d-block">S/ 65 .00</span></td>
+												</tr>
+												<tr>
+													<th scope="row">Constancia de recor de infracciones del conductor</th>
+													<td width="120px"><span class="text-right d-block">S/ 18.00</span></td>
+												</tr>
+											</tbody>
+										</table>
+                                    </div>
+								</div>
+								
+	                           
+	                        </div>
+	                        
+         				</div>
+         			</div>
+         		</div>
+         	</section> 
+         </div>
+	</body>
+</html>

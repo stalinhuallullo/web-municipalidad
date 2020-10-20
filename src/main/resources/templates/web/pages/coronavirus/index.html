@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Información del coronavirus" />
+        <meta name="keywords" content="Información del coronavirus"/>
+		<meta name="robots" content="index, follow"/>
+        <link rel="icon" type="image/png" th:href=" ${ @helper.assetsImg('favicon.png') } ">
+        <title>Coronavirus - Municipalidad Santa Anita</title>
+        <link th:href="${@helper.assetsCss('coronavirus.css?version=1.0001')}" rel="stylesheet">
+    </head>
+    <body>
+        <div id="layoutDefault">
+            <div id="layoutDefault_content">
+                <main>
+                    <nav class="navbar navbar-marketing navbar-expand-lg bg-transparent navbar-dark fixed-top" style="background-color: #1f2d41 !important;">
+                        <div class="container">
+                            <a class="navbar-brand text-white" th:href="${@helper.getURL('')}"><img th:src="${@helper.assetsImg('logo-munisantanita-coronavirus.png')}" alt="" width="180px"></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto mr-lg-5 nav-sticky">
+                                    <li class="nav-item"><a class="nav-link" href="#section-inicio">Inicio</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#section-sintomas">Síntomas</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#section-informacion">Información</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#section-mapa">Mapa</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#section-recomendaciones">Recomendaciones</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#section-medidas">Medidas</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <header id="section-inicio" class="page-header page-header-dark bg-gradient-primary-to-secondary">
+                        <div class="page-header-content pt-10">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6" data-aos="fade-up">
+                                        <h1 class="page-header-title">Coronavirus (COVID-19) en el Perú</h1>
+                                        <p class="mb-5">COVID-19 es una zoonosis. Análisis filogenéticos han identificado al murciélago como reservorio (96% similitud con cepa de coronavirus similar al SARS (BatCov RaTG13), aislada en murciélagos). Hospederos intermedios aún pendientes de identificación</p>
+                                    </div>
+                                    <div class="col-lg-6 d-none d-lg-block" data-aos="fade-up" data-aos-delay="50"><img class="img-fluid" th:src="${@helper.assetsImg('drawkit-content-man-color.svg')}" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="svg-border-rounded text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0" /></svg>
+                        </div>
+                    </header>
+
+                    <section id="section-sintomas" class="bg-white py-10">
+                        <div class="container">
+                            <div class="row text-center">
+                                <div class="col-md-12">
+                                    <h2 class="text-center">Síntomas</h2>
+                                    <p>Los síntomas pueden aparecer de forma gradual entre 1 y 14 días después de estar expuesto y no se manifiestan de la misma manera en todos los casos, algunas personas no desarrollan ningún síntoma.</p>
+                                    <p>Si has viajado a un <a href="https://www.gob.pe/institucion/minsa/informes-publicaciones/460235-lista-de-paises-con-transmision-local-de-covid-19" class="track-ga-click" target="_self" data-origin="link-inside-page">país con transmisión comunitaria del COVID-19</a> o has tenido contacto con un caso confirmado y presentas por lo menos dos de los síntomas mencionados, deberás comunicarte a la línea GRATUITA <a href="tel:113">113</a>, enviar un mensaje de <a href="https://wa.me/51952842623" class="track-ga-click" target="_blank" data-origin="link-inside-page">Whatsapp al 952842623</a> o escribir al correo <a href="mailto:infosalud@minsa.gob.pe" class="track-ga-click" target="_blank" data-origin="link-inside-page">infosalud@minsa.gob.pe</a>.</p>
+                                    <br>
+                                    <br>
+                                </div>
+                                <div class="col-lg-4 mb-5 mb-lg-0">
+                                    <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4">
+                                        <img th:src="${@helper.assetsImg('sintomas-fiebre.png')}" class="img-fluid" alt="Persona transpirando y termómetro que indica que la persona tiene fiebre" style="width:250px !important;" title="sintomas-fiebre">
+                                    </div>
+                                    <h3>Fiebre</h3>
+                                </div>
+                                <div class="col-lg-4 mb-5 mb-lg-0">
+                                    <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4">
+                                        <img th:src="${@helper.assetsImg('sintomas-tos.png')}" class="img-fluid" alt="persona sosteniendo un paño en la mano y tosiendo sobre el paño" style="width:250px !important;" title="sintomas-tos">
+                                    </div>
+                                    <h3>Tos</h3>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4">
+                                        <img th:src="${@helper.assetsImg('sintomas-falta-de-aliento.png')}" class="img-fluid" alt="imagen de pulmones que representan la dificultad para respirar" style="width:250px !important;" title="sintomas-falta-de-aliento">
+                                    </div>
+                                    <h3>Falta de aire</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="svg-border-rounded text-light">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0" /></svg>
+                        </div>
+                    </section>
+
+                    <section id="section-informacion" class="bg-light py-10">
+                        <div class="container">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-md-12 text-center mb-5">
+                                    <h2>Información</h2>
+                                </div>
+                                <div class="col-md-9 col-lg-6 order-1 order-lg-0" data-aos="fade-right">
+                                    <div class="content-skewed content-skewed-right"><img class="content-skewed-item img-fluid shadow-lg rounded-lg" th:src="${@helper.assetsImg('landing-portfolio.jpg')}" /></div>
+                                </div>
+                                <div class="col-lg-6 order-0 order-lg-1 mb-5 mb-lg-0" data-aos="fade-left">
+                                    <div class="mb-5">
+                                        <h2>Modos de transmisión</h2>
+                                        <p class="mb-2 small mb-0 text-justify">Por gotas respiratorias y fómites, durante el contacto cercano sin protección entre personas infectadas y susceptibles. La transmisión por vía aérea no ha sido reportada en COVID-19 en la literatura disponible, sin embargo, puede ocurrir si se realizan procedimientos generadores de aerosoles en las IPRESS. La eliminación del virus por heces ha sido demostrada en algunos pacientes, y virus viable ha sido reportado en un número limitado de casos. Sin embargo, la ruta fecal-oral no parece ser un mecanismo de transmisión, por lo tanto, su rol y significancia aún está por determinarse.</p>
+
+                                        <h2>Periodo de incubación</h2>
+                                        <p class="mb-2 small mb-0 text-justify">Inicio de síntomas entre 5 a 6 días después de infección, en promedio (Rango: 1 a 14 días)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2>Periodo de transmisibilidad</h2>
+                                    <p class="mb-2 small mb-0 text-justify">7 días después del inicio de síntomas (en promedio), pero puede extenderse hasta 14 días. Se estima que la transmisión podría iniciar antes de la presentación de síntomas, aunque esta información aún se encuentra en investigación</p>
+                                    <br>
+
+                                    <h2>Susceptibilidad e inmunidad</h2>
+                                    <p class="mb-2 small mb-0 text-justify">Se estima que no habría inmunidad previa para este virus debido a que su circulación es reciente. Aún se encuentra en investigación si la infección genera inmunidad y protección para futuras infecciones</p>
+                                    <br>
+
+                                    <h2>Grupos de riesgo para cuadros clínicos severos y muerte</h2>
+                                    <p class="mb-2 small mb-0 text-justify">Personas mayores de 60 años Comorbilidades: hipertensión arterial, diabetes, enfermedades cardiovasculares, enfermedad pulmonar crónica, cáncer, otros estados de inmunosupresión.</p>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <hr class="m-0" />
+
+                    <section id="section-mapa" class="bg-light pt-10">
+                        <div class="container">
+                            <div class="row z-1">
+                                <div class="col-md-12 text-center mb-5">
+                                    <h2>Mapa del coronovirus en tiempo real vía Google Maps</h2>
+                                    <p class="lead">Easy pricing means no suprises.</p>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <iframe class="mb-lg-n10" src="https://www.google.com/maps/d/embed?mid=1S0vCi3BA-7DOCS13MomK7KebkPsvYl8C&ll=-10.606613290310237%2C-71.80279268601794&z=6" style="width: 100%; height: 600px; border: none;"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="svg-border-rounded text-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0" /></svg>
+                        </div>
+                    </section>
+
+                    <section id="section-recomendaciones" class="bg-dark py-10">
+                        <div class="container">
+                            <div class="row py-10">
+                                <div class="col-md-12">
+                                    <h2 class="text-center text-white mb-5">Recomendaciones</h2>
+                                    <p class="text-white-50">El virus del COVID-19 se transmite de persona a persona a través del contacto cercano y por gotas respiratorias, no por transmisión aérea. Sin embargo, existe el potencial riesgo de transmisión aérea si se realizan procedimientos de aerosolización (intubación, nebulizaciones, entre otros).</p>
+                                    <br>
+
+                                    <h2 class="text-white">Medidas de precaución estándar</h2>
+                                    <p class="text-white-50 text-justify">Buscan disminuir la transmisión de microorganismos de cualquier fuente, se aplican en el manejo de todos los pacientes ambulatorios u hospitalizados con o sin diagnóstico de infección y deben utilizarse desde el primer punto de ingreso del paciente al hospital:</p>
+                                    <ul>
+                                        <li><strong>Higiene de manos:</strong> Antes y después de la atención directa de pacientes. </li>
+                                        <li>Higiene respiratoria y etiqueta de la tos</li>
+                                        <li>Uso de los siguientes equipos de protección personal (EPP)
+                                            <ul>
+                                                <li><strong>Guantes:</strong> Para la manipulación de fluidos corporales, sangre, secreciones, excreciones, piel no intacta o mucosa. Retirarse los guantes luego de la atención de cada paciente y lavarse las manos. </li>
+                                                <li><strong>Mandil, gorro, mascarilla y lentes:</strong> Cuando existe riesgo de salpicaduras de sangre o fluidos.</li>
+                                            </ul>
+                                        </li>
+                                        <li>Prácticas seguras de aplicación de medicamentos inyectables. Limpieza, desinfección y esterilización apropiada de equipos y dispositivos médicos antes de reuso en otro paciente. Eliminar correctamente el material desechable que fue utilizado.</li>
+                                        <li>Uso de mascarilla para inserción de catéter o inyección de material en espacios epidural o raquídeo vía punción lumbar (e.j. mielograma o anestesia raquídea o epideural).</li>
+                                    </ul>
+                                    <br>
+
+                                    <h2 class="text-white">Medidas de prevención por contacto</h2>
+                                    <p class="text-white-50">Equipos de protección personal:</p>
+                                    <ul>
+                                        <li><strong>Guantes desechables de látex (o vinilo):</strong> Realizar higiene de manos antes de colocación y posterior a retiro.</li>
+                                        <li>Mandilón descartable de uso individual.</li>
+                                        <li>Protector ocular y pechera ante posibilidad de salpicaduras por fluidos corporales.</li>
+                                    </ul>
+                                    <br>
+
+                                    <h2 class="text-white">Medidas de prevención para transmisión aérea</h2>
+                                    <p class="text-white-50">Equipos de protección personal:</p>
+                                    <ul>
+                                        <li>Mandilón o delantal ante riesgo de contaminación por secreciones copiosas del paciente o si se realizarán procedimientos que faciliten la dispersión de aerosoles.</li>
+                                        <li>Protección ocular si se prevé riesgo de contaminación con secreciones. Se colocarán antes del ingreso a la habitación y su retiro se hará fuera de la misma, habiendo realizado previamente higiene de manos.</li>
+                                        <li>Respirador con filtro de partículas (N95) que se colocará el personal antes de ingresar a la habitación, realizando previamente un chequeo de su ajuste a la cara. Su retiro se hará fuera de la habitación habiendo realizado previamente higiene de manos.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="svg-border-rounded text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+                        </div>
+                    </section>
+
+                    <section id="section-medidas" class="bg-white pb-10">
+                        <div class="container">
+                            <div class="row mb-5">
+                                <div class="col-lg-6 mt-n10 mb-5 mb-lg-0 z-1">
+                                    <a class="card text-decoration-none h-100 lift" href="https://www.munisantanita.gob.pe/noticias">
+                                        <div class="card-body py-5">
+                                            <div class="d-flex align-items-center">
+                                                <div class="icon-stack icon-stack-xl bg-primary text-white flex-shrink-0" style="background-color: #4caf50 !important;">
+                                                    <img th:src=" ${ @helper.assetsImg('favicon.png') } " style="width: 1.75rem;">
+                                                </div>
+                                                <div class="ml-4">
+                                                    <h5 style="color: #4caf50 !important;">Noticias de Santa Anita</h5>
+                                                    <p class="card-text text-gray-600">Entérate de las últimas noticias local, distrital y Nacional del Coronavirus</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 mt-0 mt-lg-n10 z-1">
+                                    <a href="https://www.facebook.com/MuniSantaAnita" class="card text-decoration-none h-100 lift" target="_blank">
+                                        <div class="card-body py-5">
+                                            <div class="d-flex align-items-center">
+                                                <div class="icon-stack icon-stack-xl bg-secondary text-white flex-shrink-0" style="background-color: #385898 !important;">
+                                                    <svg class="feather feather-code" enable-background="new 0 0 24 24" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill="#ffffff" d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="ml-4">
+                                                    <h5 style="color:#385898 !important;">Noticias de Facebook</h5>
+                                                    <p class="card-text text-gray-600">Entérate de las últimas noticias local, distrital y Nacional del Coronavirus</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="text-center text-primary">Medidas para la comunidad santanitence</h3>
+                                    <p>Las medidas de prevención más efectivas en la comunidad son:</p>
+                                    <ol>
+                                        <li>Realizar el lavado de manos de forma frecuente con agua y jabón si sus manos se encuentran sucias o con una loción a base de alcohol si sus manos no se encuentran visiblemente sucias.</li>
+                                        <li>Evitar tocarse los ojos, nariz y boca.</li>
+                                        <li>Practicar la higiene respiratoria: toser o estornudar sobre la flexura de su codo o en un papel desechable e inmediatamente eliminar el papel, y lavarse las manos después de entrar en contacto con sus secreciones o con el papel que ha eliminado.</li>
+                                        <li>Utilizar una mascarilla quirúrgica descartable si presenta signos y síntomas respiratorios y realizar el lavado de manos después de eliminar la mascarilla.</li>
+                                        <li>Mantener una distancia social (de al menos 1 metro) con individuos con síntomas respiratorios.</li>
+                                    </ol>
+                                    <br>
+
+                                    <h2>Cuándo usar mascarillas</h2>
+                                    <ul>
+                                        <li>Si está usted sano, solo necesita llevar mascarilla si atiende a alguien en quien se sospeche la infección por el 2019-nCoV.</li>
+                                        <li>Lleve también mascarilla si tiene tos o estornudos.</li>
+                                        <li>Las mascarillas solo son eficaces si se combinan con el lavado frecuente de manos con una solución hidroalcohólica o con agua y jabón.</li>
+                                        <li>Si necesita llevar una mascarilla, aprenda a usarla y eliminarla correctamente.</li>
+                                    </ul>
+                                    <br>
+
+                                    <h2>Cómo ponerse, usar, quitarse y desechar una mascarilla</h2>
+                                    <ul>
+                                        <li>Antes de ponerse una mascarilla, lávese las manos con una desinfectante a base de alcohol o con agua y jabón.</li>
+                                        <li>Cúbrase la boca y la nariz con la mascarilla y asegúrese de que no haya espacios entre su cara y la máscara.</li>
+                                        <li>Evite tocar la mascarilla mientras la usa; si lo hace, lávese las manos con un desinfectante a base de alcohol o con agua y jabón.</li>
+                                        <li>Cámbiese de mascarilla tan pronto como esté húmeda y no reutilice las mascarillas de un solo uso.</li>
+                                        <li>Para quitarse la mascarilla: quitesela por detrás (no toque la parte delantera de la mascarilla); deséchela unmediatamente en un recipiente cerrado; y lávese las manos con un desinfectante a base de alcohol o con agua y jabón</li>
+                                    </ul>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="svg-border-rounded text-light">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+                        </div>
+                    </section>
+                    
+
+                </main>
+            </div>
+            <div id="layoutDefault_footer">
+                <footer class="footer pt-10 pb-5 mt-auto bg-light footer-light">
+                    <div class="container">
+                        <div class="row align-items-center text-center">
+                            <div class="col-md-12">&#xA9; Todos los Derechos Reservados <a th:href="${@helper.getURL('')}" target="_blank"><strong>Municipalidad Distrital de Santa Anita</strong></a></div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script th:src="${@helper.assetsJsc('coronavirus.js')}"></script>
+    </body>
+</html>

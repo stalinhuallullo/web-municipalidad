@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{web/layouts/principal/container}">
+
+<head>
+</head>
+
+<body layout:fragment="content" class="haeder-fixed-scroll">
+
+    <div th:replace="web/fragments/banner"></div>
+
+    <div class="main-content p130-50">
+        <section class="team-grid official-members">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="title-style-3">
+                            <h3>Gerentes</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/livia-esther-florez-fernandez.jpg')}"
+                                            alt="Livia Esther Flórez Fernandez" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Livia Esther Flórez Fernandez</h6>
+                                        <strong class="dep">Gerente Municipal</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/carlos-jesus-paucarchuco.jpg')}"
+                                            alt="Carlos Alberto Jesús Paucarchuco" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Carlos Alberto Jesús Paucarchuco</h6>
+                                        <strong class="dep">Secretario General</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/karina-rosanna-ganoza-florian.jpg')}"
+                                            alt="Karina Rosanna Ganoza Florián" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Karina Rosanna Ganoza Florián</h6>
+                                        <strong class="dep">Gerente de Administración y Finanzas</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/whitman-cayo-rios-adrianzen.jpeg')}"
+                                            alt="Whitman Cayo Ríos Adrianzén" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Whitman Cayo Ríos Adrianzén</h6>
+                                        <strong class="dep">Gerente de Seguridad Ciudadana y Fiscalización</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/juan-raul-huaynate-holguin.jpg')}"
+                                            alt="Juan Raúl Huaynate Holguin" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Juan Raúl Huaynate Holguin</h6>
+                                        <strong class="dep">Procurador Público Municipal</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/manuel-francisco-pozo-torrejon.jpg')}"
+                                            alt="Manuel Francisco Pozo Torrejón" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Manuel Francisco Pozo Torrejón</h6>
+                                        <strong class="dep">Gerente de Asesoría Jurídica</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/jorge-luis-orbegoso-zapata.jpg')}"
+                                            alt="Jorge Luis Orbegoso Zapata" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Jorge Luis Orbegoso Zapata</h6>
+                                        <strong class="dep">Gerente de Servicios Públicos y Desarrollo Humano</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/luis-sigfredo-milla-soto.jpg')}"
+                                            alt="Luis Sigfredo Milla Soto" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Luis Sigfredo Milla Soto</h6>
+                                        <strong class="dep">Gerente de Servicios de Administración Tributaria</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImgDefaultHombre()}" alt="Alfred Darcy Silva Meinel" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Alfred Darcy Silva Meinel</h6>
+                                        <strong class="dep">Gerente de Obras y Desarrollo Urbano</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/ronald-alberto-arrasco-suarez.jpg')}"
+                                            alt="Ronald Alberto Arrasco Suárez" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Ronald Alberto Arrasco Suárez</h6>
+                                        <strong class="dep">Gerente de Planeamiento y Presupuesto</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="title-style-3">
+                            <h3>Subgerentes</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImgDefaultHombre()}"
+                                            alt="Teodoro Salvador Faustino Calderón" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Teodoro Salvador Faustino Calderón</h6>
+                                        <strong class="dep">Subgerente de Atención al Ciudadano y Gestión
+                                            Documentaria</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/jorge-omar-ore-laura.jpg')}"
+                                            alt="Jorge Omar Oré Laura" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Jorge Omar Oré Laura</h6>
+                                        <strong class="dep">Subgerente de Desarrollo Economico Local</strong>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/felipe-antonio-enriquez-ponce.jpeg')}"
+                                            alt="Felipe Antonio Enríquez Ponce">
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Felipe Antonio Enríquez Ponce</h6>
+                                        <strong class="dep">Subgerente de Educación, Cultura, Deporte, Juventud y
+                                            Turismo</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/eduardo-orlando-siuse-alva.jpg')}"
+                                            alt="Eduardo Orlando Siuse Alva">
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Eduardo Orlando Siuse Alva</h6>
+                                        <strong class="dep">Subgerente de Contabilidad</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/linda-oletzy-velasquez-espinoza.jpeg')}"
+                                            alt="Linda Oletzy Velasquez Espinoza" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Linda Oletzy Velasquez Espinoza</h6>
+                                        <strong class="dep">Subgerente de Registro, Control y Recaudación
+                                            Tributaria</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/jorge-omar-ore-laura.jpg')}"
+                                            alt="Jorge Omar Oré Laura" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Jorge Omar Oré Laura</h6>
+                                        <strong class="dep">Subgerente de Fiscalización Tributaria y
+                                            Reclamaciones (e)</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/derry-chavez-salazar.jpg')}"
+                                            alt="Derry Chávez Salazar" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Derry Chávez Salazar</h6>
+                                        <strong class="dep">Subgerente de Logística</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/karina-isabel-wong-huamani.jpg')}"
+                                            alt="Karina Isabel Wong Huamaní" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Karina Isabel Wong Huamaní</h6>
+                                        <strong class="dep">Subgerente de Recursos Humanos</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImgDefaultMujer()}"
+                                            alt="Marlene Quispe Pucuhuaylas" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Marlene Quispe Pucuhuaylas</h6>
+                                        <strong class="dep">Subgerente de Salud y Programas Alimentarios</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/marco-manuel-Felix-montesinos.jpg')}"
+                                            alt="Marco Manuel Félix Montesinos" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Marco Manuel Félix Montesinos</h6>
+                                        <strong class="dep">Subgerente de Relaciones Públicas e Imagen
+                                            Institucional</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImgDefaultMujer()}" alt="Nohely Castillo Aguilar" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Nohely Castillo Aguilar</h6>
+                                        <strong class="dep">Subgerente de Tesorería</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/luis-alberto-teran-bermudez.jpeg')}"
+                                            alt="Luis Alberto Terán Bermudez" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Luis Alberto Terán Bermudez</h6>
+                                        <strong class="dep">Subgerente de Tecnologías de la Información y
+                                            Comunicación</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImgDefaultHombre()}"
+                                            alt="Alfred Darcy Silva Meinel" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Paulo Jesus Verastegui Lucero</h6>
+                                        <strong class="dep">Subgerente de Obras Públicas y Proyectos</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/luis-alfredo-trinidad-verastegui.jpg')}"
+                                            alt="Luis Alfredo Trinidad Verástegui" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Luis Alfredo Trinidad Verástegui</h6>
+                                        <strong class="dep">Subgerente de Obras Privadas, Control Urbano y
+                                            Catastro</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImgDefaultHombre()}" alt="Gregorio Bernardino Quispe Alvino" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Gregorio Bernardino Quispe Alvino</h6>
+                                        <strong class="dep">Subgerente de Participación Ciudadana, Bienestar Social y Demuna</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/luis-manuel-condori-barrientos.jpg')}"
+                                            alt="Luis Manuel Condori Barrientos" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Luis Manuel Condori Barrientos</h6>
+                                        <strong class="dep">Subgerente de Serenazgo, Fiscalización y
+                                            Transporte</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/jorge-luis-orbegoso-zapata.jpg')}"
+                                            alt="Jorge Luis Orbegoso Zapata" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Jorge Luis Orbegoso Zapata</h6>
+                                        <strong class="dep">Subgerente de Limpieza Pública, Áreas Verdes y Medio
+                                            Ambiente (e)</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/hever-david-mauricio-aquino.png')}"
+                                            alt="Hever David Mauricio Aquino" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Hever David Mauricio Aquino</h6>
+                                        <strong class="dep">Subgerente de Gestión del Riesgo de Desastres e Inspecciones Técnicas de Seguridad en Edificaciones</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/luis-sigfredo-milla-soto.jpg')}"
+                                            alt="Luis Sigfredo Milla Soto" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Luis Sigfredo Milla Soto</h6>
+                                        <strong class="dep">Subgerente de Ejecutoria Coactiva (e)</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-team-rv col-md-3 col-sm-4 col-xs-6">
+                                <div class="team-box default">
+                                    <div class="team-thumb team-thumb-responsive">
+                                        <img th:src="${@helper.assetsImg('equipo/jorge-omar-ore-laura.jpg')}"
+                                            alt="Jorge Omar Oré Laura" />
+                                    </div>
+                                    <div class="team-txt">
+                                        <h6 class="name">Jorge Omar Oré Laura</h6>
+                                        <strong class="dep">Subgerente de Desarrollo Económico Local</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

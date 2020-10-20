@@ -1,0 +1,49 @@
+<h6 class="title-info mt-0">Plan de Acción Distrital de Seguridad Ciudadana</h6>
+
+<style>
+.archives-directory h6 a{
+	display: block;
+	width: 100%;
+	/* background: #0000001a; */
+	padding: 15px 5px;
+	border-bottom: 1px solid #00000029;
+	color: black;
+}
+.archives-directory h6 a:after{
+    content: "\f107";
+    font-family: "FontAwesome";
+    font-weight: 900;
+    color: #333;
+    font-size: 18px;
+    position: absolute;
+    right: 20px;
+}
+.archives-directory .list-directorys{
+	
+}
+.archives-directory .list-directorys li{
+
+}
+.archives-directory .list-directorys li a{
+
+}
+</style>
+
+
+<div class="panel-group archives-directory" id="accordion" role="tablist" aria-multiselectable="true">
+	<div class="panel">
+	    <div class="panel-heading" role="tab" id="row-sesiones-1">
+	        <h6> 
+	            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-sesiones-1" aria-expanded="false" aria-controls="collapse2" class="collapsed">Diseño Y Formulación de la Propuesta del Padsc 2021 del Distrito de Santa Anita</a> 
+	        </h6>
+	    </div>
+	    <div id="collapse-sesiones-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="row-sesiones-1" aria-expanded="false">
+	        <div class="panel-body">
+	            <ul class="table-info">
+					<li><a th:href=" ${@helper.getServerApiRecursos('codisec/pdf/TALLER VIRTUAL DISENO PROPUESTA PADSC 2021.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ACTA TALLER VIRTUAL PARA EL DISEÑO DE LA PROPUESTA DEL PADSC 2021 DEL DISTRITO DE SANTA ANITA</span></a></li>
+					<li><a th:href=" ${@helper.getServerApiRecursos('codisec/pdf/TALLER VIRTUAL FORMULACION PADSC 2021.pdf')} "><span class="table-item-ico left"><i class="ico file-pdf"></i></span><span class="table-item-text">ACTA TALLER VIRTUAL PARA LA FORMULACIÓN DE LA PROPUESTA DEL PADSC 2021 DEL DISTRITO DE SANTA ANITA</span></a></li>
+				</ul>
+	        </div>
+	    </div>
+	</div>
+</div>
